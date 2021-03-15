@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x041f">
+		<string name="VersionText" value="Sürüm ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Sürüm ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA Kurulum Programı"/>
+		<string name="UninstallFrameTitle" value="NVIDIA Kaldırma Programı"/>
+		<string name="ErrorNoPackagesToInstall" value="Kurulacak bileşen yok."/>
+		<string name="ErrorMissingRequiredPackages" value="Gerekli bileşenler eksik."/>
+		<string name="ErrorMissingPackageFiles" value="Gerekli dosyalar eksik."/>
+		<string name="ErrorUnsupportedPlatform" value="Bu paket, kullanılmakta olan işletim sistemini desteklemiyor. Lütfen sisteminize uygun paketi edinin."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Başka kurulumlar sürüyor. Diğer kurulumları tamamlayıp tekrar deneyin."/>
+		<string name="ErrorInstallerNeedReboot" value="Sistemin yeniden başlatılması gerekiyor. Sistemi yeniden başlatıp tekrar deneyin."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Devam etmek için sabit diskte daha fazla boş yer açın.
+Gereken alan: "/>
+		<string name="RequiredFilesMissing" value="Gereken bir veya birden çok dosya eksik."/>
+		<string name="ErrorEULAMissing" value="&quot;EULA.txt&quot; eksik olduğundan, NVIDIA Kur çalıştırılamıyor."/>
+		<string name="ErrorPackageCorrupt" value="Kurulum paketi bozuk."/>
+		<string name="CannotCancelInstallMessage" value="NVIDIA Kurulum Programı şu anda durdurulamaz."/>
+		<string name="CannotCancelUninstallMessage" value="NVIDIA Kaldırma Programı şu anda durdurulamaz."/>
+		<string name="ConfirmCancelMessage" value="Gerçekten iptal edilsin mi?"/>
+		<string name="CompList" value="Bileşen Listesi"/>
+		<string name="ResList" value="Sonuçlar Listesi"/>
+		<string name="VersionHeader" value="Sürüm"/>
+		<string name="ComponentHeader" value="Bileşen"/>
+		<string name="NewVersionHeader" value="Yeni Sürüm"/>
+		<string name="CurVersionHeader" value="Mevcut Sürüm"/>
+		<string name="StatusHeader" value="Durum"/>
+		<string name="ListEntryNotFound" value="Bulunamayan"/>
+		<string name="ListEntryNotSelected" value="Seçilmeyen"/>
+		<string name="ListEntryInstalled" value="Kurulan"/>
+		<string name="ListEntryNotInstalled" value="Kurulmayan"/>
+		<string name="ListEntryNoneInstalled" value="Yok"/>
+		<string name="ListEntryUninstalled" value="Kaldırılan"/>
+		<string name="ListEntryNotUninstalled" value="Kaldırılmayan"/>
+		<string name="ListEntryFailed" value="Başarısız"/>
+		<string name="ListEntrySkipped" value="Kurulmadı. Zaten daha yeni bir sürüm mevcut."/>
+		<string name="SystemCheck" value="Sistem Kontrolü"/>
+		<string name="LicenseAgreement" value="Lisans Sözleşmesi"/>
+		<string name="Options" value="Seçenekler"/>
+		<string name="Installation" value="Kur"/>
+		<string name="Finish" value="Bitir"/>
+		<string name="NextButtonText" value="İ&amp;LERİ"/>
+		<string name="BackButtonText" value="&amp;GERİ"/>
+		<string name="CancelButtonText" value="İ&amp;PTAL"/>
+		<string name="CloseButtonText" value="&amp;KAPAT"/>
+		<string name="RetryButtonText" value="&amp;YENİDEN DENE"/>
+		<string name="AgreeButtonText" value="&amp;KABUL ET VE DEVAM"/>
+		<string name="RestartNowButtonText" value="ŞİMDİ &amp;YENİDEN BAŞLAT"/>
+		<string name="RestartLaterButtonText" value="&amp;SONRADAN YENİDEN BAŞLAT"/>
+		<string name="UninstallButtonText" value="K&amp;ALDIR"/>
+		<string name="ContinueButtonText" value="&amp;DEVAM"/>
+		<string name="LaunchButtonText" value="&amp;BAŞLAT"/>
+		<string name="BrowseButtonText" value="GÖZAT..."/>
+		<string name="CheckingSystemCompatibility" value="Sistem uyumluluğu kontrol ediliyor"/>
+		<string name="Warnings" value="Uyarılar."/>
+		<string name="EULAHeadText" value="NVIDIA yazılım lisans sözleşmesi"/>
+		<string name="EULAInstructions" value="Lütfen aşağıdaki NVIDIA yazılım lisans sözleşmesini dikkatle okuyun."/>
+		<string name="EULAAcceptInstructions" value="Sözleşmenin şartlarını kabul ediyorsanız, kabul et ve devam seçeneğini tıklatın."/>
+		<string name="NoEULAFound" value="EULA bulunamıyor."/>
+		<string name="InstallOptions" value="Kurulum seçenekleri"/>
+		<string name="ExpressRecommended" value="&amp;Hızlı (Tavsiye edilir)"/>
+		<string name="CustomAdvanced" value="&amp;Özel (Gelişmiş)"/>
+		<string name="ExpressDescription" value="Mevcut sürücüleri yükseltir ve mevcut NVIDIA ayarlarını korur."/>
+		<string name="CustomDescription" value="Kurmak istediğiniz bileşenleri seçmenize olanak verir ve temiz kurulum seçeneği sunar."/>
+		<string name="CustomInstallOptions" value="Özel kurulum seçenekleri"/>
+		<string name="CustomInstallInstructions" value="Sürücü bileşenlerini seçin:"/>
+		<string name="CleanInstall" value="&amp;Temiz kurulum yap"/>
+		<string name="CleanInstallDescription" value="Temiz kurulumda, tüm NVIDIA ayarları varsayılan değere sıfırlanır ve oluşturmuş olduğunuz profiller kaldırılır."/>
+		<string name="SelectInstallLocation" value="Kurulum konumunu seçin"/>
+		<string name="InstallPreparing" value="Kurulum işlemi hazırlanıyor"/>
+		<string name="RebootInstallPreparing" value="Yeniden başlatma hazırlığı yapılıyor..."/>
+		<string name="UninstallingPrevious" value="Önceki sürüm kaldırılıyor"/>
+		<string name="RemoveStatus" value="${!ProgressTitle} kaldırılıyor..."/>
+		<string name="RestartNotification" value="60 saniyeden kısa bir süre içinde yeniden başlatılacak"/>
+		<string name="AfterRestartInstructions" value="Yeniden başlatıldıktan sonra NVIDIA Kurulumu devam edecek."/>
+		<string name="InstallInProgress" value="Kurulum sürüyor"/>
+		<string name="InstallStatus" value="${!ProgressTitle} kuruluyor..."/>
+		<string name="InstallComplete" value="Kurulum Tamamlandı"/>
+		<string name="InstallerFinished" value="NVIDIA Kurulum Programı tamamlandı"/>
+		<string name="InstallerFinishedInstructions" value="Aşağıdaki bileşenler kuruldu:"/>
+		<string name="InstallCannotContinue" value="NVIDIA Kurulum Programı devam edemiyor"/>
+		<string name="FailureReasonHeader" value="Hatanın nedeni:"/>
+		<string name="FailureDisplayError" value="Hatalar görüntülenemiyor."/>
+		<string name="InstallFailure" value="NVIDIA Kurulum Programı başarısız"/>
+		<string name="InstallWarning" value="Devam etmek istiyor musunuz?"/>
+		<string name="FailureListHeader" value="Şu hatalar gerçekleşti:"/>
+		<string name="InstallRebootInstructions" value="Kurulum işlemini tamamlamak için, bilgisayarı yeniden başlatın."/>
+		<string name="RebootQuestion" value="Şimdi yeniden başlatmak istiyor musunuz?"/>
+		<string name="UninstallPreparing" value="Kaldırma işlemi hazırlanıyor"/>
+		<string name="UninstallQuestion" value="Bu yazılım gerçekten kaldırılsın mı?"/>
+		<string name="UninstallInProgress" value="Kaldırma işlemi sürüyor"/>
+		<string name="UninstallStatus" value="${!ProgressTitle} kaldırılıyor..."/>
+		<string name="UninstallComplete" value="NVIDIA Kaldırma Programı tamamlandı"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} başarıyla kaldırıldı."/>
+		<string name="UninstallCannotContinue" value="NVIDIA Kaldırma Programı devam edemiyor"/>
+		<string name="UninstallFailure" value="NVIDIA Kaldırma Programı başarısız"/>
+		<string name="UninstallRebootInstructions" value="Kaldırma işlemini tamamlamak için, bilgisayarı yeniden başlatın."/>
+		<string name="WaitPnpAlreadyRunning" value="Donanım sihirbazı çalışıyor. Tamamlandığında, kuruluma devam edilecek."/>
+		<string name="DisplayFlash" value="Not: Kurulum sırasında ekran yanıp sönebilir."/>
+		<string name="PreCheckWarning" value="Bir veya birden çok sorun saptandı"/>
+		<string name="OldOverNewWarning" value="Bu sürücü, şu anda kullanılmakta olan sürümden daha eski. Kurulum işlemi sırasında bütün NVIDIA ayarları varsayılan değerlerine sıfırlanır ve oluşturmuş olduğunuz profiller kaldırılır."/>
+		<string name="IntelDriverNotPresentMessage" value="Önce bir Intel® sürücüsü kurmalısınız."/>
+		<string name="ReleaseHighlights" value="Sürümün Başlıca Özellikleri"/>
+		<string name="UpdatesReadyToInstall" value="Yeni güncelleştirmeler kurulmaya hazır"/>
+		<string name="UpdatesReady" value="Yeni güncelleştirmeler hazır"/>
+		<string name="UpdatesBeingInstalled" value="Güncelleştirmeler kuruluyor"/>
+		<string name="UpdateText" value="güncelleştiriliyor"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Güncelleştirmeler hazırlanıyor"/>
+		<string name="InstallPaused" value="NVIDIA Kurulum programı duraklatıldı"/>
+		<string name="ClosePrograms" value="Devam etmek için şu programları kapatın:"/>
+		<string name="DownloadInProgress" value="İndirme işlemi sürüyor"/>
+		<string name="DownloadingPackages" value="Kurulum paketleri indiriliyor"/>
+		<string name="ProcessingDownloadedPackages" value="İndirilen paketler işlem görüyor"/>
+		<string name="DownloadProgressInfo" value="%${!DownloadProgressInfo} tamamlandı"/>
+		<string name="LearnMore" value="Daha fazla bilgi edinin."/>
+		<string name="NetworkConnectionError" value="AÄŸ baÄŸlantÄ±sÄ± bulunamadÄ±."/>
+		<string name="DefaultDownloadFailure" value="Ä°ndirme iÅŸlemi baÅŸarÄ±yla tamamlanamadÄ±. Yeniden deneyin."/>
+		<string name="NetworkFailureNoConnection" value="NVIDIA'ya baÄŸlanÄ±lamÄ±yor. Internet baÄŸlantÄ±nÄ±zÄ± kontrol edin."/>
+		<string name="NetworkFailureTryAgain" value="NVIDIA'ya baÄŸlanÄ±lamÄ±yor. Sonradan tekrar deneyin."/>
+		<string name="SignatureCheckFailure" value="Ä°ndirme iÅŸlemi baÅŸarÄ±yla tamamlanamadÄ±. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Kurulum iÃ§in gereken dosyalar indirilemedi. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

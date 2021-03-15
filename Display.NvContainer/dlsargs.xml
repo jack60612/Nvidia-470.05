@@ -1,0 +1,32 @@
+<configuration>
+    <APP>
+    </APP>
+
+    <CPU>
+    </CPU>
+
+    <UMD>
+    </UMD>
+
+    <GPU>
+    </GPU>
+
+    <DATACOLLECTOR>
+    </DATACOLLECTOR>
+
+    <DATAPROCESSOR>
+    </DATAPROCESSOR>
+
+    <CONTROLLER>
+    </CONTROLLER>
+
+    <ENGINE>
+        <ENERGY>
+        </ENERGY>
+        <FPS>
+        </FPS>
+    </ENGINE>
+
+    <STREAMER>
+    </STREAMER>
+</configuration>

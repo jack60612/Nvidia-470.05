@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nvi name="USBC" title="${{title}}" version="${{version}}" versionText="${{version}}" timestamp="2020-09-20T22:22:21" disposition="default" installerMin="2.1002.306.0" hasDriver="true" continueOnFailure="true">
+	<strings>
+		<string name="version" value="1.46.831.832"/>
+		<string name="title" value="USBC Driver"/>
+		<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		<string name="InstallBlockedMessage" value="${{title}} cannot be installed on this computer."/>
+	</strings>
+	<dependencies>
+		<package type="requires" package="Display.Driver"/>
+	</dependencies>
+	<extensions>
+		<extension file="USBCExt.dll"/>
+	</extensions>
+	<constraints>
+		<custom name="USBCSupportCheck" text="${{InstallBlockedMessage}}" level="silent"/>
+	</constraints>
+	<properties>
+		<string name="ArpDisplayName" value="${{arpDisplayName}}"/>
+	</properties>
+	<manifest>
+		<file name="USBC.nvi"/>
+		<file name="nvppc.cat"/>
+		<file name="nvppc.inf"/>
+		<file name="UcmCxUcsiNvppc.sys"/>
+		<file name="USBCExt.dll"/>
+	</manifest>
+	<phases>
+		<device phase="installUSBCDriver" fixedProgress="10" deviceProgress="35" autoTick="200">
+			<inf name="nvppc.inf"/>
+		</device>
+	</phases>
+</nvi>

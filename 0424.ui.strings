@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0424">
+		<string name="VersionText" value="Različica ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Različica ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA Installer"/>
+		<string name="UninstallFrameTitle" value="NVIDIA Uninstaller"/>
+		<string name="ErrorNoPackagesToInstall" value="Za namestitev ni na voljo nobenih komponent."/>
+		<string name="ErrorMissingRequiredPackages" value="Zahtevane komponente manjkajo."/>
+		<string name="ErrorMissingPackageFiles" value="Zahtevane datoteke manjkajo."/>
+		<string name="ErrorUnsupportedPlatform" value="Ta paket ne podpira uporabljenega operacijskega sistema. Priskrbite si pravilen paket za svoj sistem."/>
+		<string name="ErrorInstallerAlreadyRunning" value="V teku so drugi postopki namestitve. Končajte vse druge postopke namestitve in ponovno poizkusite."/>
+		<string name="ErrorInstallerNeedReboot" value="Potreben je ponoven zagon sistema. Ponovno zaženite sistem in ponovno poizkusite."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Za nadaljevanje sprostite dodatni prostor na disku.
+Potreben prostor: "/>
+		<string name="RequiredFilesMissing" value="Ena ali več zahtevanih datotek manjka."/>
+		<string name="ErrorEULAMissing" value="Zagon NVIDIA postopka namestitve ni uspel, ker ni mogoče najti &quot;EULA.txt&quot;."/>
+		<string name="ErrorPackageCorrupt" value="Namestitveni paket je poškodovan."/>
+		<string name="CannotCancelInstallMessage" value="NVIDIA Installerja v tem trenutku ni mogoče ustaviti."/>
+		<string name="CannotCancelUninstallMessage" value="NVIDIA Uninstallerja v tem trenutku ni mogoče ustaviti."/>
+		<string name="ConfirmCancelMessage" value="Ali res želite prekiniti postopek?"/>
+		<string name="CompList" value="Seznam komponent"/>
+		<string name="ResList" value="Seznam rezultatov"/>
+		<string name="VersionHeader" value="Različica"/>
+		<string name="ComponentHeader" value="Komponenta"/>
+		<string name="NewVersionHeader" value="Nova različica"/>
+		<string name="CurVersionHeader" value="Trenutna različica"/>
+		<string name="StatusHeader" value="Stanje"/>
+		<string name="ListEntryNotFound" value="Ni bilo mogoče najti"/>
+		<string name="ListEntryNotSelected" value="Ni bil/a izbran/a"/>
+		<string name="ListEntryInstalled" value="Nameščen/a"/>
+		<string name="ListEntryNotInstalled" value="Ni bil/a nameščen/a"/>
+		<string name="ListEntryNoneInstalled" value="Noben"/>
+		<string name="ListEntryUninstalled" value="Odstranjen"/>
+		<string name="ListEntryNotUninstalled" value="Ni bil/a odstranjen/a"/>
+		<string name="ListEntryFailed" value="Neuspešno"/>
+		<string name="ListEntrySkipped" value="Ni namestil. Novejša različica že obstaja."/>
+		<string name="SystemCheck" value="Pregled sistema"/>
+		<string name="LicenseAgreement" value="Licenčni sporazum"/>
+		<string name="Options" value="Možnosti"/>
+		<string name="Installation" value="Namesti"/>
+		<string name="Finish" value="Dokončaj"/>
+		<string name="NextButtonText" value="&amp;NAPREJ"/>
+		<string name="BackButtonText" value="&amp;NAZAJ"/>
+		<string name="CancelButtonText" value="&amp;PREKLIČI"/>
+		<string name="CloseButtonText" value="&amp;ZAPRI"/>
+		<string name="RetryButtonText" value="&amp;POSKUSI ZNOVA"/>
+		<string name="AgreeButtonText" value="&amp;SE STRINJAM IN NADALJUJ"/>
+		<string name="RestartNowButtonText" value="&amp;ZDAJ PONOVNO ZAŽENI"/>
+		<string name="RestartLaterButtonText" value="PONOVNO ZAŽENI &amp;KASNEJE"/>
+		<string name="UninstallButtonText" value="&amp;ODSTRANI"/>
+		<string name="ContinueButtonText" value="NA&amp;DALJUJ"/>
+		<string name="LaunchButtonText" value="&amp;ZAŽENI"/>
+		<string name="BrowseButtonText" value="PREBRSKAJ..."/>
+		<string name="CheckingSystemCompatibility" value="Preverjanje združljivosti sistema v teku"/>
+		<string name="Warnings" value="Opozorila"/>
+		<string name="EULAHeadText" value="NVIDIA licenčni sporazum za programsko opremo"/>
+		<string name="EULAInstructions" value="Pozorno preberite naslednjo licenčno pogodbo za NVIDIA programsko opremo."/>
+		<string name="EULAAcceptInstructions" value="Če sprejemate pogoje pogodbe, kliknite Se strinjam in nadaljuj."/>
+		<string name="NoEULAFound" value="Licenčne pogodbe za končnega uporabnika ni bilo mogoče najti."/>
+		<string name="InstallOptions" value="Namestitvene možnosti"/>
+		<string name="ExpressRecommended" value="&amp;Ekspresno (Priporočeno)"/>
+		<string name="CustomAdvanced" value="&amp;Po meri (Napredno)"/>
+		<string name="ExpressDescription" value="Posodobi obstoječe gonilnike in ohrani trenutne NVIDIA nastavitve."/>
+		<string name="CustomDescription" value="Omogoča vam izbor komponent, ki jih želite namestiti in ponuja možnost za čisto namestitev."/>
+		<string name="CustomInstallOptions" value="Namestitvene možnosti po meri"/>
+		<string name="CustomInstallInstructions" value="Izberite komponente gonilnika:"/>
+		<string name="CleanInstall" value="&amp;Izvedite čisto namestitev"/>
+		<string name="CleanInstallDescription" value="Čista namestitev obnovi vse NVIDIA nastavitve na privzeto vrednost in odstrani vse profile, ki ste jih ustvarili."/>
+		<string name="SelectInstallLocation" value="Izberite mesto namestitve"/>
+		<string name="InstallPreparing" value="Pripravljanje na namestitev"/>
+		<string name="RebootInstallPreparing" value="Priprava na ponovni zagon..."/>
+		<string name="UninstallingPrevious" value="Odstranitev prejšnje različice v teku"/>
+		<string name="RemoveStatus" value="Odstranjevanje ${!ProgressTitle}v teku..."/>
+		<string name="RestartNotification" value="Reštartuje sa za menej ako 60 sekúnd"/>
+		<string name="AfterRestartInstructions" value="Namestitev NVIDIA se bo nadaljevala po ponovnem zagonu."/>
+		<string name="InstallInProgress" value="Namestitev v teku"/>
+		<string name="InstallStatus" value="Postopek namestitve ${!ProgressTitle} je v teku..."/>
+		<string name="InstallComplete" value="Namestitev zaključena"/>
+		<string name="InstallerFinished" value="NVIDIA Installer je končal"/>
+		<string name="InstallerFinishedInstructions" value="Sedaj so nameščene naslednje komponente:"/>
+		<string name="InstallCannotContinue" value="NVIDIA Installer ne more nadaljevati"/>
+		<string name="FailureReasonHeader" value="Razlog za neuspeh:"/>
+		<string name="FailureDisplayError" value="Napak ni mogoče pokazati."/>
+		<string name="InstallFailure" value="NVIDIA Installer je bil neuspešen"/>
+		<string name="InstallWarning" value="Ali želite nadaljevati?"/>
+		<string name="FailureListHeader" value="Prišlo je do naslednjih napak:"/>
+		<string name="InstallRebootInstructions" value="Če želite dokončati namestitev, ponovno zaženite računalnik."/>
+		<string name="RebootQuestion" value="Ali želite sedaj ponovno zagnati računalnik?"/>
+		<string name="UninstallPreparing" value="Priprava na odstranitev v teku"/>
+		<string name="UninstallQuestion" value="Ali želite res odstraniti to programsko opremo?"/>
+		<string name="UninstallInProgress" value="Odstranjevanje v teku"/>
+		<string name="UninstallStatus" value="Postopek odstranitve ${!ProgressTitle}v teku..."/>
+		<string name="UninstallComplete" value="NVIDIA Uninstaller je končal"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} je bil/a uspešno odstranjen/a."/>
+		<string name="UninstallCannotContinue" value="NVIDIA Uninstaller ne more nadaljevati"/>
+		<string name="UninstallFailure" value="NVIDIA Uninstaller je bil neuspešen"/>
+		<string name="UninstallRebootInstructions" value="Če želite dokončati odstranitev, ponovno zaženite računalnik."/>
+		<string name="WaitPnpAlreadyRunning" value="Je spustený sprievodca hardvérom. Inštalácia bude pokračovať po jeho zatvorení."/>
+		<string name="DisplayFlash" value="Opomba: Med namestitvijo lahko pride do utripanja."/>
+		<string name="PreCheckWarning" value="Odkrita je bila ena ali več zadev"/>
+		<string name="OldOverNewWarning" value="Ta gonilnik je starejši od različice, ki je trenutno v uporabi. Namestitev bo obnovila vse NVIDIA nastavitve na privzeto vrednost in odstranila vse profile, ki ste jih ustvarili."/>
+		<string name="IntelDriverNotPresentMessage" value="Najprej morate namestiti gonilnik Intel®."/>
+		<string name="ReleaseHighlights" value="Zanimivosti ob izdaji"/>
+		<string name="UpdatesReadyToInstall" value="Nove posodobitve so pripravljene za namestitev"/>
+		<string name="UpdatesReady" value="Na voljo so nove posodobitve"/>
+		<string name="UpdatesBeingInstalled" value="Posodobitve so v postopku nameščanja"/>
+		<string name="UpdateText" value="Posodabljanje"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Priprava posodobitev"/>
+		<string name="InstallPaused" value="NVIDIA Installer se je ustavil"/>
+		<string name="ClosePrograms" value="Če želite nadaljevati, zaprite te programe:"/>
+		<string name="DownloadInProgress" value="Prenos v teku"/>
+		<string name="DownloadingPackages" value="Prenos namestitvenih paketov je v teku"/>
+		<string name="ProcessingDownloadedPackages" value="Obdelava prenesenih paketov je v teku "/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% zaključeno"/>
+		<string name="LearnMore" value="Izvedite več."/>
+		<string name="NetworkConnectionError" value="Omrežna povezava ni bila najdena."/>
+		<string name="DefaultDownloadFailure" value="Prenos ni bil uspešno končan. Poskusite znova."/>
+		<string name="NetworkFailureNoConnection" value="Ni se mogoče zvezati z NVIDIA. Preverite svojo spletno povezavo."/>
+		<string name="NetworkFailureTryAgain" value="Ni se mogoče zvezati z NVIDIA. Poskusite znova pozneje."/>
+		<string name="SignatureCheckFailure" value="Prenos ni bil uspešno končan. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Ni mogoče prenesti zahtevanih datotek za namestitev. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

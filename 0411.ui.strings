@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0411">
+		<string name="VersionText" value="バージョン ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="バージョン ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA インストーラー"/>
+		<string name="UninstallFrameTitle" value="NVIDIA アンインストーラー"/>
+		<string name="ErrorNoPackagesToInstall" value="インストールするコンポーネントがありません。"/>
+		<string name="ErrorMissingRequiredPackages" value="必要なコンポーネントが見つかりません。"/>
+		<string name="ErrorMissingPackageFiles" value="必要なファイルが見つかりません。"/>
+		<string name="ErrorUnsupportedPlatform" value="使用中のオペレーティング システムは、このパッケージによってサポートされていません。お使いのシステムに合った正しいパッケージを取得してください。"/>
+		<string name="ErrorInstallerAlreadyRunning" value="実行中のインストールが他にあります。他のインストールを完了してからやり直してください。"/>
+		<string name="ErrorInstallerNeedReboot" value="システムを再起動する必要があります。システムを再起動してからやり直してください。"/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="続行するには、空き領域を増やしてください。
+必要な領域: "/>
+		<string name="RequiredFilesMissing" value="1 つまたは複数の必要なファイルが見つかりません。"/>
+		<string name="ErrorEULAMissing" value="&quot;EULA.txt&quot; が見つからないため、NVIDIA インストールを実行できません。"/>
+		<string name="ErrorPackageCorrupt" value="インストール パッケージが壊れています。"/>
+		<string name="CannotCancelInstallMessage" value="NVIDIA インストーラーは現在停止できません。"/>
+		<string name="CannotCancelUninstallMessage" value="NVIDIA アンインストーラーは現在停止できません。"/>
+		<string name="ConfirmCancelMessage" value="キャンセルしてよろしいですか?"/>
+		<string name="CompList" value="コンポーネント リスト"/>
+		<string name="ResList" value="結果リスト"/>
+		<string name="VersionHeader" value="バージョン"/>
+		<string name="ComponentHeader" value="コンポーネント"/>
+		<string name="NewVersionHeader" value="新しいバージョン"/>
+		<string name="CurVersionHeader" value="現在のバージョン"/>
+		<string name="StatusHeader" value="ステータス"/>
+		<string name="ListEntryNotFound" value="見つかりませんでした"/>
+		<string name="ListEntryNotSelected" value="選択されていません"/>
+		<string name="ListEntryInstalled" value="インストールされました"/>
+		<string name="ListEntryNotInstalled" value="インストールされていません"/>
+		<string name="ListEntryNoneInstalled" value="なし"/>
+		<string name="ListEntryUninstalled" value="削除されました"/>
+		<string name="ListEntryNotUninstalled" value="削除されていません"/>
+		<string name="ListEntryFailed" value="失敗"/>
+		<string name="ListEntrySkipped" value="インストールされませんでした。新しいバージョンが既に存在します。"/>
+		<string name="SystemCheck" value="システム チェック"/>
+		<string name="LicenseAgreement" value="使用許諾契約書"/>
+		<string name="Options" value="オプション"/>
+		<string name="Installation" value="インストール"/>
+		<string name="Finish" value="完了"/>
+		<string name="NextButtonText" value="次へ(&amp;N)"/>
+		<string name="BackButtonText" value="戻る(&amp;B)"/>
+		<string name="CancelButtonText" value="キャンセル(&amp;C)"/>
+		<string name="CloseButtonText" value="閉じる(&amp;C)"/>
+		<string name="RetryButtonText" value="再試行(&amp;R)"/>
+		<string name="AgreeButtonText" value="同意して続行する(&amp;A)"/>
+		<string name="RestartNowButtonText" value="今すぐ再起動する(&amp;R)"/>
+		<string name="RestartLaterButtonText" value="後で再起動する(&amp;L)"/>
+		<string name="UninstallButtonText" value="アンインストール(&amp;U)"/>
+		<string name="ContinueButtonText" value="続行(&amp;O)"/>
+		<string name="LaunchButtonText" value="起動(&amp;L)"/>
+		<string name="BrowseButtonText" value="参照..."/>
+		<string name="CheckingSystemCompatibility" value="システムの互換性チェック"/>
+		<string name="Warnings" value="警告。"/>
+		<string name="EULAHeadText" value="NVIDIA ソフトウェア使用許諾契約書"/>
+		<string name="EULAInstructions" value="次の NVIDIA ソフトウェア使用許諾契約書をお読みください。"/>
+		<string name="EULAAcceptInstructions" value="契約書の条項に同意される場合は、[同意/続行] をクリックしてください。"/>
+		<string name="NoEULAFound" value="EULA が見つかりません。"/>
+		<string name="InstallOptions" value="インストール オプション"/>
+		<string name="ExpressRecommended" value="高速 (推奨)(&amp;E)"/>
+		<string name="CustomAdvanced" value="カスタム (詳細)(&amp;C)"/>
+		<string name="ExpressDescription" value="既存のドライバーをアップグレードして、現在の NVIDIA 設定を維持します。"/>
+		<string name="CustomDescription" value="インストールするコンポーネントを指定し、クリーン インストールを選択できます。"/>
+		<string name="CustomInstallOptions" value="カスタム インストール オプション"/>
+		<string name="CustomInstallInstructions" value="ドライバー コンポーネントの選択:"/>
+		<string name="CleanInstall" value="クリーン インストールの実行(&amp;P)"/>
+		<string name="CleanInstallDescription" value="クリーン インストールを実行すると、すべての NVIDIA 設定が既定値に戻り、作成したプロファイルはすべて削除されます。"/>
+		<string name="SelectInstallLocation" value="インストール場所の選択"/>
+		<string name="InstallPreparing" value="インストールの準備をしています"/>
+		<string name="RebootInstallPreparing" value="再起動の準備をしています..."/>
+		<string name="UninstallingPrevious" value="前のバージョンの削除"/>
+		<string name="RemoveStatus" value="${!ProgressTitle} を削除しています..."/>
+		<string name="RestartNotification" value="60 秒以内に再起動します"/>
+		<string name="AfterRestartInstructions" value="NVIDIA インストールは再起動後に続行します。"/>
+		<string name="InstallInProgress" value="インストールが進行中です"/>
+		<string name="InstallStatus" value="${!ProgressTitle} をインストールしています..."/>
+		<string name="InstallComplete" value="インストール完了"/>
+		<string name="InstallerFinished" value="NVIDIA インストーラーが終了しました"/>
+		<string name="InstallerFinishedInstructions" value="次のコンポーネントがインストールされました:"/>
+		<string name="InstallCannotContinue" value="NVIDIA インストーラーを続行できません"/>
+		<string name="FailureReasonHeader" value="エラーの理由:"/>
+		<string name="FailureDisplayError" value="エラーを表示できません。"/>
+		<string name="InstallFailure" value="NVIDIA インストーラーが失敗しました"/>
+		<string name="InstallWarning" value="続行しますか。"/>
+		<string name="FailureListHeader" value="次のエラーが発生しました:"/>
+		<string name="InstallRebootInstructions" value="インストールを完了するには、コンピューターを再起動してください。"/>
+		<string name="RebootQuestion" value="今すぐ再起動しますか?"/>
+		<string name="UninstallPreparing" value="アンインストールの準備"/>
+		<string name="UninstallQuestion" value="このソフトウェアを削除してよろしいですか?"/>
+		<string name="UninstallInProgress" value="削除が進行中です"/>
+		<string name="UninstallStatus" value="${!ProgressTitle} を削除しています..."/>
+		<string name="UninstallComplete" value="NVIDIA アンインストーラーが終了しました"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} が正常に削除されました。"/>
+		<string name="UninstallCannotContinue" value="NVIDIA アンインストーラーを続行できません"/>
+		<string name="UninstallFailure" value="NVIDIA アンインストーラーが失敗しました"/>
+		<string name="UninstallRebootInstructions" value="削除を完了するには、コンピューターを再起動してください。"/>
+		<string name="WaitPnpAlreadyRunning" value="ハードウェア ウィザードが実行中です。ウィザードが完了すると、インストールが再開されます。"/>
+		<string name="DisplayFlash" value="メモ: インストール中に画面が点滅する場合があります。"/>
+		<string name="PreCheckWarning" value="問題が検出されました。"/>
+		<string name="OldOverNewWarning" value="このドライバーは現在使用中のドライバーより古いバージョンです。このドライバーをインストールすると、すべての NVIDIA 設定が既定値に戻り、作成したプロファイルはすべて削除されます。"/>
+		<string name="IntelDriverNotPresentMessage" value="Intel® ドライバーを先にインストールする必要があります。"/>
+		<string name="ReleaseHighlights" value="リリースハイライト"/>
+		<string name="UpdatesReadyToInstall" value="新しいアップデートのインストールの準備ができました"/>
+		<string name="UpdatesReady" value="新しいアップデートが準備できました"/>
+		<string name="UpdatesBeingInstalled" value="アップデートをインストール中です"/>
+		<string name="UpdateText" value="アップデート"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="更新の準備中"/>
+		<string name="InstallPaused" value="NVIDIA インストーラーが一時停止しました"/>
+		<string name="ClosePrograms" value="続行するには以下のプログラムを閉じてください:"/>
+		<string name="DownloadInProgress" value="ダウンロード進行中"/>
+		<string name="DownloadingPackages" value="インストールパッケージをダウンロードしています"/>
+		<string name="ProcessingDownloadedPackages" value="ダウンロードしたパッケージを処理しています"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% 完了"/>
+		<string name="LearnMore" value="詳細情報"/>
+		<string name="NetworkConnectionError" value="ネットワーク接続が見つかりません。"/>
+		<string name="DefaultDownloadFailure" value="ダウンロードが完了しませんでした。再試行してください。"/>
+		<string name="NetworkFailureNoConnection" value="NVIDIA に接続できません。インターネット接続を確認してください。"/>
+		<string name="NetworkFailureTryAgain" value="NVIDIA に接続できません。後でもう一度やり直してください。"/>
+		<string name="SignatureCheckFailure" value="ダウンロードが完了しませんでした。${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="インストールに必要なファイルをダウンロードできませんでした。${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

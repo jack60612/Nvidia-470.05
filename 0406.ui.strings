@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0406">
+		<string name="VersionText" value="Version ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Version ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA-installationsprogram"/>
+		<string name="UninstallFrameTitle" value="NVIDIA-afinstallationsprogram"/>
+		<string name="ErrorNoPackagesToInstall" value="Der er ingen komponenter at installere."/>
+		<string name="ErrorMissingRequiredPackages" value="Nødvendige komponenter mangler."/>
+		<string name="ErrorMissingPackageFiles" value="Nødvendige filer mangler."/>
+		<string name="ErrorUnsupportedPlatform" value="Det operativsystem, som er i brug, understøttes ikke af denne pakke. Indhent den korrekte pakke til dit system."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Andre installationer kører. Færdiggør de andre installationer, og prøv derefter igen."/>
+		<string name="ErrorInstallerNeedReboot" value="Det er nødvendigt med genstart af systemet. Genstart systemet og prøv igen."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Frigør yderligere diskplads for at fortsætte.
+Nødvendig plads: "/>
+		<string name="RequiredFilesMissing" value="En eller flere nødvendige filer mangler."/>
+		<string name="ErrorEULAMissing" value="Kan ikke køre NVIDIA-installation, fordi &quot;EULA.txt&quot; mangler."/>
+		<string name="ErrorPackageCorrupt" value="Installationspakke er ødelagt."/>
+		<string name="CannotCancelInstallMessage" value="NVIDIA-installationsprogram kan ikke standses på nuværende tidspunkt."/>
+		<string name="CannotCancelUninstallMessage" value="NVIDIA-afinstallationsprogram kan ikke standses på nuværende tidspunkt."/>
+		<string name="ConfirmCancelMessage" value="Vil du virkelig annullere?"/>
+		<string name="CompList" value="Komponentliste"/>
+		<string name="ResList" value="Resultatliste"/>
+		<string name="VersionHeader" value="Version"/>
+		<string name="ComponentHeader" value="Komponent"/>
+		<string name="NewVersionHeader" value="Ny version"/>
+		<string name="CurVersionHeader" value="Nuværende version"/>
+		<string name="StatusHeader" value="Status"/>
+		<string name="ListEntryNotFound" value="Ikke fundet"/>
+		<string name="ListEntryNotSelected" value="Ikke valgt"/>
+		<string name="ListEntryInstalled" value="Installeret"/>
+		<string name="ListEntryNotInstalled" value="Ikke installeret"/>
+		<string name="ListEntryNoneInstalled" value="Ingen"/>
+		<string name="ListEntryUninstalled" value="Fjernet"/>
+		<string name="ListEntryNotUninstalled" value="Ikke fjernet"/>
+		<string name="ListEntryFailed" value="Mislykket"/>
+		<string name="ListEntrySkipped" value="Blev ikke installeret. Der findes allerede en nyere version."/>
+		<string name="SystemCheck" value="Systemkontrol"/>
+		<string name="LicenseAgreement" value="Licensaftale"/>
+		<string name="Options" value="Indstillinger"/>
+		<string name="Installation" value="Installer"/>
+		<string name="Finish" value="Udfør"/>
+		<string name="NextButtonText" value="&amp;NÆSTE"/>
+		<string name="BackButtonText" value="&amp;TILBAGE"/>
+		<string name="CancelButtonText" value="&amp;ANNULLER"/>
+		<string name="CloseButtonText" value="&amp;LUK"/>
+		<string name="RetryButtonText" value="&amp;PRØV IGEN"/>
+		<string name="AgreeButtonText" value="&amp;ACCEPTÉR OG FORTSÆT"/>
+		<string name="RestartNowButtonText" value="&amp;GENSTART NU"/>
+		<string name="RestartLaterButtonText" value="GENSTART &amp;SENERE"/>
+		<string name="UninstallButtonText" value="&amp;AFINSTALLER"/>
+		<string name="ContinueButtonText" value="&amp;FORTSÆT"/>
+		<string name="LaunchButtonText" value="&amp;START"/>
+		<string name="BrowseButtonText" value="GENNEMSE..."/>
+		<string name="CheckingSystemCompatibility" value="Kontrollerer systemkompatibilitet"/>
+		<string name="Warnings" value="Advarsler."/>
+		<string name="EULAHeadText" value="NVIDIA-softwarelicensaftale"/>
+		<string name="EULAInstructions" value="Læs følgende NVIDIA-softwarelicensaftale omhyggeligt."/>
+		<string name="EULAAcceptInstructions" value="Klik på Acceptér og fortsæt, hvis du accepterer aftalens betingelser."/>
+		<string name="NoEULAFound" value="Kan ikke finde en slutbrugerlicensaftale."/>
+		<string name="InstallOptions" value="Installationsvalg"/>
+		<string name="ExpressRecommended" value="&amp;Ekspres (Anbefalet)"/>
+		<string name="CustomAdvanced" value="&amp;Brugerdefineret (Avanceret)"/>
+		<string name="ExpressDescription" value="Opdaterer eksisterende drivere og bevarer aktuelle NVIDIA-indstillinger."/>
+		<string name="CustomDescription" value="Giver dig mulighed for at vælge de komponenter, som du ønsker at installere, og giver mulighed for en ren installation."/>
+		<string name="CustomInstallOptions" value="Brugerdefinerede installationsvalg"/>
+		<string name="CustomInstallInstructions" value="Vælg driverkomponenter:"/>
+		<string name="CleanInstall" value="&amp;Udfør en ren installation"/>
+		<string name="CleanInstallDescription" value="En ren installation gendanner alle NVIDIA-indstillinger til standardværdien og fjerner eventuelle profiler, som du har oprettet."/>
+		<string name="SelectInstallLocation" value="Vælg installationsplacering"/>
+		<string name="InstallPreparing" value="Forbereder til installation"/>
+		<string name="RebootInstallPreparing" value="Forbereder til genstart..."/>
+		<string name="UninstallingPrevious" value="Fjerner tidligere version"/>
+		<string name="RemoveStatus" value="Fjerner ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Genstarter om mindre end 60 sekunder"/>
+		<string name="AfterRestartInstructions" value="Efter genstart, vil NVIDIA-installationen fortsætte."/>
+		<string name="InstallInProgress" value="Installation i gang"/>
+		<string name="InstallStatus" value="Installerer ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Installation færdig"/>
+		<string name="InstallerFinished" value="NVIDIA-installationsprogram er færdig"/>
+		<string name="InstallerFinishedInstructions" value="Følgende komponenter installeres nu:"/>
+		<string name="InstallCannotContinue" value="NVIDIA-installationsprogram kan ikke fortsætte"/>
+		<string name="FailureReasonHeader" value="Årsag til fejl:"/>
+		<string name="FailureDisplayError" value="Kan ikke vise fejl."/>
+		<string name="InstallFailure" value="NVIDIA-installationsprogram mislykkedes"/>
+		<string name="InstallWarning" value="Vil du fortsætte?"/>
+		<string name="FailureListHeader" value="Følgende fejl opstod:"/>
+		<string name="InstallRebootInstructions" value="Genstart computeren for at fuldføre installationen."/>
+		<string name="RebootQuestion" value="Vil du genstarte nu?"/>
+		<string name="UninstallPreparing" value="Forbereder til afinstallation"/>
+		<string name="UninstallQuestion" value="Vil du virkelig fjerne denne software?"/>
+		<string name="UninstallInProgress" value="Fjernelse i gang"/>
+		<string name="UninstallStatus" value="Fjerner ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="NVIDIA-afinstallationsprogram er færdig"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} er blevet fjernet."/>
+		<string name="UninstallCannotContinue" value="NVIDIA-afinstallationsprogram kan ikke fortsætte"/>
+		<string name="UninstallFailure" value="NVIDIA-afinstallationsprogram mislykkedes"/>
+		<string name="UninstallRebootInstructions" value="Genstart computeren for at fuldføre fjernelsen."/>
+		<string name="WaitPnpAlreadyRunning" value="Hardwareguiden kører. Installation vil genoptage, når den er færdig."/>
+		<string name="DisplayFlash" value="Bemærk: Der kan forekomme blink under installationen."/>
+		<string name="PreCheckWarning" value="Et eller flere problemer blev fundet"/>
+		<string name="OldOverNewWarning" value="Denne driver er ældre end den version, som er i brug i øjeblikket. Installation af den vil gendanne alle NVIDIA-indstillinger til standardværdien og fjerne eventuelle profiler, som du har oprettet."/>
+		<string name="IntelDriverNotPresentMessage" value="Du skal først installere en Intel® driver."/>
+		<string name="ReleaseHighlights" value="Udgivelseshøjdepunkter"/>
+		<string name="UpdatesReadyToInstall" value="Nye opdateringer er klar til at blive installeret"/>
+		<string name="UpdatesReady" value="Nye opdateringer er parate"/>
+		<string name="UpdatesBeingInstalled" value="Opdateringer installeres"/>
+		<string name="UpdateText" value="Opdaterer"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Forbereder opdateringer"/>
+		<string name="InstallPaused" value="NVIDIA Installationsprogram er midlertidigt afbrudt"/>
+		<string name="ClosePrograms" value="Luk disse programmer for at fortsætte:"/>
+		<string name="DownloadInProgress" value="Download i gang"/>
+		<string name="DownloadingPackages" value="Downloader installationspakker"/>
+		<string name="ProcessingDownloadedPackages" value="Behandler downloadede pakker"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% fuldført"/>
+		<string name="LearnMore" value="LÃ¦r mere."/>
+		<string name="NetworkConnectionError" value="NetvÃ¦rksforbindelse ikke fundet."/>
+		<string name="DefaultDownloadFailure" value="Download blev ikke fuldfÃ¸rt. PrÃ¸v igen."/>
+		<string name="NetworkFailureNoConnection" value="Kan ikke etablere forbindelse til NVIDIA. KontrollÃ©r din internetforbindelse."/>
+		<string name="NetworkFailureTryAgain" value="Kan ikke etablere forbindelse til NVIDIA. PrÃ¸v igen senere."/>
+		<string name="SignatureCheckFailure" value="Download blev ikke fuldfÃ¸rt. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Kan ikke downloade nÃ¸dvendige filer til installation. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

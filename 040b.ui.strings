@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x040b">
+		<string name="VersionText" value="Versio ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Versio ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA-asennusohjelma"/>
+		<string name="UninstallFrameTitle" value="NVIDIA-asennuksen poisto-ohjelma"/>
+		<string name="ErrorNoPackagesToInstall" value="Ei asennettavia komponentteja."/>
+		<string name="ErrorMissingRequiredPackages" value="Vaaditut komponentit puuttuvat."/>
+		<string name="ErrorMissingPackageFiles" value="Vaaditut tiedostot puuttuvat."/>
+		<string name="ErrorUnsupportedPlatform" value="Tämä pakkaus ei tue käytössä olevaa käyttöjärjestelmää. Hanki oikea pakkaus järjestelmää varten."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Muita asennuksia on käytössä. Lopeta muut asennukset ja yritä uudelleen."/>
+		<string name="ErrorInstallerNeedReboot" value="Järjestelmä on käynnistettävä uudelleen. Käynnistä järjestelmä uudelleen ja yritä uudelleen."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Jos haluat jatkaa, vapauta lisää levytilaa.
+Tarvittava tila: "/>
+		<string name="RequiredFilesMissing" value="Yksi tai useampia vaadittuja tiedostoja puuttuu."/>
+		<string name="ErrorEULAMissing" value="NVIDIA-asennusta ei voi suorittaa, koska &quot;EULA.txt&quot; puuttuu."/>
+		<string name="ErrorPackageCorrupt" value="Asennuspaketti on vahingoittunut."/>
+		<string name="CannotCancelInstallMessage" value="NVIDIA-asennusohjelmaa ei voi pysäyttää tällä hetkellä."/>
+		<string name="CannotCancelUninstallMessage" value="NVIDIA-asennuksen poisto-ohjelmaa ei voi pysäyttää tällä hetkellä."/>
+		<string name="ConfirmCancelMessage" value="Haluatko varmasti peruuttaa?"/>
+		<string name="CompList" value="Komponenttiluettelo"/>
+		<string name="ResList" value="Tulosluettelo"/>
+		<string name="VersionHeader" value="Versio"/>
+		<string name="ComponentHeader" value="Komponentti"/>
+		<string name="NewVersionHeader" value="Uusi versio"/>
+		<string name="CurVersionHeader" value="Nykyinen versio"/>
+		<string name="StatusHeader" value="Tila"/>
+		<string name="ListEntryNotFound" value="Ei löydy"/>
+		<string name="ListEntryNotSelected" value="Ei valittu"/>
+		<string name="ListEntryInstalled" value="Asennettu"/>
+		<string name="ListEntryNotInstalled" value="Ei asennettu"/>
+		<string name="ListEntryNoneInstalled" value="Ei mitään"/>
+		<string name="ListEntryUninstalled" value="Poistettu"/>
+		<string name="ListEntryNotUninstalled" value="Ei poistettu"/>
+		<string name="ListEntryFailed" value="Epäonnistui"/>
+		<string name="ListEntrySkipped" value="Ei asennettu. Uudempi versio on jo olemassa."/>
+		<string name="SystemCheck" value="Järjestelmän tarkistus"/>
+		<string name="LicenseAgreement" value="Käyttöoikeussopimus"/>
+		<string name="Options" value="Asetukset"/>
+		<string name="Installation" value="Asenna"/>
+		<string name="Finish" value="Valmis"/>
+		<string name="NextButtonText" value="&amp;SEURAAVA"/>
+		<string name="BackButtonText" value="&amp;EDELLINEN"/>
+		<string name="CancelButtonText" value="&amp;PERUUTA"/>
+		<string name="CloseButtonText" value="&amp;SULJE"/>
+		<string name="RetryButtonText" value="&amp;YRITÄ UUDELLEEN"/>
+		<string name="AgreeButtonText" value="&amp;HYVÄKSY JA JATKA"/>
+		<string name="RestartNowButtonText" value="&amp;YRITÄ UUDELLEEN NYT"/>
+		<string name="RestartLaterButtonText" value="KÄYNNISTÄ UUDELLEEN &amp;MYÖHEMMIN"/>
+		<string name="UninstallButtonText" value="&amp;POISTA ASENNUS"/>
+		<string name="ContinueButtonText" value="J&amp;ATKA"/>
+		<string name="LaunchButtonText" value="&amp;KÄYNNISTÄ"/>
+		<string name="BrowseButtonText" value="SELAA..."/>
+		<string name="CheckingSystemCompatibility" value="Tarkistaa järjestelmän yhteensopivuutta"/>
+		<string name="Warnings" value="Varoitukset."/>
+		<string name="EULAHeadText" value="NVIDIA-ohjelmiston käyttöoikeussopimus"/>
+		<string name="EULAInstructions" value="Lue seuraava NVIDIA-ohjelmiston käyttöoikeussopimus huolellisesti."/>
+		<string name="EULAAcceptInstructions" value="Napsauta hyväksy ja jatka, jos hyväksyt sopimusehdot."/>
+		<string name="NoEULAFound" value="Käyttöoikeussopimusta ei löydy."/>
+		<string name="InstallOptions" value="Asennusvaihtoehdot"/>
+		<string name="ExpressRecommended" value="&amp;Pika (suositus)"/>
+		<string name="CustomAdvanced" value="&amp;Mukautettu (kokeneille käyttäjille)"/>
+		<string name="ExpressDescription" value="Päivittää nykyiset ohjaimet ja säilyttää nykyiset NVIDIA-asetukset."/>
+		<string name="CustomDescription" value="Antaa mahdollisuuden valita komponentit, jotka haluat asentaa, ja sisältää vaihtoehdon puhtaalle asennukselle."/>
+		<string name="CustomInstallOptions" value="Mukautetut asennusvaihtoehdot"/>
+		<string name="CustomInstallInstructions" value="Valitse ohjainkomponentit:"/>
+		<string name="CleanInstall" value="&amp;Suorita puhdas asennus"/>
+		<string name="CleanInstallDescription" value="Puhdas asennus palauttaa kaikki NVIDIA-asetukset oletusarvoihin ja poistaa luodut profiilit."/>
+		<string name="SelectInstallLocation" value="Valitse asennuskohde"/>
+		<string name="InstallPreparing" value="Valmistelee asennusta"/>
+		<string name="RebootInstallPreparing" value="Valmistelee uudelleenkäynnistämistä..."/>
+		<string name="UninstallingPrevious" value="Poistaa aikaisempaa versiota"/>
+		<string name="RemoveStatus" value="Poistaa: ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Käynnistetään uudelleen 60 sekunnin kuluttua"/>
+		<string name="AfterRestartInstructions" value="NVIDIA-asennus jatkuu uudelleenkäynnistyksen jälkeen"/>
+		<string name="InstallInProgress" value="Asennus meneillään"/>
+		<string name="InstallStatus" value="Asentaa ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Asennus valmis"/>
+		<string name="InstallerFinished" value="NVIDIA-asennus on päättynyt"/>
+		<string name="InstallerFinishedInstructions" value="Seuraavat komponentit on nyt asennettu:"/>
+		<string name="InstallCannotContinue" value="NVIDIA-asennusohjelmaa ei voi jatkaa"/>
+		<string name="FailureReasonHeader" value="Epäonnistumisen syy:"/>
+		<string name="FailureDisplayError" value="Epäonnistumisen syytä ei voi näyttää."/>
+		<string name="InstallFailure" value="NVIDIA-asennusohjelma epäonnistui"/>
+		<string name="InstallWarning" value="Haluatko jatkaa?"/>
+		<string name="FailureListHeader" value="Seuraavat kohteet epäonnistuivat:"/>
+		<string name="InstallRebootInstructions" value="Suorita asennus loppuun käynnistämällä tietokone uudelleen."/>
+		<string name="RebootQuestion" value="Haluatko käynnistää tietokoneen uudelleen nyt?"/>
+		<string name="UninstallPreparing" value="Valmistelee asennuksen poistamista"/>
+		<string name="UninstallQuestion" value="Haluatko varmasti poistaa tämän ohjelmiston?"/>
+		<string name="UninstallInProgress" value="Poistaminen meneillään"/>
+		<string name="UninstallStatus" value="Poistaa: ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="NVIDIA-asennuksen poisto-ohjelma on päättynyt"/>
+		<string name="UninstallSuccessInfo" value="Kohteen ${{GeneralTitleText}} poistaminen onnistui."/>
+		<string name="UninstallCannotContinue" value="NVIDIA-asennuksen poisto-ohjelmaa ei voi jatkaa"/>
+		<string name="UninstallFailure" value="NVIDIA-asennuksen poisto-ohjelma epäonnistui"/>
+		<string name="UninstallRebootInstructions" value="Suorita asennuksen poisto loppuun käynnistämällä tietokone uudelleen."/>
+		<string name="WaitPnpAlreadyRunning" value="Laitteiston ohjattu toiminto on käynnissä. Asennusta jatketaan, kun toiminto on suoritettu loppuun."/>
+		<string name="DisplayFlash" value="Huomautus: Jonkin verran vilkkumista voi esiintyä asennuksen aikana."/>
+		<string name="PreCheckWarning" value="Yksi tai useampia ongelmia havaittiin"/>
+		<string name="OldOverNewWarning" value="Tämä ohjain on vanhempi kuin käytössä oleva versio. Asennus palauttaa kaikki NVIDIA-asetukset oletusarvoihin ja poistaa kaikki luodut profiilit."/>
+		<string name="IntelDriverNotPresentMessage" value="Sinun täytyy valita ensin Intel®-ohjain."/>
+		<string name="ReleaseHighlights" value="Julkaisun kohokohdat"/>
+		<string name="UpdatesReadyToInstall" value="Uudet päivitykset ovat valmiita asennettavaksi"/>
+		<string name="UpdatesReady" value="Uudet päivitykset ovat valmiita"/>
+		<string name="UpdatesBeingInstalled" value="Päivityksiä asennetaan"/>
+		<string name="UpdateText" value="Päivittää:"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Valmistelee päivityksiä"/>
+		<string name="InstallPaused" value="NVIDIA-asennus on keskeytetty"/>
+		<string name="ClosePrograms" value="Jatka sulkemalla nämä ohjelmat:"/>
+		<string name="DownloadInProgress" value="Lataus meneillään"/>
+		<string name="DownloadingPackages" value="Asennuspaketteja ladataan"/>
+		<string name="ProcessingDownloadedPackages" value="Ladattuja paketteja käsitellään"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo} % valmis"/>
+		<string name="LearnMore" value="LisÃ¤tietoja."/>
+		<string name="NetworkConnectionError" value="VerkkoyhteyttÃ¤ ei lÃ¶ytynyt."/>
+		<string name="DefaultDownloadFailure" value="Lataamista ei suoritettu onnistuneesti loppuun. YritÃ¤ uudelleen."/>
+		<string name="NetworkFailureNoConnection" value="Ei voitu luoda yhteyttÃ¤ NVIDIAan. Tarkista Internet-yhteys."/>
+		<string name="NetworkFailureTryAgain" value="Ei voitu luoda yhteyttÃ¤ NVIDIAan. YritÃ¤ uudelleen myÃ¶hemmin."/>
+		<string name="SignatureCheckFailure" value="Lataamista ei suoritettu onnistuneesti loppuun. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Asennukseen tarvittavien tiedostojen lataaminen epÃ¤onnistui. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

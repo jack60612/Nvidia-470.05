@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0401">
+		<string name="RightToLeft" value="true"/>
+		<string name="FrameBackgroundImageSplash" value="${{FrameBackgroundImageSplashRTL}}"/>
+		<string name="FrameBackgroundImageInstall" value="${{FrameBackgroundImageInstallRTL}}"/>
+		<string name="FrameBackgroundImageUninstall" value="${{FrameBackgroundImageUninstallRTL}}"/>
+		<string name="FrameBackgroundImagePresentations" value="${{FrameBackgroundImagePresentationsRTL}}"/>
+		<string name="VersionText" value="الإصدار ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="الإصدار ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="مثبت NVIDIA"/>
+		<string name="UninstallFrameTitle" value="أداة إلغاء تثبيت NVIDIA"/>
+		<string name="ErrorNoPackagesToInstall" value="لا توجد مكونات ليتم تثبيتها."/>
+		<string name="ErrorMissingRequiredPackages" value="المكونات المطلوبة مفقودة."/>
+		<string name="ErrorMissingPackageFiles" value="الملفات المطلوبة مفقودة."/>
+		<string name="ErrorUnsupportedPlatform" value="نظام التشغيل قيد الاستخدام غير مدعم من قِبل هذه الحزمة. برجاء الحصول على الحزمة الصحيحة لنظامك."/>
+		<string name="ErrorInstallerAlreadyRunning" value="تثبيتات أخرى قيد التشغيل. قم بإنهاء التثبيتات الأخرى ثم كرر المحاولة."/>
+		<string name="ErrorInstallerNeedReboot" value="مطلوب إعادة تشغيل النظام. أعد تشغيل النظام وكرر المحاولة."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="للتهيئة، قم بتوفير مساحة إضافية على القرص.
+المساحة المطلوبة: "/>
+		<string name="RequiredFilesMissing" value="ملف أو أكثر من الملفات المطلوبة مفقود."/>
+		<string name="ErrorEULAMissing" value="تعذر تشغيل تثبيت NVIDIA نظراً لأن  &quot;EULA.txt&quot; مفقوداً."/>
+		<string name="ErrorPackageCorrupt" value="تلف مجموعة التثبيت."/>
+		<string name="CannotCancelInstallMessage" value="لا يمكن إيقاف مثبت NVIDIA في هذا الوقت."/>
+		<string name="CannotCancelUninstallMessage" value="لا يمكن إيقاف أداة إلغاء تثبيت NVIDIA في هذا الوقت."/>
+		<string name="ConfirmCancelMessage" value="هل تريد بالفعل الإلغاء؟"/>
+		<string name="CompList" value="قائمة المكونات"/>
+		<string name="ResList" value="قائمة النتائج"/>
+		<string name="VersionHeader" value="الإصدار"/>
+		<string name="ComponentHeader" value="المكون"/>
+		<string name="NewVersionHeader" value="نسخة جديدة"/>
+		<string name="CurVersionHeader" value="النسحة الحالية"/>
+		<string name="StatusHeader" value="الحالة"/>
+		<string name="ListEntryNotFound" value="غير موجود"/>
+		<string name="ListEntryNotSelected" value="غير محدد"/>
+		<string name="ListEntryInstalled" value="مثبت"/>
+		<string name="ListEntryNotInstalled" value="غير مثبت"/>
+		<string name="ListEntryNoneInstalled" value="بلا"/>
+		<string name="ListEntryUninstalled" value="تمت الإزالة"/>
+		<string name="ListEntryNotUninstalled" value="لم تتم الإزالة"/>
+		<string name="ListEntryFailed" value="فشل"/>
+		<string name="ListEntrySkipped" value="لم يتم التثبيت. توجد بالفعل نسخة أحدث."/>
+		<string name="SystemCheck" value="فحص النظام"/>
+		<string name="LicenseAgreement" value="اتفاقية الترخيص"/>
+		<string name="Options" value="خيارات"/>
+		<string name="Installation" value="تثبيت"/>
+		<string name="Finish" value="إنهاء"/>
+		<string name="NextButtonText" value="&amp;التالي"/>
+		<string name="BackButtonText" value="&amp;عودة"/>
+		<string name="CancelButtonText" value="&amp;إلغاء"/>
+		<string name="CloseButtonText" value="&amp;إغلاق"/>
+		<string name="RetryButtonText" value="&amp;إعادة المحاولة"/>
+		<string name="AgreeButtonText" value="&amp;أوافق وتابع"/>
+		<string name="RestartNowButtonText" value="&amp;إعادة التشغيل الآن"/>
+		<string name="RestartLaterButtonText" value="إعادة التشغيل &amp;لاحقاً"/>
+		<string name="UninstallButtonText" value="&amp;إلغاء تثبيت"/>
+		<string name="ContinueButtonText" value="م&amp;تابعة"/>
+		<string name="LaunchButtonText" value="&amp;تشغيل"/>
+		<string name="BrowseButtonText" value="استعراض..."/>
+		<string name="CheckingSystemCompatibility" value="فحص قابلية توافق النظام"/>
+		<string name="Warnings" value="تحذيرات."/>
+		<string name="EULAHeadText" value="اتفاقية ترخيص برنامج NVIDIA"/>
+		<string name="EULAInstructions" value="الرجاء قراءة اتفاقية ترخيص برنامج NVIDIA التالية بعناية."/>
+		<string name="EULAAcceptInstructions" value="انقر فوق &quot;أوافق وتابع&quot; إذا كنت توافق على شروط الاتفاقية."/>
+		<string name="NoEULAFound" value="تعذر العثور على EULA."/>
+		<string name="InstallOptions" value="خيارات التثبيت"/>
+		<string name="ExpressRecommended" value="&amp;سريع (مستحسن)‏"/>
+		<string name="CustomAdvanced" value="&amp;مخصص (متقدم)‏"/>
+		<string name="ExpressDescription" value="يحدِّث برامج التشغيل الموجودة ويحافظ على إعدادات NVIDIA."/>
+		<string name="CustomDescription" value="يتيح لك تحديد المكونات التي تريد تثبيتها ويقدم الخيار الخاص بتثبيت نظيف."/>
+		<string name="CustomInstallOptions" value="خيارات تثبيت مخصصة"/>
+		<string name="CustomInstallInstructions" value="حدد مكونات برنامج التشغيل:"/>
+		<string name="CleanInstall" value="&amp;إجراء تثبيت نظيف"/>
+		<string name="CleanInstallDescription" value="يقوم التثبيت النظيف باستعادة كل إعدادات NVIDIA إلى القيمة الافتراضية ويزيل أي أوضاع قمت بإنشائها."/>
+		<string name="SelectInstallLocation" value="تحديد موقع التثبيت"/>
+		<string name="InstallPreparing" value="التحضير للتثبيت"/>
+		<string name="RebootInstallPreparing" value="التجهيز لإعادة التشغيل..."/>
+		<string name="UninstallingPrevious" value="إزالة النسخة السابقة"/>
+		<string name="RemoveStatus" value="إزالة ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="أعد التشغيل في أقل من 60 ثانية"/>
+		<string name="AfterRestartInstructions" value="بعد إعادة التشغيل، سيتم مواصلة تثبيت NVIDIA."/>
+		<string name="InstallInProgress" value="التثبيت قيد التنفيذ"/>
+		<string name="InstallStatus" value="تثبيت ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="اكتمل التثبيت"/>
+		<string name="InstallerFinished" value="انتهى مثبت NVIDIA"/>
+		<string name="InstallerFinishedInstructions" value="جاري تثبيت المكونات التالية:"/>
+		<string name="InstallCannotContinue" value="لا يمكن مواصلة مثبت NVIDIA"/>
+		<string name="FailureReasonHeader" value="سبب الفشل:"/>
+		<string name="FailureDisplayError" value="تعذر عرض أسباب الفشل."/>
+		<string name="InstallFailure" value="فشل مثبت NVIDIA"/>
+		<string name="InstallWarning" value="هل تريد المتابعة؟"/>
+		<string name="FailureListHeader" value="حدثت حالات الفشل التالية:"/>
+		<string name="InstallRebootInstructions" value="لإتمام التثبيت، أعد تشغيل الكمبيوتر."/>
+		<string name="RebootQuestion" value="هل ترغب في إعادة التشغيل الآن؟"/>
+		<string name="UninstallPreparing" value="تجهيز إلغاء التثبيت"/>
+		<string name="UninstallQuestion" value="هل تريد بالفعل إزالة هذا البرنامج؟"/>
+		<string name="UninstallInProgress" value="الإزالة قيد التنفيذ"/>
+		<string name="UninstallStatus" value="إزالة ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="فشلت أداة إلغاء تثبيت NVIDIA"/>
+		<string name="UninstallSuccessInfo" value="تم بنجاح إزالة ${{GeneralTitleText}}."/>
+		<string name="UninstallCannotContinue" value="لا يمكن مواصلة أداة إلغاء تثبيت NVIDIA"/>
+		<string name="UninstallFailure" value="فشل أداة إلغاء تثبيت NVIDIA"/>
+		<string name="UninstallRebootInstructions" value="لإتمام الإزالة، أعد تشغيل الكمبيوتر."/>
+		<string name="WaitPnpAlreadyRunning" value="جاري تشغيل معالج الأجهزة. سوف يستأنف التثبيت عند الانتهاء."/>
+		<string name="DisplayFlash" value="ملاحظة: قد يظهر بعض الومميض أثناء التثبيت."/>
+		<string name="OldOverNewWarning" value="برنامج التشغيل هذا أقدم من الإصدار قيد الاستخدام حالياً. يقوم التثبيت باستعادة كل إعدادات NVIDIA إلى القيمة الافتراضية ويزيل أي أوضاع قمت بإنشائها."/>
+		<string name="IntelDriverNotPresentMessage" value="يجب عليك تثبيت برنامج تشغيل Intel® أولاً."/>
+		<string name="ReleaseHighlights" value="مميزات الإصدار"/>
+		<string name="UpdatesReadyToInstall" value="توجد تحديثات جديدة جاهزة للتثبيت"/>
+		<string name="UpdatesReady" value="توجد تحديثات جديدة جاهزة"/>
+		<string name="UpdatesBeingInstalled" value="جاري تثبيت التحديثات"/>
+		<string name="UpdateText" value="تحديث"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="تجهيز التحديثات"/>
+		<string name="InstallPaused" value="توقف مثبت NVIDIA مؤقتاً"/>
+		<string name="ClosePrograms" value="أغلق هذه البرامج للمتابعة:"/>
+		<string name="DownloadInProgress" value="جاري التنزيل"/>
+		<string name="DownloadingPackages" value="تنزيل حزم التثبيت"/>
+		<string name="ProcessingDownloadedPackages" value="معالجة الحزم المنزلة"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% كامل"/>
+		<string name="LearnMore" value="تعلم المزيد."/>
+		<string name="NetworkConnectionError" value="لم يتم العثور اتصال الشبكة."/>
+		<string name="DefaultDownloadFailure" value="لم يكتمل التنزيل بنجاح. حاول مرة أخرى."/>
+		<string name="NetworkFailureNoConnection" value="تعذر الاتصال بـ NVIDIA. افحص اتصال الإنترنت الخاص بك."/>
+		<string name="NetworkFailureTryAgain" value="تعذر الاتصال بـ NVIDIA. كرر المحاولة لاحقاً."/>
+		<string name="SignatureCheckFailure" value="لم يكتمل التنزيل بنجاح. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="تعذر تنزيل الملفات المطلوبة للتثبيت. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

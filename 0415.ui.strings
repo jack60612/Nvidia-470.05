@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0415">
+		<string name="VersionText" value="Wersja ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Wersja ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="Instalator NVIDIA"/>
+		<string name="UninstallFrameTitle" value="Dezinstalator NVIDIA"/>
+		<string name="ErrorNoPackagesToInstall" value="Brak składników do zainstalowania."/>
+		<string name="ErrorMissingRequiredPackages" value="Brak wymaganych składników."/>
+		<string name="ErrorMissingPackageFiles" value="Brak wymaganych plików."/>
+		<string name="ErrorUnsupportedPlatform" value="Używany system operacyjny nie jest obsługiwany przez ten pakiet. Uzyskaj właściwy pakiet dla posiadanego systemu."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Uruchomione są inne programy instalacyjne. Zakończ działanie innych programów instalacyjnych i spróbuj ponownie."/>
+		<string name="ErrorInstallerNeedReboot" value="Wymagane jest ponowne uruchomienie systemu. Uruchom ponownie system i spróbuj ponownie."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Aby kontynuować, zwolnij miejsce na dysku.
+Wymagane miejsce: "/>
+		<string name="RequiredFilesMissing" value="Brak jednego lub kilku wymaganych plików."/>
+		<string name="ErrorEULAMissing" value="Nie można uruchomić Instalatora NVIDIA z powodu braku pliku „EULA.txt”."/>
+		<string name="ErrorPackageCorrupt" value="Pakiet instalacyjny jest uszkodzony."/>
+		<string name="CannotCancelInstallMessage" value="Instalator NVIDIA nie może zostać teraz zatrzymany."/>
+		<string name="CannotCancelUninstallMessage" value="Dezinstalator NVIDIA nie może zostać teraz zatrzymany."/>
+		<string name="ConfirmCancelMessage" value="Czy na pewno chcesz anulować?"/>
+		<string name="CompList" value="Lista składników"/>
+		<string name="ResList" value="Lista wyników"/>
+		<string name="VersionHeader" value="Wersja"/>
+		<string name="ComponentHeader" value="Składnik"/>
+		<string name="NewVersionHeader" value="Nowa wersja"/>
+		<string name="CurVersionHeader" value="Bieżąca wersja"/>
+		<string name="StatusHeader" value="Stan"/>
+		<string name="ListEntryNotFound" value="Nie znaleziono"/>
+		<string name="ListEntryNotSelected" value="Nie wybrano"/>
+		<string name="ListEntryInstalled" value="Zainstalowano"/>
+		<string name="ListEntryNotInstalled" value="Niezainstalowano"/>
+		<string name="ListEntryNoneInstalled" value="Brak"/>
+		<string name="ListEntryUninstalled" value="Usunięto"/>
+		<string name="ListEntryNotUninstalled" value="Nieusunięto"/>
+		<string name="ListEntryFailed" value="Niepowodzenie"/>
+		<string name="ListEntrySkipped" value="Nie zainstalowano. Istnieje już nowsza wersja."/>
+		<string name="SystemCheck" value="Sprawdzenie systemu"/>
+		<string name="LicenseAgreement" value="Umowa licencyjna"/>
+		<string name="Options" value="Opcje"/>
+		<string name="Installation" value="Zainstaluj"/>
+		<string name="Finish" value="Zakończ"/>
+		<string name="NextButtonText" value="&amp;DALEJ"/>
+		<string name="BackButtonText" value="&amp;WSTECZ"/>
+		<string name="CancelButtonText" value="&amp;ANULUJ"/>
+		<string name="CloseButtonText" value="&amp;ZAMKNIJ"/>
+		<string name="RetryButtonText" value="&amp;PONÓW"/>
+		<string name="AgreeButtonText" value="Z&amp;GADZAM SIĘ, KONTYNUUJ"/>
+		<string name="RestartNowButtonText" value="&amp;URUCHOM PONOWNIE TERAZ"/>
+		<string name="RestartLaterButtonText" value="URUCHOM PONOWNIE &amp;PÓŹNIEJ"/>
+		<string name="UninstallButtonText" value="&amp;ODINSTALUJ"/>
+		<string name="ContinueButtonText" value="&amp;KONTYNUUJ"/>
+		<string name="LaunchButtonText" value="&amp;URUCHOM"/>
+		<string name="BrowseButtonText" value="PRZEGLĄDAJ..."/>
+		<string name="CheckingSystemCompatibility" value="Sprawdzanie zgodności systemu"/>
+		<string name="Warnings" value="Ostrzeżenia."/>
+		<string name="EULAHeadText" value="Umowa licencyjna oprogramowania NVIDIA"/>
+		<string name="EULAInstructions" value="Przeczytaj uważnie poniższą umowę licencyjną oprogramowania NVIDIA."/>
+		<string name="EULAAcceptInstructions" value="Kliknij przycisk „Zgadzam się, kontynuuj”, jeśli wyrażasz zgode na warunki umowy."/>
+		<string name="NoEULAFound" value="Nie znaleziono umowy EULA."/>
+		<string name="InstallOptions" value="Opcje instalacji"/>
+		<string name="ExpressRecommended" value="&amp;Ekspresowa (zalecana)"/>
+		<string name="CustomAdvanced" value="&amp;Niestandardowa (zaawansowana)"/>
+		<string name="ExpressDescription" value="Aktualizuje istniejące sterowniki i zachowuje bieżące ustawienia NVIDIA."/>
+		<string name="CustomDescription" value="Umożliwia wybranie składników do zainstalowania oraz oferuje opcję czystej instalacji."/>
+		<string name="CustomInstallOptions" value="Opcje instalacji niestandardowej"/>
+		<string name="CustomInstallInstructions" value="Wybierz składniki sterownika:"/>
+		<string name="CleanInstall" value="&amp;Wykonaj czystą instalację"/>
+		<string name="CleanInstallDescription" value="Czysta instalacja przywraca wszystkie ustawienia NVIDIA do wartości domyślnych i usuwa utworzone profile."/>
+		<string name="SelectInstallLocation" value="Wybierz lokalizację instalacji"/>
+		<string name="InstallPreparing" value="Przygotowanie instalacji"/>
+		<string name="RebootInstallPreparing" value="Przygotowanie do ponownego uruchomienia..."/>
+		<string name="UninstallingPrevious" value="Usuwanie poprzedniej wersji"/>
+		<string name="RemoveStatus" value="Usuwanie ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Ponowne uruchomienie w czasie poniżej 60 sekund"/>
+		<string name="AfterRestartInstructions" value="Po ponownym uruchomieniu będzie kontynuowana praca programu instalacyjnego NVIDIA."/>
+		<string name="InstallInProgress" value="Trwa instalacja"/>
+		<string name="InstallStatus" value="Instalowanie ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Instalacja zakończona"/>
+		<string name="InstallerFinished" value="Program instalacyjny NVIDIA zakończył pracę"/>
+		<string name="InstallerFinishedInstructions" value="Następujące składniki zostaną teraz zainstalowane:"/>
+		<string name="InstallCannotContinue" value="Program instalacyjny NVIDIA nie może kontynuować pracy"/>
+		<string name="FailureReasonHeader" value="Przyczyna niepowodzenia:"/>
+		<string name="FailureDisplayError" value="Nie można wyświetlić informacji o niepowodzeniach."/>
+		<string name="InstallFailure" value="Praca programu instalacyjnego NVIDIA zakończyła się niepowodzeniem"/>
+		<string name="InstallWarning" value="Czy chcesz kontynuować?"/>
+		<string name="FailureListHeader" value="Wystąpiły następujące błędy:"/>
+		<string name="InstallRebootInstructions" value="Aby ukończyć instalację, uruchom ponownie komputer."/>
+		<string name="RebootQuestion" value="Czy chcesz teraz ponownie uruchomić komputer?"/>
+		<string name="UninstallPreparing" value="Przygotowanie do deinstalacji"/>
+		<string name="UninstallQuestion" value="Czy na pewno chcesz usunąć to oprogramowanie?"/>
+		<string name="UninstallInProgress" value="Trwa usuwanie"/>
+		<string name="UninstallStatus" value="Usuwanie ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="Dezinstalator NVIDIA zakończył pracę"/>
+		<string name="UninstallSuccessInfo" value="Pomyślnie usunięto ${{GeneralTitleText}}."/>
+		<string name="UninstallCannotContinue" value="Dezinstalator NVIDIA nie może kontynuować pracy"/>
+		<string name="UninstallFailure" value="Praca dezinstalatora NVIDIA zakończyła się niepowodzeniem"/>
+		<string name="UninstallRebootInstructions" value="Aby ukończyć usuwanie, uruchom ponownie komputer."/>
+		<string name="WaitPnpAlreadyRunning" value="Uruchomiony jest kreator sprzętu. Instalacja zostanie wznowiona po jego zakończeniu."/>
+		<string name="DisplayFlash" value="Uwaga: podczas instalacji może wystąpić migotanie."/>
+		<string name="PreCheckWarning" value="Wystąpił co najmniej jeden problem."/>
+		<string name="OldOverNewWarning" value="Ten sterownik jest starszy niż obecnie używana wersja. Zainstalowanie go spowoduje przywrócenie wszystkich ustawień NVIDIA do wartości domyślnych i usunięcie utworzonych profilów."/>
+		<string name="IntelDriverNotPresentMessage" value="Należy najpierw zainstalować sterownik Intel®."/>
+		<string name="ReleaseHighlights" value="Informacje o wersji"/>
+		<string name="UpdatesReadyToInstall" value="Nowe aktualizacje są gotowe do zainstalowania"/>
+		<string name="UpdatesReady" value="Nowe aktualizacje są gotowe"/>
+		<string name="UpdatesBeingInstalled" value="Aktualizacje są instalowane"/>
+		<string name="UpdateText" value="Aktualizowanie"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Przygotowanie aktualizacji"/>
+		<string name="InstallPaused" value="Program instalacyjny NVIDIA został wstrzymany"/>
+		<string name="ClosePrograms" value="Zamknij te programy, aby kontynuować:"/>
+		<string name="DownloadInProgress" value="Trwa pobieranie"/>
+		<string name="DownloadingPackages" value="Pobieranie pakietów instalacyjnych"/>
+		<string name="ProcessingDownloadedPackages" value="Przetwarzanie pobranych pakietów"/>
+		<string name="DownloadProgressInfo" value="Ukończono: ${!DownloadProgressInfo}% "/>
+		<string name="LearnMore" value="Dowiedz się więcej."/>
+		<string name="NetworkConnectionError" value="Nie znaleziono połączenia z siecią."/>
+		<string name="DefaultDownloadFailure" value="Pobieranie nie zostało zakończone pomyślnie. Spróbuj ponownie."/>
+		<string name="NetworkFailureNoConnection" value="Nie można się połączyć z witryną firmy NVIDIA. Sprawdź połączenie internetowe."/>
+		<string name="NetworkFailureTryAgain" value="Nie można się połączyć z witryną firmy NVIDIA. Spróbuj ponownie później."/>
+		<string name="SignatureCheckFailure" value="Pobieranie nie zostało zakończone pomyślnie. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Nie można pobrać wymaganych do instalacji plików. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

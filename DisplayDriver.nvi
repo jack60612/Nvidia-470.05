@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nvi name="Display.Driver" title="${{title}}" version="${{version}}" versionText="${{version}}" timestamp="2021-02-26T16:31:57" disposition="default" installerMin="2.1002.306.0" hasDriver="${{isDriver}}" hidden="${{isHidden}}" no-arp="${{noARP}}" preserveCache="${{preserveCache}}">
+	<filter name="amd64" platform="amd64"/>
+	<filter name="minWin8" min="6.2"/>
+	<filter name="minWin7" min="6.1"/>
+	<filter name="win7" min="6.1" max="6.1"/>
+	<filter name="minVista" min="6.0"/>
+	<filter name="minRS1" min="10.0.14310"/>
+	<filter name="minRS3" min="10.0.16299"/>
+	<filter name="maxRS3" max="10.0.16299"/>
+	<filter name="minRS4" min="10.0.17098"/>
+	<filter name="disableGAT" cmdOption="-disableGAT"/>
+	<filter name="safeMode" mode="safe"/>
+	<filter name="OEMPreloadDriver"/>
+	<filter name="${{appsOnlyFilter}}"/>
+	<filter name="isDeclarative"/>
+	<strings>
+		<string name="version" value="470.05"/>
+		<string name="stereoInterfaceVersion" value="265"/>
+		<string name="cplServiceName" value="nvsvc"/>
+		<string name="DisplayContainerServiceName" value="NVDisplay.ContainerLocalSystem"/>
+		<string name="NVWMIServiceName" value="nvwmi"/>
+		<string name="StateTransitionMaxTime" value="30000"/>
+		<string name="preserveCache" value="false"/>
+		<if filter="minVista">
+			<string name="driverServiceName" value="nvlddmkm"/>
+			<else>
+				<string name="driverServiceName" value="nv"/>
+			</else>
+		</if>
+		<string name="BlockFourPartInstallKBLink" value="&lt;a href=&quot;http://nvidia.custhelp.com/app/answers/detail/a_id/3814&quot;&gt;${{ViewDetails}}&lt;/a&gt;"/>
+		<string name="vGPUSymLinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\LocalSystem\vGPU"/>
+		<string name="vGPUConfigPath" value="${{NvidiaProgramFiles}}\vGPU"/>
+		<string name="WksServiceSymLinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\Session\WksServicePlugin"/>
+		<string name="WksServicePlugin" value="wksServicePlugin.dll"/>
+		<string name="WksServicePluginFolderPath" value="${{NvidiaProgramFiles}}\WksServicePlugin"/>
+		<string name="NvFBCSymLinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\Session\NvFBC"/>
+		<string name="NvFBCFolderPath" value="${{NvidiaProgramFiles}}\NvFBC"/>
+		<string name="NvFBCPlugin" value="NvFBCPlugin.dll"/>
+		<string name="NvFBCPluginName" value="NvFBCPlugin64.dll"/>
+		<string name="NvToppsSymLinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\Session\NvTopps"/>
+		<string name="NvToppsFolderPath" value="${{NvidiaProgramFiles}}\NvTopps"/>
+		<string name="NvToppsPlugin" value="NvTopps.dll"/>
+		<string name="OptionalNvToppsPlugin" value="_NvTopps.dll"/>
+		<string name="DisplayDriverRASPluginPath" value="${{NvidiaProgramFiles}}\DisplayDriverRAS"/>
+		<string name="DisplayDriverRASSymLinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\LocalSystem\DisplayDriverRAS"/>
+		<string name="NvProfileUpdaterDirPath" value="${{NvidiaProgramFiles}}\NvProfileUpdater"/>
+		<string name="NvProfileUpdaterSymLinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\Session\NvProfileUpdater"/>
+		<string name="NvCPLCorePluginPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\LocalSystem\NvXDCore.dll"/>
+		<string name="NvCPLSyncPluginPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\Session\nvxdsyncplugin.dll"/>
+		<string name="NvWatchDogSymlinkPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\LocalSystem\Watchdog"/>
+		<string name="NvWatchDogFolderPath" value="${{NvidiaProgramFiles}}\Display.NvContainer\Watchdog"/>
+		<string name="NvMessagebusbroadcastPlugin" value="${{NvidiaProgramFiles}}\Display.NvContainer\plugins\LocalSystem\_NvMsgBusBroadcast.dll"/>
+		<string name="pluginDeleteMaxTimeout" value="10000"/>
+		<string name="serviceHiveRegistryPath" value="HKLM\SYSTEM\CurrentControlSet\Services"/>
+		<string name="cplStoreAppUninstallArg" value="Get-AppxPackage *NVIDIACorp.NVIDIAControlPanel* | Remove-AppxPackage -AllUsers"/>
+		<string name="powershellPath" value="${{SystemDirectory}}\WindowsPowerShell\v1.0\powershell.exe"/>
+		<string name="installedPfnRegistryPath" value="HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceSetup\InstalledPfns"/>
+		<string name="Win7Sha2KBLink1" value="&lt;a href=&quot;http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/09/windows6.1-kb4474419-v3-x64_b5614c6cea5cb4e198717789633dca16308ef79c.msu&quot;&gt;KB4474419&lt;/a&gt;"/>
+		<string name="Win7Sha2KBLink2" value="&lt;a href=&quot;http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4490628-x64_d3de52d6987f7c8bdc2c015dca69eac96047c76e.msu&quot;&gt;KB4490628&lt;/a&gt;"/>
+		<string name="Win7Sha2Link" value="&lt;a href=&quot;https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus&quot;&gt;here&lt;/a&gt;"/>
+		<string name="BlockWin7InstallMessage" value="Windows 7 needs to install the SHA-2 update support patches before this installation can continue. Download and install ${{Win7Sha2KBLink1}} and ${{Win7Sha2KBLink2}} patches to get SHA-2 support. More information can be found from Microsoft ${{Win7Sha2Link}}."/>
+		<if filter="isDeclarative">
+			<string name="isContainerDeclarative" value="true"/>
+			<string name="isCPLDeclarative" value="true"/>
+			<else>
+				<string name="isContainerDeclarative" value="false"/>
+				<string name="isCPLDeclarative" value="false"/>
+			</else>
+		</if>
+		<if filter="OEMPreloadDriver">
+			<string name="installDriverOnly" value="true"/>
+			<else>
+				<string name="installDriverOnly" value="false"/>
+			</else>
+		</if>
+		<if filter="OEMPreloadApps">
+			<string name="installAppsOnly" value="true"/>
+			<string name="isHidden" value="true"/>
+			<string name="noARP" value="true"/>
+			<string name="isDriver" value="false"/>
+			<else>
+				<string name="installAppsOnly" value="false"/>
+				<string name="isHidden" value="false"/>
+				<string name="noARP" value="false"/>
+				<string name="isDriver" value="true"/>
+			</else>
+		</if>
+		<string name="openCLRegKey" value="HKEY_LOCAL_MACHINE\Software\Khronos\OpenCL\Vendors"/>
+		<string name="NvidiaDriversLink" value="https://www.nvidia.com/Download/Find.aspx?lang=en-us"/>
+		<string name="failedDeclarativeCheck" value="This DCH driver package is not compatible with the currently installed version of Windows. This system is configured to require a Standard driver package. The correct driver can be downloaded from &lt;a href=&quot;${{NvidiaDriversLink}}&quot;&gt;NVIDIA.com/drivers&lt;/a&gt; by selecting the &quot;Standard&quot; option under the &quot;Windows Driver Type&quot; menu."/>
+	</strings>
+	<strings>
+		<localized locale="0x0409">
+			<string name="title" value="Graphics Driver"/>
+			<string name="failedInfPlatformCheck" value="This NVIDIA graphics driver is not compatible with this version of Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="This NVIDIA graphics driver requires ${RequiredOSName}. You are running ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="This graphics driver could not find compatible graphics hardware."/>
+			<string name="failedHardwareCompatibleCheck" value="This NVIDIA graphics driver not find compatible graphics hardware."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="You are installing an older driver version. The system may install a newer version when the computer is docked or undocked."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="View details"/>
+			<string name="ErrorInstallerNeedReboot" value="A system restart is required. Restart the system and try again."/>
+		</localized>
+		<localized locale="0x0401">
+			<string name="title" value="برنامج تشغيل الرسومات"/>
+			<string name="failedInfPlatformCheck" value="برنامج تشغيل رسومات NVIDIA هذا غير متوافق مع هذا الإصدار من نظام التشغيل Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="برنامج تشغيل رسومات NVIDIA هذا يتطلب ${RequiredOSName}. أنت الآن تشغل ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="تعذر على برنامج تشغيل رسومات NVIDIA هذا العثور على برنامج رسومات متوافق."/>
+			<string name="failedHardwareCompatibleCheck" value="تعذر على برنامج تشغيل رسومات NVIDIA هذا العثور على برنامج رسومات متوافق."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="تقوم بتثبيت نسخة أقدم من برنامج التشغيل. بمقدور النظام تثبيت نسخة أحدث عند قفل أو فتح الكمبيوتر."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="عرض التفاصيل"/>
+			<string name="ErrorInstallerNeedReboot" value="مطلوب إعادة تشغيل النظام. أعد تشغيل النظام وكرر المحاولة."/>
+		</localized>
+		<localized locale="0x0405">
+			<string name="title" value="Ovladače grafiky"/>
+			<string name="failedInfPlatformCheck" value="Tento ovladač grafiky NVIDIA není kompatibilní s touto verzí Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Tento ovladač grafiky vyžaduje ${RequiredOSName}. Máte spuštěn ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Tento ovladač grafiky nemohl najít kompatibilní hardware grafiky."/>
+			<string name="failedHardwareCompatibleCheck" value="Tento ovladač grafiky NVIDIA nemohl najít kompatibilní hardware grafiky."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Instalujete starší verzi ovladače. Systém může nainstalovat novější verzi, pokud počítač je nebo není v doku."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Zobrazit podrobnosti"/>
+			<string name="ErrorInstallerNeedReboot" value="Je vyžadován restart systému. Restartujte systém a zkuste znovu."/>
+		</localized>
+		<localized locale="0x0406">
+			<string name="title" value="Grafikdriver"/>
+			<string name="failedInfPlatformCheck" value="Denne NVIDIA-grafikdriver er ikke kompatibel med denne version af Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Denne NVIDIA-grafikdriver kræver ${RequiredOSName}. Du kører ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Denne grafikdriver kunne ikke finde kompatibel grafikhardware."/>
+			<string name="failedHardwareCompatibleCheck" value="Denne NVIDIA grafikdriver kunne ikke finde kompatibel grafikhardware."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Du installerer en ældre driverversion. Systemet installerer måske en nyere version, når computeren er docket eller ikke docket."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Vis detaljer"/>
+			<string name="ErrorInstallerNeedReboot" value="Det er nødvendigt med genstart af systemet. Genstart systemet og prøv igen."/>
+		</localized>
+		<localized locale="0x0407">
+			<string name="title" value="Grafiktreiber"/>
+			<string name="failedInfPlatformCheck" value="Dieser NVIDIA Grafiktreiber ist mit dieser Windows-Version nicht kompatibel."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Der NVIDIA Grafiktreiber benötigt ${RequiredOSName}. Sie führen ${RunningOSName} aus."/>
+			<string name="failedHardwarePresentCheck" value="Der Grafiktreiber konnte keine kompatible Grafikhardware finden."/>
+			<string name="failedHardwareCompatibleCheck" value="Der NVIDIA Grafiktreiber konnte keine kompatible Grafikhardware finden."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Sie installieren eine ältere Treiber-Version. Das System könnte eine neuere Version installieren, wenn der Computer angedockt oder entdockt wird."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Details anzeigen"/>
+			<string name="ErrorInstallerNeedReboot" value="Das System muss neu gestartet werden. Starten Sie das System neu und versuchen Sie den Vorgang erneut."/>
+		</localized>
+		<localized locale="0x0408">
+			<string name="title" value="Πρόγραμμα οδήγησης γραφικών"/>
+			<string name="failedInfPlatformCheck" value="Αυτό το πρόγραμμα οδήγησης γραφικών NVIDIA δεν είναι συμβατό με αυτή την έκδοση των Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Αυτό το πρόγραμμα οδήγησης γραφικών NVIDIA απαιτεί ${RequiredOSName}. Εκτελείται ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Αυτό το πρόγραμμα οδήγησης γραφικών δεν είναι δυνατό να βρει συμβατό υλισμικό γραφικών."/>
+			<string name="failedHardwareCompatibleCheck" value="Αυτό το πρόγραμμα οδήγησης γραφικών NVIDIA δεν είναι δυνατό να βρει συμβατό υλισμικό γραφικών."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Εγκαθιστάτε μια παλαιότερη έκδοση του προγράμματος οδήγησης. Το σύστημα μπορεί να εγκαταστήσει μια νεότερη έκδοση όταν ο υπολογιστής βρίσκεται στη βάση του ή δεν βρίσκεται στη βάση του."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Προβολή λεπτομερειών"/>
+			<string name="ErrorInstallerNeedReboot" value="Απαιτείται επανεκκίνηση συστήματος. Επανεκκινήστε το σύστημα και δοκιμάστε ξανά."/>
+		</localized>
+		<localized locale="0x0809">
+			<string name="title" value="Graphics Driver"/>
+			<string name="failedInfPlatformCheck" value="This NVIDIA graphics driver is not compatible with this version of Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="This NVIDIA graphics driver requires ${RequiredOSName}. You are running ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="This graphics driver could not find compatible graphics hardware."/>
+			<string name="failedHardwareCompatibleCheck" value="This NVIDIA graphics driver not find compatible graphics hardware."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="You are installing an older driver version. The system may install a newer version when the computer is docked or undocked."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="View details"/>
+			<string name="ErrorInstallerNeedReboot" value="A system restart is required. Restart the system and try again."/>
+		</localized>
+		<localized locale="0x040a">
+			<string name="title" value="Controlador gráfico"/>
+			<string name="failedInfPlatformCheck" value="Este controlador gráfico de NVIDIA no es compatible con esta versión de Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Este controlador gráfico de NVIDIA necesita ${RequiredOSName}. Está ejecutando ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Este controlador gráfico no pudo encontrar hardware gráfico compatible."/>
+			<string name="failedHardwareCompatibleCheck" value="Este controlador gráfico de NVIDIA no pudo encontrar hardware gráfico compatible."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Está instalando una versión anterior del instalador.El sistema puede instalar una versión más reciente cuando el equipo esté conectado o desconectado."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Ver detalles"/>
+			<string name="ErrorInstallerNeedReboot" value="Hay que reiniciar el sistema. Reiniciar el sistema e intentar de nuevo."/>
+		</localized>
+		<localized locale="0x080a">
+			<string name="title" value="Controlador de gráficos"/>
+			<string name="failedInfPlatformCheck" value="Este controlador de gráficos de NVIDIA no es compatible con esta versión de Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Este controlador de gráficos de NVIDIA necesita ${RequiredOSName}. Está ejecutando ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Este controlador de gráficos no pudo encontrar hardware gráfico compatible."/>
+			<string name="failedHardwareCompatibleCheck" value="Este controlador de gráficos de NVIDIA no pudo encontrar hardware gráfico compatible."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Está instalando una versión anterior del controlador.El sistema puede instalar una versión más reciente cuando el equipo esté conectado o desconectado.."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Ver detalles"/>
+			<string name="ErrorInstallerNeedReboot" value="Hay que reiniciar el sistema. Reiniciar el sistema e intentar de nuevo."/>
+		</localized>
+		<localized locale="0x040b">
+			<string name="title" value="Grafiikkaohjain"/>
+			<string name="failedInfPlatformCheck" value="Tämä NVIDIA-grafiikkaohjain ei ole yhteensopiva tämän Windows-version kanssa."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Tämä NVIDIA-grafiikkaohjain vaatii käyttöjärjestelmän ${RequiredOSName} Käytössä on käyttöjärjestelmä ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Tämä grafiikkaohjain ei löytänyt yhteensopivaa grafiikkalaitteistoa."/>
+			<string name="failedHardwareCompatibleCheck" value="Tämä NVIDIA-grafiikkaohjain ei löytänyt yhteensopivaa grafiikkalaitteistoa."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Asennat vanhempaa ohjainversiota. Tämä järjestelmä voi asentaa uudemman version, kun tietokone on telakoitu tai poistettu telakasta."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Näytä tiedot"/>
+			<string name="ErrorInstallerNeedReboot" value="Järjestelmä on käynnistettävä uudelleen. Käynnistä järjestelmä uudelleen ja yritä uudelleen."/>
+		</localized>
+		<localized locale="0x040c">
+			<string name="title" value="Pilote graphique"/>
+			<string name="failedInfPlatformCheck" value="Ce pilote graphique NVIDIA n'est pas compatible avec cette version de Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Ce pilote graphique NVIDIA nécessite ${RequiredOSName}.  Vous utilisez ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Ce pilote graphique n'a pas trouvé de matériel graphique compatible."/>
+			<string name="failedHardwareCompatibleCheck" value="Ce pilote graphique n'a pas trouvé de matériel graphique compatible."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Vous installez une version antérieure du pilote. Le système peut installer une version plus récente lorsque vous ancrez ou détachez le système.."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Afficher les détails"/>
+			<string name="ErrorInstallerNeedReboot" value="Le redémarrage du système est nécessaire. Redémarrez le système et réessayez."/>
+		</localized>
+		<localized locale="0x040d">
+			<string name="title" value="מנהל התקן עבור נתונים גרפיים"/>
+			<string name="failedInfPlatformCheck" value="מנהל התקן זה מתוצרת NVIDIA עבור נתונים גרפיים אינו תואם  לגרסה זו של מערכת ההפעלה Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="מנהל התקן זה מתוצרת NVIDIA עבור נתונים גרפיים נזקק ל-${RequiredOSName} אתה משתמש ב- ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="מנהל התקן זה לניהול עיבוד נתונים גרפיים לא הצליח לאתר חומרה תואמת לעיבוד נתונים גרפיים"/>
+			<string name="failedHardwareCompatibleCheck" value="מנהל התקן זה מתוצרת NVIDIAלניהול עיבוד נתונים גרפיים לא הצליח לאתר חומרה תואמת לעיבוד נתונים גרפיים"/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="אתה מתקין גרסה ישנה יותר של מנהל ההתקן. המערכת עשויה להתקין גרסה חדשה יותר בעת עגינת המחשב או שחרור העגינה של המחשב."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="הצג פרטים"/>
+			<string name="ErrorInstallerNeedReboot" value="יש להפעיל שנית את המערכת. הפעל שנית את המערכת ונסה שנית."/>
+		</localized>
+		<localized locale="0x040e">
+			<string name="title" value="Grafikus illesztőprogram"/>
+			<string name="failedInfPlatformCheck" value="Az NVIDIA grafikus illesztőprogram nem kompatibilis a Windows ezen verziójával."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Az NVIDIA grafikus illesztőprogram a következő operációs rendszert igényli: ${RequiredOSName}. A jelenleg futó operációs rendszer: ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="A grafikus illesztőprogram nem talált kompatibilis grafikus hardvert."/>
+			<string name="failedHardwareCompatibleCheck" value="Az NVIDIA grafikus illesztőprogram nem talált kompatibilis grafikus hardvert."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Egy régebbi illesztőprogram-verziót telepít. A rendszer egy újabb verziót telepíthet, amikor a számítógépet dokkolja vagy eltávolítja a dokkból."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Részletek megtekintése"/>
+			<string name="ErrorInstallerNeedReboot" value="Rendszer-újraindítás szükséges. Indítsa újra a rendszert, majd próbálja meg újra."/>
+		</localized>
+		<localized locale="0x0410">
+			<string name="title" value="Driver grafico"/>
+			<string name="failedInfPlatformCheck" value="Il driver grafico NVIDIA in uso non è compatibile con questa versione di Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Il driver grafico NVIDIA in uso richiede ${RequiredOSName}. Si sta eseguendo ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Il driver grafico in uso non ha rilevato hardware grafici compatibili."/>
+			<string name="failedHardwareCompatibleCheck" value="Il driver grafico NVIDIA in uso non ha rilevato hardware grafici compatibili."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Si sta installando una versione del driver precedente. È possibile che il sistema installi una versione più recente quando il computer è collegato a una dock station o meno."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Visualizza dettagli"/>
+			<string name="ErrorInstallerNeedReboot" value="È necessario riavviare il sistema. Riavviare il sistema e riprovare."/>
+		</localized>
+		<localized locale="0x0411">
+			<string name="title" value="グラフィックス ドライバー"/>
+			<string name="failedInfPlatformCheck" value="この NVIDIA グラフィックス ドライバーには、このバージョンの Windows との互換性がありません。"/>
+			<string name="substitutedFailedInfPlatformCheck" value="この NVIDIA グラフィックス ドライバーには ${RequiredOSName} が必要ですが、${RunningOSName} が実行されています。"/>
+			<string name="failedHardwarePresentCheck" value="このグラフィックス ドライバーと互換性のあるグラフィックス ハードウェアが見つかりませんでした。"/>
+			<string name="failedHardwareCompatibleCheck" value="この NVIDIA ドライバーと互換性のあるグラフィックス ハードウェアが見つかりませんでした。"/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="古いバージョンのドライバーをインストールしています。コンピューターをドッキングまたはドッキング解除したときに、新しいバージョンがインストールされる場合があります。."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="詳細の表示"/>
+			<string name="ErrorInstallerNeedReboot" value="システムを再起動する必要があります。システムを再起動してからやり直してください。"/>
+		</localized>
+		<localized locale="0x0412">
+			<string name="title" value="그래픽 드라이버"/>
+			<string name="failedInfPlatformCheck" value="이 NVIDIA 그래픽 드라이버는 이 Windows 버전과 호환되지 않습니다."/>
+			<string name="substitutedFailedInfPlatformCheck" value="이 NVIDIA 그래픽 드라이버에는 ${RequiredOSName}이(가) 필요합니다. ${RunningOSName}이(가) 실행 중입니다."/>
+			<string name="failedHardwarePresentCheck" value="이 그래픽 드라이버는 호환되는 그래픽 하드웨어를 찾지 못했습니다."/>
+			<string name="failedHardwareCompatibleCheck" value="이 NVIDIA 그래픽 드라이버는 호환되는 그래픽 하드웨어를 찾지 못했습니다."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="이전 버전 드라이버를 설치 중입니다. 컴퓨터의 도킹 여부에 상관없이 시스템에 새로운 버전을 설치할 수 있습니다.."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="자세히 보기"/>
+			<string name="ErrorInstallerNeedReboot" value="시스템을 재시작해야 합니다. 시스템을 재시작하고 다시 시도하십시오."/>
+		</localized>
+		<localized locale="0x0413">
+			<string name="title" value="Grafisch stuurprogramma"/>
+			<string name="failedInfPlatformCheck" value="Dit NVIDIA grafisch stuurprogramma is niet compatibel met deze versie van Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Dit NVIDIA grafisch stuurprogramma vereist ${RequiredOSName}. U bent ${RunningOSName} aan het uitvoeren."/>
+			<string name="failedHardwarePresentCheck" value="Dit grafisch stuurprogramma kon geen compatibele grafische hardware vinden."/>
+			<string name="failedHardwareCompatibleCheck" value="Dit grafisch stuurprogramma kon geen compatibele grafische hardware vinden."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="U bent een oudere versie van het stuurprogramma aan het installeren. Het systeem kan een nieuwere versie installeren wanneer de computer wordt gedokt of ontdokt."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Details weergeven"/>
+			<string name="ErrorInstallerNeedReboot" value="Het systeem moet opnieuw worden gestart. Start het systeem opnieuw en probeer opnieuw."/>
+		</localized>
+		<localized locale="0x0414">
+			<string name="title" value="Grafikkdriver"/>
+			<string name="failedInfPlatformCheck" value="Denne NVIDIA-grafikkdriveren er ikke kompatibel med denne Windows-versjonen."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Denne NVIDIA-grafikkdriveren krever ${RequiredOSName}. Du kjører ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Denne grafikkdriveren finner ikke kompatibel grafikkmaskinvare."/>
+			<string name="failedHardwareCompatibleCheck" value="Denne NVIDIA-grafikkdriveren finner ikke kompatibel grafikkmaskinvare."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Du installerer en eldre driverversjon. Systemet kan installere en nyere versjon når datamaskinen er forankret eller ikke forankret."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Vis detaljer"/>
+			<string name="ErrorInstallerNeedReboot" value="Systemet må startes på nytt. Start systemet på nytt, og prøv igjen."/>
+		</localized>
+		<localized locale="0x0415">
+			<string name="title" value="Sterownik graficzny"/>
+			<string name="failedInfPlatformCheck" value="Ten sterownik graficzny NVIDIA nie jest zgodny z tą wersją systemu Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Ten sterownik graficzny NVIDIA wymaga systemu ${RequiredOSName}. Obecnie uruchomiony jest system ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Ten sterownik graficzny nie mógł odnaleźć zgodnego sprzętu graficznego."/>
+			<string name="failedHardwareCompatibleCheck" value="Ten sterownik graficzny NVIDIA nie mógł odnaleźć zgodnego sprzętu graficznego."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Instalowana jest starsza wersja sterownika. System może zainstalować nowszą wersję, gdy komputer zostanie zadokowany lub oddokowany."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Wyświetl szczegóły"/>
+			<string name="ErrorInstallerNeedReboot" value="Wymagane jest ponowne uruchomienie systemu. Uruchom ponownie system i spróbuj ponownie."/>
+		</localized>
+		<localized locale="0x0816">
+			<string name="title" value="Controlador gráfico"/>
+			<string name="failedInfPlatformCheck" value="Este controlador gráfico da NVIDIA não é compatível com esta versão do Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Este controlador gráfico da NVIDIA requer o ${RequiredOSName}. Está a utilizar o ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Este controlador gráfico não conseguiu localizar hardware gráfico compatível."/>
+			<string name="failedHardwareCompatibleCheck" value="Este controlador gráfico da NVIDIA não conseguiu localizar hardware gráfico compatível."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Está a instalar uma versão de controlador mais antiga. O sistema poderá instalar uma versão mais recente quando o computador é ancorado ou não ancorado."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Ver detalhes"/>
+			<string name="ErrorInstallerNeedReboot" value="É necessário reiniciar o sistema. Reinicie o sistema e volte a tentar."/>
+		</localized>
+		<localized locale="0x0416">
+			<string name="title" value="Driver de gráficos"/>
+			<string name="failedInfPlatformCheck" value="Este driver de gráficos NVIDIA não é compatível com esta versão do Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Este driver de gráficos NVIDIA exige ${RequiredOSName}. Você está executando ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Este driver de gráficos não encontrou hardware de gráficos compatível."/>
+			<string name="failedHardwareCompatibleCheck" value="Este driver de gráficos NVIDIAnão encontrou hardware de gráficos compatível."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Você está instalando uma versão de driver mais antiga. O sistema pode instalar uma versão mais atual quando o computador estiver encaixado ou não."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Exibir detalhes"/>
+			<string name="ErrorInstallerNeedReboot" value="É necessário reiniciar o sistema. Reinicie o sistema e tente novamente."/>
+		</localized>
+		<localized locale="0x0419">
+			<string name="title" value="Графический драйвер"/>
+			<string name="failedInfPlatformCheck" value="Этот графический драйвер NVIDIA несовместим с данной версией Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Для этого графического драйвера NVIDIA требуется ${RequiredOSName}. Работает ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Этот графический драйвер не обнаружил совместимого графического оборудования."/>
+			<string name="failedHardwareCompatibleCheck" value="Этот графический драйвер NVIDIA не обнаружил совместимого графического оборудования."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Вы устанавливаете устаревшую версию драйвера. Система может установить более новую версию, когда компьютер подключен или отключен.."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Просмотр сведений"/>
+			<string name="ErrorInstallerNeedReboot" value="Требуется перезагрузить систему. Перезагрузите систему и повторите попытку."/>
+		</localized>
+		<localized locale="0x041b">
+			<string name="title" value="Grafický ovládač"/>
+			<string name="failedInfPlatformCheck" value="Grafický ovládač NVIDIA nie je kompatibilný s touto verziou systému Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Tento grafický ovládač NVIDIA vyžaduje systém ${RequiredOSName}. Na vašom počítači je nainštalovaný systém ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Pre tento grafický ovládač sa nepodarilo nájsť kompatibilný grafický hardvér."/>
+			<string name="failedHardwareCompatibleCheck" value="Pre tento grafický ovládač NVIDIA sa nepodarilo nájsť kompatibilný grafický hardvér."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Inštalujete staršiu verziu ovládača. Keď sa počítač bude nachádzať v doku alebo mimo doku, bude môcť systém nainštalovať novšiu verziu."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Zobraziť podrobnosti"/>
+			<string name="ErrorInstallerNeedReboot" value="Vyžaduje sa reštartovanie systému. Reštartujte systém a skúste to znova."/>
+		</localized>
+		<localized locale="0x0424">
+			<string name="title" value="Grafični gonilnik"/>
+			<string name="failedInfPlatformCheck" value="Ta grafični gonilnik NVIDIA ni združljiv s to različico programa Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Ta grafični gonilnik NVIDIA zahteva ${RequiredOSName}. Vi uporabljate ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Ta grafični gonilnik ni mogel najti združljive grafične strojne opreme."/>
+			<string name="failedHardwareCompatibleCheck" value="Ta grafični gonilnik ni mogel najti združljive grafične strojne opreme."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Nameščate starejšo različico gonilnika.  Sistem bo morda namestil novejšo različico, ko bo računalnik nameščen v priklopno postajo ali pa ne ."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Ogled podrobnosti"/>
+			<string name="ErrorInstallerNeedReboot" value="Potreben je ponoven zagon sistema. Ponovno zaženite sistem in ponovno poizkusite."/>
+		</localized>
+		<localized locale="0x041d">
+			<string name="title" value="Grafikdrivrutin"/>
+			<string name="failedInfPlatformCheck" value="Denna NVIDIA-grafikdrivrutin inte är kompatibel med denna version av Windows."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Denna NVIDIA-grafikdrivrutin kräver ${RequiredOSName}. Du kör ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Denna grafikdrivrutin kunde inte hitta kompatibel grafikmaskinvara."/>
+			<string name="failedHardwareCompatibleCheck" value="Denna NVIDIA  grafikdrivrutin kunde inte hitta kompatibel grafikmaskinvara."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Du installerar en äldre drivrutinsversion. Systemet kan installera en nyare version när datorn är dockad eller frånkopplad."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Visa information"/>
+			<string name="ErrorInstallerNeedReboot" value="Det krävs att du startar om systemet. Starta om systemet och försök igen."/>
+		</localized>
+		<localized locale="0x041e">
+			<string name="title" value="โปรแกรมควบคุมกราฟิก"/>
+			<string name="failedInfPlatformCheck" value="โปรแกรมควบคุมการ์ดกราฟิกของ NVIDIA ไม่เข้ากันกับ Windows รุ่นนี้"/>
+			<string name="substitutedFailedInfPlatformCheck" value="โปรแกรมควบคุมกราฟิกของ NVIDIA กำหนดให้ต้องมี ${RequiredOSName} คุณกำลังใช้ ${RunningOSName}"/>
+			<string name="failedHardwarePresentCheck" value="โปรแกรมควบคุมกราฟิกนี้หาไม่พบฮาร์ดแวร์กราฟิกที่เข้ากันได้"/>
+			<string name="failedHardwareCompatibleCheck" value="โปรแกรมควบคุมกราฟิกของ NVIDIA นี้ไม่พบฮาร์ดแวร์กราฟิกที่เข้ากันได้"/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="คุณกำลังติดตั้งไดรเวอร์เวอร์ชันที่เก่ากว่า ระบบอาจติดตั้งเวอร์ชันที่ใหม่กว่าเมื่อต่อหรือยกเลิกการต่อกับคอมพิวเตอร์."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="ดูรายละเอียด"/>
+			<string name="ErrorInstallerNeedReboot" value="ต้องเริ่มการทำงานของระบบใหม่อีกครั้ง เริ่มการทำงานของระบบอีกครั้งและลองใหม่อีกครั้ง"/>
+		</localized>
+		<localized locale="0x041f">
+			<string name="title" value="Grafik Sürücüsü"/>
+			<string name="failedInfPlatformCheck" value="Bu NVIDIA grafik sürücüsü, Windows'un bu sürümüyle uyumlu değildir."/>
+			<string name="substitutedFailedInfPlatformCheck" value="Bu NVIDIA grafik sürücüsü ${RequiredOSName} gerektirir. Sizin işletim sisteminizse ${RunningOSName}."/>
+			<string name="failedHardwarePresentCheck" value="Bu grafik sürücüsü, uyumlu grafik donanımı bulamadı."/>
+			<string name="failedHardwareCompatibleCheck" value="Bu NVIDIA grafik sürücüsü, uyumlu grafik donanımı bulamadı."/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="Daha eski bir sürücü sürümünü kurmaktasınız. Bilgisayar takma istasyonuna takıldığında veya çıkartıldığında sistem, daha yeni bir sürüm kurabilir."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="Ayrıntıları Görüntüle"/>
+			<string name="ErrorInstallerNeedReboot" value="Sistemin yeniden başlatılması gerekiyor. Sistemi yeniden başlatıp tekrar deneyin."/>
+		</localized>
+		<localized locale="0x0804">
+			<string name="title" value="图形驱动程序"/>
+			<string name="failedInfPlatformCheck" value="此 NVIDIA 驱动程序与此 Windows 版本不兼容。"/>
+			<string name="substitutedFailedInfPlatformCheck" value="此 NVIDIA 图形驱动程序要求 ${RequiredOSName}。您正在运行 ${RunningOSName}。"/>
+			<string name="failedHardwarePresentCheck" value="此图形驱动程序无法找到兼容的图形硬件。"/>
+			<string name="failedHardwareCompatibleCheck" value="此 NVIDIA 图形驱动程序无法找到兼容的图形硬件。"/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="您正在安装老版本的驱动程序。系统可在计算机定位或未定位时安装新版本的驱动程序。."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="查看详细信息"/>
+			<string name="ErrorInstallerNeedReboot" value="需要重新启动系统。重新启动系统并重试。"/>
+		</localized>
+		<localized locale="0x0404">
+			<string name="title" value="圖形驅動程式"/>
+			<string name="failedInfPlatformCheck" value="此 NVIDIA 圖形驅動程式與這個 Windows 版本不相容。"/>
+			<string name="substitutedFailedInfPlatformCheck" value="此 NVIDIA 圖形驅動程式需要 ${RequiredOSName}。您正在執行 ${RunningOSName}。"/>
+			<string name="failedHardwarePresentCheck" value="此圖形驅動程式找不到相容的圖形硬體。"/>
+			<string name="failedHardwareCompatibleCheck" value="此 NVIDIA 圖形驅動程式找不到相容的圖形硬體。"/>
+			<string name="ExternalGraphicsDowngradeCheckWarning" value="您正在安裝舊版的驅動程式。不論電腦在定位或是卸除狀態，系統都可以安裝新的版本."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+			<string name="ViewDetails" value="檢視詳細資料"/>
+			<string name="ErrorInstallerNeedReboot" value="需要重新啟動系統。請重新啟動系統，然後再試一次。"/>
+		</localized>
+	</strings>
+	<description/>
+	<interfaces>
+		<interface name="stereoInterface" version="${{stereoInterfaceVersion}}"/>
+	</interfaces>
+	<constraints>
+		<if filter="!OEMPreloadApps">
+			<if filter="isDeclarative">
+				<if filter="maxRS3">
+					<custom name="InfPlatformCheck" level="skip" text="${{failedDeclarativeCheck}}"/>
+					<else>
+						<custom name="InfPlatformCheck" level="skip" text="${{failedInfPlatformCheck}}"/>
+					</else>
+				</if>
+			</if>
+			<if filter="!isDeclarative">
+				<custom name="InfPlatformCheck" level="skip" text="${{failedInfPlatformCheck}}"/>
+			</if>
+			<device name="HardwarePresentCheck" level="skip" text="${{failedHardwarePresentCheck}}"/>
+			<custom name="ExternalGraphicsDowngradeCheck" text="${{ExternalGraphicsDowngradeCheckWarning}}" level="warn"/>
+			<custom name="AllowInstallCheck" text="${{failedHardwarePresentCheck}} ${{BlockFourPartInstallKBLink}}" level="skip"/>
+			<custom name="BlockTH1Install" text="${{failedInfPlatformCheck}}" level="skip"/>
+			<custom name="CriticalBsodIssueCheck" text="${{ErrorInstallerNeedReboot}}" level="skip"/>
+			<if filter="win7">
+				<custom name="SHA2PatchCheckWin7" text="${{BlockWin7InstallMessage}}" level="skip"/>
+			</if>
+		</if>
+	</constraints>
+	<dependencies>
+		<package type="uninstalls" package="Display.3DVision"/>
+		<package type="uninstalls" package="Display.NVIRUSB"/>
+		<package type="uninstalls" package="DisplayDriverAnalyzer"/>
+		<package type="uninstalls" package="NGXCore"/>
+	</dependencies>
+	<extensions>
+		<extension file="DisplayDriverExt.DLL"/>
+	</extensions>
+	<properties>
+		<if filter="isDeclarative">
+			<bool name="Universal" value="true"/>
+		</if>
+		<bool name="UsesVGPUSymLink" value="true"/>
+		<bool name="UsesWksServiceSymLink" value="true"/>
+		<string name="WksServiceSymLinkPath" value="${{WksServiceSymLinkPath}}"/>
+		<string name="VGPUSymLinkPath" value="${{vGPUSymLinkPath}}"/>
+		<bool name="UsesNvFBCSymLink" value="true"/>
+		<string name="NvFBCSymLinkPath" value="${{NvFBCSymLinkPath}}"/>
+		<bool name="UsesNvProfileUpdaterSymLink" value="true"/>
+		<string name="NvProfileUpdaterSymLinkPath" value="${{NvProfileUpdaterSymLinkPath}}"/>
+		<bool name="UsesDisplayDriverRASSymLink" value="true"/>
+		<string name="DisplayDriverRASSymLinkPath" value="${{DisplayDriverRASSymLinkPath}}"/>
+		<bool name="FixedInstallLocation" value="true"/>
+		<bool name="SkipCPLInstall"/>
+		<string name="ArpDisplayName" value="${{arpDisplayName}}"/>
+		<string name="DriverServiceName" value="${{driverServiceName}}"/>
+		<bool name="UseDisplayContainer" value="true"/>
+		<bool name="InstallDriverOnly" value="${{installDriverOnly}}"/>
+		<bool name="InstallAppsOnly" value="${{installAppsOnly}}"/>
+		<bool name="IsContainerDeclarative" value="${{isContainerDeclarative}}"/>
+		<bool name="IsCPLDeclarative" value="${{isCPLDeclarative}}"/>
+		<string name="PluginsAndSymLinks" value="${{vGPUSymLinkPath}};
+            ${{NvFBCSymLinkPath}};
+            ${{NvProfileUpdaterSymLinkPath}};
+            ${{DisplayDriverRASSymLinkPath}};
+            ${{NvToppsSymLinkPath}};
+            ${{NvWatchDogSymlinkPath}};
+            ${{WksServiceSymLinkPath}};
+            ${{vGPUConfigPath}};
+            ${{NvFBCFolderPath}};
+            ${{NvToppsFolderPath}}\${{OptionalNvToppsPlugin}};
+            ${{DisplayDriverRASPluginPath}};
+            ${{NvProfileUpdaterDirPath}};
+            ${{NvWatchDogFolderPath}};
+            ${{NvCPLCorePluginPath}};
+            ${{NvCPLSyncPluginPath}};
+            ${{NvMessagebusbroadcastPlugin}};
+            ${{WksServicePluginFolderPath}}\${{WksServicePlugin}};"/>
+		<bool name="SameDriver" value="false"/>
+	</properties>
+	<manifest>
+		<file name="cudnn_infer64_7.dl_" sizeKB="13554"/><file name="nvui.dl_" sizeKB="3146"/><file name="vulkaninfo-x86.ex_" sizeKB="562"/><file name="nvoglv32.dl_" sizeKB="16995"/><file name="nvwgf2um_cfg.dl_" sizeKB="16034"/><file name="nvdlist.dl_" sizeKB="114"/><file name="nvofapi.dl_" sizeKB="256"/><file name="nvfbc.dl_" sizeKB="694"/><file name="nvlicensings.dl_" sizeKB="2241"/><file name="nvcompiler64.dl_" sizeKB="26166"/><file name="libnvidia-ml_loader.so" sizeKB="193"/><file name="nvifropengl64.dl_" sizeKB="345"/><file name="nvsvsr.dl_" sizeKB="642"/><file name="nvidia-smi" sizeKB="643"/><file name="nvapi64.dl_" sizeKB="3509"/><file name="nvsmartmaxapp.ex_" sizeKB="139"/><file name="nvifropengl32.dl_" sizeKB="287"/><file name="vulkan-1-x64.dl_" sizeKB="429"/><file name="nv-vk64.json" sizeKB="1"/><file name="nvdecmftmjpeg.dl_" sizeKB="278"/><file name="nvfbc64.dl_" sizeKB="947"/><file name="nvngx.dl_" sizeKB="675"/><file name="nvcuda32.dl_" sizeKB="6122"/><file name="nvencodeapi.dl_" sizeKB="285"/><file name="nvencmfth264x.dl_" sizeKB="647"/><file name="nvcuda_loader32.dl_" sizeKB="1965"/><file name="nvdisps.dll" sizeKB="11316"/><file name="nv3dappshextr.dl_" sizeKB="25"/><file name="vulkaninfo-x64.ex_" sizeKB="710"/><file name="nvvitvs.dll" sizeKB="7219"/><file name="nvwgf2umx.dl_" sizeKB="27161"/><file name="nvptxjitcompiler64.dl_" sizeKB="5684"/><file name="vulkan-1-x86.dl_" sizeKB="372"/><file name="nvd3dum.dl_" sizeKB="9592"/><file name="libnvwgf2umx.so" sizeKB="46002"/><file name="libcuda.so.1.1" sizeKB="16862"/><file name="nvcbl64.dl_" sizeKB="382"/><file name="nvofapi64.dl_" sizeKB="308"/><file name="nvwgf2umx_cfg.dl_" sizeKB="27420"/><file name="nvapi.dl_" sizeKB="2860"/><file name="license.txt" sizeKB="27"/><file name="nv3dappshext.dl_" sizeKB="523"/><file name="nvlddmkm.sy_" sizeKB="32601"/><file name="nvxdapix.dl_" sizeKB="4113"/><file name="nvcuda64.dl_" sizeKB="7000"/><file name="dbInstaller.exe" sizeKB="703"/><file name="nvencmfthevcx.dl_" sizeKB="651"/><file name="nvldumd.dl_" sizeKB="354"/><file name="nvrtum64.dl_" sizeKB="38425"/><file name="nvgamesr.dl_" sizeKB="6796"/><file name="nvdevtools.dl_" sizeKB="2243"/><file name="NvTelemetry64.dll" sizeKB="4572"/><file name="nvencmfth264.dl_" sizeKB="534"/><file name="nvcpl.dll" sizeKB="5535"/><file name="nvuir.dl_" sizeKB="898"/><file name="nvldumdx.dl_" sizeKB="430"/><file name="nvsvcr.dl_" sizeKB="634"/><file name="mcu.ex_" sizeKB="542"/><file name="libnvidia-ml.so.1" sizeKB="1750"/><file name="nvsmartmax.dl_" sizeKB="115"/><file name="nvshext.dl_" sizeKB="72"/><file name="nvlicensingsr.dl_" sizeKB="76"/><file name="nvd3dumx_cfg.dl_" sizeKB="11572"/><file name="nvifr.dl_" sizeKB="471"/><file name="nvml_loader.dll" sizeKB="603"/><file name="nvdebugdump.ex_" sizeKB="143"/><file name="nvwgf2um.dl_" sizeKB="15771"/><file name="nvptxjitcompiler32.dl_" sizeKB="5183"/><file name="DisplayDriverExt.dll" sizeKB="1665"/><file name="opencl32.dl_" sizeKB="511"/><file name="nvencmfthevc.dl_" sizeKB="537"/><file name="nvdecmftmjpegx.dl_" sizeKB="328"/><file name="opencl64.dl_" sizeKB="610"/><file name="nvifr64.dl_" sizeKB="659"/><file name="nvml.dll" sizeKB="1061"/><file name="nvdevtoolsr.dl_" sizeKB="87"/><file name="nvd3dum_cfg.dl_" sizeKB="9737"/><file name="nvwss.dll" sizeKB="11774"/><file name="nvcoproc.bi_" sizeKB="1961"/><file name="libcuda_loader.so" sizeKB="135"/><file name="nvoptix.dl_" sizeKB="159072"/><file name="nvopencl32.dl_" sizeKB="5292"/><file name="nvdispsr.dl_" sizeKB="6464"/><file name="nvidia-smi.ex_" sizeKB="369"/><file name="nvsmartmax64.dl_" sizeKB="119"/><file name="libnvidia-ptxjitcompiler.so.1" sizeKB="10543"/><file name="nviccadvancedcoloridentity.ic_" sizeKB="3"/><file name="nvwssr.dl_" sizeKB="6183"/><file name="nvd3dumx.dl_" sizeKB="11431"/><file name="nvoglv64.dl_" sizeKB="21702"/><file name="nvdlistx.dl_" sizeKB="128"/><file name="nvinfo.pb" sizeKB="88"/><file name="nvcuvid32.dl_" sizeKB="2729"/><file name="nvvitvsr.dl_" sizeKB="3004"/><file name="nvcompiler32.dl_" sizeKB="23858"/><file name="nvsvc64.dl_" sizeKB="1246"/><file name="nv-vk32.json" sizeKB="1"/><file name="nvgames.dll" sizeKB="12036"/><file name="nvsvs.dll" sizeKB="4929"/><file name="nvencodeapi64.dl_" sizeKB="344"/><file name="nvdrsdb.bi_" sizeKB="611"/><file name="nvsmartmaxapp64.ex_" sizeKB="142"/><file name="nvcuvid64.dl_" sizeKB="3088"/><file name="nvopencl64.dl_" sizeKB="6148"/><file name="nvngx_update.ex_" sizeKB="700"/><file name="nvxdbat.dl_" sizeKB="765"/><file name="nvcuda_loader64.dl_" sizeKB="1316"/><file name="nvxdplcy.dl_" sizeKB="869"/><file name="nvdispco64.exe" sizeKB="1505"/><file name="nvpciflt.sy_" sizeKB="25"/><file name="flxcore64.dl_" sizeKB="6287"/><file name="NVGPUP.Container.exe" sizeKB="865"/><file name="nvsetup.exe" sizeKB="73"/><file name="flxcomm64.dl_" sizeKB="1539"/><file name="nvvgpuconfig.dl_" sizeKB="159"/><file name="NvCCX32.dll" sizeKB="803"/><file name="flxconnect64.dl_" sizeKB="4887"/><file name="nvvgpu64.dl_" sizeKB="870"/><file name="vgpuconfig.xm_" sizeKB="11"/><file name="NvCCX.dll" sizeKB="1105"/><file name="DisplayDriver.nvi" sizeKB="79"/><file name="nv_dispi.inf" sizeKB="770"/><file name="NvCamera\Sticker01.png" sizeKB="49"/><file name="NvCamera\NvCamera32.dll" sizeKB="7177"/><file name="NvCamera\Sticker08.png" sizeKB="95"/><file name="NvCamera\Details.fx" sizeKB="8"/><file name="NvCamera\FreqTransfer32.exe" sizeKB="3611"/><file name="NvCamera\Adjustments.fx" sizeKB="7"/><file name="NvCamera\FreqTransfer64.exe" sizeKB="3898"/><file name="NvCamera\SphericalEquirect64.exe" sizeKB="3979"/><file name="NvCamera\GreenScreenBG02.jpg" sizeKB="489"/><file name="NvCamera\NightMode.fx" sizeKB="2"/><file name="NvCamera\fxtools.cfg" sizeKB="1"/><file name="NvCamera\NvCameraAllowlisting32.dll" sizeKB="530"/><file name="NvCamera\Sticker03.png" sizeKB="372"/><file name="NvCamera\Sticker05.png" sizeKB="58"/><file name="NvCamera\HighresBlender64.exe" sizeKB="4155"/><file name="NvCamera\Stickers.fx" sizeKB="13"/><file name="NvCamera\Sticker04.png" sizeKB="85"/><file name="NvCamera\BlacknWhite.fx" sizeKB="6"/><file name="NvCamera\NvCamera64.dll" sizeKB="7972"/><file name="NvCamera\Sharpen.fx" sizeKB="7"/><file name="NvCamera\RemoveHud.fx" sizeKB="1"/><file name="NvCamera\filternames.cfg" sizeKB="14"/><file name="NvCamera\ReShadeFXC64.exe" sizeKB="869"/><file name="NvCamera\GreenScreen.fx" sizeKB="6"/><file name="NvCamera\NvImageConvert32.exe" sizeKB="3619"/><file name="NvCamera\Sticker06.png" sizeKB="14"/><file name="NvCamera\NvTiltShift.fx" sizeKB="7"/><file name="NvCamera\NvVignette.fx" sizeKB="3"/><file name="NvCamera\NvImageConvert64.exe" sizeKB="3877"/><file name="NvCamera\LDR_RGB1_18.png" sizeKB="4"/><file name="NvCamera\Splitscreen.fx" sizeKB="9"/><file name="NvCamera\SpecialFX.fx" sizeKB="13"/><file name="NvCamera\d3dcompiler_47_64.dll" sizeKB="4068"/><file name="NvCamera\HighresBlender32.exe" sizeKB="3833"/><file name="NvCamera\SphericalEquirect32.exe" sizeKB="3705"/><file name="NvCamera\Colorblind.fx" sizeKB="5"/><file name="NvCamera\Sticker02.png" sizeKB="463"/><file name="NvCamera\YAMLFXC32.exe" sizeKB="1128"/><file name="NvCamera\NvCommon.fxh" sizeKB="3"/><file name="NvCamera\OldFilm.fx" sizeKB="10"/><file name="NvCamera\YAMLFXC64.exe" sizeKB="1289"/><file name="NvCamera\NvCameraAllowlisting64.dll" sizeKB="668"/><file name="NvCamera\DOF.fx" sizeKB="16"/><file name="NvCamera\Letterbox.fx" sizeKB="4"/><file name="NvCamera\NvCameraEnable.exe" sizeKB="356"/><file name="NvCamera\GreenScreenBG01.jpg" sizeKB="275"/><file name="NvCamera\ReShadeFXC32.exe" sizeKB="772"/><file name="NvCamera\Color.fx" sizeKB="7"/><file name="NvCamera\scratches.jpg" sizeKB="339"/><file name="NvCamera\Posterize.fx" sizeKB="13"/><file name="NvCamera\tools_licenses.txt" sizeKB="17"/><file name="NvCamera\Sticker07.png" sizeKB="7"/><file name="NvCamera\ShotWithGeforce518x32.rgba" sizeKB="65"/><file name="NvCamera\ui.tga" sizeKB="118"/><file name="NvCamera\d3dcompiler_47_32.dll" sizeKB="3377"/><file name="Display.NvContainer\dlsnetparams.csv" sizeKB="38"/><file name="Display.NvContainer\nvtopps.db3" sizeKB="1"/><file name="Display.NvContainer\MessageBus.dll" sizeKB="7348"/><file name="Display.NvContainer\NvContainerRecovery.bat" sizeKB="2"/><file name="Display.NvContainer\nvgwls.exe" sizeKB="17"/><file name="Display.NvContainer\dlsargs.xml" sizeKB="1"/><file name="Display.NvContainer\messagebus_client.conf" sizeKB="1"/><file name="Display.NvContainer\NVDisplay.Container.exe" sizeKB="863"/><file name="Display.NvContainer\plugins\LocalSystem\messagebus.conf" sizeKB="1"/><file name="Display.NvContainer\plugins\LocalSystem\NvcDispCorePlugin.dll" sizeKB="500"/><file name="Display.NvContainer\plugins\LocalSystem\NvXDCore.dll" sizeKB="1769"/><file name="Display.NvContainer\plugins\LocalSystem\NvcDispWatchdog.dll" sizeKB="605"/><file name="Display.NvContainer\plugins\LocalSystem\_NvMsgBusBroadcast.dll" sizeKB="3071"/><file name="Display.NvContainer\plugins\LocalSystem\_DisplayDriverRAS.dll" sizeKB="2544"/><file name="Display.NvContainer\plugins\Session\wksServicePlugin.dll" sizeKB="569"/><file name="Display.NvContainer\plugins\Session\NvFBCPlugin.dll" sizeKB="1328"/><file name="Display.NvContainer\plugins\Session\NvProfileUpdaterPlugin.dll" sizeKB="2130"/><file name="Display.NvContainer\plugins\Session\_nvppo.dll" sizeKB="1562"/><file name="Display.NvContainer\plugins\Session\nvxdsyncplugin.dll" sizeKB="1758"/><file name="Display.NvContainer\plugins\Session\_nvtopps.dll" sizeKB="9425"/><file name="NVWMI\nvWmi64.exe" sizeKB="4331"/><file name="NVWMI\nvPerfProvider.man" sizeKB="14"/><file name="NVWMI\nvWmi.mof" sizeKB="145"/><file name="nv_disp.cat"/></manifest>
+	<phases>
+		<if filter="minRS3">
+			<if filter="!isDeclarative">
+				<exe phase="removeStoreCPLApp" onError="ignore" name="${{powershellPath}}" flags="nowait,disassociate" when="install">
+					<arg value="-NonInteractive" quote="none"/>
+					<arg value="-Command" quote="none"/>
+					<arg value="${{cplStoreAppUninstallArg}}"/>
+				</exe>
+				<standard phase="deleteStoreAppRegKeys" onError="ignore" when="install">
+					<deleteRegistry keyName="${{installedPfnRegistryPath}}" valueName="NVIDIACorp.NVIDIAControlPanel_56jybvy8sckqj"/>
+				</standard>
+			</if>
+		</if>
+		<standard condition="Display.Driver:Feature.GridvGaming" phase="installGridvGaming" onError="ignore">
+			<addRegistry keyName="${{NvidiaSoftwareKey}}\Global\GridLicensing"/>
+			<addRegistry keyName="${{NvidiaSoftwareKey}}\Global\GridLicensing" valueName="NvCplDisableManageLicensePage" value="1" type="REG_DWORD"/>
+		</standard>
+		<standard phase="removenvOpenCLx86" when="uninstall" onError="ignore" platform="x86">
+			<deleteFile target="${{SysWowDirectory}}\nvopencl32.dll"/>
+		</standard>
+		<standard phase="removenvOpenCLx64" when="uninstall" onError="ignore" platform="amd64">
+			<deleteFile target="${{SystemDirectory}}\nvopencl64.dll"/>
+		</standard>
+		<standard phase="removeImplicitDirectories" when="uninstall">
+			<deleteDirectory target="${{NvidiaProgramFiles}}\coprocmanager"/>
+			<deleteDirectory target="${{NvidiaProgramFilesX86}}\coprocmanager"/>
+		</standard>
+		<setPropertyIf phase="checkIfNVWMIRunning" boolProperty="WasNVWMIRunning" onError="ignore" value="true" when="install">
+			<process name="nvwmi64.exe" check="exists"/>
+		</setPropertyIf>
+		<standard phase="deleteNvFBCPlugins" onError="ignore" when="uninstall">
+			<deleteDirectoryTree target="${{NvFBCFolderPath}}" waitForUnlock="${{pluginDeleteMaxTimeout}}"/>
+		</standard>
+		<standard phase="deleteJunctionPointforNvFBCPlugins" condition="NvFBCPluginExists" when="uninstall">
+			<deleteDirectory target="${{NvFBCSymLinkPath}}"/>
+		</standard>
+		<setPropertyIf phase="checkIfNvToppsPluginExists" boolProperty="NvToppsPluginExists" value="true" when="install">
+			<file name="${{NvToppsFolderPath}}\${{NvToppsPlugin}}" check="exists"/>
+		</setPropertyIf>
+		<standard phase="deleteJunctionPointforNvToppsPlugins" condition="NvToppsPluginExists" when="uninstall">
+			<deleteDirectoryTree target="${{NvToppsSymLinkPath}}"/>
+		</standard>
+		<standard phase="deleteNvToppsPlugin" onError="ignore" when="uninstall">
+			<deleteFile target="${{NvToppsFolderPath}}\${{OptionalNvToppsPlugin}}" waitForUnlock="${{pluginDeleteMaxTimeout}}"/>
+			<deleteFile target="${{NvidiaProgramFiles}}\Display.NvContainer\nvtopps.db3"/>
+			<deleteFile target="${{NvidiaProgramFiles}}\Display.NvContainer\nvgwls.exe"/>
+			<deleteFile target="${{NvidiaProgramFiles}}\Display.NvContainer\dlsargs.xml"/>
+			<deleteFile target="${{NvidiaProgramFiles}}\Display.NvContainer\dlsnetparams.csv"/>
+			<deleteDirectory target="${{NvToppsFolderPath}}"/>
+		</standard>
+		<standard phase="deleteJunctionPointforNvVGPUPlugin" condition="VGPUFolderExists" when="uninstall">
+			<deleteDirectory target="${{vGPUSymLinkPath}}"/>
+		</standard>
+		<if filter="!isDeclarative">
+			<standard phase="deleteNvProfileUpdaterPlugin" onError="ignore" when="uninstall">
+				<deleteDirectoryTree target="${{NvProfileUpdaterDirPath}}" waitForUnlock="${{pluginDeleteMaxTimeout}}"/>
+			</standard>
+		</if>
+		<standard phase="deleteVulkanRegistryKeys" onError="ignore" when="uninstall">
+			<if filter="minVista">
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\Vulkan" valueName="Installed"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\Vulkan" valueName="Version"/>
+				<deleteRegistryKey keyName="${{NvidiaSoftwareKey}}\Global\Vulkan"/>
+			</if>
+		</standard>
+		<if filter="minVista">
+			<custom phase="VulkanUninstall" action="uninstallVulkan" onError="ignore" when="uninstall"/>
+		</if>
+		<standard phase="deleteComponents" when="uninstall" onError="ignore">
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\nvtopps"/>
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\NvProfileUpdaterPlugin"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvModes.dat"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvModes.001"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvdrsdb0.bin"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvdrsdb1.bin"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvdrssel.bin"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvdrswr.ilk"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvdrswr.lk"/>
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\DRS\nvAppTimestamps"/>
+			<deleteDirectory target="${{CommonAppData}}\NVIDIA Corporation\DRS"/>
+			<deleteDirectory target="${{CommonAppData}}\NVIDIA Corporation"/>
+			<deleteFile target="${{CommonAppData}}\nvModes.dat"/>
+			<deleteFile target="${{CommonAppData}}\nvModes.001"/>
+			<deleteFile target="${{SystemDirectory}}\nvdrsdb0.bin"/>
+			<deleteFile target="${{SystemDirectory}}\nvdrsdb1.bin"/>
+			<deleteFile target="${{SystemDirectory}}\nvdrssel.bin"/>
+			<deleteFile target="${{SystemDirectory}}\nvdrswr.ilk"/>
+			<deleteFile target="${{SystemDirectory}}\nvdrswr.lk"/>
+			<deleteFile target="${{SystemDirectory}}\nvAppTimestamps"/>
+		</standard>
+		<custom phase="deleteMisc" action="DeleteMiscellaneousData" when="uninstall" onError="ignore"/>
+		<custom phase="deleteTrustedInsallerKey" action="DeleteTrustedInstallerkeys" onError="ignore"/>
+		<standard phase="deleteRegistryKeys" onError="ignore" when="uninstall">
+			<if filter="minWin7">
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.XResolution"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.YResolution"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.BitsPerPel"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.VRefresh"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.Flags"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.XPanning"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVTweak" valueName="DefaultSettings.YPanning"/>
+				<deleteRegistryKey keyName="${{NvidiaSoftwareKey}}\Global\NVTweak"/>
+				<deleteRegistry keyName="${{NvidiaPerUserSoftwareKey}}\NvBackend" valueName="IsFRLSupported"/>
+				<deleteRegistryKey keyName="${{NvidiaPerUserSoftwareKey}}\NvBackend"/>
+				<deleteRegistryKey keyName="${{NvidiaPerUserSoftwareKey}}"/>
+			</if>
+			<deleteRegistryKeyTree keyName="${{NvidiaSoftwareKey}}\Global\DRSPath"/>
+			<deleteRegistryKeyTree keyName="${{NvidiaSoftwareKey}}\Global\NVSMI"/>
+			<deleteRegistryKey keyName="${{NvidiaSoftwareKey}}\Global"/>
+			<deleteRegistryKey keyName="${{NvidiaSoftwareKey}}"/>
+			<deleteRegistryKey keyName="${{NvidiaPerUserClassesKey}}"/>
+		</standard>
+		<standard phase="removeDXCacheWhileUninstall" when="uninstall" onError="ignore">
+			<deleteDirectoryTree target="${{@TempDirectory}}\NVIDIA Corporation\NV_Cache"/>
+			<deleteDirectory target="${{@TempDirectory}}\NVIDIA Corporation"/>
+			<deleteDirectoryTree target="${{LocalUserAppData}}\NVIDIA Corporation\NV_Cache"/>
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\NV_Cache"/>
+		</standard>
+		<environment phase="GetEnvVariablesWhileUninstall" when="uninstall" onError="ignore">
+			<getVariable type="user" variableName="TEMP" value="TempDirectory"/>
+		</environment>
+		<standard phase="removeOpenGLCache" when="uninstall" onError="ignore">
+			<deleteDirectoryTree target="${{RoamingUserAppData}}\NVIDIA\GLCache"/>
+			<deleteDirectoryTree target="${{LocalUserAppData}}\NVIDIA\GLCache"/>
+			<deleteDirectoryTree target="${{LocalUserAppData}}\..\Locallow\NVIDIA\GLCache"/>
+			<deleteDirectoryTree target="${{SystemDirectory}}\config\systemprofile\AppData\Roaming\NVIDIA\GLCache"/>
+			<deleteDirectory target="${{RoamingUserAppData}}\NVIDIA"/>
+			<deleteDirectory target="${{SystemDirectory}}\config\systemprofile\AppData\Roaming\NVIDIA"/>
+		</standard>
+		<standard phase="removeComputeCache" when="uninstall" onError="ignore">
+			<deleteDirectoryTree target="${{RoamingUserAppData}}\NVIDIA\ComputeCache"/>
+			<deleteDirectoryTree target="${{SystemDirectory}}\config\systemprofile\AppData\Roaming\NVIDIA\ComputeCache"/>
+		</standard>
+		<if filter="!OEMPreloadApps">
+			<environment phase="GetEnvVariablesWhileInstall" when="install" onError="ignore">
+				<getVariable type="user" variableName="TEMP" value="TempDirectory"/>
+			</environment>
+			<standard phase="removeDXCacheWhileInstall" when="install" onError="ignore">
+				<deleteDirectoryTree target="${{@TempDirectory}}\NVIDIA Corporation\NV_Cache"/>
+				<deleteDirectory target="${{@TempDirectory}}\NVIDIA Corporation"/>
+			</standard>
+			<if filter="minVista">
+				<standard phase="stopCplServiceMinVista" onError="ignore" when="install">
+					<controlService name="${{cplServiceName}}" command="129"/>
+				</standard>
+				<else>
+					<standard phase="stopCplServicePreVista" onError="ignore" when="install">
+						<stopService name="${{cplServiceName}}" timeOut="0"/>
+					</standard>
+				</else>
+			</if>
+			<if filter="disableGAT">
+				<standard phase="createDisableLoadRegForDCHRASPlugin" condition="DisableGPUActivation &amp;&amp; Universal">
+					<addRegistry keyName="${{serviceHiveRegistryPath}}\${{DisplayContainerServiceName}}\LocalSystem\_DisplayDriverRAS" valueName="DisableLoad" value="1" type="REG_DWORD"/>
+				</standard>
+				<standard phase="createDisableLoadRegForLegacyRASPlugin" condition="DisableGPUActivation &amp;&amp; !Universal">
+					<addRegistry keyName="${{NvidiaSoftwareKey}}\NvContainer\_DisplayDriverRAS" valueName="DisableLoad" value="1" type="REG_DWORD"/>
+				</standard>
+			</if>
+			<device phase="removeDisplayPhantoms" action="removePhantoms" when="install" condition="RemoveDisplayPhantoms &amp;&amp; Global:IsSetupInitiated">
+				<inf name="*.inf"/>
+				<hwid name="PCI\VEN_10DE¤"/>
+			</device>
+			<if filter="isDeclarative">
+				<if filter="minRS3">
+					<standard phase="clearCPLColorAccuracyModeRegistryData" onError="ignore" when="uninstall">
+						<deleteRegistryKeyTree keyName="${{NvidiaPerUserSoftwareKey}}\Global\NVTweak\Devices"/>
+					</standard>
+					<custom phase="decideIfSameDriver" action="DecideIfSameDriver" when="install" onError="ignore"/>
+					<device phase="installAllDrivers" condition="SameDriver" fixedProgress="10" deviceProgress="150" autoTick="200">
+						<inf name="*.inf"/>
+						<hwid name="PCI\VEN_10DE¤"/>
+					</device>
+					<device phase="installAllDrivers" condition="!SameDriver" skipSibling="true" fixedProgress="10" deviceProgress="150" autoTick="200">
+						<inf name="*.inf"/>
+						<hwid name="PCI\VEN_10DE¤"/>
+					</device>
+					<exe phase="cplAppxPackageInstall" when="install" name="${{SystemDirectory}}\Dism.exe" onError="ignore" progress="500" autotick="200">
+						<arg value="/online"/>
+						<arg value="/add-provisionedappxpackage"/>
+						<arg value="/packagepath:${{SubPackageDirectory}}\NVCPL\dfd6487db6f94f9ea2243ee415e059b2.appx"/>
+						<arg value="/LicensePath:${{SubPackageDirectory}}\NVCPL\dfd6487db6f94f9ea2243ee415e059b2_License1.xml"/>
+						<success value="0"/>
+					</exe>
+					<else>
+						<device phase="installAllDrivers" fixedProgress="10" deviceProgress="150" autoTick="200">
+							<inf name="*.inf"/>
+							<hwid name="PCI\VEN_10DE¤"/>
+						</device>
+					</else>
+				</if>
+			</if>
+			<if filter="!isDeclarative">
+				<device phase="installAllDrivers" fixedProgress="10" deviceProgress="150" autoTick="200">
+					<inf name="*.inf"/>
+					<hwid name="PCI\VEN_10DE¤"/>
+				</device>
+			</if>
+			<custom phase="deleteRMEnablePhyRepeaterRegistryKeyConditionally" action="DeleteRegistryKeyIfNotCreatedViaINF" when="install" onError="ignore">
+				<properties>
+					<string name="regroot" value="HKR"/>
+					<string name="valuename" value="RMEnablePhyRepeater"/>
+					<string name="sectionOfAddRegDirective" value="software"/>
+				</properties>
+			</custom>
+			<custom phase="getNGXDriverStoreLocation" action="GetDriverStoreLocationInProperty" when="install" onError="ignore">
+				<properties>
+					<string name="SupportFlagName" value="NVSupportNGX"/>
+					<string name="PropertyName" value="NGXDriverStoreLocation"/>
+				</properties>
+			</custom>
+			<custom action="invokeNGXUpdater" phase="NGXUpdater" when="install" onError="ignore"/>
+			<standard phase="deleteOlderNGXInstallSettings" when="install" onError="ignore">
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NGXCore" valueName="FullPath"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NGXCore" valueName="Installed"/>
+				<deleteRegistry keyName="${{NvidiaSoftwareKey}}\Global\NGXCore" valueName="Version"/>
+				<deleteRegistryKey keyName="${{NvidiaSoftwareKey}}\Global\NGXCore"/>
+			</standard>
+			<standard phase="createNGXInstallSettings" condition="Feature.NGX" onError="ignore">
+				<addRegistry keyName="${{NvidiaSoftwareKey}}\Global\NGXCore" valueName="FullPath" value="${{@NGXDriverStoreLocation}}" type="REG_SZ"/>
+				<addRegistry keyName="${{NvidiaSoftwareKey}}\Global\NGXCore" valueName="Installed" value="1" type="REG_DWORD"/>
+			</standard>
+			<standard phase="deleteOlderDrsFiles" when="install" onError="ignore">
+				<deleteFile target="${{NvidiaProgramFiles}}\DRS\dbInstaller.exe"/>
+				<deleteFile target="${{NvidiaProgramFiles}}\DRS\nvdrsdb.bin"/>
+				<deleteDirectoryTree target="${{NvidiaProgramFiles}}\DRS"/>
+			</standard>
+			<confirm phase="Confirm-install" when="install">
+				<fileExists target="${{SystemDirectory}}\nvinfo.pb"/>
+			</confirm>
+			<confirm platform="x86" phase="Confirm-install" when="install">
+				<fileExists target="${{SystemDirectory}}\nvapi.dll"/>
+			</confirm>
+			<confirm platform="amd64" phase="Confirm-install" when="install">
+				<fileExists target="${{SystemDirectory}}\nvapi64.dll"/>
+			</confirm>
+			<if filter="!isDeclarative">
+				<setPropertyIf phase="checkIfNvFBCPluginExists" boolProperty="NvFBCPluginExists" value="true" when="install">
+					<file name="${{SubPackageDirectory}}\${{NvFBCPluginName}}" check="exists"/>
+				</setPropertyIf>
+				<standard phase="installNvFBCPlugins" condition="NvFBCPluginExists" when="install">
+					<createDirectory target="${{NvFBCFolderPath}}"/>
+					<copyFile source="${{NvFBCPluginName}}" target="${{NvFBCFolderPath}}\${{NvFBCPlugin}}"/>
+					<createDirectory target="${{NvFBCSymLinkPath}}" source="${{NvFBCFolderPath}}" symLink="true"/>
+				</standard>
+				<standard phase="deleteOldNonOptioalNvToppsPlugin" when="install" onError="ignore">
+					<renameFile source="${{NvToppsFolderPath}}\NvTopps.dll" target="${{NvToppsFolderPath}}\NvTopps.dll_"/>
+					<deleteFile target="${{NvToppsFolderPath}}\NvTopps.dll_" waitForUnlock="${{pluginDeleteMaxTimeout}}"/>
+				</standard>
+				<standard phase="installNvToppsPlugins" when="install">
+					<createDirectory target="${{NvToppsFolderPath}}"/>
+					<copyFile source="nvtopps.db3" target="${{NvidiaProgramFiles}}\Display.NvContainer\nvtopps.db3"/>
+					<copyFile source="nvgwls.exe" target="${{NvidiaProgramFiles}}\Display.NvContainer\nvgwls.exe"/>
+					<copyFile source="dlsargs.xml" target="${{NvidiaProgramFiles}}\Display.NvContainer\dlsargs.xml"/>
+					<copyFile source="dlsnetparams.csv" target="${{NvidiaProgramFiles}}\Display.NvContainer\dlsnetparams.csv"/>
+					<copyFile source="${{NvToppsPlugin}}" target="${{NvToppsFolderPath}}\${{OptionalNvToppsPlugin}}"/>
+					<createDirectory target="${{NvToppsSymLinkPath}}" source="${{NvToppsFolderPath}}" symLink="true"/>
+				</standard>
+				<setPropertyIf phase="checkIfVGPUFolderExists" boolProperty="VGPUFolderExists" value="true" when="install">
+					<directory name="${{vGPUConfigPath}}" check="exists"/>
+				</setPropertyIf>
+				<standard phase="createJunctionPointforNvVGPUPlugin" condition="VGPUFolderExists" when="install">
+					<createDirectory target="${{vGPUSymLinkPath}}" source="${{vGPUConfigPath}}" symLink="true"/>
+				</standard>
+				<if filter="minRS1">
+					<standard phase="installWksServicePlugin">
+						<copyFile source="${{WksServicePlugin}}" target="${{WksServicePluginFolderPath}}\${{WksServicePlugin}}"/>
+						<createDirectory target="${{WksServiceSymLinkPath}}" source="${{WksServicePluginFolderPath}}" symLink="true"/>
+					</standard>
+				</if>
+			</if>
+			<standard onError="ignore" phase="deleteOlderRASPluginData" when="install">
+				<deleteDirectoryTree target="${{DisplayDriverRASSymLinkPath}}"/>
+				<deleteFile target="${{DisplayDriverRASPluginPath}}\DisplayDriverRAS.dll" waitForUnlock="${{pluginDeleteMaxTimeout}}"/>
+			</standard>
+			<if filter="!isDeclarative">
+				<standard phase="installDisplayDriverRASPlugin" condition="Feature.NvTelemetry" onError="ignore">
+					<createDirectory target="${{DisplayDriverRASPluginPath}}"/>
+					<copyFile target="${{DisplayDriverRASPluginPath}}\_DisplayDriverRAS.dll" source="DisplayDriverRAS.dll"/>
+					<createDirectory target="${{DisplayDriverRASSymLinkPath}}" source="${{DisplayDriverRASPluginPath}}" symLink="true"/>
+				</standard>
+				<standard phase="installNvProfileUpdaterPlugin" when="install">
+					<createDirectory target="${{NvProfileUpdaterDirPath}}"/>
+					<copyFile target="${{NvProfileUpdaterDirPath}}\NvProfileUpdaterPlugin.dll" source="NvProfileUpdaterPlugin.dll"/>
+				</standard>
+				<standard phase="createNvProfileUpdaterJunctionPoint">
+					<createDirectory target="${{NvProfileUpdaterSymLinkPath}}" source="${{NvProfileUpdaterDirPath}}" symLink="true"/>
+				</standard>
+			</if>
+			<standard phase="copyLogo" condition="ICafeLogoSupported" when="install" onError="ignore">
+				<copyFile target="${{NvidiaProgramFiles}}\Drs\logo.png" source="logo.png"/>
+			</standard>
+			<standard phase="removeOpenCLLegacyx86" when="install" onError="ignore" platform="x86">
+				<deleteRegistry keyName="${{openCLRegKey}}" valueName="${{SysWowDirectory}}\nvopencl.dll"/>
+				<deleteFile target="${{SysWowDirectory}}\nvopencl.dll"/>
+			</standard>
+			<standard phase="removeOpenCLLegacyx64" when="install" onError="ignore" platform="amd64">
+				<deleteRegistry keyName="${{openCLRegKey}}" valueName="${{SystemDirectory}}\nvopencl.dll"/>
+				<deleteFile target="${{SystemDirectory}}\nvopencl.dll"/>
+			</standard>
+			<setPropertyIf phase="checkNVSMIPathExist" boolProperty="CheckNVSMIPathExist" value="true" when="install" onError="ignore">
+				<directory name="${{NvidiaProgramFiles}}\NVSMI" check="exists"/>
+			</setPropertyIf>
+			<standard phase="addNvsmiToReg" when="install" condition="CheckNVSMIPathExist" onError="ignore">
+				<addRegistry keyName="${{NvidiaSoftwareKey}}\Global\NVSMI" valueName="NVSMIPATH" type="REG_SZ" value="${{NvidiaProgramFiles}}\NVSMI"/>
+			</standard>
+			<setPropertyIf phase="checkIfGridTPLFileExists" boolProperty="GridTPLFileExists" value="true" onError="ignore">
+				<file name="${{SubPackageDirectory}}\grid-third-party-licenses.txt" check="exists"/>
+			</setPropertyIf>
+			<standard phase="copyGridLicenseFile" condition="GridTPLFileExists" onError="ignore">
+				<copyFile target="${{NvidiaProgramFiles}}\grid-third-party-licenses.txt" source="grid-third-party-licenses.txt"/>
+			</standard>
+			<if filter="minWin8">
+				<custom phase="SetRebootForWin8KFilter" action="SetRebootForWin8KFilter" when="install"/>
+			</if>
+			<custom phase="changeDisplayResolution" action="SetResolution" when="install"/>
+			<custom phase="removeOldARPEntry" action="RemoveOldARPEntry" onError="ignore" when="install"/>
+			<if filter="minVista">
+				<custom phase="VulkanUninstall" action="uninstallVulkan" onError="ignore" when="install"/>
+			</if>
+			<custom phase="checkRemoveOptimusFilters" action="checkRemoveOptimusFilters" when="install" onError="ignore"/>
+			<standard phase="removeOldOpenGLCache" when="install" onError="ignore">
+				<deleteDirectoryTree target="${{RoamingUserAppData}}\NVIDIA\GLCache"/>
+				<deleteDirectoryTree target="${{LocalUserAppData}}\NVIDIA\GLCache"/>
+				<deleteDirectoryTree target="${{LocalUserAppData}}\..\Locallow\NVIDIA\GLCache"/>
+			</standard>
+			<if filter="!isDeclarative">
+				<exe phase="containerInstall" when="install" name="NvContainerSetup.exe" progress="500" autotick="200" condition="Global:EnableTelemetry">
+					<arg value="-n"/>
+					<arg value="-s"/>
+					<arg value="-enableTelemetry:true"/>
+					<success value="0"/>
+					<success value="1" rebootNeeded="true"/>
+				</exe>
+				<exe phase="containerInstall" when="install" name="NvContainerSetup.exe" progress="500" autotick="200" condition="!Global:EnableTelemetry">
+					<arg value="-n"/>
+					<arg value="-s"/>
+					<arg value="-enableTelemetry:false"/>
+					<success value="0"/>
+					<success value="1" rebootNeeded="true"/>
+				</exe>
+			</if>
+			<standard phase="deleteNvFBCx86" platform="x86" when="install" onError="ignore">
+				<deleteDirectoryTree target="${{NvidiaProgramFilesX86}}\NvFBC"/>
+			</standard>
+			<standard onError="ignore" phase="startNVWMIService" when="installClose" condition="WasNVWMIRunning">
+				<startService name="${{NVWMIServiceName}}" timeOut="${{StateTransitionMaxTime}}"/>
+			</standard>
+		</if>
+		<if filter="!isDeclarative">
+			<custom phase="updateCPLInstallPhaseApp" action="updateCPLInstallPhaseApp" when="install">
+				<properties>
+					<string name="CPLSearchPath" value="${{SubPackageDirectory}}"/>
+				</properties>
+			</custom>
+			<custom phase="removeCPLInstallData" action="removeCPLInstallData" when="install"/>
+			<exe phase="cplInstall" when="install" name="*cplsetup*.exe" progress="500" autoTick="200" condition="!SkipCPLInstall &amp;&amp; Global:EnableTelemetry">
+				<arg value="-n"/>
+				<arg value="-s"/>
+				<arg value="-enableTelemetry:true"/>
+				<arg value="Display.ControlPanel"/>
+				<success value="0"/>
+				<success value="1" rebootNeeded="true"/>
+			</exe>
+			<exe phase="cplInstall" when="install" name="*cplsetup*.exe" progress="500" autoTick="200" condition="!SkipCPLInstall &amp;&amp; !Global:EnableTelemetry">
+				<arg value="-n"/>
+				<arg value="-s"/>
+				<arg value="-enableTelemetry:false"/>
+				<arg value="Display.ControlPanel"/>
+				<success value="0"/>
+				<success value="1" rebootNeeded="true"/>
+			</exe>
+		</if>
+		<if filter="!OEMPreloadApps">
+			<if filter="!safeMode">
+				<if filter="!isDeclarative">
+					<standard phase="startDisplayContainerLocalSystem" when="install">
+						<startService name="${{DisplayContainerServiceName}}" timeOut="${{StateTransitionMaxTime}}"/>
+					</standard>
+				</if>
+			</if>
+			<if filter="minVista">
+				<custom phase="vulkanInstall" when="install" action="InstallVulkan" onError="ignore"/>
+			</if>
+		</if>
+		<exe phase="runCacheCleanupTool" name="${{NvidiaProgramFilesX86}}\NvInstallerUtil\NvInstallerUtil.exe" when="installClose" onError="ignore" condition="!Global:RebootRequired &amp;&amp; !Global:SilentInstall" flags="nowait,disassociate">
+			<arg value="-s" quote="none"/>
+		</exe>
+	</phases>
+</nvi>

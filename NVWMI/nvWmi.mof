@@ -1,0 +1,2558 @@
+
+ /***************************************************************************\
+|*                                                                           *|
+|*      Copyright 2010-2020 NVIDIA Corporation.  All rights reserved.        *|
+|*                                                                           *|
+|*   NOTICE TO USER:                                                         *|
+|*                                                                           *|
+|*   This source code is subject to NVIDIA ownership rights under U.S.       *|
+|*   and international Copyright laws.                                       *|
+|*                                                                           *|
+|*   Users and possessors of this source code may not modify this code or    *|
+|*   create derivative works of this code.                                   *|
+|*                                                                           *|
+|*   NVIDIA MAKES NO REPRESENTATION ABOUT THE SUITABILITY OF THIS SOURCE     *|
+|*   CODE FOR ANY PURPOSE. IT IS PROVIDED "AS IS" WITHOUT EXPRESS OR         *|
+|*   IMPLIED WARRANTY OF ANY KIND. NVIDIA DISCLAIMS ALL WARRANTIES WITH      *|
+|*   REGARD TO THIS SOURCE CODE, INCLUDING ALL IMPLIED WARRANTIES OF         *|
+|*   MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR          *|
+|*   PURPOSE. IN NO EVENT SHALL NVIDIA BE LIABLE FOR ANY SPECIAL,            *|
+|*   INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES          *|
+|*   WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN      *|
+|*   AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING     *|
+|*   OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOURCE      *|
+|*   CODE.                                                                   *|
+|*                                                                           *|
+|*   U.S. Government End Users. This source code is a "commercial item"      *|
+|*   as that term is defined at 48 C.F.R. 2.101 (OCT 1995), consisting       *|
+|*   of "commercial computer  software" and "commercial computer software    *|
+|*   documentation" as such terms are used in 48 C.F.R. 12.212 (SEPT 1995)   *|
+|*   and is provided to the U.S. Government only as a commercial end item.   *|
+|*   Consistent with 48 C.F.R.12.212 and 48 C.F.R. 227.7202-1 through        *|
+|*   227.7202-4 (JUNE 1995), all U.S. Government End Users acquire the       *|
+|*   source code with only those rights set forth herein.                    *|
+|*                                                                           *|
+|*   Any use of this source code in individual and commercial software must  *|
+|*   include, in the user documentation and internal comments to the code,   *|
+|*   the above Disclaimer and U.S. Government End Users Notice.              *|
+|*                                                                           *|
+|*                                                                           *|
+ \***************************************************************************/
+// File: ../nvWmi.mof
+// Generated: 16:39:38, Feb 26, 2021
+
+
+
+
+
+// purge all previous definitions of NV namespace
+#pragma namespace("\\\\.\\root\\cimv2")
+#pragma deleteinstance("__Namespace.Name='NV'", NOFAIL)
+
+#pragma autorecover
+#pragma namespace("\\\\.\\root\\cimv2")
+
+Instance of __Namespace
+{
+    Name = "NV";
+};
+
+#pragma namespace("\\\\.\\root\\cimv2\\NV")
+
+instance of __Win32Provider as $NVPROV
+{
+    ClientLoadableCLSID    = NULL;
+    CLSID                  = "{96CDE098-DB47-4040-97CF-C522384F5554}";  // unchanged from 1.1
+    DefaultMachineName     = NULL;
+    HostingModel           = "Decoupled:Com";
+    InitializeAsAdminFirst = FALSE;
+    Name                   = "NVIDIA|NVWMI|2.0";
+    UnloadTimeout          = NULL;
+    SecurityDescriptor     = "O:BAG:SYD:(A;;0x10000001;;;BA)(A;;0x10000001;;;SY)";
+    Version                = 0x02000000;            // 2.0.0 (major in MSB byte, then byte with minor, then 16-bit word with build)
+                                                    // Note that Version here is a property inherited from __Win32Provider
+};
+
+
+instance of __InstanceProviderRegistration
+{
+    Provider            = $NVPROV;
+    InteractionType     = 0;                        // 0- Pull, 1 - Push, 2 - PushVerify
+    SupportsPut         = TRUE;
+    SupportsGet         = TRUE;
+    SupportsDelete      = TRUE;
+    SupportsEnumeration = TRUE;
+    QuerySupportLevels  = {"WQL:UnarySelect", "WQL:References"};
+};
+
+
+instance of __PropertyProviderRegistration
+{
+    Provider           = $NVPROV;
+    SupportsPut        = TRUE;
+    SupportsGet        = TRUE;
+};
+
+
+instance of __MethodProviderRegistration
+{
+    Provider = $NVPROV;
+};
+
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Internal version of NV objects")]
+//! Internal version of NV objects
+class Version
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Key, Description("Ordered version value, guaranteed to grow monotonically")]
+    //! Ordered version value, guaranteed to grow monotonically
+    uint32                  orderedValue;
+
+    [Read: ToInstance ToSubClass,  Description("Raw version value")]
+    //! Raw version value
+    uint32                  value;
+
+    [Read: ToInstance ToSubClass,  Description("Human-readable string with version value")]
+    //! Human-readable string with version value
+    string                  strValue;
+};
+
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Base class for all named NV objects")]
+//! Base class for all named NV objects
+class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents parameters of PCI Express bus link")]
+//! Represents parameters of PCI Express bus link
+class PcieLink
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Object version")]
+    //! Object version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Description("Maximum speed attainable on this link in Mbits per second")]
+    //! Maximum speed attainable on this link in Mbits per second
+    sint32                  maxSpeed;
+
+    [Read: ToInstance ToSubClass,  Description("Maximum supported generation of the PCIe bus protocol")]
+    //! Maximum supported generation of the PCIe bus protocol
+    sint32                  maxGen;
+
+    [Read: ToInstance ToSubClass,  Description("Maximum width, in # of PCI-Express lanes")]
+    //! Maximum width, in # of PCI-Express lanes
+    sint32                  maxWidth;
+
+    [Read: ToInstance ToSubClass,  Description("Current speed on this link in Mbits per second")]
+    //! Current speed on this link in Mbits per second
+    sint32                  curSpeed;
+
+    [Read: ToInstance ToSubClass,  Description("Currently negotiated generation of the PCIe bus protocol")]
+    //! Currently negotiated generation of the PCIe bus protocol
+    sint32                  curGen;
+
+    [Read: ToInstance ToSubClass,  Description("Current width, in # of PCI-Express lanes")]
+    //! Current width, in # of PCI-Express lanes
+    sint32                  curWidth;
+
+    [Implemented, Description("Formats basic information about this PCI-Express link into a human-readable string")]
+    //! Formats basic information about this PCI-Express link into a human-readable string
+    string                  info();
+};
+
+[Version("1.1.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents parameters of Video Engine encoder and decoder")]
+//! Represents parameters of Video Engine encoder and decoder
+class VideoCodec
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Object version")]
+    //! Object version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Description("The percentage of Video Encoder utilization during sampling period.")]
+    //! The percentage of Video Encoder utilization during sampling period.
+    sint32                  percentEncoderUsage;
+
+    [Read: ToInstance ToSubClass,  Description("The percentage of Video Decoder utilization during sampling period.")]
+    //! The percentage of Video Decoder utilization during sampling period.
+    sint32                  percentDecoderUsage;
+
+    [Read: ToInstance ToSubClass,  Description("The period (in milliseconds) between Video Encoder samples. -1 if not supported in current environment")]
+    //! The period (in milliseconds) between Video Encoder samples. -1 if not supported in current environment
+    sint32                  encoderSamplingPeriod;
+
+    [Read: ToInstance ToSubClass,  Description("The period (in milliseconds) between Video Decoder samples. -1 if not supported in current environment")]
+    //! The period (in milliseconds) between Video Decoder samples. -1 if not supported in current environment
+    sint32                  decoderSamplingPeriod;
+
+    [Read: ToInstance ToSubClass,  Description("Count of active encoder sessions. 0 if not supported in current environment or when encoder inactive")]
+    //! Count of active encoder sessions. 0 if not supported in current environment or when encoder inactive
+    sint32                  encoderSessionsCount;
+
+    [Read: ToInstance ToSubClass,  Description("Frames per second encoded, as a trailing average for all active sessions. -1 if not supported in current environment")]
+    //! Frames per second encoded, as a trailing average for all active sessions. -1 if not supported in current environment
+    sint32                  averageFps;
+
+    [Read: ToInstance ToSubClass,  Description("Encoding latency in milliseconds. -1 if not supported in current environment")]
+    //! Encoding latency in milliseconds. -1 if not supported in current environment
+    sint32                  averageLatency;
+
+    [Implemented, Description("Formats basic information about this PCI-Express link into a human-readable string")]
+    //! Formats basic information about this PCI-Express link into a human-readable string
+    string                  info();
+};
+
+[Version("2.4.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents an NVIDIA GPU")]
+//! Represents an NVIDIA GPU
+class Gpu // contains embedded class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Deprecated, Description("same as NVAPI ID of the GPU. Unique ID - deprecated, please use 'id'")]
+    //! same as NVAPI ID of the GPU. Unique ID - deprecated, please use 'id'
+    uint32                  handle;
+
+    [Read: ToInstance ToSubClass,  Description("NVAPI ID of the GPU")]
+    //! NVAPI ID of the GPU
+    uint32                  nvapiId;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","4"}, Values {"unknown","GeForce", "Quadro", "NVS", "Tesla"}, Description("GPU product type. Possible values are: 0 - unknown, 1 - GeForce, 2 - Quadro, 3 - NVS, 4 - Tesla")]
+    //! GPU product type. Possible values are: 0 - unknown, 1 - GeForce, 2 - Quadro, 3 - NVS, 4 - Tesla
+    uint32                  productType;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14"}, Values {"unknown","SDRAM","DDR1","DDR2","GDDR2","GDDR3","GDDR4","DDR3","GDDR5","LPDDR2","GDDR5X","HBM1","HBM2","SDDR4","GDDR6"}, Description("The type of memory associated with this GPU. Possible values are: 0 - unknown, 1 - SDRAM, 2 - DDR1, 3 - DDR2, 4 - GDDR2, 5 - GDDR3, 6 - GDDR4, 7 - DDR3, 8 - GDDR5, 9 - LPDDR2, 10 - GDDR5X, 11 - HBM1, 12 - HBM2, 13 - SDDR4, 14 - GDDR6")]
+    //! The type of memory associated with this GPU. Possible values are: 0 - unknown, 1 - SDRAM, 2 - DDR1, 3 - DDR2, 4 - GDDR2, 5 - GDDR3, 6 - GDDR4, 7 - DDR3, 8 - GDDR5, 9 - LPDDR2, 10 - GDDR5X, 11 - HBM1, 12 - HBM2, 13 - SDDR4, 14 - GDDR6
+    uint32                  memoryType;
+
+    [Read: ToInstance ToSubClass,  Description("The virtual memory size in MB (Physical Video Memory + System Video Memory + Shared System Memory)")]
+    //! The virtual memory size in MB (Physical Video Memory + System Video Memory + Shared System Memory)
+    uint32                  memorySizeVirtual;
+
+    [Read: ToInstance ToSubClass,  Description("The physical video memory size in MB")]
+    //! The physical video memory size in MB
+    uint32                  memorySizePhysical;
+
+    [Read: ToInstance ToSubClass,  Description("The currently available physical video memory size in MB")]
+    //! The currently available physical video memory size in MB
+    uint32                  memorySizeAvailable;
+
+    [Read: ToInstance ToSubClass,  Description("The width of the GPU's RAM memory bus in MB")]
+    //! The width of the GPU's RAM memory bus in MB
+    uint32                  memoryBusWidth;
+
+    [Read: ToInstance ToSubClass,  Description("The total number of Cores defined for a GPU")]
+    //! The total number of Cores defined for a GPU
+    uint32                  coreCount;
+
+    [Read: ToInstance ToSubClass,  Description("The current memory clock frequency in MHz, 0 if not available, -1 if not supported in current environment")]
+    //! The current memory clock frequency in MHz, 0 if not available, -1 if not supported in current environment
+    sint32                  memoryClockCurrent;
+
+    [Read: ToInstance ToSubClass,  Description("The current GPU clock frequency in MHz, 0 if not available, -1 if not supported in current environment")]
+    //! The current GPU clock frequency in MHz, 0 if not available, -1 if not supported in current environment
+    sint32                  gpuCoreClockCurrent;
+
+    [Read: ToInstance ToSubClass,  Description("Parameters of PCI-Express link to this GPU")]
+    //! Parameters of PCI-Express link to this GPU
+    PcieLink                pcieGpu;
+
+    [Read: ToInstance ToSubClass,  Description("Width of the PCI-Express downstream link, in count of PCI-Express lanes")]
+    //! Width of the PCI-Express downstream link, in count of PCI-Express lanes
+    sint32                  pcieDownstreamWidth;
+
+    [Read: ToInstance ToSubClass,  Description("Parameters of Video Engine encoder and decoder in this GPU")]
+    //! Parameters of Video Engine encoder and decoder in this GPU
+    VideoCodec              videoCodec;
+
+    [Read: ToInstance ToSubClass,  Description("The total GPU power drawn over last iteration of sampling in watts. -1 if not supported in current environment")]
+    //! The total GPU power drawn over last iteration of sampling in watts. -1 if not supported in current environment
+    real32                  power;
+
+    [Read: ToInstance ToSubClass,  Description("The number of power sensor samples per iteration. -1 if not supported in current environment")]
+    //! The number of power sensor samples per iteration. -1 if not supported in current environment
+    sint32                  powerSampleCount;
+
+    [Read: ToInstance ToSubClass,  Description("The period (in milliseconds) between the power samples. -1 if not supported in current environment")]
+    //! The period (in milliseconds) between the power samples. -1 if not supported in current environment
+    sint32                  powerSamplingPeriod;
+
+    [Read: ToInstance ToSubClass,  Description("The percentage of GPU utilization. -1 if not supported in current environment")]
+    //! The percentage of GPU utilization. -1 if not supported in current environment
+    sint32                  percentGpuUsage;
+
+    [Read: ToInstance ToSubClass,  Description("The percentage of GPU memory utilization. -1 if not supported in current environment")]
+    //! The percentage of GPU memory utilization. -1 if not supported in current environment
+    sint32                  percentGpuMemoryUsage;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of thermal probes of this GPU")]
+    //! Array of thermal probes of this GPU
+    ThermalProbe ref        thermalProbes[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to coolers of this GPU")]
+    //! Array of references to coolers of this GPU
+    Cooler ref              coolers[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to Error Correction Code instances on this GPU")]
+    //! Array of references to Error Correction Code instances on this GPU
+    Ecc ref                 ecc[];
+
+    [Read: ToInstance ToSubClass,  Description("The name of the graphics card to which this GPU belongs")]
+    //! The name of the graphics card to which this GPU belongs
+    string                  productName;
+
+    [Read: ToInstance ToSubClass,  Description("The video BIOS version associated with this GPU")]
+    //! The video BIOS version associated with this GPU
+    Version                 verVBIOS;
+
+    [Read: ToInstance ToSubClass,  Description("The display adapter string comprising of Vendor Id, Device Id, Sub-device Id, Revision Id")]
+    //! The display adapter string comprising of Vendor Id, Device Id, Sub-device Id, Revision Id
+    string                  deviceInfo;
+
+    [Read: ToInstance ToSubClass,  Description("The name of the GPU architecture - 'Curie','Tesla','Fermi','Tegra','Kepler','Maxwell','Volta','Turing','Ampere' etc.")]
+    //! The name of the GPU architecture - 'Curie','Tesla','Fermi','Tegra','Kepler','Maxwell','Volta','Turing','Ampere' etc.
+    string                  archName;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","1","2","3","4","5","6","7","8","9","10"}, Values{"unknown", "Legacy", "Curie","Tesla","Fermi","Tegra","Kepler","Maxwell", "Pascal", "Volta", "Turing", "Ampere"}, Description("numerical ID of the GPU architecture. Possible values are: -1 - unknown, 0 - Legacy, 1 - Curie, 2 - Tesla, 3 - Fermi, 4 - Tegra, 5 - Kepler, 6 - Maxwell, 7 - Pascal, 8 - Volta, 9 - Turing, 10 - Ampere")]
+    //! numerical ID of the GPU architecture. Possible values are: -1 - unknown, 0 - Legacy, 1 - Curie, 2 - Tesla, 3 - Fermi, 4 - Tegra, 5 - Kepler, 6 - Maxwell, 7 - Pascal, 8 - Volta, 9 - Turing, 10 - Ampere
+    sint32                  archId;
+
+    [Read: ToInstance ToSubClass,  Description("Licensable features")]
+    //! Licensable features
+    string                  licensableFeatures[];
+
+    [Read: ToInstance ToSubClass,  Description("Licensed Product Name")]
+    //! Licensed Product Name
+    string                  licensedProductName[];
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","1"}, Values{"N/A","Disabled", "Enabled"}, Description("Status of licensable features. Possible values are: -1 - N/A, 0 - Disabled, 1 - Enabled")]
+    //! Status of licensable features. Possible values are: -1 - N/A, 0 - Disabled, 1 - Enabled
+    sint32                  licensableStatus[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to encoder sessions info.")]
+    //! Array of references to encoder sessions info.
+    EncoderSessions ref     encoderSessionsInfo[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to per process utilization info for this GPU.")]
+    //! Array of references to per process utilization info for this GPU.
+    ProcessUtilization ref  processUtilization[];
+
+    [Implemented, Static, Description("Enable licensed feature with given name")]
+    //! Enable licensed feature with given name
+    boolean enableLicensedFeature
+    (
+        [in]string feature  //!< Licensable feature to enable
+    );
+    
+    [Implemented, Static, Description("Disable licensed feature with given name")]
+    //! Disable licensed feature with given name
+    boolean disableLicensedFeature
+    (
+        [in]string feature  //!< Licensed feature to disable
+    );
+
+    [Implemented, Description("Fake given EDID on all display outputs or on specified display outputs, of the given GPU")]
+    //! Fake given EDID on all display outputs or on specified display outputs, of the given GPU
+    boolean                 fakeEDID
+    (
+        [in]string filePath,                        //!< Full path to the file with the custom EDID. In order to remove the forced EDID, specify an empty string
+        [in, ValueMap{"-1","0","1","2","3","4","5","6","7","8","9"},
+        Values{"unknown","unintialized","VGA","Component","S-Video","HDMI","DVI","LVDS","DP","Composite","All"}]
+        uint32     output                           //!< Display output type for faking EDID. In order to force/remove the EDID on all display outputs, specify the output value "All"
+    );
+
+    [Implemented, Description("Fake given EDID on specified display output, of the given GPU port")]
+    //! Fake given EDID on specified display output, of the given GPU port
+    boolean                 fakeEDIDOnPort
+    (
+        [in]string filePath,                        //!< Full path to the file with the custom EDID. In order to remove the forced EDID, specify an empty string
+        [in]uint32 portIndex,                       //!< Physical location of the display port on the GPU.
+        [in, ValueMap{"-1","0","1","2","3","4","5","6","7","8"},
+        Values{"unknown","unintialized","VGA","Component","S-Video","HDMI","DVI","LVDS", "DP","Composite"}]
+        uint32     output                           //!< Display output type for faking EDID.
+    );
+
+    [Implemented, Description("Create utilization event with given bounds in given performance domain")]
+    //! Create utilization event with given bounds in given performance domain
+    boolean                 createUtilizationEvent
+    (
+        [in]sint32 lower,                           //!< Lower bound. When utilization value drops below this value, event notification will be posted to the OS event log
+        [in]sint32 upper,                           //!< Upper bound. When utilization value grows above this value, event notification will be posted to the OS event log
+        [in, ValueMap{"-1","0","1","2","3"},Values{"All","GPU","Frame Buffer","Video Engine","PCIe bus"}]
+        sint32 domain                               //!< Performance domain of the GPU. "All" means that given bounds will trigger notification events for all domains
+    );
+    
+    [Implemented, Description("Delete all utilization events in given performance domain")]
+    //! Delete all utilization events in given performance domain
+    boolean                 deleteUtilizationEvents
+    (
+        [in, ValueMap{"-1","0","1","2","3"},Values{"All","GPU","Frame Buffer","Video Engine","PCIe bus"}]
+        sint32 domain                               //!< Performance domain of the GPU. "All" means that all event triggers for all domains will be removed
+    );
+    
+    [Implemented, Description("Get all utilization events in given performance domain")]
+    //! Get all utilization events in given performance domain
+    string                  getAllUtilizationEvents
+    (
+        [in, ValueMap{"-1","0","1","2","3"},Values{"All","GPU","Frame Buffer","Video Engine","PCIe bus"}]
+        sint32 domain                               //!< Performance domain of the GPU. "All" means that all event triggers for all domains will be listed
+    );
+
+    [Implemented, Description("Formats basic information about this GPU into a human-readable string")]
+    //! Formats basic information about this GPU into a human-readable string
+    string                  info();
+};
+
+[Version("1.1.1"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Singleton, Description("Represents root object for NV-related HW and SW in the system")]
+//! Represents root object for NV-related HW and SW in the system
+class System
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("System root class version")]
+    //! System root class version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Description("Version of the NVWMI driver")]
+    //! Version of the NVWMI driver
+    Version                 verNVWMI;
+
+    [Read: ToInstance ToSubClass,  Description("Version of the NV display driver")]
+    //! Version of the NV display driver
+    Version                 verDisplayDriver;
+
+    [Read: ToInstance ToSubClass,  Description("Firmware version of the SDI Capture board")]
+    //! Firmware version of the SDI Capture board
+    Version                 verSDICaptureFirmware;
+
+    [Read: ToInstance ToSubClass,  Description("Firmware version of the SDI output board")]
+    //! Firmware version of the SDI output board
+    Version                 verSDIOutputFirmware;
+
+    [Read: ToInstance ToSubClass,  BitMap{"0","1","2"}, BitValues{"debugger", "file", "eventLog"}, Description("log types. Default is 5 (e.g. debugger and OS event log). 0 - disabled.")]
+    //! log types. Default is 5 (e.g. debugger and OS event log). 0 - disabled.
+    uint32                  logTypes;
+
+    [Read: ToInstance ToSubClass,  Description("bitmask for filtering out messages. Recommended values are 0 - quiet, 16 - errors only, 272 - errors and warnings, 16777216 - performance profiling")]
+    //! bitmask for filtering out messages. Recommended values are 0 - quiet, 16 - errors only, 272 - errors and warnings, 16777216 - performance profiling
+    uint32                  logFilter;
+
+    [Read: ToInstance ToSubClass,  Description("reserved. Default is 0")]
+    //! reserved. Default is 0
+    uint32                  logOptions;
+
+    [Read: ToInstance ToSubClass,  Description("Network port on a licensing server. Default value is 0. When 0 is specified, default server port value will be used")]
+    //! Network port on a licensing server. Default value is 0. When 0 is specified, default server port value will be used
+    uint16                  licensingPort;
+
+    [Read: ToInstance ToSubClass,  Description("Network address of licensing server")]
+    //! Network address of licensing server
+    string                  licensingServer;
+
+    [Implemented, Static, Description("Change address of a licensing server")]
+    //! Change address of a licensing server
+    boolean                 setLicensingServer
+    (
+        [in]string address, //!< Network address of licensing server
+        [in]uint16 port     //!< Network port on licensing server. This is optional parameter and will be set to default value of 0 when omitted
+    );
+
+    [Implemented, Static, Description("Clear licensing server address and forfeit license after reboot")]
+    //! Clear licensing server address and forfeit license after reboot
+    boolean                 unsetLicensingServer();
+
+    [Read: ToInstance ToSubClass,  Description("The video BIOS version associated with the GPU's")]
+    //! The video BIOS version associated with the GPU's
+    Version                 verVBIOS;
+
+    [Read: ToInstance ToSubClass,  Description("The version of nView Desktop Manager")]
+    //! The version of nView Desktop Manager
+    Version                 vernViewDesktopManager;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1"}, Values{"Desktop","Mobile"}, Description("Type of machine whether desktop or mobile. Possible values are: 0 - Desktop, 1 - Mobile")]
+    //! Type of machine whether desktop or mobile. Possible values are: 0 - Desktop, 1 - Mobile
+    uint32                 machineType;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"Disable", "Enable", "Not Installed"}, Description("nView Desktop Manager current state. Possible values are: 0 - Disable, 1 - Enable, 2 - Not Installed")]
+    //! nView Desktop Manager current state. Possible values are: 0 - Disable, 1 - Enable, 2 - Not Installed
+    uint32                  nViewState;
+
+    [Implemented, Static, Description("Set nView Desktop Manager State")]
+    //! Set nView Desktop Manager State
+    boolean                 setnViewState
+    (
+        [in, ValueMap{"0","1"}, Values{"Disable","Enable"}]
+        uint32 state                                //!< nView state to set
+    );
+
+    [Implemented, Static, Description("Change logging settings")]
+    //! Change logging settings
+    boolean                 setLogState
+    (
+        [in, BitMap{"0","1","2"}, BitValues{"debugger", "file", "eventLog"}]
+        uint32 types,                               //!< enabled log types. Default is 5 (e.g. debugger and OS event log)
+
+        [in]uint32 filter,                          //!< bitmask for filtering out messages. Recommended values are 0 - quiet, 16 - errors only, 272 - errors and warnings, 16777216 - performance profiling
+
+        [in]uint32 options                          //!< optional parameter, reserved. Set to 0
+    );
+
+    [Implemented, Static, Description("Enable NVIDIA GPU Encoder Sessions performance counter")]
+    //! Enable NVIDIA GPU Encoder Sessions performance counter
+    string                  enableEncoderSessionsPerfCounter();
+
+    [Implemented, Static, Description("Disable NVIDIA GPU Encoder Sessions performance counter")]
+    //! Disable NVIDIA GPU Encoder Sessions performance counter
+    string                  disableEncoderSessionsPerfCounter();
+
+    [Implemented, Static, Description("Enable NVIDIA GPU Process Utilization performance counter")]
+    //! Enable NVIDIA GPU Process Utilization performance counter
+    string                  enableProcessUtilizationPerfCounter();
+
+    [Implemented, Static, Description("Disable NVIDIA GPU Process Utilization performance counter")]
+    //! Disable NVIDIA GPU Process Utilization performance counter
+    string                  disableProcessUtilizationPerfCounter();
+
+    [Implemented, Static, Description("Formats basic information about System objects into a human-readable string")]
+    //! Formats basic information about System objects into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Singleton, Description("Management of nView desktops")]
+//! Management of nView desktops
+class DesktopManager
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Object version")]
+    //! Object version
+    Version                 verClass;
+
+    [Implemented, Static, Description("Get a string with names of all Virtual Desktops. Desktop names are separated by semicolon. Returns empty string when Desktop Manager is disabled.")]
+    //! Get a string with names of all Virtual Desktops. Desktop names are separated by semicolon. Returns empty string when Desktop Manager is disabled.
+    string                  getAllDesktops();
+
+    [Implemented, Static, Description("Create Virtual Desktop for nView Desktop Manager")]
+    //! Create Virtual Desktop for nView Desktop Manager
+    boolean                 createDesktop
+    (
+        [in]string name,                            //!< nView desktop name
+        [in]string backgrounds                      //!< string with per-display array of paths to the file with background image and style, separated by semicolon. Default style is "center" (0).
+                                                    //!< for example: "C:\ProgramData\Documents\My Pictures\Sample Pictures\Jellyfish.jpg#1;C:\ProgramData\Documents\My Pictures\Sample Pictures\Koala.jpg#0"
+    );
+
+    [Implemented, Static, Description("Edit properties of existing Virtual Desktop for nView Desktop Manager")]
+    //! Edit properties of existing Virtual Desktop for nView Desktop Manager
+    boolean                 editDesktop
+    (
+        [in]string name,                            //!< nView desktop name
+        [in]string backgrounds                      //!< string with per-display array of paths to the file with background image and style, separated by semicolon. Default style is "center" (0).
+                                                    //!< for example: "C:\ProgramData\Documents\My Pictures\Sample Pictures\Jellyfish.jpg#1;C:\ProgramData\Documents\My Pictures\Sample Pictures\Koala.jpg#0"
+    );
+
+    [Implemented, Static, Description("Delete Virtual Desktop from nView Desktop Manager")]
+    //! Delete Virtual Desktop from nView Desktop Manager
+    boolean                 deleteDesktop
+    (
+        [in]string name                             //!< nView desktop name
+    );
+};
+
+[Version("1.4.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents a board with NVIDIA GPU(s)")]
+//! Represents a board with NVIDIA GPU(s)
+class Board // contains embedded class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Board Serial Number stored in the InfoROM")]
+    //! Board Serial Number stored in the InfoROM
+    string                  serialNumber;
+
+    [Read: ToInstance ToSubClass,  Description("Board ID from NVAPI")]
+    //! Board ID from NVAPI
+    uint32                  nvapiId;
+
+    [Read: ToInstance ToSubClass,  Description("SKU of the GPU chip")]
+    //! SKU of the GPU chip
+    string                  chipSKU;
+
+    [Read: ToInstance ToSubClass,  Description("SKU modifier of the GPU chip")]
+    //! SKU modifier of the GPU chip
+    string                  chipSKUMod;
+    
+    [Read: ToInstance ToSubClass,  Description("Project(Board) number")]
+    //! Project(Board) number
+    string                  project;
+    
+    [Read: ToInstance ToSubClass,  Description("Project(Board) SKU number")]
+    //! Project(Board) SKU number
+    string                  projectSKU;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to GPUs installed on this board")]
+    //! Array of references to GPUs installed on this board
+    Gpu ref                 gpus[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to thermal probes of this board")]
+    //! Array of references to thermal probes of this board
+    ThermalProbe ref        thermalProbes[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to coolers of this board")]
+    //! Array of references to coolers of this board
+    Cooler ref              coolers[];
+
+    [Implemented, Description("Formats basic information about Board instance into a human-readable string")]
+    //! Formats basic information about Board instance into a human-readable string
+    string                  info();
+};
+
+[Version("3.1.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Singleton, Description("Management of display-related task")]
+//! Management of display-related task
+class DisplayManager
+{
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  Description("Object version")]
+    //! Object version
+    Version                 verClass;
+
+    [Implemented, Static, Description("Change scaling mode of all display targets in a system")]
+    //! Change scaling mode of all display targets in a system
+    boolean                 setScalingAll
+    (
+        [in, ValueMap{"0","1","2","3","5","6","7"},
+        Values{"Default","Closest","Native","ScanoutToNative","AspectScanoutToNative","AspectScanoutToClosest","ScanoutToClosest"}]
+        uint32 scaling                              //!< Scaling mode to be set
+    );
+
+    [Implemented, Static, Description("Validate the display grid by specifying display IDs, before creating the grid. Validates only a single grid, for multigrid, please use validateDisplayGrids method")]
+    //! Validate the display grid by specifying display IDs, before creating the grid. Validates only a single grid, for multigrid, please use validateDisplayGrids method
+    boolean                 validateDisplayGridById
+    (
+        [in]uint32 cols,                            //!< number of columns in a grid (must be non-zero)
+        [in]uint32 rows,                            //!< number of rows in a grid (must be non-zero)
+        [in]uint32 displayIds[]                     //!< array of display IDs (Display.id). Order is important. C convention for array - grid element at column=i and row=j must be at index=j*cols+i
+    );
+
+    [Implemented, Static, Description("Create a display grid by specifying display IDs. Creates only a single grid, for multigrid, please use createDisplayGrids method. Will disable all previous grids")]
+    //! Create a display grid by specifying display IDs. Creates only a single grid, for multigrid, please use createDisplayGrids method. Will disable all previous grids
+    boolean                 createDisplayGridById
+    (
+        [in]uint32 cols,                            //!< number of columns in a grid (must be non-zero)
+        [in]uint32 rows,                            //!< number of rows in a grid (must be non-zero)
+        [in]uint32 displayIds[]                     //!< array of display IDs (Display.id). Order is important. C convention for array - grid element at column=i and row=j must be at index=j*cols+i
+    );
+
+    [Implemented, Static, Description("Create a display grid by specifying unique display names. Creates only a single grid, for multigrid, please use createDisplayGrids method. Will disable all previous grids")]
+    //! Create a display grid by specifying unique display names. Creates only a single grid, for multigrid, please use createDisplayGrids method. Will disable all previous grids
+    boolean                 createDisplayGridByName
+    (
+        [in]uint32 cols,                            //!< number of columns in a grid (must be non-zero)
+        [in]uint32 rows,                            //!< number of rows in a grid (must be non-zero)
+        [in]string displayNames                     //!< string of unique display names (Display.uname), separated by semicolon. Order is important. C convention for array - grid element at column=i and row=j must be at index=j*cols+i
+    );
+
+    [Implemented, Static, Description("Create a display grid by specifying references to the Display class instances. Creates only a single grid, for multigrid, please use createDisplayGrids method. Will disable all previous grids")]
+    //! Create a display grid by specifying references to the Display class instances. Creates only a single grid, for multigrid, please use createDisplayGrids method. Will disable all previous grids
+    boolean                 createDisplayGridByRef
+    (
+        [in]uint32 cols,                            //!< number of columns in a grid (must be non-zero)
+        [in]uint32 rows,                            //!< number of rows in a grid (must be non-zero)
+        [in]string displayRefs                      //!< string of references to Display instances, separated by semicolon. Order is important. C convention for array - grid element at column=i and row=j must be at index=j*cols+i
+    );
+
+    [Implemented, Static, Description("Validate multiple display grid topologies")]
+    //! Validate multiple display grid topologies
+    boolean                 validateDisplayGrids
+    (
+        [in]string grids[]                          //!< array of grid topologies to be validated, each grid specified by a string with key=value pairs
+                                                    //!< "rows=2;cols=2;stereo=0;layout=1.1 1.2 1.3 1.4;mode=1920 1200 32 60;rotation=0 0 0 0", 
+                                                    //!< "rows=1;cols=4;stereo=0;layout=2.1 2.2 2.3 2.4;mode=1920 1200 32 60;rotation=1 1 1 1", ...
+                                                    //!< Only "rows" and "cols" are the mandatory keys in the string with grid specification 
+                                                    //!< Other parameters are optional and will be deduced from a default topology
+    );
+
+    [Implemented, Static, Description("Create multiple display grid topologies")]
+    //! Create multiple display grid topologies
+    boolean                 createDisplayGrids
+    (
+        [in]string grids[]                          //!< array of grid topologies to be created, each grid specified by a string with key=value pairs
+                                                    //!< "rows=2;cols=2;stereo=0;layout=1.1 1.2 1.3 1.4;mode=1920 1200 32 60;rotation=0 0 0 0", 
+                                                    //!< "rows=1;cols=4;stereo=0;layout=2.1 2.2 2.3 2.4;mode=1920 1200 32 60;rotation=1 1 1 1", ...
+                                                    //!< Only "rows" and "cols" are the mandatory keys in a string with grid specification 
+                                                    //!< Other parameters are optional and will be deduced from a default topology
+    );
+
+    [Implemented, Static, Description("Set desktop positions of all active display grids. All active display grids have to be re-positioned together. Primary grid (with taskbar) must be positioned at (0,0)")]
+    //! Set desktop positions of all active display grids. All active display grids have to be re-positioned together. Primary grid (with taskbar) must be positioned at (0,0)
+    boolean                 setGridPositions
+    (
+        [in]uint32 positionCol[],                   //!< array of valid grid column positions in pixels. Order is important. Also, DisplayGrid::colOverlap (if any) should be considered.
+        [in]uint32 positionRow[]                    //!< array of valid grid row positions in pixels. Order is important. Also, DisplayGrid::rowOverlap (if any) should be considered.
+    );
+
+    [Implemented, Static, Description("Fake given EDID across all GPUs, on all or only specified display outputs")]
+    //! Fake given EDID across all GPUs, on all or only specified display outputs
+    boolean                 fakeEDIDAll
+    (
+        [in]string  filePath,                       //!< Full path to the file with the custom EDID. In order to remove the forced EDID, specify an empty string
+        [in, ValueMap{"-1","0","1","2","3","4","5","6","7","8","9"},
+        Values{"unknown","unintialized","VGA","Component","S-Video","HDMI","DVI","LVDS", "DP","Composite","All"}]
+        uint32      output                          //!< Display output type for faking EDID. In order to force/remove the EDID on all display outputs, specify the output value "All"
+    );
+
+    [Implemented, Static, Description("Try the new custom timing without applying it")]
+    //! Try the new custom timing without applying it
+    boolean                 tryCustomTiming
+    (
+        [in]string  timing                          //!< String of custom timing parameters 
+                                                    //!< "displayLocus=1001 1002 2001 2002...; mode=1720 1000 32 60.45; override=6�
+                                                    //!< possible override values: CURRENT=0, AUTO=1, EDID=2, DMT=3, DMT_RB=4, CVT=5, CVT_RB=6, GFT=7, EIA861=8, ANALOG_TV=9, CUST=10,
+                                                    //!< NV_PSF=11, NV_ASPR=12, SDI=13. Note - not all override values may be supported. Default is CVT_RB
+                                                    //!< Other parameters are optional and will be deduced from default
+    );
+
+    [Implemented, Static, Description("Create the new Custom timing. This will only save the new timing and not apply. To apply, call setDisplayMode.")]
+    //! Create the new Custom timing. This will only save the new timing and not apply. To apply, call setDisplayMode.
+    boolean                 createCustomTiming
+    (
+        [in]string  timing                          //!< String of custom timing parameters 
+                                                    //!< "displayLocus=1001 1002 2001 2002...; mode=1720 1000 32 60.45; override=6�
+                                                    //!< possible override values: CURRENT=0, AUTO=1, EDID=2, DMT=3, DMT_RB=4, CVT=5, CVT_RB=6, GFT=7, EIA861=8, ANALOG_TV=9, CUST=10,
+                                                    //!< NV_PSF=11, NV_ASPR=12, SDI=13. Note - not all override values may be supported. Default is CVT_RB
+                                                    //!< Other parameters are optional and will be deduced from default
+    );
+
+    [Implemented, Static, Description("Modify the existing Custom timing. This will only save the new timing and not apply. To apply, call setDisplayMode.")]
+    //! Modify the existing Custom timing. This will only save the new timing and not apply. To apply, call setDisplayMode.
+    boolean                 editCustomTiming
+    (
+        [in]uint32  modeId,                         //!< Existing custom timing source mode Id
+        [in]string  newTiming                       //!< String of new custom timing parameters 
+                                                    //!< "displayLocus=1001 1002 2001 2002...; mode=1720 1000 32 60.45; override=6�
+                                                    //!< possible override values: CURRENT=0, AUTO=1, EDID=2, DMT=3, DMT_RB=4, CVT=5, CVT_RB=6, GFT=7, EIA861=8, ANALOG_TV=9, CUST=10,
+                                                    //!< NV_PSF=11, NV_ASPR=12, SDI=13. Note - not all override values may be supported. Default is CVT_RB
+                                                    //!< Other parameters are optional and will be deduced from default
+    );
+
+    [Implemented, Static, Description("Delete the existing Custom timing. This will permanently delete the timing of the display")]
+    //! Delete the existing Custom timing. This will permanently delete the timing of the display
+    boolean                 deleteCustomTiming
+    (
+        [in]string  timing                          //!< String of custom timing parameters 
+                                                    //!< "displayLocus=1001 1002 2001 2002...; mode=1720 1000 32 60.45; override=CVT_RB�
+                                                    //!< possible override values: CURRENT=0, AUTO=1, EDID=2, DMT=3, DMT_RB=4, CVT=5, CVT_RB=6, GFT=7, EIA861=8, ANALOG_TV=9, CUST=10,
+                                                    //!< NV_PSF=11, NV_ASPR=12, SDI=13. Note - not all override values may be supported. Default is CVT_RB
+                                                    //!< Other parameters are optional and will be deduced from default
+    );
+
+    [Implemented, Static, Description("Enumerates all existing Custom timing for the given displays.")]
+    //! Enumerates all existing Custom timing for the given displays.
+    string                  enumCustomTimings
+    (
+        [in]uint32  displays[]                      //!< Array of display IDs (Display.id)
+    );
+
+    [Implemented, Static, Description("Saves all existing Custom Timings for the given displays to given XML file. File format is compatible with Control Panel.")]
+    //! Saves all existing Custom Timings for the given displays to given XML file. File format is compatible with Control Panel.
+    boolean                 saveCustomTimings
+    (
+        [in]uint32  displays[],                     //!< Array of display IDs (Display.id)
+        [in]string  filePath                        //!< Path to the file with Custom Timings
+    );
+
+    [Implemented, Static, Description("Loads all existing Custom Timings into the given displays from given XML file. File format is compatible with Control Panel.")]
+    //! Loads all existing Custom Timings into the given displays from given XML file. File format is compatible with Control Panel.
+    boolean                 loadCustomTimings
+    (
+        [in]uint32  displays[],                     //!< Array of display IDs (Display.id)
+        [in]string  filePath                        //!< Path to the file with Custom Timings
+    );
+
+    [Implemented, Static, Description("Clone displays. Note that all displays must be connected to the same GPU")]
+    //! Clone displays. Note that all displays must be connected to the same GPU
+    boolean                 createClone
+    (
+        [in, ValueMap{"0","1"}, Values{"basic","smart"}]
+        uint32  type,                               //!< type of clone - basic (same display resolution) or smart (pan and scan target to a source display)
+        [in]uint32  source,                         //!< display ID of clone source (Display.id)
+        [in]uint32  targets[]                       //!< array of clone target display IDs (Display.id)
+    );
+
+    [Implemented, Static, Description("Create display mode filter for given displays.")]
+    //! Create display mode filter for given displays.
+    boolean                 createModeFilter
+    (
+        [in]uint32  displays[],                     //!< Array of display IDs (Display.id)
+        [in]string  filter                          //!< filter definition in format "<type>;<limits>;". Type could be <, > or =. Limits are given as <width>x<height>x<color depth>@<frequency>. 
+                                                    //!< Zero value means no filtering will occur for given limit.
+                                                    //!< \n Example 1: ">;999x888x31@0" - all display modes with resolution more than 999x998 and color depth 32 or more, at any refresh rate will pass.
+                                                    //!< \n Example 2: "=;1024x768x0@59.95" - only display mode 1024x768 with any color depth at refresh rate 59.95 Hz will pass.
+    );
+
+    [Implemented, Static, Description("Create display mode filter for given displays.")]
+    //! Create display mode filter for given displays.
+    boolean                 deleteModeFilter
+    (
+        [in]uint32  displays[]                      //!< Array of display IDs (Display.id)
+    );
+    
+    [Implemented, Static, Description("Enumerate display mode filters.")]
+    //! Enumerate display mode filters.
+    string                  enumModeFilters
+    (
+        [in]uint32  displays[]                      //!< Array of display IDs (Display.id)
+    );
+
+    [Implemented, Static, Description("Formats basic information about DisplayManager objects in a system into a human-readable string")]
+    //! Formats basic information about DisplayManager objects in a system into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.1.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents overlap limits of individual display in a display grid")]
+//! Represents overlap limits of individual display in a display grid
+class OverlapLimits
+{
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  Description("Object version")]
+    //! Object version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique identification of the overlap limits")]
+    //! Unique identification of the overlap limits
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("The minimum column overlap for each display (in pixels)")]
+    //! The minimum column overlap for each display (in pixels)
+    sint32                  minOverlapCol;
+
+    [Read: ToInstance ToSubClass,  Description("The maximum column overlap for each display (in pixels)")]
+    //! The maximum column overlap for each display (in pixels)
+    sint32                  maxOverlapCol;
+
+    [Read: ToInstance ToSubClass,  Description("The minimum row overlap for each display (in pixels)")]
+    //! The minimum row overlap for each display (in pixels)
+    sint32                  minOverlapRow;
+
+    [Read: ToInstance ToSubClass,  Description("The maximum row overlap for each display (in pixels)")]
+    //! The maximum row overlap for each display (in pixels)
+    sint32                  maxOverlapRow;
+
+    [Read: ToInstance ToSubClass,  Description("The minimum total column overlap for the entire grid (in pixels)")]
+    //! The minimum total column overlap for the entire grid (in pixels)
+    sint32                  minTotalCol;
+
+    [Read: ToInstance ToSubClass,  Description("The maximum total column overlap for the entire grid (in pixels)")]
+    //! The maximum total column overlap for the entire grid (in pixels)
+    sint32                  maxTotalCol;
+
+    [Read: ToInstance ToSubClass,  Description("The minimum total row overlap for the entire grid (in pixels)")]
+    //! The minimum total row overlap for the entire grid (in pixels)
+    sint32                  minTotalRow;
+
+    [Read: ToInstance ToSubClass,  Description("The maximum total row overlap for the entire grid (in pixels)")]
+    //! The maximum total row overlap for the entire grid (in pixels)
+    sint32                  maxTotalRow;
+
+    [Implemented, Description("Formats basic information about OverlapLimits instance into a human-readable string")]
+    //! Formats basic information about OverlapLimits instance into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.2.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents physical displays, organized into a regular grid (rows by columns)")]
+//! Represents physical displays, organized into a regular grid (rows by columns)
+class DisplayGrid // contains embedded class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  Description("Number of rows in the grid")]
+    //! Number of rows in the grid
+    uint32                  rows;
+
+    [Read: ToInstance ToSubClass,  Description("Number of columns in the grid")]
+    //! Number of columns in the grid
+    uint32                  cols;
+
+    [Read: ToInstance ToSubClass,  Description("Distance between displays per row. Positive number indicates overlap, negative - gap (in pixels)")]
+    //! Distance between displays per row. Positive number indicates overlap, negative - gap (in pixels)
+    sint32                  overlapRows[];
+
+    [Read: ToInstance ToSubClass,  Description("Distance between displays per column. Positive number indicates overlap, negative - gap (in pixels)")]
+    //! Distance between displays per column. Positive number indicates overlap, negative - gap (in pixels)
+    sint32                  overlapCols[];
+
+    [Read: ToInstance ToSubClass,  Description("Overlap limits (in pixels) for this display grid")]
+    //! Overlap limits (in pixels) for this display grid
+    OverlapLimits           overlapLimits;
+
+    [Read: ToInstance ToSubClass,  Description("Virtual mode of this display grid (including overlaps)")]
+    //! Virtual mode of this display grid (including overlaps)
+    DisplayMode             displayModeVirtual;
+
+    [Read: ToInstance ToSubClass,  Description("Current mode of this display grid (per-display)")]
+    //! Current mode of this display grid (per-display)
+    DisplayMode             displayModePhysical;
+
+    [Read: ToInstance ToSubClass,  Description("Column-wise (horizontal) position of the display grid (in pixels)")]
+    //! Column-wise (horizontal) position of the display grid (in pixels)
+    sint32                  positionCol;
+
+    [Read: ToInstance ToSubClass,  Description("Row-wise (vertical) position of the display grid (in pixels)")]
+    //! Row-wise (vertical) position of the display grid (in pixels)
+    sint32                  positionRow;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3"}, Values{"No rotation","rotate 90 degrees","rotate 180 degrees","rotate 270 degrees"}, Description("per-display rotation modes in a grid. Possible values are: 0 - No rotation, 1 - rotate 90 degrees, 2 - rotate 180 degrees, 3 - rotate 270 degrees")]
+    //! per-display rotation modes in a grid. Possible values are: 0 - No rotation, 1 - rotate 90 degrees, 2 - rotate 180 degrees, 3 - rotate 270 degrees
+    uint32                  rotation[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to modes available on this display grid")]
+    //! Array of references to modes available on this display grid
+    DisplayMode ref         displayModes[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to displays bound into this display grid")]
+    //! Array of references to displays bound into this display grid
+    Display ref             displays[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to GPUs, driving displays on this display grid")]
+    //! Array of references to GPUs, driving displays on this display grid
+    Gpu ref                 gpus[];
+
+    [Implemented, Description("Change per-row overlap of the display grid item with given index")]
+    //! Change per-row overlap of the display grid item with given index
+    boolean                 setOverlapRow
+    (
+        [in]sint32  index,                          //!< Index of the column. Value -1 could be used to change overlap for all rows at once
+        [in]sint32  overlap                         //!< Overlap. Positive number indicates overlap, negative - gap (in pixels)
+    );
+
+    [Implemented, Description("Change per-col overlap of the display grid item with given index")]
+    //! Change per-col overlap of the display grid item with given index
+    boolean                 setOverlapCol
+    (
+        [in]sint32  index,                          //!< Index of the column. Value -1 could be used to change overlap for all columns at once
+        [in]sint32  overlap                         //!< Overlap. Positive number indicates overlap, negative - gap (in pixels)
+    );
+
+    [Implemented, Description("Change overlap of the display grid item with given index")]
+    //! Change overlap of the display grid item with given index
+    boolean                 setOverlaps
+    (
+        [in]sint32  index,                          //!< Index of the item. Value -1 could be used to change overlap for all items at once
+        [in]sint32  overlapRow,                     //!< Overlap. Positive number indicates overlap, negative - gap (in pixels)
+        [in]sint32  overlapCol                      //!< Overlap. Positive number indicates overlap, negative - gap (in pixels)
+    );
+
+    [Implemented, Description("Change display mode of this display grid by specifying a display mode properties")]
+    //! Change display mode of this display grid by specifying a display mode properties
+    boolean                 setDisplayMode
+    (
+        [in]uint32  width,                          //!< Width of the display grid (in pixels)
+        [in]uint32  height,                         //!< Height of the display grid (in pixels)
+        [in]real32  refreshRate,                    //!< Refresh rate of the display grid (in Hz)
+        [in]uint32  depth                           //!< Color depth of the display grid (in bits per pixel)
+    );
+
+    [Implemented, Description("Change mode of this display grid by specifying a display mode ID")]
+    //! Change mode of this display grid by specifying a display mode ID
+    boolean                 setDisplayModeById
+    (
+        [in]uint32  id                              //!< DisplayMode ID
+    );
+
+    [Implemented, Description("Change mode of this display grid by specifying a reference to a display mode")]
+    //! Change mode of this display grid by specifying a reference to a display mode
+    boolean                 setDisplayModeByRef
+    (
+        [in]DisplayMode ref gridMode                //!< A reference to the display mode to be applied
+    );
+
+    [Implemented, Description("Change rotation of the displays in this grid by specifying the per-display rotation mode. Currently only common mode for all displays in a grid is supported.")]
+    //! Change rotation of the displays in this grid by specifying the per-display rotation mode. Currently only common mode for all displays in a grid is supported.
+    boolean                 setRotation
+    (
+        [in]uint32 rotation[]                       //!< per-display rotation modes to be set in the grid. Currently only identical rotation angle for all displays in a grid is supported.
+                                                    //!< \n Example 1: for 1x4 grid, "setRotation 1" will apply "rotate 90 degrees" to all displays in the grid.
+                                                    //!< \n Example 2: specifying same angle for all displays is supported: "setRotation rotation=(1,1,1,1)" 
+                                                    //!< \n Example 3: attempt to rotate to non-identical angles "setRotation rotation=(1,2,1,1)" will fail
+    );
+
+    [Implemented, Description("Save Gamma Ramp data from all displays into specified file (binary format). Using file path with '.grg' extension is recommended.")]
+    //! Save Gamma Ramp data from all displays into specified file (binary format). Using file path with '.grg' extension is recommended.
+    boolean                 saveGammaRamp
+    (
+        [in]string filePath                         //!< Path to the file with Gamma Ramp. File will be in binary format, specifying '.grg' extension explicitly is recommended.
+    );
+
+    [Implemented, Description("Override Gamma Ramp data for all displays from specified file (binary format). Using file path with '.grg' extension is recommended.")]
+    //! Override Gamma Ramp data for all displays from specified file (binary format). Using file path with '.grg' extension is recommended.
+    boolean                 setGammaRamp
+    (
+        [in]string filePath                         //!< Path to the file with Gamma Ramp. Using file path with '.grg' extension is recommended.
+    );
+
+    [Implemented, Description("Calculate and set Gamma Ramp from basic color controls")]
+    //! Calculate and set Gamma Ramp from basic color controls
+    boolean                 setGammaRampBasic
+    (
+        [in]real32 brightness,                      //!< brightness: -0.2 .. +0.2 default: 0.0
+        [in]real32 contrast,                        //!< contrast: -0.2 .. +0.2 default: 0.0
+        [in]real32 gamma                            //!< gamma: 0.3 .. 2.8  default: 1.0
+    );
+
+    [Implemented, Description("Save Color Space Conversion data into specified file (binary format). Using file path with '.cscg' extension is recommended.")]
+    //! Save Color Space Conversion data into specified file (binary format). Using file path with '.cscg' extension is recommended.
+    boolean                 saveCSC
+    (
+        [in]string filePath                         //!< Path to the file with CSC data. File will be in binary format, specifying '.cscg' extension explicitly is recommended.
+    );
+
+    [Implemented, Description("Override Color Space Conversion data from specified file (binary format). Using file path with '.cscg' extension is recommended.")]
+    //! Override Color Space Conversion data from specified file (binary format). Using file path with '.cscg' extension is recommended.
+    boolean                 setCSC
+    (
+        [in]string filePath                         //!< Path to the file with CSC data. Using file path with '.cscg' extension is recommended.
+    );
+
+    [Implemented, Description("Formats basic information about this Display grid into a human-readable string")]
+    //! Formats basic information about this Display grid into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.3.3"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents physical display")]
+//! Represents physical display
+class Display // contains embedded class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  Description("locus of the display - <gpu#>.<output#>")]
+    //! locus of the display - <gpu#>.<output#>
+    string                  locus;
+
+    [Read: ToInstance ToSubClass,  Description("NVAPI Display ID")]
+    //! NVAPI Display ID
+    uint32                  nvapiId;
+
+    [Read: ToInstance ToSubClass,  Description("Firmware version of this display")]
+    //! Firmware version of this display
+    Version                 verFirmware;
+
+    [Read: ToInstance ToSubClass,  Description("Manufacturer of this display")]
+    //! Manufacturer of this display
+    string                  make;
+
+    [Read: ToInstance ToSubClass,  Description("Model of this display")]
+    //! Model of this display
+    string                  model;
+
+    [Read: ToInstance ToSubClass,  Description("Native display mode")]
+    //! Native display mode
+    DisplayMode             displayModeNative;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","5","6","7"}, Values{"Default","Closest","Native","ScanoutToNative","AspectScanoutToNative","AspectScanoutToClosest","ScanoutToClosest"}, Description("Display scaling mode - Default, Closest, Native, ScanoutToNative, AspectScanoutToNative, AspectScanoutToClosest, ScanoutToClosest. Possible values are: 0 - Default, 1 - Closest, 2 - Native, 3 - ScanoutToNative, 5 - AspectScanoutToNative, 6 - AspectScanoutToClosest, 7 - ScanoutToClosest")]
+    //! Display scaling mode - Default, Closest, Native, ScanoutToNative, AspectScanoutToNative, AspectScanoutToClosest, ScanoutToClosest. Possible values are: 0 - Default, 1 - Closest, 2 - Native, 3 - ScanoutToNative, 5 - AspectScanoutToNative, 6 - AspectScanoutToClosest, 7 - ScanoutToClosest
+    uint32                  scaling;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","4"}, Values{"None","90 degree","180 degree","270 degree","Ignored"}, Description("rotation angle. Possible values are: 0 - None, 1 - 90 degree, 2 - 180 degree, 3 - 270 degree, 4 - Ignored")]
+    //! rotation angle. Possible values are: 0 - None, 1 - 90 degree, 2 - 180 degree, 3 - 270 degree, 4 - Ignored
+    uint32                  rotation;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Raw EDID of this display")]
+    //! Raw EDID of this display
+    uint8                   EDID[];
+
+    [Read: ToInstance ToSubClass,  Description("Size of the EDID in bytes")]
+    //! Size of the EDID in bytes
+    uint32                  EDIDSize;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","0x10","0x11","0x13","0x14","0x16","0x17","0x18","0x19","0x1A","0x20","0x21","0x30","0x31","0x32","0x38","0x39","0x40","0x41","0x46","0x47","0x48","0x61","0x63","0x64","0x65","0x70","0x71"}, Values{"Unknown","VGA 15-pin","TV Composite","TV S-Video","TV HDTV Component","TV SCART","TV Composite SCART on EIAJ-4120","TV HDTV EIAJ-4120","PcPod HDTV-YPrPb","PcPod S-video","PcPod Composite","DVI-i TV S-Video","DVI-i TV Composite","DVI-i","DVI-d","ADC","Lfh DVI-i 1","Lfh DVI-i 2","SPWG","OEM","DP external","DP internal","DP mini, external","HDMI type A","HDMI type C mini","LFH DP 1","LFH DP 2","Virtual WFD","USB-C"}, Description("Type of physical connector on a GPU side. Possible values are: -1 - Unknown, 0 - VGA 15-pin, 0x10 - TV Composite, 0x11 - TV S-Video, 0x13 - TV HDTV Component, 0x14 - TV SCART, 0x16 - TV Composite SCART on EIAJ-4120, 0x17 - TV HDTV EIAJ-4120, 0x18 - PcPod HDTV-YPrPb, 0x19 - PcPod S-video, 0x1A - PcPod Composite, 0x20 - DVI-i TV S-Video, 0x21 - DVI-i TV Composite, 0x30 - DVI-i, 0x31 - DVI-d, 0x32 - ADC, 0x38 - Lfh DVI-i 1, 0x39 - Lfh DVI-i 2, 0x40 - SPWG, 0x41 - OEM, 0x46 - DP external, 0x47 - DP internal, 0x48 - DP mini, external, 0x61 - HDMI type A, 0x63 - HDMI type C mini, 0x64 - LFH DP 1, 0x65 - LFH DP 2, 0x70 - Virtual WFD, 0x71 - USB-C")]
+    //! Type of physical connector on a GPU side. Possible values are: -1 - Unknown, 0 - VGA 15-pin, 0x10 - TV Composite, 0x11 - TV S-Video, 0x13 - TV HDTV Component, 0x14 - TV SCART, 0x16 - TV Composite SCART on EIAJ-4120, 0x17 - TV HDTV EIAJ-4120, 0x18 - PcPod HDTV-YPrPb, 0x19 - PcPod S-video, 0x1A - PcPod Composite, 0x20 - DVI-i TV S-Video, 0x21 - DVI-i TV Composite, 0x30 - DVI-i, 0x31 - DVI-d, 0x32 - ADC, 0x38 - Lfh DVI-i 1, 0x39 - Lfh DVI-i 2, 0x40 - SPWG, 0x41 - OEM, 0x46 - DP external, 0x47 - DP internal, 0x48 - DP mini, external, 0x61 - HDMI type A, 0x63 - HDMI type C mini, 0x64 - LFH DP 1, 0x65 - LFH DP 2, 0x70 - Virtual WFD, 0x71 - USB-C
+    sint32                  gpuConnectorType;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","0x10","0x11","0x13","0x14","0x16","0x17","0x18","0x19","0x1A","0x20","0x21","0x30","0x31","0x32","0x38","0x39","0x40","0x41","0x46","0x47","0x48","0x61","0x63","0x64","0x65","0x70","0x71"}, Values{"Unknown","VGA 15-pin","TV Composite","TV S-Video","TV HDTV Component","TV SCART","TV Composite SCART on EIAJ-4120","TV HDTV EIAJ-4120","PcPod HDTV-YPrPb","PcPod S-video","PcPod Composite","DVI-i TV S-Video","DVI-i TV Composite","DVI-i","DVI-d","ADC","Lfh DVI-i 1","Lfh DVI-i 2","SPWG","OEM","DP external","DP internal","DP mini, external","HDMI type A","HDMI type C mini","LFH DP 1","LFH DP 2","Virtual WFD","USB-C"}, Description("Type of physical connector on a display side. Possible values are: -1 - Unknown, 0 - VGA 15-pin, 0x10 - TV Composite, 0x11 - TV S-Video, 0x13 - TV HDTV Component, 0x14 - TV SCART, 0x16 - TV Composite SCART on EIAJ-4120, 0x17 - TV HDTV EIAJ-4120, 0x18 - PcPod HDTV-YPrPb, 0x19 - PcPod S-video, 0x1A - PcPod Composite, 0x20 - DVI-i TV S-Video, 0x21 - DVI-i TV Composite, 0x30 - DVI-i, 0x31 - DVI-d, 0x32 - ADC, 0x38 - Lfh DVI-i 1, 0x39 - Lfh DVI-i 2, 0x40 - SPWG, 0x41 - OEM, 0x46 - DP external, 0x47 - DP internal, 0x48 - DP mini, external, 0x61 - HDMI type A, 0x63 - HDMI type C mini, 0x64 - LFH DP 1, 0x65 - LFH DP 2, 0x70 - Virtual WFD, 0x71 - USB-C")]
+    //! Type of physical connector on a display side. Possible values are: -1 - Unknown, 0 - VGA 15-pin, 0x10 - TV Composite, 0x11 - TV S-Video, 0x13 - TV HDTV Component, 0x14 - TV SCART, 0x16 - TV Composite SCART on EIAJ-4120, 0x17 - TV HDTV EIAJ-4120, 0x18 - PcPod HDTV-YPrPb, 0x19 - PcPod S-video, 0x1A - PcPod Composite, 0x20 - DVI-i TV S-Video, 0x21 - DVI-i TV Composite, 0x30 - DVI-i, 0x31 - DVI-d, 0x32 - ADC, 0x38 - Lfh DVI-i 1, 0x39 - Lfh DVI-i 2, 0x40 - SPWG, 0x41 - OEM, 0x46 - DP external, 0x47 - DP internal, 0x48 - DP mini, external, 0x61 - HDMI type A, 0x63 - HDMI type C mini, 0x64 - LFH DP 1, 0x65 - LFH DP 2, 0x70 - Virtual WFD, 0x71 - USB-C
+    sint32                  displayConnectorType;
+
+    [Read: ToInstance ToSubClass,  Description("True if display is active")]
+    //! True if display is active
+    boolean                 isActive;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","1","2"}, Values{"N/A","Default","Enable","Disable"}, Description("dithering state. Possible values are: -1 - N/A, 0 - Default, 1 - Enable, 2 - Disable")]
+    //! dithering state. Possible values are: -1 - N/A, 0 - Default, 1 - Enable, 2 - Disable
+    sint32                  ditherState;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","1","2"}, Values{"N/A","6 bit","8 bit","10 bit"}, Description("dithering to specified number of bits per channel. Possible values are: -1 - N/A, 0 - 6 bit, 1 - 8 bit, 2 - 10 bit")]
+    //! dithering to specified number of bits per channel. Possible values are: -1 - N/A, 0 - 6 bit, 1 - 8 bit, 2 - 10 bit
+    sint32                  ditherBits;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","1","2","3","4"}, Values{"N/A","SpatialDynamic","SpatialStatic","SpatialDynamic2x2","SpatialStatic2x2","Temporal"}, Description("dithering mode. Possible values are: -1 - N/A, 0 - SpatialDynamic, 1 - SpatialStatic, 2 - SpatialDynamic2x2, 3 - SpatialStatic2x2, 4 - Temporal")]
+    //! dithering mode. Possible values are: -1 - N/A, 0 - SpatialDynamic, 1 - SpatialStatic, 2 - SpatialDynamic2x2, 3 - SpatialStatic2x2, 4 - Temporal
+    sint32                  ditherMode;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Ordered"), Description("Array of references to the Display modes")]
+    //! Array of references to the Display modes
+    DisplayMode ref         displayModes[];
+
+    [Implemented, Description("Restore the display mode to native")]
+    //! Restore the display mode to native
+    boolean                 restoreNativeDisplayMode();
+
+    [Implemented, Description("save EDID into specified file (in text and binary format). File path with extension '.bin' is recommended.")]
+    //! save EDID into specified file (in text and binary format). File path with extension '.bin' is recommended.
+    boolean                 saveEDID
+    (
+        [in]string filePath                         //!< Path to the file with EDID data. File can be a binary or a text file, file path with extension '.bin' is recommended.
+    );
+
+    [Implemented, Description("Override EDID with specified data. File can be text or a binary file. File path with extension '.bin' is recommended.")]
+    //! Override EDID with specified data. File can be text or a binary file. File path with extension '.bin' is recommended.
+    boolean                 setEDID
+    (
+        [in]string filePath                         //!< Path to the file with EDID data. This parameter must be empty string "" for removing the forced EDID.
+    );
+
+    [Implemented, Description("Change scaling mode of this display")]
+    //! Change scaling mode of this display
+    boolean                 setScaling
+    (
+        [in, ValueMap{"0","1","2","3","5","6","7"},
+        Values{"Default","Closest","Native","ScanoutToNative","AspectScanoutToNative","AspectScanoutToClosest","ScanoutToClosest"}]
+        uint32 scaling                              //!< scaling mode to be set
+    );
+
+    [Implemented, Description("Rotate display")]
+    //! Rotate display
+    boolean                 setRotation
+    (
+        [in, ValueMap{"0","1","2","3"}, Values{"No rotation","rotate 90 degrees","rotate 180 degrees","rotate 270 degrees"}]
+        uint32 rotation                             //!< rotation to be set
+    );
+
+    [Implemented, Description("Get display's current timing into a human-readable string")]
+    //! Get display's current timing into a human-readable string
+    string                  getCurrentTiming();
+
+    [Implemented, Description("Save display Gamma Ramp into specified file (binary format). Using file path with '.gr' extension is recommended.")]
+    //! Save display Gamma Ramp into specified file (binary format). Using file path with '.gr' extension is recommended.
+    boolean                 saveGammaRamp
+    (
+        [in]string filePath                         //!< Path to the file with Gamma Ramp. File will be in binary format, specifying '.gr' extension explicitly is recommended.
+    );
+
+    [Implemented, Description("Override display Gamma Ramp data from specified file (binary format). Using file path with '.gr' extension is recommended.")]
+    //! Override display Gamma Ramp data from specified file (binary format). Using file path with '.gr' extension is recommended.
+    boolean                 setGammaRamp
+    (
+        [in]string filePath                         //!< Path to the file with Gamma Ramp. Using file path with '.gr' extension is recommended.
+    );
+
+    [Implemented, Description("Calculate and set Gamma Ramp from basic color controls")]
+    //! Calculate and set Gamma Ramp from basic color controls
+    boolean                 setGammaRampBasic
+    (
+        [in]real32 brightness,                      //!< brightness: -0.2 .. +0.2 default: 0.0
+        [in]real32 contrast,                        //!< contrast: -0.2 .. +0.2 default: 0.0
+        [in]real32 gamma                            //!< gamma: 0.3 .. 2.8  default: 1.0
+    );
+
+    [Implemented, Description("Save Color Space Conversion data into specified file (binary format). Using file path with '.csc' extension is recommended.")]
+    //! Save Color Space Conversion data into specified file (binary format). Using file path with '.csc' extension is recommended.
+    boolean                 saveCSC
+    (
+        [in]string filePath                         //!< Path to the file with CSC data. File will be in binary format, specifying '.csc' extension explicitly is recommended.
+    );
+
+    [Implemented, Description("Override Color Space Conversion data from specified file (binary format). Using file path with '.csc' extension is recommended.")]
+    //! Override Color Space Conversion data from specified file (binary format). Using file path with '.csc' extension is recommended.
+    boolean                 setCSC
+    (
+        [in]string filePath                         //!< Path to the file with CSC data. Using file path with '.csc' extension is recommended.
+    );
+
+    [Implemented, Description("Change display mode of a display grid, which contains this display, by specifying a display mode properties")]
+    //! Change display mode of a display grid, which contains this display, by specifying a display mode properties
+    boolean                 setDisplayMode
+    (
+        [in]uint32  width,                          //!< Width of the display grid (in pixels)
+        [in]uint32  height,                         //!< Height of the display grid (in pixels)
+        [in]real32  refreshRate,                    //!< Refresh rate of the display grid (in Hz)
+        [in]uint32  depth                           //!< Color depth of the display grid (in bits per pixel)
+    );
+
+    [Implemented, Description("Change display mode of a display grid, which contains this display, by specifying a display mode ID")]
+    //! Change display mode of a display grid, which contains this display, by specifying a display mode ID
+    boolean                 setDisplayModeById
+    (
+        [in]uint32  id                              //!< DisplayMode ID
+    );
+
+    [Implemented, Description("Change display mode of a display grid, which contains this display, by specifying a reference to a display mode")]
+    //! Change display mode of a display grid, which contains this display, by specifying a reference to a display mode
+    boolean                 setDisplayModeByRef
+    (
+        [in]DisplayMode ref mode                    //!< A reference to the display mode to be applied
+    );
+
+    [Implemented, Description("Set dithering parameters")]
+    //! Set dithering parameters
+    boolean                 setDither
+    (
+        [in, ValueMap{"0","1","2"}, Values{"Default","Enable","Disable"}]
+        uint32 state,                               //!< New dithering state. Required
+        
+        [in, ValueMap{"0","1","2"}, Values{"6 bit","8 bit","10 bit"}]
+        uint32 bits,                                //!< Dither to specified number of bits per channel. Optional
+        
+        [in, ValueMap{"0","1","2","3","4"}, Values{"SpatialDynamic","SpatialStatic","SpatialDynamic2x2","SpatialStatic2x2","Temporal"}]
+        uint32 mode                                 //!< Dithering mode. Optional
+    );
+
+    [Implemented, Description("Formats basic information about this display into a human-readable string")]
+    //! Formats basic information about this display into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents display mode")]
+//! Represents display mode
+class DisplayMode
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Object version")]
+    //! Object version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique identification of the display mode")]
+    //! Unique identification of the display mode
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Write, Description("Display mode width")]
+    //! Display mode width
+    sint32                  width;
+
+    [Read: ToInstance ToSubClass,  Write, Description("Display mode height")]
+    //! Display mode height
+    sint32                  height;
+
+    [Read: ToInstance ToSubClass,  Write, Description("Display mode refresh rate")]
+    //! Display mode refresh rate
+    real32                  refreshRate;
+
+    [Read: ToInstance ToSubClass,  Write, Description("Display mode color depth in bits per pixel (bpp)")]
+    //! Display mode color depth in bits per pixel (bpp)
+    sint32                  colorDepth;
+
+    [Implemented, Description("Formats basic information about this display mode into a human-readable string")]
+    //! Formats basic information about this display mode into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.6.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents a cooler (fan, liquid system etc.)")]
+//! Represents a cooler (fan, liquid system etc.)
+class Cooler
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Cooler class version")]
+    //! Cooler class version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique ID")]
+    //! Unique ID
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Deprecated, Description("Unique ID - deprecated, please use 'id'")]
+    //! Unique ID - deprecated, please use 'id'
+    uint32                  handle;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3"}, Values{"unknown","fan","water","liquid"}, Description("The type of cooler present on the card (fan, water or liquid). Possible values are: 0 - unknown, 1 - fan, 2 - water, 3 - liquid")]
+    //! The type of cooler present on the card (fan, water or liquid). Possible values are: 0 - unknown, 1 - fan, 2 - water, 3 - liquid
+    uint32                  coolerType;
+
+    [Read: ToInstance ToSubClass,  Description("Current percentage speed of a cooler fan (or liquid flow rate %)")]
+    //! Current percentage speed of a cooler fan (or liquid flow rate %)
+    uint32                  percentCoolerRate;
+
+    [Read: ToInstance ToSubClass,  Description("Minimum percentage speed of a cooler fan (or liquid flow rate %)")]
+    //! Minimum percentage speed of a cooler fan (or liquid flow rate %)
+    uint32                  percentMinCoolerRate;
+
+    [Read: ToInstance ToSubClass,  Description("Maximum percentage speed of a cooler fan (or liquid flow rate %)")]
+    //! Maximum percentage speed of a cooler fan (or liquid flow rate %)
+    uint32                  percentMaxCoolerRate;
+
+    [Read: ToInstance ToSubClass,  Description("The tachometer reading for fan speed in rpm")]
+    //! The tachometer reading for fan speed in rpm
+    uint32                  fanSpeed;
+
+    [Read: ToInstance ToSubClass,  Description("Maximal fan speed in rpm")]
+    //! Maximal fan speed in rpm
+    uint32                  maxSpeed;
+
+    [Read: ToInstance ToSubClass,  Description("Minimal fan speed in rpm")]
+    //! Minimal fan speed in rpm
+    uint32                  minSpeed;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3"}, Values{"unknown","normal","warning","critical"}, Description("Cooler fan speed event level. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical")]
+    //! Cooler fan speed event level. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical
+    uint32                  coolerLevel;
+
+    [Implemented, Description("Formats basic information about the Cooler object in a system into a human-readable string")]
+    //! Formats basic information about the Cooler object in a system into a human-readable string
+    string                  info();
+
+};
+
+[Version("1.4.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents a thermal probe")]
+//! Represents a thermal probe
+class ThermalProbe
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Thermal probe class version")]
+    //! Thermal probe class version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique ID")]
+    //! Unique ID
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Deprecated, Description("Unique ID - deprecated, please use 'id'")]
+    //! Unique ID - deprecated, please use 'id'
+    uint32                  handle;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"-1","0","1","2","3","4","5","6","7","8","9","10","11"}, Values{"unknown","none","gpuInternal","adm1032","max6649","max1617","lm99","lm89","lm64","adt7473","sbmax6649","vbiosEvt","os"}, Description("The type of thermal probe controller type. Possible values are: -1 - unknown, 0 - none, 1 - gpuInternal, 2 - adm1032, 3 - max6649, 4 - max1617, 5 - lm99, 6 - lm89, 7 - lm64, 8 - adt7473, 9 - sbmax6649, 10 - vbiosEvt, 11 - os")]
+    //! The type of thermal probe controller type. Possible values are: -1 - unknown, 0 - none, 1 - gpuInternal, 2 - adm1032, 3 - max6649, 4 - max1617, 5 - lm99, 6 - lm89, 7 - lm64, 8 - adt7473, 9 - sbmax6649, 10 - vbiosEvt, 11 - os
+    uint32                  type;
+
+    [Read: ToInstance ToSubClass,  Description("The current temperature value of the thermal sensor in degrees Celsius")]
+    //! The current temperature value of the thermal sensor in degrees Celsius
+    sint32                  temperature;
+
+    [Read: ToInstance ToSubClass,  Description("Default minimum temperature value of the thermal sensor in degrees Celsius")]
+    //! Default minimum temperature value of the thermal sensor in degrees Celsius
+    sint32                  defaultMinTemperature;
+
+    [Read: ToInstance ToSubClass,  Description("Default maximum temperature value of the thermal sensor in degrees Celsius")]
+    //! Default maximum temperature value of the thermal sensor in degrees Celsius
+    sint32                  defaultMaxTemperature;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3"}, Values{"unknown","normal","warning","critical"}, Description("current temperature event level. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical")]
+    //! current temperature event level. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical
+    uint32                  thermalLevel;
+
+    [Implemented, Description("Formats basic information about the Thermal object in a system into a human-readable string")]
+    //! Formats basic information about the Thermal object in a system into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents the GPU Error Correction Code. This feature is not supported if there are multiple GPU topologies enabled.")]
+//! Represents the GPU Error Correction Code. This feature is not supported if there are multiple GPU topologies enabled.
+class Ecc
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Ecc class version")]
+    //! Ecc class version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique identification of the NVIDIA GPU")]
+    //! Unique identification of the NVIDIA GPU
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Is ECC memory feature supported?")]
+    //! Is ECC memory feature supported?
+    boolean                 isSupported;
+
+    [Read: ToInstance ToSubClass,  Description("Is ECC memory setting enabled?")]
+    //! Is ECC memory setting enabled?
+    boolean                 isEnabled;
+
+    [Read: ToInstance ToSubClass,  Description("Is current ECC configuration stored in non-volatile memory?")]
+    //! Is current ECC configuration stored in non-volatile memory?
+    boolean                 isWritable;
+
+    [Read: ToInstance ToSubClass,  Description("Is factory default ECC configuration enabled?")]
+    //! Is factory default ECC configuration enabled?
+    boolean                 isEnabledByDefault;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"notSupported","deferred","immediate"}, Description("Possible ECC memory configuration options. Possible values are: 0 - notSupported, 1 - deferred, 2 - immediate")]
+    //! Possible ECC memory configuration options. Possible values are: 0 - notSupported, 1 - deferred, 2 - immediate
+    uint32                  option;
+
+    [Read: ToInstance ToSubClass,  Description("Number of single bit ECC errors detected since last boot")]
+    //! Number of single bit ECC errors detected since last boot
+    uint64                  currentSingleBitErrors;
+
+    [Read: ToInstance ToSubClass,  Description("Number of double bit ECC errors detected since last boot")]
+    //! Number of double bit ECC errors detected since last boot
+    uint64                  currentDoubleBitErrors;
+
+    [Read: ToInstance ToSubClass,  Description("Number of single bit ECC errors detected since last counter reset")]
+    //! Number of single bit ECC errors detected since last counter reset
+    uint64                  aggregateSingleBitErrors;
+
+    [Read: ToInstance ToSubClass,  Description("Number of double bit ECC errors detected since last counter reset")]
+    //! Number of double bit ECC errors detected since last counter reset
+    uint64                  aggregateDoubleBitErrors;
+
+    [Implemented, Description("Resets memory error counters. This method will fail if option=0 (notSupported)")]
+    //! Resets memory error counters. This method will fail if option=0 (notSupported)
+    boolean                 resetCounters
+    (
+       [in]boolean     bResetCurrent,              //!< Reset the current ECC error counters
+       [in]boolean     bResetAggregate             //!< Reset the aggregate ECC error counters
+    );
+
+    [Implemented, Description("Updates the ECC memory configuration settings. This method will fail if option=0 (notSupported)")]
+    //! Updates the ECC memory configuration settings. This method will fail if option=0 (notSupported)
+    boolean                 setConfiguration
+    (
+       [in]boolean     bEnable,                     //!< Enable new ECC configuration setting
+       [in]boolean     bEnableImmediately           //!< New configuration setting should take effect immediately. This flag is valid only if option=2 (immediate).
+    );
+
+    [Implemented, Description("Formats basic information about ECC objects into a human-readable string")]
+    //! Formats basic information about ECC objects into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents per process GPU encoder utilization values")]
+//! Represents per process GPU encoder utilization values
+class ProcessUtilization
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("ProcessUtilization class version.")]
+    //! ProcessUtilization class version.
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique ID")]
+    //! Unique ID
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Total no of process.")]
+    //! Total no of process.
+    uint32                  processCount;
+
+    [Read: ToInstance ToSubClass,  Description("Process Id")]
+    //! Process Id
+    uint32                  pid[];
+
+    [Read: ToInstance ToSubClass,  Description("CPU Timestamp.")]
+    //! CPU Timestamp.
+    string                  timeStamp[];
+
+    [Read: ToInstance ToSubClass,  Description("SM Utilization value.")]
+    //! SM Utilization value.
+    uint32                  smUtilization[];
+
+    [Read: ToInstance ToSubClass,  Description("Mem Utilization value.")]
+    //! Mem Utilization value.
+    uint32                  memUtilization[];
+
+    [Read: ToInstance ToSubClass,  Description("Enc Utilization value.")]
+    //! Enc Utilization value.
+    uint32                  encUtilization[];
+
+    [Read: ToInstance ToSubClass,  Description("Dec Utilization value.")]
+    //! Dec Utilization value.
+    uint32                  decUtilization[];
+
+    [Implemented, Description("Formats basic information about per process utilization into a human-readable string")]
+    //! Formats basic information about per process utilization into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents the Sync Topology")]
+//! Represents the Sync Topology
+class SyncTopology // contains embedded class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+//! \publicsection
+    
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"UnSynced","Slave","Master"}, Description("Synchronization state of a display in the Sync topology. Possible values are: 0 - UnSynced, 1 - Slave, 2 - Master")]
+    //! Synchronization state of a display in the Sync topology. Possible values are: 0 - UnSynced, 1 - Slave, 2 - Master
+    uint32                  displaySyncState;
+
+    [Read: ToInstance ToSubClass,  Description("Can the current display be set as a sync master?")]
+    //! Can the current display be set as a sync master?
+    boolean                 isDisplayMasterable;
+
+    [Implemented, Description("Returns true if GPU is synchronized (in phase) with the Sync device")]
+    //! Returns true if GPU is synchronized (in phase) with the Sync device
+    boolean                 isGPUSynced();
+
+    [Implemented, Description("Formats basic information about SyncTopology objects into a human-readable string")]
+    //! Formats basic information about SyncTopology objects into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents encoder sessions info")]
+//! Represents encoder sessions info
+class EncoderSessions
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("EncoderSessions class version.")]
+    //! EncoderSessions class version.
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique ID")]
+    //! Unique ID
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Total no of sessions.")]
+    //! Total no of sessions.
+    uint32                  sessionsCount;
+
+    [Read: ToInstance ToSubClass,  Description("Session Id.")]
+    //! Session Id.
+    uint32                  sessionId[];
+
+    [Read: ToInstance ToSubClass,  Description("Owning process ID.")]
+    //! Owning process ID.
+    uint32                  processId[];
+
+    [Read: ToInstance ToSubClass,  Description("Owning vGPU instance ID (only valid on vGPU hosts, otherwise zero).")]
+    //! Owning vGPU instance ID (only valid on vGPU hosts, otherwise zero).
+    uint32                  vgpuInstance[];
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"Unknown","H264","HEVC"}, Description("Video encoder type.. Possible values are: 0 - Unknown, 1 - H264, 2 - HEVC")]
+    //! Video encoder type.. Possible values are: 0 - Unknown, 1 - H264, 2 - HEVC
+    uint32                  codecType[];
+
+    [Read: ToInstance ToSubClass,  Description("Current encode horizontal resolution.")]
+    //! Current encode horizontal resolution.
+    uint32                  hResolution[];
+
+    [Read: ToInstance ToSubClass,  Description("Current encode vertical resolution.")]
+    //! Current encode vertical resolution.
+    uint32                  vResolution[];
+
+    [Read: ToInstance ToSubClass,  Description("Moving average encode frames per second.")]
+    //! Moving average encode frames per second.
+    uint32                  averageEncodeFps[];
+
+    [Read: ToInstance ToSubClass,  Description("Moving average encode latency in milliseconds.")]
+    //! Moving average encode latency in milliseconds.
+    uint32                  averageEncodeLatency[];
+
+    [Implemented, Description("Formats basic information about per process utilization into a human-readable string")]
+    //! Formats basic information about per process utilization into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents the Sync Delay (Sync Skew or Startup Delay)")]
+//! Represents the Sync Delay (Sync Skew or Startup Delay)
+class SyncDelay
+{
+//! \publicsection
+    
+    [Read: ToInstance ToSubClass,  Description("SyncDelay class version")]
+    //! SyncDelay class version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique identification of SyncDelay objects")]
+    //! Unique identification of SyncDelay objects
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"unknown","SyncSkew","StartupDelay"}, Description("Type of Sync Delay.. Possible values are: 0 - unknown, 1 - SyncSkew, 2 - StartupDelay")]
+    //! Type of Sync Delay.. Possible values are: 0 - unknown, 1 - SyncSkew, 2 - StartupDelay
+    uint32                  delayType;
+
+    [Read: ToInstance ToSubClass,  Description("Minimum number of pixels required at current display mode to induce sync delay.")]
+    //! Minimum number of pixels required at current display mode to induce sync delay.
+    uint32                  minPixels;
+
+    [Read: ToInstance ToSubClass,  Description("Maximum number of lines supported at current display mode to induce sync delay.")]
+    //! Maximum number of lines supported at current display mode to induce sync delay.
+    uint32                  maxLines;
+
+    [Read: ToInstance ToSubClass,  Description("Sync delay to be induced in unit pixels.")]
+    //! Sync delay to be induced in unit pixels.
+    uint32                  numOfPixels;
+
+    [Read: ToInstance ToSubClass,  Description("Sync delay to be induced in unit horizontal lines.")]
+    //! Sync delay to be induced in unit horizontal lines.
+    uint32                  numOfLines;
+
+    [Implemented, Description("Formats basic information about SyncTopology objects into a human-readable string")]
+    //! Formats basic information about SyncTopology objects into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.1"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Represents Sync-capable devices")]
+//! Represents Sync-capable devices
+class Sync // contains embedded class NamedObject
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of named object")]
+    //! Version of named object
+    Version                 ver;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of named object, used as a key")]
+    //! Unique id of named object, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of an object")]
+    //! Name of an object
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique name of an object")]
+    //! Unique name of an object
+    string                  uname;
+
+    [Read: ToInstance ToSubClass,  Description("Ordinal number of named object among objects with same names")]
+    //! Ordinal number of named object among objects with same names
+    sint32                  ordinal;
+
+    [Read: ToInstance ToSubClass,  Description("Total number of named objects with same name")]
+    //! Total number of named objects with same name
+    sint32                  count;
+//! \publicsection
+    
+    [Read: ToInstance ToSubClass,  Description("Version of the Sync board firmware")]
+    //! Version of the Sync board firmware
+    Version                 verSyncFirmware;
+
+    [Read: ToInstance ToSubClass,  Description("NVAPI ID of the Sync device")]
+    //! NVAPI ID of the Sync device
+    uint32                  nvapiId;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of references to SyncTopology objects")]
+    //! Array of references to SyncTopology objects
+    SyncTopology ref        syncDisplays[];
+
+    [Read: ToInstance ToSubClass,  Description("Is sync enabled on this device?")]
+    //! Is sync enabled on this device?
+    boolean                 isSynced;
+
+    [Read: ToInstance ToSubClass,  Description("Is house sync present?")]
+    //! Is house sync present?
+    boolean                 isHouseSync;
+
+    [Read: ToInstance ToSubClass,  Description("Is stereo enabled?")]
+    //! Is stereo enabled?
+    boolean                 isStereoSynced;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"Rising Edge","Falling Edge","Both Edges"}, Description("Polarity of a synchronization signal. Possible values are: 0 - Rising Edge, 1 - Falling Edge, 2 - Both Edges")]
+    //! Polarity of a synchronization signal. Possible values are: 0 - Rising Edge, 1 - Falling Edge, 2 - Both Edges
+    uint32                  polarity;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","4"}, Values{"none","TTL","NTSC-PAL-SECAM","HDTV","composite"}, Description("Video mode. Possible values are: 0 - none, 1 - TTL, 2 - NTSC-PAL-SECAM, 3 - HDTV, 4 - composite")]
+    //! Video mode. Possible values are: 0 - none, 1 - TTL, 2 - NTSC-PAL-SECAM, 3 - HDTV, 4 - composite
+    uint32                  vmode;
+
+    [Read: ToInstance ToSubClass,  Description("Number of pulses to wait between framelock signal generation.")]
+    //! Number of pulses to wait between framelock signal generation.
+    uint32                  interval;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1"}, Values{"VSync","HouseSync"}, Description("Source of a synchronization signal. Possible values are: 0 - VSync, 1 - HouseSync")]
+    //! Source of a synchronization signal. Possible values are: 0 - VSync, 1 - HouseSync
+    uint32                  source;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1"}, Values{"Disabled","Enabled"}, Description("Interlace mode for a Sync device. Possible values are: 0 - Disabled, 1 - Enabled")]
+    //! Interlace mode for a Sync device. Possible values are: 0 - Disabled, 1 - Enabled
+    uint32                  interlaceMode;
+
+    [Read: ToInstance ToSubClass,  Description("Sync signal refresh rate in Hz. If the house sync is present and selected source is HouseSync, then it will be the house sync signal refresh rate. Otherwise, it will be an internal display signal refresh rate")]
+    //! Sync signal refresh rate in Hz. If the house sync is present and selected source is HouseSync, then it will be the house sync signal refresh rate. Otherwise, it will be an internal display signal refresh rate
+    real32                  syncSignalRate;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2"}, Values{"output","input","unused"}, Description("RJ-45 signal status. Possible values are: 0 - output, 1 - input, 2 - unused")]
+    //! RJ-45 signal status. Possible values are: 0 - output, 1 - input, 2 - unused
+    uint32                  flStatus[];
+
+    [Read: ToInstance ToSubClass,  Description("syncSkew object (The time delay between the frame sync signal and the GPUs signal). Available only in Client mode or if external Housesync signal is present.")]
+    //! syncSkew object (The time delay between the frame sync signal and the GPUs signal). Available only in Client mode or if external Housesync signal is present.
+    SyncDelay               syncSkew;
+
+    [Read: ToInstance ToSubClass,  Description("startupDelay object (The amount of time the frame lock card should wait until generating sync pulse). Available only in Server mode.")]
+    //! startupDelay object (The amount of time the frame lock card should wait until generating sync pulse). Available only in Server mode.
+    SyncDelay               startupDelay;
+
+    [Implemented, Description("Setup the synchronization between displays with given IDs")]
+    //! Setup the synchronization between displays with given IDs
+    boolean                 setSyncStateById
+    (
+        [in]uint32    syncDisplayIds[],         //!< Array of display IDs to synchronize(SyncTopology.id), separated by comma. Order is important. 
+                                                //!< For Mosaic topologies, user can specify either a master display or all displays in a Mosaic topology. 
+                                                //!< If user does not specify any displays, the method will choose the best topology to synchronize. 
+                                                //!< To un-synchronize the displays, user will have to pass all the displays with displaySyncState as UnSynced.
+
+        [in]uint32    syncState[]               //!< Possible values are: 0 - UnSynced, 1 - Slave, 2 - Master
+    );
+
+    [Implemented, Description("Setup the synchronization between displays with given Names")]
+    //! Setup the synchronization between displays with given Names
+    boolean                 setSyncStateByName
+    (
+        [in]string    syncDisplayNames,         //!< Display Names to synchronize. String of unique display names (SyncTopology.uname), separated by semicolon. Order is important.
+                                                //!< For Mosaic topologies, user can specify either a master display or all displays in a Mosaic topology. 
+                                                //!< If user does not specify any displays, the method will choose the best topology to synchronize. 
+                                                //!< To un-synchronize the displays, user will have to pass all the displays with displaySyncState as UnSynced.
+
+        [in]uint32    syncState[]               //!< Possible values are: 0 - UnSynced, 1 - Slave, 2 - Master
+    );
+
+    [Implemented, Description("Toggle the sync signal source between internal and external house sync")]
+    //! Toggle the sync signal source between internal and external house sync
+    boolean                 toggleSource();
+
+    [Implemented, Description("Set synchronization signal polarity")]
+    //! Set synchronization signal polarity
+    boolean                 setPolarity
+    (
+        [in, ValueMap{"0","1","2"}, Values{"Rising Edge","Falling Edge","Both Edges"}]
+        uint32              polarity            //!< Possible values are: 0 - rising edge, 1 - falling edge, 2 - both
+    );
+
+    [Implemented, Description("Set video mode type")]
+    //! Set video mode type
+    boolean                 setVmode
+    (
+        [in, ValueMap{"0","1","2","3","4"}, Values{"none","TTL","NTSC-PAL-SECAM","HDTV","composite"}]
+        uint32              vmode               //!< Possible values are: 0 - none, 1 - TTL, 2 - NTSC/PAL/SECAM, 3 - HDTV, 4 - composite
+    );
+
+    [Implemented, Description("Set number of pulses to wait between framelock signal generation.")]
+    //! Set number of pulses to wait between framelock signal generation.
+    boolean                 setInterval
+    (
+        [in]uint32          interval            //!< The number of pulses to skip for signal generation. 0 uses source, 1 gives half the frequency, and so on.
+    );
+
+    [Implemented, Description("Set interlace mode for a Sync device")]
+    //! Set interlace mode for a Sync device
+    boolean                 setInterlaceMode 
+    (
+        [in, ValueMap{"0","1"}, Values{"Disabled","Enabled"}]
+        uint32              interlaceMode       //!< Interlace mode for a Sync device. Possible values are: 0 - Disabled, 1- Enabled.
+    );
+
+    [Implemented, Description("Set the amount of delay between the frame sync signal and the GPUs signal. Sync device must be in Client mode or if external Housesync signal present.")]
+    //! Set the amount of delay between the frame sync signal and the GPUs signal. Sync device must be in Client mode or if external Housesync signal present.
+    boolean                 setSyncSkew 
+    (
+        [in]uint32          numOfPixels,        //!< Number of pixels to induce sync skew
+        [in]uint32          numOfLines          //!< Number of horizontal lines to induce sync skew
+    );
+
+    [Implemented, Description("Set the amount of delay the frame lock card should wait, until generating sync pulse. Sync device must be in Server mode.")]
+    //! Set the amount of delay the frame lock card should wait, until generating sync pulse. Sync device must be in Server mode.
+    boolean                 setStartupDelay 
+    (
+        [in]uint32          numOfPixels,        //!< Number of pixels to induce startup delay
+        [in]uint32          numOfLines          //!< Number of horizontal lines to induce startup delay
+    );
+
+    [Implemented, Description("Formats basic information about Sync objects into a human-readable string")]
+    //! Formats basic information about Sync objects into a human-readable string
+    string                  info();
+};
+
+[Version("1.1.1"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Singleton, Description("Represents root object for performing Profile related task")]
+//! Represents root object for performing Profile related task
+class ProfileManager
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Profile Manager class version")]
+    //! Profile Manager class version
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Description("Current Global 3D profile (D3D, OGL)")]
+    //! Current Global 3D profile (D3D, OGL)
+    string                  currentProfile3D;
+
+    [Read: ToInstance ToSubClass,  Description("Default Global 3D profile (D3D, OGL)")]
+    //! Default Global 3D profile (D3D, OGL)
+    string                  defaultProfile3D;
+
+    [Read: ToInstance ToSubClass,  Description("Current Desktop Profile (nView)")]
+    //! Current Desktop Profile (nView)
+    string                  currentProfileDesktop;
+
+    [Read: ToInstance ToSubClass,  Description("Default Desktop Profile (nView)")]
+    //! Default Desktop Profile (nView)
+    string                  defaultProfileDesktop;
+
+    [Read: ToInstance ToSubClass,  Description("Current system profile")]
+    //! Current system profile
+    string                  currentSystemProfile;
+
+    [Read: ToInstance ToSubClass,  Description("Default system profile")]
+    //! Default system profile
+    string                  defaultSystemProfile;
+
+    [Implemented, Static, Description("Get name and id of all profiles for a given  profile type. The return value is a string in format profile id: profile name e.g.profile1 id: profile 1 name; profile2 id: profile 2 name;")]
+    //! Get name and id of all profiles for a given  profile type. The return value is a string in format profile id: profile name e.g.profile1 id: profile 1 name; profile2 id: profile 2 name;
+    string                  getAllProfiles
+    (
+        [in, ValueMap{"0","1","3","4","5"}, Values{"3D Application Profile", "3D Global Profile", "nView Profile", "Display Profile", "System Profile"}]
+        uint32 type                          //!< Type of the profile
+    );
+
+    [Implemented, Static, Description("Restore all profiles to default")]
+    //! Restore all profiles to default
+    boolean                 restoreDefaults3D();
+
+    [Implemented, Static, Description("Set current profile")]
+    //! Set current profile
+    boolean                 setCurrentProfile3D
+    (
+        [in]string name                             //!< Name of existing profile to set as current
+    );
+
+    [Implemented, Static, Description("Set mode of vertical synchronization in the current global profile")]
+    //! Set mode of vertical synchronization in the current global profile
+    boolean                 setVSync
+    (
+        [in, ValueMap{"0","1","2","3","4"}, Values{"Passive","Off","On","Adaptive","Adaptive half"}]
+        uint32 vsyncMode                            //!< V-Sync mode to be applied to the current global profile
+                                                    //!< values might be Application-Controlled (same as Passive) = 0, Off = 1, On = 2,
+                                                    //!< Adaptive = 3 and Adaptive (half refresh rate) = 4
+    );
+
+    [Implemented, Static, Description("Load a selected profile into nView Desktop Manager")]
+    //! Load a selected profile into nView Desktop Manager
+    boolean                 loadDesktopProfile
+    (
+        [in]string name                             //!< Name of existing profile to be loaded into nView Desktop Manager
+    );
+
+    [Implemented, Static, Description("Lock a nView Desktop profile, once locked the setting in this profile will not be modified through nView Dekstop Manager")]
+    //! Lock a nView Desktop profile, once locked the setting in this profile will not be modified through nView Dekstop Manager
+    boolean                 lockDesktopProfile
+    (
+        [in]string name,                            //!< Name of the existing profile which needs to be locked
+        [in]uint32 lock                             //!< Paramer to lock/unlock the profile. Pass 1 to indicate lock and pass 0 to unlock the profile
+    );
+
+    [Implemented, Static, Description("Save nView Desktop Manager settings to the profile")]
+    //! Save nView Desktop Manager settings to the profile
+    boolean                 saveDesktopProfile
+    (
+        [in]string name                             //!< Name of profile where the nView Desktop Manager settings will be saved
+    );
+
+    [Implemented, Static, Description("Delete the nView Desktop profile")]
+    //! Delete the nView Desktop profile
+    boolean                 deleteDesktopProfile
+    (
+        [in]string name                             //!< Name of the existing profile which will be deleted
+    );
+
+    [Implemented, Static, Description("Save system profile")]
+    //! Save system profile
+    boolean                 saveSystemProfile
+    (
+        [in]string name                             //!< Name of system profile to be saved
+    );
+
+    [Implemented, Static, Description("Apply system profile")]
+    //! Apply system profile
+    boolean                 applySystemProfile
+    (
+        [in]string name                             //!< Name of system profile to be applied
+    );
+
+    [Implemented, Static, Description("Save current display state in display profiles with given prefixes. One display profile per DisplayGrid. DisplayGrid might contain more than one physical display")]
+    //! Save current display state in display profiles with given prefixes. One display profile per DisplayGrid. DisplayGrid might contain more than one physical display
+    boolean                 saveDisplayProfiles
+    (
+        [in]string prefix                           //!< Common prefix - e.g. "my display". Ordinals will be added per every display profile (e.g. "my display 1 of 4", "my display 2 of 4" etc.)
+    );
+
+    [Implemented, Static, Description("Apply saved state in display profiles with given prefixes. One display profile per DisplayGrid")]
+    //! Apply saved state in display profiles with given prefixes. One display profile per DisplayGrid
+    boolean                 applyDisplayProfiles
+    (
+        [in]string prefix                           //!< Common prefix - e.g. "my display" Ordinals will be added per every display profile (e.g. "my display 1 of 4", "my display 2 of 4" etc.)
+    );
+
+    [Implemented, Static, Description("Create a new Profile")]
+    //! Create a new Profile
+    boolean                 createProfile
+    (
+        [in]string name,                            //!< Name of the profile
+        [in]uint32 type,                            //!< Type of the profile. 0 - 3D application profile
+        [in]string params                           //!< Additional parameters separated by semicolon. For a 3D Application Profile specify a minimal path to the binary which uses Direct3D or OpenGL, e.g. "Application1.exe;Application2.exe". Note that white space at the beginning or end of a path will be trimmed and empty entries discarded.
+    );
+
+    [Implemented, Static, Description("Restore/Delete the Profile. Predefined Profile gets restored and non-predefined Profile gets deleted.")]
+    //! Restore/Delete the Profile. Predefined Profile gets restored and non-predefined Profile gets deleted.
+    boolean                 restoreProfile
+    (
+        [in]string name                             //!< Profile name
+    );
+
+    [Implemented, Static, Description("Formats basic information about Profile Manager into a human-readable string")]
+    //! Formats basic information about Profile Manager into a human-readable string
+    string                  info();
+};
+
+[Version("1.1.1"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Profile setting")]
+//! Profile setting
+class Setting
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of a Setting class")]
+    //! Version of a Setting class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a setting, used as a key")]
+    //! Unique id of a setting, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","4"}, Values{"invalid","uint32","sint32","string","binary"}, Description("Type of value of the setting. Possible values are: 0 - invalid, 1 - uint32, 2 - sint32, 3 - string, 4 - binary")]
+    //! Type of value of the setting. Possible values are: 0 - invalid, 1 - uint32, 2 - sint32, 3 - string, 4 - binary
+    uint32                  type;
+
+    [Read: ToInstance ToSubClass,  Description("Value for the Setting")]
+    //! Value for the Setting
+    uint8                   value[];
+
+    [Implemented, Description("Get the string value for a setting")]
+    //! Get the string value for a setting
+    string                  getStringValue();
+
+    [Implemented, Description("Formats basic information about the Profile setting object into a human-readable string")]
+    //! Formats basic information about the Profile setting object into a human-readable string
+    string                  info();
+};
+
+[Version("1.1.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Application, associated with an application profile")]
+//! Application, associated with an application profile
+class Application
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of Application class")]
+    //! Version of Application class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of an application, used as a key")]
+    //! Unique id of an application, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("User-friendly name of an application")]
+    //! User-friendly name of an application
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Description("Unique subpaths to identify an application, separated by ';'")]
+    //! Unique subpaths to identify an application, separated by ';'
+    string                  subPaths;
+
+    [Read: ToInstance ToSubClass,  Description("When non-empty, subpath to a launcher")]
+    //! When non-empty, subpath to a launcher
+    string                  launcher;
+
+    [Read: ToInstance ToSubClass,  Description("If true, application is predefined and cannot be removed")]
+    //! If true, application is predefined and cannot be removed
+    boolean                 isPredefined;
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is predefined and cannot be removed")]
+    //! If true, profile is predefined and cannot be removed
+    boolean                 isSupported;
+
+    [Implemented, Description("Formats basic information about this Application into a human-readable string")]
+    //! Formats basic information about this Application into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.2"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Information about a display grid")]
+//! Information about a display grid
+class DisplayGridInfo
+{
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  Description("Version of a display grid information")]
+    //! Version of a display grid information
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a display grid information, used as a key")]
+    //! Unique id of a display grid information, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Number of rows in the display grid")]
+    //! Number of rows in the display grid
+    uint32                  rows;
+
+    [Read: ToInstance ToSubClass,  Description("Number of columns in the display grid")]
+    //! Number of columns in the display grid
+    uint32                  cols;
+
+    [Read: ToInstance ToSubClass,  Description("ID of the primary display")]
+    //! ID of the primary display
+    uint32                  primaryId;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of display IDs (Display.id)")]
+    //! Array of display IDs (Display.id)
+    uint32                  displayIds[];
+
+    [Read: ToInstance ToSubClass,  Description("string of unique display names (Display.uname), separated by semicolon. Order corresponds to displayIds property")]
+    //! string of unique display names (Display.uname), separated by semicolon. Order corresponds to displayIds property
+    string                  unames;
+
+    [Read: ToInstance ToSubClass,  Description("string, containing a file path to CSC data")]
+    //! string, containing a file path to CSC data
+    string                  cscFilePath;
+
+    [Read: ToInstance ToSubClass,  Description("path to the file which contains desktop gamma ramps for every display in the grid")]
+    //! path to the file which contains desktop gamma ramps for every display in the grid
+    string                  gammaRampFilePath;
+
+    [Implemented, Description("Formats basic information about the display grid information into a human-readable string")]
+    //! Formats basic information about the display grid information into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.2.2"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Global profile class")]
+//! Global profile class
+class Profile
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of a profile class")]
+    //! Version of a profile class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a profile, used as a key")]
+    //! Unique id of a profile, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of a profile")]
+    //! Name of a profile
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"1","3","5"}, Values{"3D global","nView global","system"}, Description("Type of global profile. Possible values are: 1 - 3D global, 3 - nView global, 5 - system")]
+    //! Type of global profile. Possible values are: 1 - 3D global, 3 - nView global, 5 - system
+    uint32                  type;
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is predefined and cannot be removed")]
+    //! If true, profile is predefined and cannot be removed
+    boolean                 isPredefined;
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is supported on this system")]
+    //! If true, profile is supported on this system
+    boolean                 isSupported;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of settings for a profile")]
+    //! Array of settings for a profile
+    Setting                 settings[];
+
+    [Implemented, Description("Set the 32-bit value by a setting ID")]
+    //! Set the 32-bit value by a setting ID
+    boolean                 setValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]uint32          value                   //!< 32-bit value
+    );
+
+    [Implemented, Description("Set the binary value by a setting ID")]
+    //! Set the binary value by a setting ID
+    boolean                 setBinaryValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]uint8           value[]                 //!< Binary value as an array of bytes
+    );
+
+    [Implemented, Description("Set the string value by a setting ID")]
+    //! Set the string value by a setting ID
+    boolean                 setStringValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]string          value                   //!< String value
+    );
+
+    [Implemented, Description("Restore or delete settings, specified by IDs. Predefined settings get restored and non-predefined settings get deleted.")]
+    //! Restore or delete settings, specified by IDs. Predefined settings get restored and non-predefined settings get deleted.
+    boolean                 restoreSettings
+    (
+        [in]uint32          settingIds[]            //!< Array of Setting IDs
+    );
+
+    [Implemented, Description("formats basic information about a profile into a human-readable string")]
+    //! formats basic information about a profile into a human-readable string
+    string                  info();
+};
+
+
+[Version("1.2.2"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Application profile")]
+//! Application profile
+class ApplicationProfile // contains embedded class Profile
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of a profile class")]
+    //! Version of a profile class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a profile, used as a key")]
+    //! Unique id of a profile, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of a profile")]
+    //! Name of a profile
+    string                  name;
+
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is predefined and cannot be removed")]
+    //! If true, profile is predefined and cannot be removed
+    boolean                 isPredefined;
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is supported on this system")]
+    //! If true, profile is supported on this system
+    boolean                 isSupported;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of settings for a profile")]
+    //! Array of settings for a profile
+    Setting                 settings[];
+
+    [Implemented, Description("Set the 32-bit value by a setting ID")]
+    //! Set the 32-bit value by a setting ID
+    boolean                 setValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]uint32          value                   //!< 32-bit value
+    );
+
+    [Implemented, Description("Set the binary value by a setting ID")]
+    //! Set the binary value by a setting ID
+    boolean                 setBinaryValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]uint8           value[]                 //!< Binary value as an array of bytes
+    );
+
+    [Implemented, Description("Set the string value by a setting ID")]
+    //! Set the string value by a setting ID
+    boolean                 setStringValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]string          value                   //!< String value
+    );
+
+    [Implemented, Description("Restore or delete settings, specified by IDs. Predefined settings get restored and non-predefined settings get deleted.")]
+    //! Restore or delete settings, specified by IDs. Predefined settings get restored and non-predefined settings get deleted.
+    boolean                 restoreSettings
+    (
+        [in]uint32          settingIds[]            //!< Array of Setting IDs
+    );
+
+    [Implemented, Description("formats basic information about a profile into a human-readable string")]
+    //! formats basic information about a profile into a human-readable string
+    string                  info();
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of applications associated to the Application Profile")]
+    //! Array of applications associated to the Application Profile
+    Application             applications[];
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","2"}, Values{"3D Application","nView Application"}, Description("Application Profile type. Possible values are: 0 - 3D Application, 2 - nView Application")]
+    //! Application Profile type. Possible values are: 0 - 3D Application, 2 - nView Application
+    uint32                  type;
+
+    [Read: ToInstance ToSubClass,  Description("Time when a profile was activated")]
+    //! Time when a profile was activated
+    DATETIME                startTime;
+
+    [Implemented, Description("Add applications to a Profile")]
+    //! Add applications to a Profile
+    boolean                 addApplications
+    (
+         [in]string         appNames[]              //!< Array of Application names. In WMIC array of strings is: ("app1.exe", "app2.exe", "app3.exe")
+    );
+
+    [Implemented, Description("Remove applications from a profile. Only non-predefined applications can be removed")]
+    //! Remove applications from a profile. Only non-predefined applications can be removed
+    boolean                 removeApplications
+    (
+         [in]string         appNames[]              //!< Array of Application names. In WMIC array of strings is: ("app1.exe", "app2.exe", "app3.exe")
+    );
+};
+
+[Version("1.1.2"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Display profile")]
+//! Display profile
+class DisplayProfile // contains embedded class Profile
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of a profile class")]
+    //! Version of a profile class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a profile, used as a key")]
+    //! Unique id of a profile, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Name of a profile")]
+    //! Name of a profile
+    string                  name;
+
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is predefined and cannot be removed")]
+    //! If true, profile is predefined and cannot be removed
+    boolean                 isPredefined;
+
+    [Read: ToInstance ToSubClass,  Description("If true, profile is supported on this system")]
+    //! If true, profile is supported on this system
+    boolean                 isSupported;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of settings for a profile")]
+    //! Array of settings for a profile
+    Setting                 settings[];
+
+    [Implemented, Description("Set the 32-bit value by a setting ID")]
+    //! Set the 32-bit value by a setting ID
+    boolean                 setValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]uint32          value                   //!< 32-bit value
+    );
+
+    [Implemented, Description("Set the binary value by a setting ID")]
+    //! Set the binary value by a setting ID
+    boolean                 setBinaryValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]uint8           value[]                 //!< Binary value as an array of bytes
+    );
+
+    [Implemented, Description("Set the string value by a setting ID")]
+    //! Set the string value by a setting ID
+    boolean                 setStringValueById
+    (
+        [in]uint32          settingId,              //!< Setting ID
+        [in]string          value                   //!< String value
+    );
+
+    [Implemented, Description("Restore or delete settings, specified by IDs. Predefined settings get restored and non-predefined settings get deleted.")]
+    //! Restore or delete settings, specified by IDs. Predefined settings get restored and non-predefined settings get deleted.
+    boolean                 restoreSettings
+    (
+        [in]uint32          settingIds[]            //!< Array of Setting IDs
+    );
+
+    [Implemented, Description("formats basic information about a profile into a human-readable string")]
+    //! formats basic information about a profile into a human-readable string
+    string                  info();
+//! \publicsection
+
+    [Read: ToInstance ToSubClass,  ValueMap{"4"}, Values{"Display"}, Description("Display Profile type. Possible values are: 4 - Display")]
+    //! Display Profile type. Possible values are: 4 - Display
+    uint32                  type;
+
+    [Read: ToInstance ToSubClass,  Description("information about a display grid")]
+    //! information about a display grid
+    DisplayGridInfo         grid;
+
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Useful information about a profile setting")]
+//! Useful information about a profile setting
+class SettingInfo
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of a SettingInfo class")]
+    //! Version of a SettingInfo class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a setting, used as a key")]
+    //! Unique id of a setting, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  Description("Setting name")]
+    //! Setting name
+    string                  name;
+
+    [Read: ToInstance ToSubClass,  Description("Setting description")]
+    //! Setting description
+    string                  description;
+
+    [Implemented, Description("formats information about a setting into a human-readable string")]
+    //! formats information about a setting into a human-readable string
+    string                  info();
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|2.0"), Description("Table which describes profile settings of certain type")]
+//! Table which describes profile settings of certain type
+class SettingTable
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of a SettingTable class")]
+    //! Version of a SettingTable class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique id of a setting table, used as a key")]
+    //! Unique id of a setting table, used as a key
+    uint32                  id;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3","4","5"}, Values{"3D Application","3D Global","nView Application","nView Global","Display","System"}, Description("Profile type for settings in this table. Possible values are: 0 - 3D Application, 1 - 3D Global, 2 - nView Application, 3 - nView Global, 4 - Display, 5 - System")]
+    //! Profile type for settings in this table. Possible values are: 0 - 3D Application, 1 - 3D Global, 2 - nView Application, 3 - nView Global, 4 - Display, 5 - System
+    uint32                  type;
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of all setting IDs, described in this table")]
+    //! Array of all setting IDs, described in this table
+    uint32                  settingIds[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of all setting names, described in this table")]
+    //! Array of all setting names, described in this table
+    string                  settingNames[];
+
+    [Read: ToInstance ToSubClass,  ArrayType("Indexed"), Description("Array of settings, described in this table")]
+    //! Array of settings, described in this table
+    SettingInfo             settings[];
+
+    [Implemented, Description("get setting ID from setting name")]
+    //! get setting ID from setting name
+    uint32                  getIdFromName
+    (
+        [in]string          name                    //!< Setting name
+    );
+
+    [Implemented, Description("get setting name from setting ID")]
+    //! get setting name from setting ID
+    string                  getNameFromId
+    (
+        [in]uint32          id                      //!< Setting ID
+    );
+
+    [Implemented, Description("formats information about given setting with given name")]
+    //! formats information about given setting with given name
+    string                  infoByName
+    (
+        [in]string          name                    //!< Setting name
+    );
+
+    [Implemented, Description("formats information about given setting with given ID")]
+    //! formats information about given setting with given ID
+    string                  infoById
+    (
+        [in]uint32          id                      //!< Setting ID
+    );
+
+    [Implemented, Description("formats basic information about all settings into a human-readable string")]
+    //! formats basic information about all settings into a human-readable string
+    string                  info();
+};
+
+
+Instance of __Namespace
+{
+    Name = "Events";
+};
+
+
+#pragma namespace("\\\\.\\root\\cimv2\\NV\\Events")
+
+instance of __Win32Provider as $EVENTPROVIDER
+{
+    ClientLoadableCLSID    = NULL;
+    CLSID                  = "{0CB84A35-AB4F-4B6B-B4F6-493624B6C132}";
+    DefaultMachineName     = NULL;
+    HostingModel           = "Decoupled:Com";
+    InitializeAsAdminFirst = FALSE;
+    Name                   = "NVIDIA|NVWMI|EVENTS|2.0";
+    UnloadTimeout          = NULL;
+    SecurityDescriptor     = "O:BAG:SYD:(A;;0x10000001;;;BA)(A;;0x10000001;;;SY)";
+    Version                = 0x02000000;            // 2.0.0 (major in MSB byte, then byte with minor, then 16-bit word with build)
+                                                    // Note that Version here is a property inherited from __Win32Provider
+};
+
+[Version("2.1.0"), Dynamic, Provider("NVIDIA|NVWMI|EVENTS|2.0"), Description("Represents GPU thermal events")]
+//! Represents GPU thermal events
+class ThermalEvent : __ExtrinsicEvent
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Key, Description("Unique identification of the NVIDIA GPU")]
+    //! Unique identification of the NVIDIA GPU
+    uint32                  handleGpu;
+
+    [Read: ToInstance ToSubClass,  Description("Thermal probe index in array of probes on a given GPU")]
+    //! Thermal probe index in array of probes on a given GPU
+    uint32                  probeIndex;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3"},Values{"unknown","normal","warning","critical"}, Description("Thermal level to identify the temperature zone. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical")]
+    //! Thermal level to identify the temperature zone. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical
+    uint32                  thermalLevel;
+};
+
+[Version("2.1.0"), Dynamic, Provider("NVIDIA|NVWMI|EVENTS|2.0"), Description("Represents GPU cooler events")]
+//! Represents GPU cooler events
+class CoolerEvent : __ExtrinsicEvent
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Key, Description("Unique identification of the NVIDIA GPU")]
+    //! Unique identification of the NVIDIA GPU
+    uint32                  handleGpu;
+
+    [Read: ToInstance ToSubClass,  Description("Cooler index in array of coolers on a given GPU")]
+    //! Cooler index in array of coolers on a given GPU
+    uint32                  coolerIndex;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","3"},Values{"unknown","normal","warning","critical"}, Description("Cooler level to identify the cooler zone. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical")]
+    //! Cooler level to identify the cooler zone. Possible values are: 0 - unknown, 1 - normal, 2 - warning, 3 - critical
+    uint32                  coolerLevel;
+};
+
+[Version("1.0.0"), Dynamic, Provider("NVIDIA|NVWMI|EVENTS|2.0"), Description("Represent Sync events")]
+//! Represent Sync events
+class SyncEvent : __ExtrinsicEvent
+{
+//! \publicsection
+    [Read: ToInstance ToSubClass,  Description("Version of the SyncEvent class")]
+    //! Version of the SyncEvent class
+    Version                 verClass;
+
+    [Read: ToInstance ToSubClass,  Key, Description("Unique sync device ID")]
+    //! Unique sync device ID
+    uint32                  syncDeviceId;
+
+    [Read: ToInstance ToSubClass,  ValueMap{"0","1","2","4","8","0x10","0x20","0x40","0x80","0x10000"}, Values{"Unknown","SyncLoss","SyncGain","StereoLoss","StereoGain","HouseSyncGain","HouseSyncLoss","FlGain","FlLoss","SyncStateChange"}, Description("Sync event type. Possible values are: 0 - Unknown, 1 - SyncLoss, 2 - SyncGain, 4 - StereoLoss, 8 - StereoGain, 0x10 - HouseSyncGain, 0x20 - HouseSyncLoss, 0x40 - FlGain, 0x80 - FlLoss, 0x10000 - SyncStateChange")]
+    //! Sync event type. Possible values are: 0 - Unknown, 1 - SyncLoss, 2 - SyncGain, 4 - StereoLoss, 8 - StereoGain, 0x10 - HouseSyncGain, 0x20 - HouseSyncLoss, 0x40 - FlGain, 0x80 - FlLoss, 0x10000 - SyncStateChange
+    uint32                  eventType;
+};
+
+instance of __EventProviderRegistration
+{
+    Provider            = $EVENTPROVIDER;
+    EventQueryList = {"select * from SyncEvent", "select * from CoolerEvent", "select * from ThermalEvent"};
+};

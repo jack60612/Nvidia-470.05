@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<forms>
+	<form name="Install" base="!SplashTemplate" locale="0x040b"/>
+	<form name="Uninstall" base="!SplashTemplate" locale="0x040b"/>
+	<form name="SideBarMetrics" base="!SideBarTemplate" locale="0x040b">
+		<control name="SBsysCheck" height="25pt"/>
+		<properties>
+			<string name="@SideBarTextLineTwoY" value="103pt"/>
+			<string name="@SideBarIconLineTwoY" value="104pt"/>
+			<string name="@SideBarTextLineThreeY" value="126pt"/>
+			<string name="@SideBarIconLineThreeY" value="127pt"/>
+			<string name="@SideBarTextLineFourY" value="149pt"/>
+			<string name="@SideBarIconLineFourY" value="150pt"/>
+			<string name="@SideBarTextLineFiveY" value="172pt"/>
+			<string name="@SideBarIconLineFiveY" value="173pt"/>
+		</properties>
+	</form>
+	<form name="InstallChecking" base="!InstallCheckingTemplate" locale="0x040b"/>
+	<form name="InstallCheckWait" base="!InstallCheckWaitTemplate" locale="0x040b"/>
+	<form name="EULA" base="!EULATemplate" locale="0x040b">
+		<control name="headText" style="smallHeader"/>
+	</form>
+	<form name="InstallSelect" base="!InstallSelectTemplate" locale="0x040b"/>
+	<form name="InstallSelectCustom" base="!InstallSelectCustomTemplate" locale="0x040b"/>
+	<if filter="progressPresentation">
+		<form name="PreInstallCheck" base="!PreInstallCheckProgressPresentationTemplate" locale="0x040b"/>
+		<form name="InstallRemoveProgress" base="!InstallRemoveProgressPresentationTemplate" locale="0x040b"/>
+		<form name="PreRebootInstall" base="!PreRebootInstallProgressPresentationTemplate" locale="0x040b"/>
+		<form name="InstallProgress" base="!InstallProgressPresentationTemplate" locale="0x040b"/>
+		<form name="PackageDownloadProgress" base="PackageDownloadProgressPresentationTemplate" locale="0x040b"/>
+		<form name="ProcessDownloadedPackage" base="ProcessDownloadedPackagePresentationTemplate" locale="0x040b"/>
+		<else>
+			<form name="PreInstallCheck" base="!PreInstallCheckTemplate" locale="0x040b"/>
+			<form name="InstallRemoveProgress" base="!InstallRemoveProgressTemplate" locale="0x040b"/>
+			<form name="PreRebootInstall" base="!PreRebootInstallTemplate" locale="0x040b"/>
+			<form name="InstallProgress" base="!InstallProgressTemplate" locale="0x040b"/>
+			<form name="PackageDownloadProgress" base="PackageDownloadProgressTemplate" locale="0x040b"/>
+			<form name="ProcessDownloadedPackage" base="ProcessDownloadedPackageTemplate" locale="0x040b"/>
+		</else>
+	</if>
+	<form name="InstallSelectInstallationPath" base="!SelectInstallationPathTemplate" locale="0x040b"/>
+	<form name="PackageDownloadFailed" base="PackageDownloadFailedTemplate" locale="0x040b"/>
+	<form name="PreInstallCheckRetry" base="!PreInstallCheckRetryTemplate" locale="0x040b">
+		<control name="back" x="187pt"/>
+		<control name="next" style="mediumPrimaryButton" x="254pt"/>
+	</form>
+	<form name="PreInstallCheckWait" base="!PreInstallCheckWaitTemplate" locale="0x040b"/>
+	<form name="InstallRemoveReboot" base="!InstallRemoveRebootTemplate" locale="0x040b">
+		<control name="headText" style="smallHeader"/>
+	</form>
+	<form name="InstallFinished" base="!InstallFinishedTemplate" locale="0x040b"/>
+	<form name="InstallFinishedNoSummary" base="!InstallFinishedNoSummaryTemplate" locale="0x040b"/>
+	<form name="InstallFinishedLaunch" base="!InstallFinishedLaunchTemplate" locale="0x040b"/>
+	<form name="InstallFinishedNoSummaryLaunch" base="!InstallFinishedNoSummaryLaunchTemplate" locale="0x040b"/>
+	<form name="InstallFinishedOptions" base="!InstallFinishedOptionsTemplate" locale="0x040b"/>
+	<form name="InstallFinishedNoSummaryOptions" base="!InstallFinishedOptionsNoSummaryTemplate" locale="0x040b"/>
+	<form name="InstallCheckFailed" base="!InstallCheckFailedTemplate" locale="0x040b"/>
+	<form name="InstallFailed" base="!InstallFailedTemplate" locale="0x040b"/>
+	<form name="InstallReboot" base="!InstallRebootTemplate" locale="0x040b">
+		<control name="next" style="largePrimaryButton" x="145pt" width="135pt"/>
+		<control name="cancel" style="largeSecondaryButton" x="280pt" width="155pt"/>
+	</form>
+	<form name="InstallRebootNoSummary" base="!InstallRebootNoSummaryTemplate" locale="0x040b">
+		<control name="next" style="largePrimaryButton" x="145pt" width="135pt"/>
+		<control name="cancel" style="largeSecondaryButton" x="280pt" width="155pt"/>
+	</form>
+	<form name="InstallRebootNoSummaryOptions" base="!InstallRebootNoSummaryOptionsTemplate" locale="0x040b">
+		<control name="next" style="largePrimaryButton" x="145pt" width="135pt"/>
+		<control name="cancel" style="largeSecondaryButton" x="280pt" width="155pt"/>
+	</form>
+	<form name="InstallRebootOptions" base="!InstallRebootOptionsTemplate" locale="0x040b">
+		<control name="next" style="largePrimaryButton" x="145pt" width="135pt"/>
+		<control name="cancel" style="largeSecondaryButton" x="280pt" width="155pt"/>
+	</form>
+	<form name="UninstallChecking" base="!UninstallCheckingTemplate" locale="0x040b"/>
+	<form name="UninstallCheckWait" base="!UninstallCheckWaitTemplate" locale="0x040b"/>
+	<form name="UninstallConfirm" base="!UninstallConfirmTemplate" locale="0x040b">
+		<control name="next" style="mediumPrimaryButton" x="254pt"/>
+	</form>
+	<form name="PreUninstallCheck" base="!PreUninstallCheckTemplate" locale="0x040b"/>
+	<form name="PreUninstallCheckWait" base="!PreUninstallCheckWaitTemplate" locale="0x040b"/>
+	<form name="UninstallProgress" base="!UninstallProgressTemplate" locale="0x040b"/>
+	<form name="UninstallFinished" base="!UninstallFinishedTemplate" locale="0x040b"/>
+	<form name="UninstallCheckFailed" base="!UninstallCheckFailedTemplate" locale="0x040b"/>
+	<form name="UninstallFailed" base="!UninstallFailedTemplate" locale="0x040b"/>
+	<form name="UninstallReboot" base="!UninstallRebootTemplate" locale="0x040b">
+		<control name="next" style="largePrimaryButton" x="145pt" width="135pt"/>
+		<control name="cancel" style="largeSecondaryButton" x="280pt" width="155pt"/>
+	</form>
+</forms>

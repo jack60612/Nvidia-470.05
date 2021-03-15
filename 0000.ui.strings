@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string name="RightToLeft" value="false"/>
+	<string name="FrameBackgroundImageSplash" value="${{FrameBackgroundImageSplash}}"/>
+	<string name="FrameBackgroundImageInstall" value="${{FrameBackgroundImageInstall}}"/>
+	<string name="FrameBackgroundImageUninstall" value="${{FrameBackgroundImageUninstall}}"/>
+	<string name="FrameBackgroundImagePresentations" value="${{FrameBackgroundImagePresentations}}"/>
+	<string name="RedirectBaseUrl" value="http://www.nvidia.com/content/drivers/redirect.asp"/>
+	<string name="URLLanguageIdentifierToken" value="?language=${{AbbrevLangName}}"/>
+	<string name="SignatureErrorLearnMoreUrl" value="${{RedirectBaseUrl}}${{URLLanguageIdentifierToken}}${{SignatureErrorLearnMorePage}}"/>
+	<string name="SignatureErrorLearnMorePage" value="&amp;page=installer_standalone_error_signature"/>
+	<string name="SignatureErrorLearnMoreLink" value="&lt;a href=&quot;${{SignatureErrorLearnMoreUrl}}&quot;&gt;${{LearnMore}}&lt;/a&gt;"/>
+	<string name="DataWriteErrorLearnMoreUrl" value="${{RedirectBaseUrl}}${{URLLanguageIdentifierToken}}${{DataWriteErrorLearnMorePage}}"/>
+	<string name="DataWriteErrorLearnMorePage" value="&amp;page=installer_standalone_error_write"/>
+	<string name="DataWriteErrorLearnMoreLink" value="&lt;a href=&quot;${{DataWriteErrorLearnMoreUrl}}&quot;&gt;${{LearnMore}}&lt;/a&gt;"/>
+</strings>

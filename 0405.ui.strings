@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0405">
+		<string name="VersionText" value="Verze ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Verze ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="Instalační aplikace NVIDIA"/>
+		<string name="UninstallFrameTitle" value="Odinstalační aplikace NVIDIA"/>
+		<string name="ErrorNoPackagesToInstall" value="Nejsou žádné komponenty k instalaci."/>
+		<string name="ErrorMissingRequiredPackages" value="Požadované komponenty chybí."/>
+		<string name="ErrorMissingPackageFiles" value="Požadované soubory chybí."/>
+		<string name="ErrorUnsupportedPlatform" value="Používaný operační systém není tímto balíčkem podporován. Získejte správný instalační balíček pro váš systém."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Ostatní instalace běží. Dokončete ostatní instalace a poté zkuste znovu."/>
+		<string name="ErrorInstallerNeedReboot" value="Je vyžadován restart systému. Restartujte systém a zkuste znovu."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Chcete-li pokračovat, uvolněte místo na disku.
+Požadovaný prostor: "/>
+		<string name="RequiredFilesMissing" value="Jeden nebo více požadovaných souborů chybí."/>
+		<string name="ErrorEULAMissing" value="Nelze spustit instalaci NVIDIA, neboť chybí soubor &quot;EULA.txt&quot;."/>
+		<string name="ErrorPackageCorrupt" value="Instalační balíček je poškozen."/>
+		<string name="CannotCancelInstallMessage" value="Instalační aplikaci NVIDIA v tuto chvíli nelze zastavit."/>
+		<string name="CannotCancelUninstallMessage" value="Odinstalace NVIDIA v tuto chvíli nemůže být zastavena."/>
+		<string name="ConfirmCancelMessage" value="Chcete instalaci opravdu zrušit?"/>
+		<string name="CompList" value="Seznam komponentů"/>
+		<string name="ResList" value="Seznam výsledků"/>
+		<string name="VersionHeader" value="Verze"/>
+		<string name="ComponentHeader" value="Komponent"/>
+		<string name="NewVersionHeader" value="Nová verze"/>
+		<string name="CurVersionHeader" value="Současná verze"/>
+		<string name="StatusHeader" value="Stav"/>
+		<string name="ListEntryNotFound" value="Nenalezeno"/>
+		<string name="ListEntryNotSelected" value="Nevybráno"/>
+		<string name="ListEntryInstalled" value="Instalováno"/>
+		<string name="ListEntryNotInstalled" value="Nenainstalováno"/>
+		<string name="ListEntryNoneInstalled" value="Žádný"/>
+		<string name="ListEntryUninstalled" value="Odstraněno"/>
+		<string name="ListEntryNotUninstalled" value="Neodstraněno"/>
+		<string name="ListEntryFailed" value="Nezdařilo se"/>
+		<string name="ListEntrySkipped" value="Nenainstalován. Je již nainstalována novější verze."/>
+		<string name="SystemCheck" value="Kontrola systému"/>
+		<string name="LicenseAgreement" value="Licenční dohoda"/>
+		<string name="Options" value="Možnosti"/>
+		<string name="Installation" value="Instalovat"/>
+		<string name="Finish" value="Dokončit"/>
+		<string name="NextButtonText" value="&amp;DALŠÍ"/>
+		<string name="BackButtonText" value="&amp;ZPĚT"/>
+		<string name="CancelButtonText" value="&amp;ZRUŠIT"/>
+		<string name="CloseButtonText" value="Z&amp;AVŘÍT"/>
+		<string name="RetryButtonText" value="Z&amp;NOVU"/>
+		<string name="AgreeButtonText" value="&amp;SOUHLASIT A POKRAČOVAT"/>
+		<string name="RestartNowButtonText" value="&amp;RESTARTOVAT NYNÍ"/>
+		<string name="RestartLaterButtonText" value="RESTARTOVAT &amp;POZDĚJI"/>
+		<string name="UninstallButtonText" value="&amp;ODINSTALOVAT"/>
+		<string name="ContinueButtonText" value="&amp;POKRAČOVAT"/>
+		<string name="LaunchButtonText" value="&amp;SPUSTIT"/>
+		<string name="BrowseButtonText" value="PROCHÁZET..."/>
+		<string name="CheckingSystemCompatibility" value="Zkontrolovat kompatibilitu systému"/>
+		<string name="Warnings" value="Upozornění."/>
+		<string name="EULAHeadText" value="Licenční dohoda softwaru NVIDIA"/>
+		<string name="EULAInstructions" value="Přečtěte si pozorně následující licenční dohodu softwaru NVIDIA."/>
+		<string name="EULAAcceptInstructions" value="Jestliže akceptujete podmínky dohody, klikněte na Souhlasím a pokračujte."/>
+		<string name="NoEULAFound" value="Nelze nalézt žádnou licenční dohodu koncového uživatele (EULA)."/>
+		<string name="InstallOptions" value="Možnosti instalace"/>
+		<string name="ExpressRecommended" value="&amp;Expresní (Doporučeno)"/>
+		<string name="CustomAdvanced" value="&amp;Vlastní (Pokročilé)"/>
+		<string name="ExpressDescription" value="Aktualizuje existující ovladače a zachová současná nastavení NVIDIA."/>
+		<string name="CustomDescription" value="Umožňuje vám vybrat komponenty, které si přejete nainstalovat a nabízí možnost čisté instalace."/>
+		<string name="CustomInstallOptions" value="Možnosti vlastní instalace"/>
+		<string name="CustomInstallInstructions" value="Vyberte komponenty ovladače:"/>
+		<string name="CleanInstall" value="&amp;Provést čistou instalaci"/>
+		<string name="CleanInstallDescription" value="Čistá instalace obnoví všechna nastavení NVIDIA na výchozí hodnoty a odstraní všechny profily, které jste vytvořili."/>
+		<string name="SelectInstallLocation" value="Vybrat umístění instalace"/>
+		<string name="InstallPreparing" value="Příprava na instalaci"/>
+		<string name="RebootInstallPreparing" value="Připravování na restart..."/>
+		<string name="UninstallingPrevious" value="Odstranění předchozí verze"/>
+		<string name="RemoveStatus" value="Odstranění ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Restartování do 60 sekund"/>
+		<string name="AfterRestartInstructions" value="Po restartování bude instalace NVIDIA pokračovat."/>
+		<string name="InstallInProgress" value="Instalace probíhá"/>
+		<string name="InstallStatus" value="Probíhá instalace ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Nainstalovat vše"/>
+		<string name="InstallerFinished" value="Instalační aplikace NVIDIA byla dokončena"/>
+		<string name="InstallerFinishedInstructions" value="Následující komponenty jsou nyní instalovány:"/>
+		<string name="InstallCannotContinue" value="Instalační aplikace NVIDIA nemůže pokračovat"/>
+		<string name="FailureReasonHeader" value="Důvod selhání:"/>
+		<string name="FailureDisplayError" value="Nelze zobrazit chyby."/>
+		<string name="InstallFailure" value="Instalační aplikace NVIDIA selhala"/>
+		<string name="InstallWarning" value="Přejete si pokračovat?"/>
+		<string name="FailureListHeader" value="Objevily se následující chyby:"/>
+		<string name="InstallRebootInstructions" value="Pro dokončení instalace restartuje počítač."/>
+		<string name="RebootQuestion" value="Chcete restartovat nyní?"/>
+		<string name="UninstallPreparing" value="Příprava odinstalování"/>
+		<string name="UninstallQuestion" value="Opravdu si přejte tento software odebrat?"/>
+		<string name="UninstallInProgress" value="Probíhá odstraňování"/>
+		<string name="UninstallStatus" value="Odstranění ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="Odinstalační aplikace NVIDIA byla dokončena"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} byl úspěšně odstraněn."/>
+		<string name="UninstallCannotContinue" value="Odinstalační aplikace NVIDIA nemůže pokračovat"/>
+		<string name="UninstallFailure" value="Odinstalační aplikace NVIDIA selhala"/>
+		<string name="UninstallRebootInstructions" value="Pro dokončení odstranění restartuje počítač."/>
+		<string name="WaitPnpAlreadyRunning" value="Je spuštěn průvodce hardwarem. Instalace bude pokračovat po jeho ukončení."/>
+		<string name="DisplayFlash" value="Poznámka: Během instalace se může vyskytnout určité blikání."/>
+		<string name="PreCheckWarning" value="Byl zjištěn jeden nebo více problémů"/>
+		<string name="OldOverNewWarning" value="Tento ovladač je starší než momentálně používaná verze. Jeho instalace obnoví všechna nastavení NVIDIA na výchozí hodnoty a odstraní všechny profily, které jste vytvořili."/>
+		<string name="IntelDriverNotPresentMessage" value="Nejprve musíte nainstalovat ovladač Intel®."/>
+		<string name="ReleaseHighlights" value="Hlavní body vydané verze"/>
+		<string name="UpdatesReadyToInstall" value="Nové aktualizace jsou připraveny k nainstalování"/>
+		<string name="UpdatesReady" value="K dispozici jsou nové aktualizace"/>
+		<string name="UpdatesBeingInstalled" value="Aktualizace jsou instalovány"/>
+		<string name="UpdateText" value="Probíhá aktualizace"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Probíhá příprava aktualizací"/>
+		<string name="InstallPaused" value="Instalační aplikace NVIDIA byla přerušena"/>
+		<string name="ClosePrograms" value="Zavřít tyto programy a pokračovat:"/>
+		<string name="DownloadInProgress" value="Probíhá stahování"/>
+		<string name="DownloadingPackages" value="Stahování instalačních balíčků"/>
+		<string name="ProcessingDownloadedPackages" value="Procesování instalačních balíčků"/>
+		<string name="DownloadProgressInfo" value="$${!DownloadProgressInfo}% dokončeno"/>
+		<string name="LearnMore" value="DalÅ¡Ã­ informace."/>
+		<string name="NetworkConnectionError" value="Nebylo nalezeno Å¾Ã¡dnÃ© pÅ™ipojenÃ­ k sÃ­ti."/>
+		<string name="DefaultDownloadFailure" value="StahovÃ¡nÃ­ nebylo dokonÄeno. Zkuste to znovu."/>
+		<string name="NetworkFailureNoConnection" value="Nelze se pÅ™ipojit kÂ NVIDIA. Zkontrolujte svÃ© internetovÃ© pÅ™ipojenÃ­."/>
+		<string name="NetworkFailureTryAgain" value="Nelze se pÅ™ipojit kÂ NVIDIA. Zkuste to znovu pozdÄ›ji."/>
+		<string name="SignatureCheckFailure" value="StahovÃ¡nÃ­ nebylo dokonÄeno. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Soubory potÅ™ebnÃ© pro instalaci nelze stÃ¡hnout. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

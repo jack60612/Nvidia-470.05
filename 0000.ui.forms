@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<forms>
+	<form name="BaseFontFamilyTemplate" locale="0x0000">
+		<fonts>
+			<font name="default" family="Arial"/>
+		</fonts>
+	</form>
+	<form name="BaseFontsStylesTemplate" base="!BaseFontFamilyTemplate" locale="0x0000">
+		<fonts>
+			<font name="splashTitle" base="default" height="13pt" caps="true"/>
+			<font name="splashVersion" base="default" height="10pt" caps="true"/>
+			<font name="splashInfoTitle" base="default" height="13pt" caps="true"/>
+			<font name="splashInfoVersion" base="default" height="10pt" caps="true"/>
+			<font name="title" base="default" height="16pt"/>
+			<font name="subtitle" base="default" height="11pt"/>
+			<font name="sidebar" base="default" height="9pt" weight="700"/>
+			<font name="button" base="default" height="8pt" caps="false"/>
+			<font name="header" base="default" height="15pt" weight="700"/>
+			<font name="largeText" base="default" height="10pt"/>
+			<font name="standardText" base="default" height="8pt"/>
+			<font name="smallText" base="default" height="7pt"/>
+			<font name="smallHeader" base="header" height="13pt"/>
+			<font name="smallSidebar" base="sidebar" height="8pt"/>
+			<font name="smallSplashTitle" base="splashTitle" height="10pt"/>
+		</fonts>
+		<styles>
+			<control style="splashTitle" class="label" font="splashTitle" height="13pt" width="186pt" alignment="right" enabledTextColor="0xFFFFFF" bkgndColor="TRANSPARENT"/>
+			<control style="smallSplashTitle" class="label" font="smallSplashTitle" height="13pt" width="186pt" alignment="right" enabledTextColor="0xFFFFFF" bkgndColor="TRANSPARENT"/>
+			<control style="splashVersion" class="label" font="splashVersion" height="13pt" width="186pt" alignment="right" enabledTextColor="0x00462C" bkgndColor="TRANSPARENT"/>
+			<control style="splashInfo" class="splashLabel" height="72pt" width="186pt" alignment="right" titleFont="splashInfoTitle" versionFont="splashInfoVersion" titleColor="0xFFFFFF" versionColor="0x00462c" bkgndColor="TRANSPARENT"/>
+			<control style="advice" class="label" font="smallText" height="12pt" enabledTextColor="0xFFFFFF" bkgndColor="TRANSPARENT"/>
+			<control style="label" class="label" font="standardText" height="20pt" enabledTextColor="0xFFFFFF" bkgndColor="TRANSPARENT"/>
+			<control style="header" class="label" font="header" height="30pt" enabledTextColor="0xFFFFFF" bkgndColor="TRANSPARENT"/>
+			<control style="smallHeader" class="label" font="smallHeader" height="30pt" enabledTextColor="0xFFFFFF" bkgndColor="TRANSPARENT"/>
+			<control style="title" class="label" font="title" x="15pt" y="9pt" width="392pt" height="30pt" enabledTextColor="0x76B900" bkgndColor="TRANSPARENT"/>
+			<control style="subtitle" class="label" font="subtitle" x="15pt" y="27pt" width="392pt" height="30pt" enabledTextColor="0x76B900" bkgndColor="TRANSPARENT"/>
+			<control style="doneIcon" class="image" width="10pt" height="10pt" sourceFile="checkmark.png"/>
+			<control style="sideBarLabel" class="label" font="sidebar" width="93pt" height="12pt" bkgndColor="TRANSPARENT"/>
+			<control style="wideSideBarLabel" class="label" font="sidebar" width="98pt" height="12pt" bkgndColor="TRANSPARENT"/>
+			<control style="smallPrimaryButton" class="button" font="button" width="68pt" height="21pt" enabledTextColor="${{PrimaryButtonEnabledTextColor}}" hoverTextColor="${{PrimaryButtonHoverTextColor}}" pressedTextColor="${{PrimaryButtonPressedTextColor}}" disabledTextColor="${{PrimaryButtonDisabledTextColor}}" enabledImage="${{SmallPrimaryButtonEnabledImage}}" disabledImage="${{SmallPrimaryButtonDisabledImage}}" hoverImage="${{SmallPrimaryButtonFocusImage}}" pressedImage="${{SmallPrimaryButtonPressedImage}}"/>
+			<control style="smallSecondaryButton" class="button" font="button" width="68pt" height="21pt" enabledTextColor="${{SecondaryButtonEnabledTextColor}}" hoverTextColor="${{SecondaryButtonHoverTextColor}}" pressedTextColor="${{SecondaryButtonPressedTextColor}}" disabledTextColor="${{SecondaryButtonDisabledTextColor}}" enabledImage="${{SmallSecondaryButtonEnabledImage}}" disabledImage="${{SmallSecondaryButtonDisabledImage}}" hoverImage="${{SmallSecondaryButtonFocusImage}}" pressedImage="${{SmallSecondaryButtonPressedImage}}"/>
+			<control style="mediumPrimaryButton" class="button" font="button" width="102pt" height="21pt" enabledTextColor="${{PrimaryButtonEnabledTextColor}}" hoverTextColor="${{PrimaryButtonHoverTextColor}}" pressedTextColor="${{PrimaryButtonPressedTextColor}}" disabledTextColor="${{PrimaryButtonDisabledTextColor}}" enabledImage="${{MediumPrimaryButtonEnabledImage}}" disabledImage="${{MediumPrimaryButtonDisabledImage}}" hoverImage="${{MediumPrimaryButtonFocusImage}}" pressedImage="${{MediumPrimaryButtonPressedImage}}"/>
+			<control style="mediumSecondaryButton" class="button" font="button" width="102pt" height="21pt" enabledTextColor="${{SecondaryButtonEnabledTextColor}}" hoverTextColor="${{SecondaryButtonHoverTextColor}}" pressedTextColor="${{SecondaryButtonPressedTextColor}}" disabledTextColor="${{SecondaryButtonDisabledTextColor}}" enabledImage="${{MediumSecondaryButtonEnabledImage}}" disabledImage="${{MediumSecondaryButtonDisabledImage}}" hoverImage="${{MediumSecondaryButtonFocusImage}}" pressedImage="${{MediumSecondaryButtonPressedImage}}"/>
+			<control style="largePrimaryButton" class="button" font="button" width="135pt" height="21pt" enabledTextColor="${{PrimaryButtonEnabledTextColor}}" hoverTextColor="${{PrimaryButtonHoverTextColor}}" pressedTextColor="${{PrimaryButtonPressedTextColor}}" disabledTextColor="${{PrimaryButtonDisabledTextColor}}" enabledImage="${{LargePrimaryButtonEnabledImage}}" disabledImage="${{LargePrimaryButtonDisabledImage}}" hoverImage="${{LargePrimaryButtonFocusImage}}" pressedImage="${{LargePrimaryButtonPressedImage}}"/>
+			<control style="largeSecondaryButton" class="button" font="button" width="135pt" height="21pt" enabledTextColor="${{SecondaryButtonEnabledTextColor}}" hoverTextColor="${{SecondaryButtonHoverTextColor}}" pressedTextColor="${{SecondaryButtonPressedTextColor}}" disabledTextColor="${{SecondaryButtonDisabledTextColor}}" enabledImage="${{LargeSecondaryButtonEnabledImage}}" disabledImage="${{LargeSecondaryButtonDisabledImage}}" hoverImage="${{LargeSecondaryButtonFocusImage}}" pressedImage="${{LargeSecondaryButtonPressedImage}}"/>
+			<control style="radio" class="radio" font="largeText" width="200pt" height="12pt" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F" bkgndColor="TRANSPARENT" selectedEnabledImage="${{RadioSelectedEnabledImage}}" unselectedEnabledImage="${{RadioUnselectedEnabledImage}}" selectedDisabledImage="${{RadioSelectedDisabledImage}}" unselectedDisabledImage="${{RadioUnselectedDisabledImage}}"/>
+			<control style="checkbox" class="checkbox" font="standardText" width="200pt" height="12pt" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F" bkgndColor="TRANSPARENT" checkedEnabledImage="${{CheckboxCheckedEnabledImage}}" uncheckedEnabledImage="${{CheckboxUncheckedEnabledImage}}" checkedDisabledImage="${{CheckboxCheckedDisabledImage}}" uncheckedDisabledImage="${{CheckboxUncheckedDisabledImage}}"/>
+			<control style="checkboxLargeText" class="checkbox" font="largeText" width="200pt" height="12pt" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F" bkgndColor="TRANSPARENT" checkedEnabledImage="${{CheckboxCheckedEnabledImage}}" uncheckedEnabledImage="${{CheckboxUncheckedEnabledImage}}" checkedDisabledImage="${{CheckboxCheckedDisabledImage}}" uncheckedDisabledImage="${{CheckboxUncheckedDisabledImage}}"/>
+			<control style="compList" class="packagelistview" font="standardText" text="${{CompList}}" enabledTextColor="0xb7bebd" disabledTextColor="0xe0e3e3" bkgndColor="0x394a4a" rowColor="0x394a4a" compColName="${{ComponentHeader}}" newVerColName="${{NewVersionHeader}}" curVerColName="${{CurVersionHeader}}" verNotFoundText="${{ListEntryNotFound}}" verNotInstalledText="${{ListEntryNoneInstalled}}" compColWidth="118pt" newVerColWidth="68pt" curVerColWidth="68pt" property="packageProp" iconSize="11pt" checkedEnabledImage="${{CheckboxCheckedEnabledImage}}" uncheckedEnabledImage="${{CheckboxUncheckedEnabledImage}}" checkedDisabledImage="${{CheckboxCheckedDisabledImage}}" uncheckedDisabledImage="${{CheckboxUncheckedDisabledImage}}"/>
+			<control style="compTreeList" class="packagetreelistview" font="standardText" text="${{compList}}" enabledTextColor="0xb7bebd" disabledTextColor="0xe0e3e3" bkgndColor="0x394a4a" rowColor="0x394a4a" compColName="${{ComponentHeader}}" newVerColName="${{NewVersionHeader}}" curVerColName="${{CurVersionHeader}}" verNotFoundText="${{ListEntryNotFound}}" verNotInstalledText="${{ListEntryNoneInstalled}}" compColWidth="154pt" newVerColWidth="58pt" curVerColWidth="66pt" property="packageProp" iconSize="11pt" checkedEnabledImage="${{CheckboxCheckedEnabledImage}}" uncheckedEnabledImage="${{CheckboxUncheckedEnabledImage}}" checkedDisabledImage="${{CheckboxCheckedDisabledImage}}" uncheckedDisabledImage="${{CheckboxUncheckedDisabledImage}}" checkboxPartialEnabledImage="${{CheckboxedPartialEnabledImage}}"/>
+			<control style="browsePathForPackages" class="browsepath" bkgndColor="TRANSPARENT" packageNameFont="largeText" installLocationFont="standardText" browseButtonFont="button" enabledTextColor="0xFFFFFF" dataColumnWidth="200pt" browseColumnWidth="70pt" rowHeight="35pt" browseButtonWidth="68pt" browseButtonHeight="21pt" browseButtonEnabledImage="${{SmallPrimaryButtonEnabledImage}}" browseButtonText="${{BrowseButtonText}}"/>
+			<control style="installResults" class="resultslistview" font="standardText" text="${{ResList}}" enabledTextColor="0xb7bebd" disabledTextColor="0xe0e3e3" bkgndColor="0x394a4a" rowColor="0x394a4a" compColName="${{ComponentHeader}}" verColName="${{VersionHeader}}" resultColName="${{StatusHeader}}" showResultCol="true" verNotFoundText="${{ListEntryNotFound}}" successText="${{ListEntryInstalled}}" failedText="${{ListEntryFailed}}" notSelectedText="${{ListEntryNotSelected}}" notPerformedText="${{ListEntryNotInstalled}}" category="install" compColWidth="118pt" newVerColWidth="68pt" resultColWidth="68pt"/>
+			<control style="uninstallResults" class="resultslistview" font="standardText" text="${{ResList}}" enabledTextColor="0xb7bebd" disabledTextColor="0xe0e3e3" bkgndColor="0x394a4a" rowColor="0x394a4a" compColName="${{ComponentHeader}}" verColName="${{VersionHeader}}" resultColName="${{StatusHeader}}" showResultCol="true" verNotFoundText="${{ListEntryNotFound}}" successText="${{ListEntryUninstalled}}" failedText="${{ListEntryFailed}}" notSelectedText="${{ListEntryNotSelected}}" notPerformedText="${{ListEntryNotUninstalled}}" category="uninstall" compColWidth="135pt" newVerColWidth="62pt" resultColWidth="62pt"/>
+			<control style="filesinuse" class="filesinuseview" font="standardText" text="${{ClosePrograms}}" enabledTextColor="0xb7bebd" disabledTextColor="0xe0e3e3" bkgndColor="0x394a4a" rowColor="0x394a4a" showJustIcons="false" iconSize="32px"/>
+			<control style="finishOptions" class="finishchecklist" enabledTextColor="0xFFFFFF" font="standardText" bkgndColor="TRANSPARENT" checkDimensions="12pt" checkedImage="${{CheckboxCheckedEnabledImage}}" uncheckedImage="${{CheckboxUncheckedEnabledImage}}" height="105pt" rowHeight="20pt"/>
+			<if filter="progressPresentation">
+				<control style="progressPresentation" class="html" x="0pt" y="0pt" width="444pt" height="270pt" hidden="true" data="${{progressPresentationData}}" ready="@ContentReady" file="${{progressPresentationFile}}"/>
+			</if>
+		</styles>
+	</form>
+	<form name="Blank" locale="0x0000">
+	</form>
+	<form name="NoSideBarTemplate" base="!BaseFontsStylesTemplate" locale="0x0000">
+		<properties>
+			<string name="!FrameBackgroundImage" value="${{FrameBackgroundImageUninstall}}"/>
+			<bool name="!ShowBorder" value="true"/>
+			<string name="!FrameWidth" value="444pt"/>
+			<string name="!FrameHeight" value="309pt"/>
+		</properties>
+	</form>
+	<form name="SideBarTemplate" base="!BaseFontsStylesTemplate" locale="0x0000">
+		<properties>
+			<string name="!FrameBackgroundImage" value="${{FrameBackgroundImageInstall}}"/>
+			<bool name="!ShowBorder" value="true"/>
+			<string name="!FrameWidth" value="444pt"/>
+			<string name="!FrameHeight" value="309pt"/>
+			<string name="@SideBarProgress" value=""/>
+			<bool name="@SysCheckPending" value="true"/>
+			<string name="@SysCheckTextColor" value="${{SideBarNotDoneTextColor}}"/>
+			<bool name="@EulaPending" value="true"/>
+			<string name="@EulaTextColor" value="${{SideBarNotDoneTextColor}}"/>
+			<bool name="@OptionsPending" value="true"/>
+			<string name="@OptionsTextColor" value="${{SideBarNotDoneTextColor}}"/>
+			<bool name="@ProgressPending" value="true"/>
+			<string name="@ProgressTextColor" value="${{SideBarNotDoneTextColor}}"/>
+			<bool name="@FinishPending" value="true"/>
+			<string name="@FinishTextColor" value="${{SideBarNotDoneTextColor}}"/>
+			<string name="@SideBarIconX" value="16pt"/>
+			<string name="@SideBarTextX" value="30pt"/>
+			<string name="@SideBarTextLineOneY" value="68pt"/>
+			<string name="@SideBarIconLineOneY" value="69pt"/>
+			<string name="@SideBarTextLineTwoY" value="89pt"/>
+			<string name="@SideBarIconLineTwoY" value="90pt"/>
+			<string name="@SideBarTextLineThreeY" value="112pt"/>
+			<string name="@SideBarIconLineThreeY" value="113pt"/>
+			<string name="@SideBarTextLineFourY" value="135pt"/>
+			<string name="@SideBarIconLineFourY" value="136pt"/>
+			<string name="@SideBarTextLineFiveY" value="158pt"/>
+			<string name="@SideBarIconLineFiveY" value="159pt"/>
+		</properties>
+		<conditions>
+			<switch property="@SideBarProgress">
+				<case value="Checking">
+					<properties>
+						<string name="@SysCheckTextColor" value="${{SideBarCurrentTextColor}}"/>
+					</properties>
+				</case>
+				<case value="EULA">
+					<properties>
+						<string name="@SysCheckTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@SysCheckPending" value="false"/>
+						<string name="@EulaTextColor" value="${{SideBarCurrentTextColor}}"/>
+					</properties>
+				</case>
+				<case value="Options">
+					<properties>
+						<string name="@SysCheckTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@SysCheckPending" value="false"/>
+						<string name="@EulaTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@EulaPending" value="false"/>
+						<string name="@OptionsTextColor" value="${{SideBarCurrentTextColor}}"/>
+					</properties>
+				</case>
+				<case value="Progress">
+					<properties>
+						<string name="@SysCheckTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@SysCheckPending" value="false"/>
+						<string name="@EulaTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@EulaPending" value="false"/>
+						<string name="@OptionsTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@OptionsPending" value="false"/>
+						<string name="@ProgressTextColor" value="${{SideBarCurrentTextColor}}"/>
+					</properties>
+				</case>
+				<case value="Finish">
+					<properties>
+						<string name="@SysCheckTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@SysCheckPending" value="false"/>
+						<string name="@EulaTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@EulaPending" value="false"/>
+						<string name="@OptionsTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@OptionsPending" value="false"/>
+						<string name="@ProgressTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@ProgressPending" value="false"/>
+						<string name="@FinishTextColor" value="${{SideBarCurrentTextColor}}"/>
+					</properties>
+				</case>
+				<case value="AllDone">
+					<properties>
+						<string name="@SysCheckTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@SysCheckPending" value="false"/>
+						<string name="@EulaTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@EulaPending" value="false"/>
+						<string name="@OptionsTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@OptionsPending" value="false"/>
+						<string name="@ProgressTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@ProgressPending" value="false"/>
+						<string name="@FinishTextColor" value="${{SideBarDoneTextColor}}"/>
+						<bool name="@FinishPending" value="false"/>
+					</properties>
+				</case>
+				<default>
+				</default>
+			</switch>
+		</conditions>
+		<control name="SBsysCheck" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineOneY}" text="${{SystemCheck}}" enabledTextColor="${@SysCheckTextColor}"/>
+		<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineOneY}" hidden="${@SysCheckPending}"/>
+		<control name="SBeula" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineTwoY}" text="${{LicenseAgreement}}" enabledTextColor="${@EulaTextColor}"/>
+		<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineTwoY}" hidden="${@EulaPending}"/>
+		<if filter="SkipOptions">
+			<control name="SBXprogress" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineThreeY}" text="${{Installation}}" enabledTextColor="${@ProgressTextColor}"/>
+			<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineThreeY}" hidden="${@ProgressPending}"/>
+			<control name="SBXfinish" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineFourY}" text="${{Finish}}" enabledTextColor="${@FinishTextColor}"/>
+			<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineFourY}" hidden="${@FinishPending}"/>
+			<else>
+				<control name="SBoptions" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineThreeY}" text="${{Options}}" enabledTextColor="${@OptionsTextColor}"/>
+				<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineThreeY}" hidden="${@OptionsPending}"/>
+				<control name="SBprogress" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineFourY}" text="${{Installation}}" enabledTextColor="${@ProgressTextColor}"/>
+				<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineFourY}" hidden="${@ProgressPending}"/>
+				<control name="SBfinish" style="sideBarLabel" x="${@SideBarTextX}" y="${@SideBarTextLineFiveY}" text="${{Finish}}" enabledTextColor="${@FinishTextColor}"/>
+				<control style="doneIcon" x="${@SideBarIconX}" y="${@SideBarIconLineFiveY}" hidden="${@FinishPending}"/>
+			</else>
+		</if>
+	</form>
+	<form name="SideBarMetrics" base="!SideBarTemplate" locale="0x0000"/>
+	<form name="InstallTemplate" base="!SideBarMetrics" locale="0x0000" cancel="cancel">
+		<properties>
+			<string name="!FrameDefaultTitle" value="${{InstallFrameTitle}}"/>
+			<string name="!CannotCancelMessage" value="${{CannotCancelInstallMessage}}"/>
+			<string name="@SideBarProgress" value=""/>
+		</properties>
+		<control name="title" style="title" text="${{GeneralTitleText}}"/>
+		<if filter="!HideVersion">
+			<control name="subtitle" style="subtitle" text="${{GeneralVersionText}}"/>
+			<else>
+				<control name="subtitle" style="subtitle" text=""/>
+			</else>
+		</if>
+		<control name="header" class="placeholder"/>
+		<control name="body" class="placeholder"/>
+		<control name="footer" class="placeholder"/>
+		<control name="back" style="smallSecondaryButton" x="221pt" y="280pt" text="${{BackButtonText}}" onClick="!PrevFormGroup"/>
+		<control name="next" style="smallPrimaryButton" x="289pt" y="280pt" text="${{NextButtonText}}" onClick="!NextFormGroup"/>
+		<control name="cancel" style="smallSecondaryButton" x="366pt" y="280pt" text="${{CancelButtonText}}" onClick="!CancelInstall"/>
+	</form>
+	<form name="UninstallTemplate" base="!NoSideBarTemplate" locale="0x0000" cancel="cancel">
+		<properties>
+			<string name="!FrameDefaultTitle" value="${{UninstallFrameTitle}}"/>
+			<string name="!CannotCancelMessage" value="${{CannotCancelUninstallMessage}}"/>
+			<string name="@SideBarProgress" value=""/>
+		</properties>
+		<control name="title" style="title" x="15pt" y="9pt" width="392pt" text="${{GeneralTitleText}}"/>
+		<if filter="!HideVersion">
+			<control name="subtitle" style="subtitle" x="15pt" y="27pt" width="392pt" text="${{GeneralVersionText}}"/>
+			<else>
+				<control name="subtitle" style="subtitle" x="15pt" y="27pt" width="392pt" text=""/>
+			</else>
+		</if>
+		<control name="header" class="placeholder"/>
+		<control name="body" class="placeholder"/>
+		<control name="footer" class="placeholder"/>
+		<control name="back" style="smallSecondaryButton" x="221pt" y="280pt" text="${{BackButtonText}}" onClick="!PrevFormGroup"/>
+		<control name="next" style="smallPrimaryButton" x="289pt" y="280pt" text="${{NextButtonText}}" onClick="!NextFormGroup"/>
+		<control name="cancel" style="smallSecondaryButton" x="366pt" y="280pt" text="${{CancelButtonText}}" onClick="!CancelInstall"/>
+	</form>
+	<form name="PresentationTemplate" base="!BaseFontsStylesTemplate" locale="0x0000">
+		<properties>
+			<string name="!FrameBackgroundImage" value="${{FrameBackgroundImagePresentations}}"/>
+			<bool name="!ShowBorder" value="true"/>
+			<string name="!FrameWidth" value="444pt"/>
+			<string name="!FrameHeight" value="309pt"/>
+		</properties>
+		<control name="presentation" class="placeholder"/>
+		<control name="footer" class="placeholder"/>
+	</form>
+	<form name="SplashTemplate" base="!BaseFontsStylesTemplate" locale="0x0000">
+		<control name="splashInfoArea" style="splashInfo" x="1pt" y="135pt" titleXOffset="5pt" titleYOffset="10pt" titleText="${{GeneralTitleText}}" versionText="${{GeneralVersionText}}"/>
+		<control class="timer" onTimeout="!NextFormGroup" timeoutValue="true" duration="500" start="true"/>
+	</form>
+	<if filter="progressPresentation">
+		<form name="ProgressPresentationTemplate" base="!PresentationTemplate" locale="0x0000">
+			<control name="presentation"/>
+			<control name="progressPresentation" style="progressPresentation" hidden="false"/>
+			<control name="footer"/>
+			<control name="taskInfo" style="label" x="8pt" y="272pt" width="428pt" height="15pt" text=""/>
+			<control name="progressBar" class="progress" x="8pt" y="288pt" width="428pt" height="15pt"/>
+		</form>
+		<form name="PreInstallCheckProgressPresentationTemplate" base="!ProgressPresentationTemplate" locale="0x0000">
+			<properties>
+				<bool name="!DisableCloseButton" value="true"/>
+				<string name="@SideBarProgress" value="Progress"/>
+			</properties>
+			<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+			<control name="taskInfo" text="${{InstallPreparing}}"/>
+			<control name="progressBar" marquee="true"/>
+		</form>
+		<form name="PreRebootInstallProgressPresentationTemplate" base="!PreInstallCheckProgressPresentationTemplate" locale="0x0000">
+			<control name="taskInfo" text="${{RebootInstallPreparing}}"/>
+		</form>
+		<form name="InstallRemoveProgressPresentationTemplate" base="!ProgressPresentationTemplate" locale="0x0000">
+			<properties>
+				<bool name="!DisableCloseButton" value="true"/>
+				<string name="@SideBarProgress" value="Progress"/>
+			</properties>
+			<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+			<control name="taskInfo" text="${{UninstallingPrevious}} -- ${!ProgressTitleFull}"/>
+			<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+		</form>
+		<form name="InstallProgressPresentationTemplate" base="!ProgressPresentationTemplate" locale="0x0000">
+			<properties>
+				<bool name="!DisableCloseButton" value="true"/>
+				<string name="@SideBarProgress" value="Progress"/>
+			</properties>
+			<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="500" start="true"/>
+			<control name="taskInfo" text="${!ProgressTitleFull}"/>
+			<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+		</form>
+		<form name="PackageDownloadProgressPresentationTemplate" base="!ProgressPresentationTemplate" locale="0x0000">
+			<properties>
+				<bool name="!DisableCloseButton" value="true"/>
+				<string name="@SideBarProgress" value="Progress"/>
+			</properties>
+			<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="1" start="true"/>
+			<control name="taskInfo" text="${{DownloadInProgress}} : ${{DownloadProgressInfo}}"/>
+			<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+			<control name="cancel"/>
+		</form>
+		<form name="ProcessDownloadedPackagePresentationTemplate" base="!ProgressPresentationTemplate" locale="0x0000">
+			<properties>
+				<bool name="!DisableCloseButton" value="true"/>
+				<string name="@SideBarProgress" value="Progress"/>
+			</properties>
+			<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="1" start="true"/>
+			<control name="taskInfo" text="${{ProcessingDownloadedPackages}}"/>
+			<control name="progressBar" marquee="true"/>
+			<control name="cancel" disabled="true"/>
+		</form>
+	</if>
+	<form name="InstallProgressBarTemplate" base="!InstallTemplate" locale="0x0000">
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt"/>
+		<control name="body"/>
+		<control name="taskInfo" style="label" x="137pt" y="90pt" width="294pt" height="15pt" text=""/>
+		<control name="progressBar" class="progress" x="137pt" y="107pt" width="294pt" height="15pt"/>
+		<control name="footer"/>
+		<control name="back" disabled="true"/>
+		<control name="next" disabled="true"/>
+	</form>
+	<form name="InstallSuccessTemplate" base="!InstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Finish"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{InstallerFinished}}"/>
+		<control name="body"/>
+		<if filter="!HideResults">
+			<control name="resultsList" style="installResults" x="137pt" y="105pt" width="294pt" height="127pt"/>
+		</if>
+		<control name="footer"/>
+		<control name="back"/>
+		<control name="next"/>
+		<control name="cancel"/>
+	</form>
+	<form name="InstallSuccessNoSummaryTemplate" base="!InstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Finish"/>
+			<string name="FormStyle" value="Summary"/>
+		</properties>
+		<control name="header"/>
+		<control name="body"/>
+		<control name="CheckIcon" class="image" x="260pt" y="107pt" width="49pt" height="49pt" sourceFile="circled_checkmark.png"/>
+		<control name="headText" style="header" x="137pt" y="168pt" width="294pt" height="23pt" text="${{InstallComplete}}" alignment="center"/>
+		<control name="footer"/>
+		<control name="back"/>
+		<control name="next"/>
+		<control name="cancel"/>
+	</form>
+	<form name="InstallCheckingTemplate" base="!InstallProgressBarTemplate" locale="0x0000">
+		<conditions>
+			<switch property="ProgressOnly">
+				<case value="true">
+					<properties>
+						<bool name="!DisableCloseButton" value="true"/>
+					</properties>
+				</case>
+			</switch>
+		</conditions>
+		<properties>
+			<string name="@SideBarProgress" value="Checking"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="True"/>
+		<control name="headText" text="${{CheckingSystemCompatibility}}"/>
+		<control name="progressBar" marquee="true"/>
+		<control name="back" disabled="true"/>
+		<control name="cancel" disabled="${!ProgressOnly}"/>
+	</form>
+	<form name="InstallCheckWaitTemplate" base="!InstallTemplate" locale="0x0000">
+		<properties>
+			<string name="@SideBarProgress" value="Checking"/>
+			<string name="@Reset" value="true"/>
+		</properties>
+		<control name="pollTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="True" duration="2000" start="True" reset="@Reset"/>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="137pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="159pt" y="63pt" width="272pt" height="23pt" text="${{InstallCannotContinue}}"/>
+		<control name="body"/>
+		<control name="constraints" class="constraintlist" x="137pt" y="105pt" width="294pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" hidden="true"/>
+	</form>
+	<form name="EULATemplate" base="!InstallTemplate" locale="0x0000" cancel="cancel" default="next" focus="next">
+		<properties>
+			<string name="@SideBarProgress" value="EULA"/>
+			<bool name="!DisableCloseButton" value="false"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{EULAHeadText}}"/>
+		<control name="body"/>
+		<control name="eulaHeader" style="label" x="137pt" y="90pt" width="294pt" height="15pt" text="${{EULAInstructions}}"/>
+		<control name="eulaBox" class="richedit" x="137pt" y="105pt" width="294pt" height="135pt" font="largeText" text="${{NoEULAFound}}" readOnly="true" sourceFile="${!EulaFile}" vScroll="true" multiLine="true" enabledTextColor="0xb7bebd" bkgndColor="0x394a4a"/>
+		<control name="eulaFooter" style="label" x="137pt" y="247pt" width="294pt" height="15pt" text="${{EULAAcceptInstructions}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" style="largePrimaryButton" x="222pt" text="${{AgreeButtonText}}"/>
+	</form>
+	<form name="InstallSelectTemplate" base="!InstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<string name="@InstallSelectBegin" value="Debug"/>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Options"/>
+			<string name="@InstallSelectNext" value=""/>
+			<string name="@InstallSelectEnd" value="Debug"/>
+		</properties>
+		<conditions>
+			<switch property="InstallType">
+				<case value="Express">
+				</case>
+				<default>
+				</default>
+			</switch>
+			<switch property="@InstallSelectNext">
+				<case value="Activated">
+					<switch property="InstallType">
+						<case value="Express">
+							<properties>
+								<bool name="NextFormGroup" value="true"/>
+							</properties>
+						</case>
+						<default>
+							<properties>
+								<string name="CurrentForm" value="InstallSelectCustom"/>
+							</properties>
+						</default>
+					</switch>
+				</case>
+			</switch>
+		</conditions>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{InstallOptions}}"/>
+		<control name="body"/>
+		<control name="express" style="radio" x="137pt" y="90pt" width="294pt" text="${{ExpressRecommended}}" property="InstallType" selectedValue="Express" initSelect="true"/>
+		<control name="expressAdvice" style="label" x="152pt" y="108pt" width="212pt" height="45pt" text="${{ExpressDescription}}"/>
+		<control name="custom" style="radio" x="137pt" y="150pt" width="294pt" text="${{CustomAdvanced}}" property="InstallType" selectedValue="Custom" initSelect="false"/>
+		<control name="customAdvice" style="label" x="152pt" y="168pt" width="215pt" height="45pt" text="${{CustomDescription}}"/>
+		<control name="displayFlash" style="label" x="137pt" y="222pt" width="294pt" height="40pt" text="${{DisplayFlash}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="${!SkipEula}"/>
+		<control name="next" onClick="@InstallSelectNext" clickValue="Activated"/>
+		<if filter="progressPresentation">
+			<control name="progressPresentation" style="progressPresentation"/>
+		</if>
+	</form>
+	<form name="InstallSelectCustomTemplate" base="!InstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Options"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{CustomInstallOptions}}"/>
+		<control name="body"/>
+		<control name="instructions" style="label" x="137pt" y="90pt" width="294pt" height="15pt" text="${{CustomInstallInstructions}}"/>
+		<control name="compList" style="compList" x="137pt" y="105pt" width="294pt" height="90pt"/>
+		<control name="clean" style="checkbox" x="137pt" y="202pt" text="${{CleanInstall}}" property="!CleanInstall" initSelect="false"/>
+		<control name="warningIcon" class="image" x="153pt" y="220pt" width="16pt" height="16pt" sourceFile="warning.png"/>
+		<control name="adviceFooter" style="advice" x="172pt" y="220pt" width="259pt" height="45pt" enabledTextColor="0x8a918c" bkgndColor="TRANSPARENT" text="${{CleanInstallDescription}}"/>
+		<control name="footer"/>
+		<control name="back" onClick="CurrentForm" clickValue="InstallSelect"/>
+	</form>
+	<form name="PreInstallTemplate" base="!InstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Options"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt"/>
+		<control name="body"/>
+		<control name="placeholder" class="placeholder"/>
+		<control name="footer"/>
+	</form>
+	<form name="PreInstallCheckTemplate" base="!InstallProgressBarTemplate" locale="0x0000" cancel="cancel">
+		<properties>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+		<control name="headText" text="${{InstallPreparing}}"/>
+		<control name="progressBar" marquee="true"/>
+	</form>
+	<form name="PreRebootInstallTemplate" base="!PreInstallCheckTemplate" locale="0x0000" cancel="cancel">
+		<control name="headText" text="${{RebootInstallPreparing}}"/>
+	</form>
+	<form name="PreInstallCheckRetryTemplate" base="!InstallTemplate" locale="0x0000" cancel="cancel" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="137pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="159pt" y="63pt" width="272pt" height="23pt" text="${{InstallCannotContinue}}"/>
+		<control name="body"/>
+		<control name="constraints" class="constraintlist" x="137pt" y="90pt" width="294pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F" bkgndColor="TRANSPARENT"/>
+		<control name="footer"/>
+		<if filter="SkipOptions">
+			<control name="back" onClick="CurrentForm" clickValue="EULA"/>
+		</if>
+		<control name="next" x="289pt" text="${{RetryButtonText}}"/>
+		<control name="cancel" x="366pt" text="${{CancelButtonText}}" onClick="CancelInstall"/>
+	</form>
+	<form name="PreInstallCheckWaitTemplate" base="!InstallTemplate" locale="0x0000">
+		<properties>
+			<string name="@SideBarProgress" value="Progress"/>
+			<string name="@Reset" value="true"/>
+		</properties>
+		<control name="pollTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="True" duration="2000" start="True" reset="@Reset"/>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="272pt" height="23pt" text="${{InstallPaused}}"/>
+		<control name="body"/>
+		<control name="bodyHeader" style="label" x="137pt" y="90pt" width="294pt" height="15pt" text="${{ClosePrograms}}"/>
+		<control name="filesinuse" style="filesinuse" x="137pt" y="105pt" width="294pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" hidden="true"/>
+	</form>
+	<form name="SelectInstallationPathTemplate" base="!InstallTemplate" locale="0x0000" cancel="cancel" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Options"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{SelectInstallLocation}}"/>
+		<control name="body"/>
+		<control name="browsepath" style="browsePathForPackages" x="137pt" y="90pt" width="294pt" height="130pt"/>
+		<control name="footer"/>
+	</form>
+	<form name="InstallRemoveProgressTemplate" base="!InstallProgressBarTemplate" locale="0x0000">
+		<properties>
+			<bool name="!DisableCloseButton" value="true"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+		<control name="headText" text="${{UninstallingPrevious}}"/>
+		<control name="taskInfo" text="${!ProgressTitleFull}"/>
+		<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+		<control name="cancel" disabled="true"/>
+	</form>
+	<form name="InstallRemoveRebootTemplate" base="!InstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="60000" start="true"/>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{RestartNotification}}"/>
+		<control name="body"/>
+		<control name="advice" style="label" x="137pt" y="90pt" width="294pt" height="15pt" text="${{AfterRestartInstructions}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true"/>
+		<control name="next" x="333pt" style="mediumPrimaryButton" text="${{RestartNowButtonText}}"/>
+		<control name="cancel" hidden="true"/>
+	</form>
+	<form name="PackageDownloadProgressTemplate" base="!InstallProgressBarTemplate" locale="0x0000">
+		<properties>
+			<bool name="!DisableCloseButton" value="true"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="1" start="true"/>
+		<control name="headText" text="${{DownloadInProgress}}"/>
+		<control name="taskInfo" text="${{DownloadingPackages}}"/>
+		<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+		<control name="progressInfo" style="label" x="137pt" y="130pt" width="150pt" height="15pt" text="${{DownloadProgressInfo}}"/>
+		<control name="cancel"/>
+	</form>
+	<form name="ProcessDownloadedPackageTemplate" base="!InstallProgressBarTemplate" locale="0x0000">
+		<properties>
+			<bool name="!DisableCloseButton" value="true"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="1" start="true"/>
+		<control name="headText" text="${{ProcessingDownloadedPackages}}"/>
+		<control name="progressBar" marquee="true"/>
+		<control name="cancel" disabled="true"/>
+	</form>
+	<form name="PackageDownloadFailedTemplate" base="!InstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="137pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="159pt" y="63pt" width="272pt" height="23pt" text="${{InstallCannotContinue}}"/>
+		<control name="body"/>
+		<control name="downloadError" style="label" class="link" x="137pt" y="90pt" width="294pt" height="25pt" text="${!DownloadErrorMessage}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallProgressTemplate" base="!InstallProgressBarTemplate" locale="0x0000">
+		<properties>
+			<bool name="!DisableCloseButton" value="true"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+		<control name="headText" text="${{InstallInProgress}}"/>
+		<control name="body"/>
+		<control name="taskInfo" text="${!ProgressTitleFull}"/>
+		<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+		<control name="cancel" disabled="true"/>
+	</form>
+	<form name="PostInstallTemplate" base="!InstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Finish"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt"/>
+		<control name="body"/>
+		<control name="placeholder" class="placeholder"/>
+		<control name="footer"/>
+	</form>
+	<form name="InstallFinishedTemplate" base="!InstallSuccessTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallFinishedNoSummaryTemplate" base="!InstallSuccessNoSummaryTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallFinishedLaunchTemplate" base="!InstallSuccessTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{LaunchButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallFinishedNoSummaryLaunchTemplate" base="!InstallSuccessNoSummaryTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{LaunchButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallFinishedOptionsTemplate" base="!InstallSuccessTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{InstallerFinished}}"/>
+		<control name="body"/>
+		<control name="resultsList" style="installResults" x="137pt" y="90pt" width="294pt" height="120pt"/>
+		<control name="finishOptions" style="finishOptions" x="134pt" y="220pt" width="294pt" height="55pt"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallFinishedOptionsNoSummaryTemplate" base="!InstallSuccessTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{InstallerFinished}}"/>
+		<control name="body"/>
+		<control name="resultsList" style="installResults" hidden="true"/>
+		<control name="finishOptions" style="finishOptions" x="134pt" y="90pt" width="294pt" height="127pt"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallCheckFailedTemplate" base="!InstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Checking"/>
+		</properties>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="137pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="159pt" y="63pt" width="272pt" height="23pt" text="${{InstallCannotContinue}}"/>
+		<control name="body"/>
+		<control name="constraints" class="constraintlist" x="137pt" y="90pt" width="294pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F" bkgndColor="TRANSPARENT"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallCheckWarningTemplate" base="!InstallTemplate" locale="0x0000" cancel="cancel" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Checking"/>
+		</properties>
+		<control name="header"/>
+		<control name="warningIcon" class="image" x="137pt" y="62pt" width="18pt" height="18pt" sourceFile="warning.png"/>
+		<control name="headText" style="header" x="159pt" y="63pt" width="272pt" height="23pt" text="${{InstallWarning}}"/>
+		<control name="body"/>
+		<control name="constraints" class="constraintlist" x="137pt" y="90pt" width="294pt" height="135pt" font="standardText" text="${{FailureDisplayWarning}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F" bkgndColor="TRANSPARENT"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" x="289pt" text="${{ContinueButtonText}}" onClick="NextFormGroup"/>
+		<control name="cancel" x="366pt" text="${{CloseButtonText}}" onClick="CancelInstall"/>
+	</form>
+	<form name="InstallFailedTemplate" base="!InstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="137pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="159pt" y="63pt" width="272pt" height="23pt" text="${{InstallFailure}}"/>
+		<control name="body"/>
+		<if filter="!HideResults">
+			<control name="resultsList" style="installResults" x="137pt" y="105pt" width="294pt" height="127pt"/>
+		</if>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="InstallRebootTemplate" base="!InstallSuccessTemplate" locale="0x0000" default="next" focus="next">
+		<control name="body"/>
+		<control name="infoIcon" class="image" x="137pt" y="215pt" width="12pt" height="12pt" sourceFile="info.png"/>
+		<if filter="!HideResults">
+			<control name="resultsList" style="installResults" x="137pt" y="105pt" width="294pt" height="93pt"/>
+		</if>
+		<control name="rebootInstructions" style="label" x="153pt" y="217pt" width="278pt" height="15pt" text="${{InstallRebootInstructions}}"/>
+		<control name="rebootQuestion" style="label" x="153pt" y="227pt" width="278pt" height="15pt" text="${{RebootQuestion}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" style="mediumPrimaryButton" x="227pt" text="${{RestartNowButtonText}}"/>
+		<control name="cancel" style="mediumSecondaryButton" x="333pt" text="${{RestartLaterButtonText}}"/>
+	</form>
+	<form name="InstallRebootNoSummaryTemplate" base="!InstallSuccessNoSummaryTemplate" locale="0x0000" default="next" focus="next">
+		<control name="body"/>
+		<control name="CheckIcon" class="image" x="260pt" y="107pt" width="49pt" height="49pt" sourceFile="circled_checkmark.png"/>
+		<control name="headText" style="header" x="137pt" y="168pt" width="294pt" height="23pt" text="${{InstallComplete}}" alignment="center"/>
+		<control name="infoIcon" class="image" x="137pt" y="215pt" width="12pt" height="12pt" sourceFile="info.png"/>
+		<control name="rebootInstructions" style="label" x="153pt" y="217pt" width="278pt" height="15pt" text="${{InstallRebootInstructions}}"/>
+		<control name="rebootQuestion" style="label" x="153pt" y="227pt" width="278pt" height="15pt" text="${{RebootQuestion}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" style="mediumPrimaryButton" x="227pt" text="${{RestartNowButtonText}}"/>
+		<control name="cancel" style="mediumSecondaryButton" x="333pt" text="${{RestartLaterButtonText}}"/>
+	</form>
+	<form name="InstallRebootNoSummaryOptionsTemplate" base="!InstallSuccessNoSummaryTemplate" locale="0x0000" default="next" focus="next">
+		<control name="body"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{InstallerFinished}}" alignment="left"/>
+		<control name="CheckIcon" hidden="true"/>
+		<control name="finishOptions" style="finishOptions" x="134pt" y="105pt" width="315pt" height="93pt"/>
+		<control name="infoIcon" class="image" x="137pt" y="215pt" width="12pt" height="12pt" sourceFile="info.png"/>
+		<control name="rebootInstructions" style="label" x="153pt" y="217pt" width="278pt" height="15pt" text="${{InstallRebootInstructions}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" style="mediumPrimaryButton" x="227pt" text="${{RestartNowButtonText}}"/>
+		<control name="cancel" style="mediumSecondaryButton" x="333pt" text="${{RestartLaterButtonText}}"/>
+	</form>
+	<form name="InstallRebootOptionsTemplate" base="!InstallSuccessTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<control name="header"/>
+		<control name="headText" style="header" x="137pt" y="63pt" width="294pt" height="23pt" text="${{InstallerFinished}}"/>
+		<control name="body"/>
+		<control name="resultsList" style="installResults" x="137pt" y="105pt" width="294pt" height="93pt"/>
+		<control name="finishOptions" style="finishOptions" x="134pt" y="220pt" width="315pt" height="20pt"/>
+		<control name="infoIcon" class="image" x="137pt" y="245pt" width="12pt" height="12pt" sourceFile="info.png"/>
+		<control name="rebootInstructions" style="label" x="153pt" y="247pt" width="278pt" height="15pt" text="${{InstallRebootInstructions}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" style="mediumPrimaryButton" x="227pt" text="${{RestartNowButtonText}}"/>
+		<control name="cancel" style="mediumSecondaryButton" x="333pt" text="${{RestartLaterButtonText}}"/>
+	</form>
+	<form name="UninstallProgressBarTemplate" base="!UninstallTemplate" locale="0x0000">
+		<control name="header"/>
+		<control name="headText" style="header" x="16pt" y="63pt" width="408pt" height="23pt"/>
+		<control name="body"/>
+		<control name="taskInfo" style="label" x="16pt" y="90pt" width="408pt" height="15pt" text=""/>
+		<control name="progressBar" class="progress" x="16pt" y="107pt" width="408pt" height="15pt"/>
+		<control name="footer"/>
+		<control name="back" hidden="true"/>
+		<control name="next" hidden="true"/>
+	</form>
+	<form name="UninstallCheckingTemplate" base="!UninstallProgressBarTemplate" locale="0x0000">
+		<properties>
+			<string name="@SideBarProgress" value="Checking"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="True"/>
+		<control name="headText" text="${{UninstallPreparing}}"/>
+		<control name="progressBar" marquee="true"/>
+		<control name="back" disabled="true"/>
+		<control name="next" disabled="true"/>
+	</form>
+	<form name="UninstallCheckWaitTemplate" base="!UninstallTemplate" locale="0x0000">
+		<properties>
+			<string name="@SideBarProgress" value="Checking"/>
+			<string name="@Reset" value="true"/>
+		</properties>
+		<control name="pollTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="2000" start="True" reset="@Reset"/>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="16pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="38pt" y="63pt" width="385pt" height="23pt" text="${{UninstallCannotContinue}}"/>
+		<control name="body"/>
+		<control name="constraints" class="constraintlist" x="16pt" y="105pt" width="408pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" hidden="true"/>
+	</form>
+	<form name="PreUninstallTemplate" base="!UninstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<string name="@SideBarProgress" value="Options"/>
+		</properties>
+		<control name="header"/>
+		<control name="body"/>
+		<control name="headText" style="header" x="16pt" y="63pt" width="408pt" height="90pt"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" text="${{NextButtonText}}"/>
+	</form>
+	<form name="UninstallConfirmTemplate" base="!UninstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<string name="@SideBarProgress" value="Checking"/>
+		</properties>
+		<control name="header"/>
+		<control name="body"/>
+		<control name="headText" style="header" x="16pt" y="63pt" width="408pt" height="90pt" text="${{UninstallQuestion}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" text="${{UninstallButtonText}}" onClick="NextFormGroup"/>
+		<control name="cancel" text="${{CancelButtonText}}" onClick="CancelInstall"/>
+	</form>
+	<form name="PreUninstallCheckTemplate" base="!UninstallProgressBarTemplate" locale="0x0000" cancel="cancel">
+		<properties>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+		<control name="headText" text="${{UninstallPreparing}}"/>
+		<control name="progressBar" marquee="true"/>
+	</form>
+	<form name="PreUninstallCheckWaitTemplate" base="!UninstallTemplate" locale="0x0000">
+		<properties>
+			<string name="@SideBarProgress" value="Progress"/>
+			<string name="@Reset" value="true"/>
+		</properties>
+		<control name="pollTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="2000" start="True" reset="@Reset"/>
+		<control name="header"/>
+		<control name="headText" style="header" x="16pt" y="63pt" width="385pt" height="23pt" text="${{InstallPaused}}"/>
+		<control name="body"/>
+		<control name="bodyHeader" style="label" x="16pt" y="90pt" width="294pt" height="15pt" text="${{ClosePrograms}}"/>
+		<control name="filesinuse" style="filesinuse" x="16pt" y="105pt" width="408pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" hidden="true"/>
+	</form>
+	<form name="UninstallProgressTemplate" base="!UninstallProgressBarTemplate" locale="0x0000">
+		<properties>
+			<string name="@SideBarProgress" value="Progress"/>
+			<bool name="!DisableCloseButton" value="true"/>
+		</properties>
+		<control name="waitTimeout" class="timer" onTimeout="NextFormGroup" timeoutValue="true" duration="250" start="true"/>
+		<control name="headText" text="${{UninstallInProgress}}"/>
+		<control name="taskInfo" text="${!ProgressTitleFull}"/>
+		<control name="progressBar" min="0" max="${!ProgressCount}" pos="${!ProgressIndex}" smooth="true"/>
+		<control name="back" disabled="true"/>
+		<control name="cancel" disabled="true"/>
+	</form>
+	<form name="UninstallFinishedTemplate" base="!UninstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Finish"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="16pt" y="63pt" width="408pt" height="23pt" text="${{UninstallComplete}}"/>
+		<control name="body"/>
+		<control name="done-label" style="label" x="16pt" y="90pt" width="408pt" height="40pt" text="${{UninstallSuccessInfo}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="UninstallCheckFailedTemplate" base="!UninstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Checking"/>
+		</properties>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="16pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="38pt" y="63pt" width="385pt" height="23pt" text="${{UninstallCannotContinue}}"/>
+		<control name="body"/>
+		<control name="constraints" class="constraintlist" x="16pt" y="90pt" width="514pt" height="135pt" font="standardText" text="${{FailureDisplayError}}" enabledTextColor="0xFFFFFF" disabledTextColor="0x7F7F7F"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="UninstallFailedTemplate" base="!UninstallTemplate" locale="0x0000" cancel="next" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Progress"/>
+		</properties>
+		<control name="header"/>
+		<control name="errorIcon" class="image" x="16pt" y="62pt" width="18pt" height="18pt" sourceFile="error.png"/>
+		<control name="headText" style="header" x="38pt" y="63pt" width="385pt" height="23pt" text="${{UninstallFailure}}"/>
+		<control name="body"/>
+		<control name="uninstFailedText" style="label" x="16pt" y="90pt" width="408pt" height="15pt" text="${{FailureListHeader}}"/>
+		<control name="resultsList" style="uninstallResults" x="16pt" y="105pt" width="408pt" height="137pt"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="cancel" hidden="true" disabled="true"/>
+		<control name="next" x="366pt" text="${{CloseButtonText}}" onClick="CloseInstall"/>
+	</form>
+	<form name="UninstallRebootTemplate" base="!UninstallTemplate" locale="0x0000" default="next" focus="next">
+		<properties>
+			<bool name="!DisableCloseButton" value="false"/>
+			<string name="@SideBarProgress" value="Finish"/>
+		</properties>
+		<control name="header"/>
+		<control name="headText" style="header" x="16pt" y="63pt" width="408pt" height="15" text="${{UninstallComplete}}"/>
+		<control name="body"/>
+		<control name="infoIcon" class="image" x="16pt" y="95pt" width="12pt" height="12pt" sourceFile="info.png"/>
+		<control name="rebootInstructions" style="label" x="32pt" y="97pt" width="391pt" height="15pt" text="${{UninstallRebootInstructions}}"/>
+		<control name="rebootQuestion" style="label" x="32pt" y="107pt" width="391pt" height="15pt" text="${{RebootQuestion}}"/>
+		<control name="footer"/>
+		<control name="back" hidden="true" disabled="true"/>
+		<control name="next" style="mediumPrimaryButton" x="227pt" text="${{RestartNowButtonText}}"/>
+		<control name="cancel" style="mediumSecondaryButton" x="333pt" text="${{RestartLaterButtonText}}"/>
+	</form>
+</forms>

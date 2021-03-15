@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x080a">
+		<string name="VersionText" value="Versión ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Versión ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="Instalador de NVIDIA"/>
+		<string name="UninstallFrameTitle" value="Desinstalador de NVIDIA"/>
+		<string name="ErrorNoPackagesToInstall" value="No hay componentes para instalar."/>
+		<string name="ErrorMissingRequiredPackages" value="Faltan componentes necesarios."/>
+		<string name="ErrorMissingPackageFiles" value="Faltan archivos necesarios."/>
+		<string name="ErrorUnsupportedPlatform" value="El sistema operativo que se está utilizando no es compatible con este paquete. Obtenga el paquete correcto para su sistema."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Otras instalaciones se están ejecutando. Finalizar las otras instalaciones e intentar de nuevo."/>
+		<string name="ErrorInstallerNeedReboot" value="Hay que reiniciar el sistema. Reiniciar el sistema e intentar de nuevo."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Para continuar, libere más espacio en el disco.
+Espacio necesario: "/>
+		<string name="RequiredFilesMissing" value="Faltan uno o más archivos necesarios."/>
+		<string name="ErrorEULAMissing" value="No se puede ejecutar Instalación de NVIDIA porque falta &quot;EULA.txt&quot;."/>
+		<string name="ErrorPackageCorrupt" value="El paquete de instalación está dañado."/>
+		<string name="CannotCancelInstallMessage" value="El instalador de NVIDIA no puede interrumpirse en este momento."/>
+		<string name="CannotCancelUninstallMessage" value="El desinstalador de NVIDIA no puede interrumpirse en este momento."/>
+		<string name="ConfirmCancelMessage" value="¿Está seguro de que desea cancelar?"/>
+		<string name="CompList" value="Lista de componentes"/>
+		<string name="ResList" value="Lista de resultados"/>
+		<string name="VersionHeader" value="Versión"/>
+		<string name="ComponentHeader" value="Componente"/>
+		<string name="NewVersionHeader" value="Nueva versión"/>
+		<string name="CurVersionHeader" value="Versión actual"/>
+		<string name="StatusHeader" value="Estado"/>
+		<string name="ListEntryNotFound" value="No se encontró"/>
+		<string name="ListEntryNotSelected" value="No seleccionado"/>
+		<string name="ListEntryInstalled" value="Instalado"/>
+		<string name="ListEntryNotInstalled" value="No instalado"/>
+		<string name="ListEntryNoneInstalled" value="Ninguno"/>
+		<string name="ListEntryUninstalled" value="Eliminado"/>
+		<string name="ListEntryNotUninstalled" value="No eliminado"/>
+		<string name="ListEntryFailed" value="Error	"/>
+		<string name="ListEntrySkipped" value="No se instaló. Ya existe una versión más actual."/>
+		<string name="SystemCheck" value="Comprobación del sistema"/>
+		<string name="LicenseAgreement" value="Contrato de licencia"/>
+		<string name="Options" value="Opciones"/>
+		<string name="Installation" value="Instalar"/>
+		<string name="Finish" value="Finalizar"/>
+		<string name="NextButtonText" value="&amp;SIGUIENTE"/>
+		<string name="BackButtonText" value="&amp;ATRÁS"/>
+		<string name="CancelButtonText" value="&amp;CANCELAR"/>
+		<string name="CloseButtonText" value="&amp;CERRAR"/>
+		<string name="RetryButtonText" value="&amp;REINTENTAR"/>
+		<string name="AgreeButtonText" value="&amp;ACEPTAR Y CONTINUAR"/>
+		<string name="RestartNowButtonText" value="&amp;REINICIAR AHORA"/>
+		<string name="RestartLaterButtonText" value="REINICIAR &amp;MÁS TARDE"/>
+		<string name="UninstallButtonText" value="&amp;DESINSTALAR"/>
+		<string name="ContinueButtonText" value="C&amp;ONTINUAR"/>
+		<string name="LaunchButtonText" value="&amp;INICIAR"/>
+		<string name="BrowseButtonText" value="EXAMINAR..."/>
+		<string name="CheckingSystemCompatibility" value="Comprobando la compatibilidad del sistema"/>
+		<string name="Warnings" value="Advertencias."/>
+		<string name="EULAHeadText" value="Contrato de licencia de software de NVIDIA"/>
+		<string name="EULAInstructions" value="Lea atentamente el siguiente contrato de licencia de software de NVIDIA."/>
+		<string name="EULAAcceptInstructions" value="Haga clic en aceptar y continuar si acepta los términos del contrato."/>
+		<string name="NoEULAFound" value="No se puede encontrar un CLUF."/>
+		<string name="InstallOptions" value="Opciones de instalación"/>
+		<string name="ExpressRecommended" value="&amp;Rápida (recomendada)"/>
+		<string name="CustomAdvanced" value="&amp;Personalizada (avanzada)"/>
+		<string name="ExpressDescription" value="Actualiza los controladores existentes y conserva la configuración actual de NVIDIA."/>
+		<string name="CustomDescription" value="Le permite seleccionar los componentes que desea instalar y proporciona la opción para conseguir una instalación limpia."/>
+		<string name="CustomInstallOptions" value="Opciones de instalación personalizadas"/>
+		<string name="CustomInstallInstructions" value="Seleccionar componentes del controlador:"/>
+		<string name="CleanInstall" value="&amp;Realizar una instalación correcta"/>
+		<string name="CleanInstallDescription" value="Una instalación correcta restaura toda configuración de NVIDIA al valor predeterminado y elimina cualquier perfil que se haya creado."/>
+		<string name="SelectInstallLocation" value="Seleccionar ubicación de instalación"/>
+		<string name="InstallPreparing" value="Preparando la instalación"/>
+		<string name="RebootInstallPreparing" value="Preparando para reiniciar..."/>
+		<string name="UninstallingPrevious" value="Eliminando la versión anterior"/>
+		<string name="RemoveStatus" value="Eliminando ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Reiniciando en menos de 60 segundos"/>
+		<string name="AfterRestartInstructions" value="La instalación de NVIDIA continuará después de reiniciar."/>
+		<string name="InstallInProgress" value="Instalación en curso"/>
+		<string name="InstallStatus" value="Instalando ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Instalación completada"/>
+		<string name="InstallerFinished" value="El instalador de NVIDIA ha finalizado"/>
+		<string name="InstallerFinishedInstructions" value="Los siguientes componentes están ahora instalados:"/>
+		<string name="InstallCannotContinue" value="El instalador de NVIDIA no puede continuar"/>
+		<string name="FailureReasonHeader" value="Motivo del error:"/>
+		<string name="FailureDisplayError" value="No se pueden mostrar los errores."/>
+		<string name="InstallFailure" value="Error en el instalador de NVIDIA"/>
+		<string name="InstallWarning" value="¿Desea continuar?"/>
+		<string name="FailureListHeader" value="Han ocurrido los siguientes errores:"/>
+		<string name="InstallRebootInstructions" value="Para completar la instalación, reinicie el equipo."/>
+		<string name="RebootQuestion" value="¿Desea reiniciar ahora?"/>
+		<string name="UninstallPreparing" value="Preparando la desinstalación"/>
+		<string name="UninstallQuestion" value="¿Realmente desea eliminar este software?"/>
+		<string name="UninstallInProgress" value="Eliminación en curso"/>
+		<string name="UninstallStatus" value="Eliminando ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="El desinstalador de NVIDIA ha finalizado"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} se ha eliminado correctamente."/>
+		<string name="UninstallCannotContinue" value="El desinstalador de NVIDIA no puede continuar"/>
+		<string name="UninstallFailure" value="Error en el desinstalador de NVIDIA"/>
+		<string name="UninstallRebootInstructions" value="Para completar la eliminación, reinicie el equipo."/>
+		<string name="WaitPnpAlreadyRunning" value="El asistente del hardware se está ejecutando. La instalación continuará cuando haya terminado."/>
+		<string name="DisplayFlash" value="Nota: Durante la instalación se puede producir intermitencia."/>
+		<string name="PreCheckWarning" value="Se han detectado uno o más problemas"/>
+		<string name="OldOverNewWarning" value="Este controlador es más antiguo que la versión actual en uso. La instalación del mismo restaurará toda configuración de NVIDIA al valor predeterminado y eliminará cualquier perfil que se haya creado."/>
+		<string name="IntelDriverNotPresentMessage" value="Debe instalar primero un controlador de Intel®."/>
+		<string name="ReleaseHighlights" value="Puntos destacados de la versión"/>
+		<string name="UpdatesReadyToInstall" value="Las nuevas actualizaciones están listas para su instalación"/>
+		<string name="UpdatesReady" value="Las nuevas actualizaciones están listas"/>
+		<string name="UpdatesBeingInstalled" value="Instalación de actualizaciones en proceso"/>
+		<string name="UpdateText" value="Actualizando"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Preparando actualizaciones"/>
+		<string name="InstallPaused" value="El instalador de NVIDIA se ha detenido"/>
+		<string name="ClosePrograms" value="Cerrar estos programas para continuar:"/>
+		<string name="DownloadInProgress" value="Descarga en curso"/>
+		<string name="DownloadingPackages" value="Descargando paquetes de instalación"/>
+		<string name="ProcessingDownloadedPackages" value="Procesando paquetes descargados"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% terminado"/>
+		<string name="LearnMore" value="MÃ¡s informaciÃ³n."/>
+		<string name="NetworkConnectionError" value="No se encontrÃ³ ninguna conexiÃ³n de red."/>
+		<string name="DefaultDownloadFailure" value="La descarga no se completÃ³. Vuelva a intentarlo."/>
+		<string name="NetworkFailureNoConnection" value="No se puede conectar con NVIDIA. Compruebe su conexiÃ³n a Internet."/>
+		<string name="NetworkFailureTryAgain" value="No se puede conectar con NVIDIA. Vuelva a intentarlo mÃ¡s tarde."/>
+		<string name="SignatureCheckFailure" value="La descarga no se completÃ³. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="No se pudo descargar los archivos necesarios para la instalaciÃ³n. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0412">
+		<string name="VersionText" value="버전 ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="버전 ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA 설치 프로그램"/>
+		<string name="UninstallFrameTitle" value="NVIDIA 설치 제거 프로그램"/>
+		<string name="ErrorNoPackagesToInstall" value="설치할 구성 요소가 없습니다."/>
+		<string name="ErrorMissingRequiredPackages" value="필수 구성 요소가 없습니다."/>
+		<string name="ErrorMissingPackageFiles" value="필수 파일이 없습니다."/>
+		<string name="ErrorUnsupportedPlatform" value="이 패키지는 사용 중인 운영 체제를 지원하지 않습니다. 시스템에 맞는 올바른 패키지를 사용하십시오."/>
+		<string name="ErrorInstallerAlreadyRunning" value="다른 설치 프로그램이 실행 중입니다. 다른 설치 프로그램을 마치고 다시 시도하십시오."/>
+		<string name="ErrorInstallerNeedReboot" value="시스템을 재시작해야 합니다. 시스템을 재시작하고 다시 시도하십시오."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="계속하려면 추가 디스크 공간을 확보하십시오.
+필요한 공간: "/>
+		<string name="RequiredFilesMissing" value="하나 이상의 필수 파일이 없습니다."/>
+		<string name="ErrorEULAMissing" value="&quot;EULA.txt&quot;가 없어 NVIDIA 설치 프로그램을 실행할 수 없습니다."/>
+		<string name="ErrorPackageCorrupt" value="설치 패키지가 손상되었습니다."/>
+		<string name="CannotCancelInstallMessage" value="지금은 NVIDIA 설치 프로그램을 중지할 수 없습니다."/>
+		<string name="CannotCancelUninstallMessage" value="지금은 NVIDIA 설치 제거 프로그램을 중지할 수 없습니다."/>
+		<string name="ConfirmCancelMessage" value="취소하시겠습니까?"/>
+		<string name="CompList" value="구성 요소 목록"/>
+		<string name="ResList" value="결과 목록"/>
+		<string name="VersionHeader" value="버전"/>
+		<string name="ComponentHeader" value="구성 요소"/>
+		<string name="NewVersionHeader" value="새 버전"/>
+		<string name="CurVersionHeader" value="현재 버전"/>
+		<string name="StatusHeader" value="상태"/>
+		<string name="ListEntryNotFound" value="찾을 수 없습니다"/>
+		<string name="ListEntryNotSelected" value="선택하지 않았습니다"/>
+		<string name="ListEntryInstalled" value="설치됨"/>
+		<string name="ListEntryNotInstalled" value="설치되지 않음"/>
+		<string name="ListEntryNoneInstalled" value="없음"/>
+		<string name="ListEntryUninstalled" value="제거됨"/>
+		<string name="ListEntryNotUninstalled" value="제거되지 않음"/>
+		<string name="ListEntryFailed" value="실패"/>
+		<string name="ListEntrySkipped" value="설치하지 않았습니다. 새 버전이 이미 존재합니다."/>
+		<string name="SystemCheck" value="시스템 검사"/>
+		<string name="LicenseAgreement" value="라이선스 계약"/>
+		<string name="Options" value="옵션"/>
+		<string name="Installation" value="설치"/>
+		<string name="Finish" value="마침"/>
+		<string name="NextButtonText" value="다음(&amp;N)"/>
+		<string name="BackButtonText" value="뒤로(&amp;B)"/>
+		<string name="CancelButtonText" value="취소(&amp;C)"/>
+		<string name="CloseButtonText" value="닫기(&amp;C)"/>
+		<string name="RetryButtonText" value="재시도(&amp;R)"/>
+		<string name="AgreeButtonText" value="동의 및 계속(&amp;A)"/>
+		<string name="RestartNowButtonText" value="지금 다시 시작(&amp;R)"/>
+		<string name="RestartLaterButtonText" value="나중에 다시 시작(&amp;L)"/>
+		<string name="UninstallButtonText" value="설치 제거(&amp;U)"/>
+		<string name="ContinueButtonText" value="계속(&amp;O)"/>
+		<string name="LaunchButtonText" value="시작(&amp;L)"/>
+		<string name="BrowseButtonText" value="찾아보기..."/>
+		<string name="CheckingSystemCompatibility" value="시스템 호환성 검사"/>
+		<string name="Warnings" value="경고"/>
+		<string name="EULAHeadText" value="NVIDIA 소프트웨어 라이센스 계약"/>
+		<string name="EULAInstructions" value="다음 NVIDIA 소프트웨어 라이센스 계약을 숙지하십시오."/>
+		<string name="EULAAcceptInstructions" value="약관 조항을 수락하는 경우 동의 및 계속을 클릭하십시오."/>
+		<string name="NoEULAFound" value="EULA를 찾을 수 없습니다."/>
+		<string name="InstallOptions" value="설치 옵션"/>
+		<string name="ExpressRecommended" value="빠른 설치(&amp;E) (권장)"/>
+		<string name="CustomAdvanced" value="사용자 정의 설치(&amp;C) (고급)"/>
+		<string name="ExpressDescription" value="기존 드라이버를 업그레이드하고 현재 NVIDIA 설정을 유지합니다."/>
+		<string name="CustomDescription" value="설치하려는 구성 요소를 선택할 수 있도록 하고, 전체 설치를 할 수 있는 옵션을 제공합니다."/>
+		<string name="CustomInstallOptions" value="사용자 정의 설치 옵션"/>
+		<string name="CustomInstallInstructions" value="드라이버 구성 요소 선택:"/>
+		<string name="CleanInstall" value="전체 설치 수행(&amp;P)"/>
+		<string name="CleanInstallDescription" value="전체 설치는 모든 NVIDIA 설정을 기본 값으로 복구하고 작성된 모든 프로파일을 제거합니다."/>
+		<string name="SelectInstallLocation" value="설치 위치 선택"/>
+		<string name="InstallPreparing" value="설치 준비 중"/>
+		<string name="RebootInstallPreparing" value="재시작 준비 중..."/>
+		<string name="UninstallingPrevious" value="기존 버전 제거 중"/>
+		<string name="RemoveStatus" value="${!ProgressTitle} 제거 중..."/>
+		<string name="RestartNotification" value="60초 이내에 재시작"/>
+		<string name="AfterRestartInstructions" value="재시작 후 NVIDIA 설치가 계속됩니다."/>
+		<string name="InstallInProgress" value="설치 진행 중"/>
+		<string name="InstallStatus" value="${!ProgressTitle} 설치 중..."/>
+		<string name="InstallComplete" value="설치 완료"/>
+		<string name="InstallerFinished" value="NVIDIA 설치 프로그램이 완료되었습니다."/>
+		<string name="InstallerFinishedInstructions" value="다음 구성 요소가 설치되었습니다."/>
+		<string name="InstallCannotContinue" value="NVIDIA 설치 프로그램을 계속할 수 없습니다."/>
+		<string name="FailureReasonHeader" value="실패 원인:"/>
+		<string name="FailureDisplayError" value="실패를 표시할 수 없습니다."/>
+		<string name="InstallFailure" value="NVIDIA 설치 프로그램 실패"/>
+		<string name="InstallWarning" value="계속하시겠습니까?"/>
+		<string name="FailureListHeader" value="다음과 같은 실패가 발생했습니다."/>
+		<string name="InstallRebootInstructions" value="설치를 완료하려면 컴퓨터를 재시작하십시오."/>
+		<string name="RebootQuestion" value="지금 재시작하시겠습니까?"/>
+		<string name="UninstallPreparing" value="설치 삭제 준비 중"/>
+		<string name="UninstallQuestion" value="이 소프트웨어를 제거하시겠습니까?"/>
+		<string name="UninstallInProgress" value="제거 진행 중"/>
+		<string name="UninstallStatus" value="${!ProgressTitle} 제거 중..."/>
+		<string name="UninstallComplete" value="NVIDIA 설치 제거 프로그램이 완료되었습니다."/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}}이(가) 성공적으로 제거되었습니다."/>
+		<string name="UninstallCannotContinue" value="NVIDIA 설치 제거 프로그램을 계속할 수 없습니다."/>
+		<string name="UninstallFailure" value="NVIDIA 설치 제거 프로그램 실패"/>
+		<string name="UninstallRebootInstructions" value="제거를 완료하려면 컴퓨터를 재시작하십시오."/>
+		<string name="WaitPnpAlreadyRunning" value="하드웨어 마법사가 실행 중입니다. 마친 후에 설치가 다시 시작됩니다."/>
+		<string name="DisplayFlash" value="참고: 설치 중에 깜박임 현상이 나타날 수 있습니다."/>
+		<string name="PreCheckWarning" value="하나 이상의 문제가 감지되었습니다"/>
+		<string name="OldOverNewWarning" value="이 드라이버는 현재 사용하는 버전보다 구형입니다. 이것을 설치하면 모든 NVIDIA 설정을 기본 값으로 복구하고 작성된 모든 프로파일을 제거합니다."/>
+		<string name="IntelDriverNotPresentMessage" value="Intel® 드라이버를 우선 설치해야 합니다."/>
+		<string name="ReleaseHighlights" value="하이라이트 릴리스"/>
+		<string name="UpdatesReadyToInstall" value="새 업데이트 설치가 준비되었습니다"/>
+		<string name="UpdatesReady" value="새 업데이트가 준비되었습니다"/>
+		<string name="UpdatesBeingInstalled" value="업데이트가 진행 중입니다"/>
+		<string name="UpdateText" value="업데이트"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="업데이트 준비 중"/>
+		<string name="InstallPaused" value="NVIDIA 설치 프로그램이 일시 중지되었습니다."/>
+		<string name="ClosePrograms" value="계속 진행하려면 다음 프로그램을 닫으십시오."/>
+		<string name="DownloadInProgress" value="다운로드 진행 중"/>
+		<string name="DownloadingPackages" value="설치 패키지 다운로드 중"/>
+		<string name="ProcessingDownloadedPackages" value="다운로드한 패키지 처리 중"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% 완료됨"/>
+		<string name="LearnMore" value="자세히 알아보기."/>
+		<string name="NetworkConnectionError" value="네트워크 연결을 찾을 수 없습니다."/>
+		<string name="DefaultDownloadFailure" value="다운로드를 완료하지 못했습니다. 다시 시도하십시오."/>
+		<string name="NetworkFailureNoConnection" value="NVIDIA에 연결할 수 없습니다. 인터넷 연결 상태를 확인하십시오."/>
+		<string name="NetworkFailureTryAgain" value="NVIDIA에 연결할 수 없습니다. 나중에 다시 시도하십시오."/>
+		<string name="SignatureCheckFailure" value="다운로드를 완료하지 못했습니다. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="요청한 설치 파일을 다운로드할 수 없습니다. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

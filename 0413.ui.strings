@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0413">
+		<string name="VersionText" value="Versie ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Versie ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA installatieprogramma"/>
+		<string name="UninstallFrameTitle" value="NVIDIA deïnstallatieprogramma"/>
+		<string name="ErrorNoPackagesToInstall" value="Er zijn componenten om te installeren."/>
+		<string name="ErrorMissingRequiredPackages" value="Vereiste componenten ontbreken."/>
+		<string name="ErrorMissingPackageFiles" value="Vereiste bestanden ontbreken."/>
+		<string name="ErrorUnsupportedPlatform" value="Het gebruikte besturingssysteem wordt niet door dit pakket ondersteund. Verkrijg het juiste pakket voor uw systeem."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Andere installaties worden uitgevoerd. Sluit de andere installaties af en probeer opnieuw."/>
+		<string name="ErrorInstallerNeedReboot" value="Het systeem moet opnieuw worden gestart. Start het systeem opnieuw en probeer opnieuw."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="Maak meer schijfruimte vrij om verder te gaan.
+Vereiste ruimte: "/>
+		<string name="RequiredFilesMissing" value="Een of meer vereiste bestanden ontbreken."/>
+		<string name="ErrorEULAMissing" value="Kan de NVIDIA installatie niet uitvoeren omdat de &quot;EULA.txt&quot; ontbreekt."/>
+		<string name="ErrorPackageCorrupt" value="Installatiepakket is corrupt."/>
+		<string name="CannotCancelInstallMessage" value="Het NVIDIA deïnstallatieprogramma kan nu niet worden gestopt."/>
+		<string name="CannotCancelUninstallMessage" value="Het NVIDIA-deïnstallatieprogramma kan nu niet worden gestopt."/>
+		<string name="ConfirmCancelMessage" value="Wilt u werkelijk annuleren?"/>
+		<string name="CompList" value="Onderdelenlijst"/>
+		<string name="ResList" value="Resultatenlijst"/>
+		<string name="VersionHeader" value="Versie"/>
+		<string name="ComponentHeader" value="Onderdeel"/>
+		<string name="NewVersionHeader" value="Nieuwe versie"/>
+		<string name="CurVersionHeader" value="Huidige versie"/>
+		<string name="StatusHeader" value="Status"/>
+		<string name="ListEntryNotFound" value="Niet gevonden"/>
+		<string name="ListEntryNotSelected" value="Niet geselecteerd"/>
+		<string name="ListEntryInstalled" value="Geïnstalleerd"/>
+		<string name="ListEntryNotInstalled" value="Niet geïnstalleerd"/>
+		<string name="ListEntryNoneInstalled" value="Geen"/>
+		<string name="ListEntryUninstalled" value="Verwijderd"/>
+		<string name="ListEntryNotUninstalled" value="Niet verwijderd"/>
+		<string name="ListEntryFailed" value="Mislukt"/>
+		<string name="ListEntrySkipped" value="Is niet geïnstalleerd. Er bestaat reeds een nieuwere versie."/>
+		<string name="SystemCheck" value="Systeemcontrole"/>
+		<string name="LicenseAgreement" value="Licentieovereenkomst"/>
+		<string name="Options" value="Opties"/>
+		<string name="Installation" value="Installeren"/>
+		<string name="Finish" value="Voltooien"/>
+		<string name="NextButtonText" value="&amp;VOLGENDE"/>
+		<string name="BackButtonText" value="&amp;TERUG"/>
+		<string name="CancelButtonText" value="&amp;ANNULEREN"/>
+		<string name="CloseButtonText" value="&amp;SLUITEN"/>
+		<string name="RetryButtonText" value="&amp;OPNIEUW PROBEREN"/>
+		<string name="AgreeButtonText" value="&amp;INSTEMMEN EN DOORGAAN"/>
+		<string name="RestartNowButtonText" value="&amp;NU OPNIEUW STARTEN"/>
+		<string name="RestartLaterButtonText" value="OPNIEUW STARTEN &amp;LATER"/>
+		<string name="UninstallButtonText" value="&amp;INSTALLATIE ONGEDAAN MAKEN"/>
+		<string name="ContinueButtonText" value="D&amp;OORGAAN"/>
+		<string name="LaunchButtonText" value="&amp;STARTEN"/>
+		<string name="BrowseButtonText" value="BLADEREN..."/>
+		<string name="CheckingSystemCompatibility" value="Bezig met controleren van systeemcompatibiliteit"/>
+		<string name="Warnings" value="Waarschuwingen."/>
+		<string name="EULAHeadText" value="NVIDIA softwarelicentieovereenkomst"/>
+		<string name="EULAInstructions" value="Lees de volgende NVIDIA softwarelicentieovereenkomst aandachtig door."/>
+		<string name="EULAAcceptInstructions" value="Klik op instemmen en doorgaan als u de voorwaarden van de overeenkomst accepteert."/>
+		<string name="NoEULAFound" value="Er kan geen EULA worden gevonden."/>
+		<string name="InstallOptions" value="Installatieopties"/>
+		<string name="ExpressRecommended" value="&amp;Express (Aanbevolen)"/>
+		<string name="CustomAdvanced" value="&amp;Aangepast (geavanceerd)"/>
+		<string name="ExpressDescription" value="Werkt bestaande stuurprogramma’s bij en behoudt huidige NVIDIA-instellingen."/>
+		<string name="CustomDescription" value="Laat u de onderdelen selecteren die u wilt installeren en biedt de optie voor een schone installatie."/>
+		<string name="CustomInstallOptions" value="Aangepaste installatieopties"/>
+		<string name="CustomInstallInstructions" value="Selecteer onderdelen van het stuurprogramma:"/>
+		<string name="CleanInstall" value="&amp;Voer een schone installatie uit"/>
+		<string name="CleanInstallDescription" value="Een schone installatie herstelt alle NVIDIA-instellingen naar de standaardwaarde en verwijdert alle profielen die u hebt gemaakt."/>
+		<string name="SelectInstallLocation" value="Selecteer locatie van installatie"/>
+		<string name="InstallPreparing" value="Bezig met voorbereiden op installatie"/>
+		<string name="RebootInstallPreparing" value="Voorbereiden voor opnieuw starten..."/>
+		<string name="UninstallingPrevious" value="Bezig met verwijderen van vorige versie"/>
+		<string name="RemoveStatus" value="Bezig met verwijderen van ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Opnieuw starten in minder dan 60 seconden"/>
+		<string name="AfterRestartInstructions" value="Na het opnieuw starten gaat de NVIDIA-installatie door."/>
+		<string name="InstallInProgress" value="Installatie wordt uitgevoerd"/>
+		<string name="InstallStatus" value="Bezig met installeren ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Installatie voltooid"/>
+		<string name="InstallerFinished" value="NVIDIA-installatieprogramma is voltooid"/>
+		<string name="InstallerFinishedInstructions" value="De volgende onderdelen zijn nu geïnstalleerd:"/>
+		<string name="InstallCannotContinue" value="NVIDIA-installatieprogramma kan niet doorgaan"/>
+		<string name="FailureReasonHeader" value="Reden voor falen:"/>
+		<string name="FailureDisplayError" value="Kan defecten niet weergeven."/>
+		<string name="InstallFailure" value="NVIDIA-installatieprogramma mislukt"/>
+		<string name="InstallWarning" value="Wilt u doorgaan?"/>
+		<string name="FailureListHeader" value="De volgende defecten traden op:"/>
+		<string name="InstallRebootInstructions" value="Om de installatie te voltooien, start u de computer opnieuw."/>
+		<string name="RebootQuestion" value="Wilt u nu opnieuw starten?"/>
+		<string name="UninstallPreparing" value="Bezig met voorbereiden van ongedaan maken van installatie"/>
+		<string name="UninstallQuestion" value="Wilt u deze software echt verwijderen?"/>
+		<string name="UninstallInProgress" value="Verwijdering wordt uitgevoerd"/>
+		<string name="UninstallStatus" value="Bezig met verwijderen van ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="NVIDIA-deïnstallatieprogramma is voltooid"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} is verwijderd."/>
+		<string name="UninstallCannotContinue" value="NVIDIA-deïnstallatieprogramma kan niet doorgaan"/>
+		<string name="UninstallFailure" value="NVIDIA-deïnstallatieprogramma mislukt"/>
+		<string name="UninstallRebootInstructions" value="Om de verwijdering te voltooien, start u de computer opnieuw."/>
+		<string name="WaitPnpAlreadyRunning" value="De hardware-wizard wordt uitgevoerd. Installatie wordt hervat wanneer deze is voltooid."/>
+		<string name="DisplayFlash" value="NB: Er treedt enige flikkering op tijdens de installatie."/>
+		<string name="PreCheckWarning" value="Een of meer problemen werden gedetecteerd."/>
+		<string name="OldOverNewWarning" value="Dit stuurprogramma is ouder dan de momenteel gebruikte versie. Bij installatie worden alle NVIDIA-instellingen hersteld naar de standaardwaarde en worden alle profielen die u hebt gemaakt verwijderd."/>
+		<string name="IntelDriverNotPresentMessage" value="U moet eerst een Intel®-stuurprogramma installeren."/>
+		<string name="ReleaseHighlights" value="Hoogtepunten release"/>
+		<string name="UpdatesReadyToInstall" value="Nieuwe updates zijn klaar om te worden geïnstalleerd"/>
+		<string name="UpdatesReady" value="Nieuwe updates staan klaar"/>
+		<string name="UpdatesBeingInstalled" value="Updates worden geïnstalleerd"/>
+		<string name="UpdateText" value="Bijwerken"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Voorbereiden van updates"/>
+		<string name="InstallPaused" value="NVIDIA-installatieprogramma is gepauzeerd"/>
+		<string name="ClosePrograms" value="Sluit deze programma’s om door te gaan:"/>
+		<string name="DownloadInProgress" value="Download wordt uitgevoerd"/>
+		<string name="DownloadingPackages" value="Installatiepakketten downloaden"/>
+		<string name="ProcessingDownloadedPackages" value="Gedownloade pakketten verwerken"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% voltooid"/>
+		<string name="LearnMore" value="Meer informatie."/>
+		<string name="NetworkConnectionError" value="Netwerkverbinding niet gevonden."/>
+		<string name="DefaultDownloadFailure" value="Download niet volledig uitgevoerd. Probeer het opnieuw."/>
+		<string name="NetworkFailureNoConnection" value="Kan geen verbinding met NVIDIA maken. Controleer uw internetverbinding."/>
+		<string name="NetworkFailureTryAgain" value="Kan geen verbinding met NVIDIA maken. Probeer het later opnieuw."/>
+		<string name="SignatureCheckFailure" value="Download niet volledig uitgevoerd. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Kan voor installatie vereiste bestanden niet downloaden. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

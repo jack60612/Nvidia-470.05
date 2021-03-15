@@ -1,0 +1,289 @@
+<instrumentationManifest xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd"
+     xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:trace="http://schemas.microsoft.com/win/2004/08/events/trace">
+    <instrumentation>
+        <counters xmlns="http://schemas.microsoft.com/win/2005/12/counters" schemaVersion="1.1">
+            <provider
+              applicationIdentity = "nvwmi64.exe"
+              providerName = "nvwmi"
+              providerGuid = "{33d68436-4cf9-4f58-9976-44b048b072f3}"
+              symbol = "nvwmi">
+                <counterSet guid = "{381300a5-3be6-46d8-8615-12d8b259aae4}"
+                  uri = "NVIDIA"
+                  name = "NVIDIA GPU"
+                  description = "NVIDIA GPU Counters"
+                  instances = "multiple"
+                  symbol = "nvwmiGPUset">
+                    <counter id = "1"
+                      uri = "NVIDIA.HW.GPUtemp"
+                      name = "Temperature C"
+                      description = "GPU Temperature (in C)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "2"
+                      uri = "NVIDIA.HW.GPUfan"
+                      name = "% Cooler rate"
+                      description = "GPU % Cooler rate"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "3"
+                      uri = "NVIDIA.HW.GPUClock"
+                      name = "Core Clock MHz"
+                      description = "GPU Core Clock (in MHz)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "4"
+                      uri = "NVIDIA.HW.GPUMemClock"
+                      name = "Memory Clock MHz"
+                      description = "GPU Memory Clock (in MHz)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "5"
+                      uri = "NVIDIA.HW.GPUVirtualFB"
+                      name = "Virtual Memory MB"
+                      description = "GPU Virtual Frame Buffer Size (in MB)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "6"
+                      uri = "NVIDIA.HW.GPUPhysicalFB"
+                      name = "Total Memory MB"
+                      description = "GPU Physical Frame Buffer Size (in MB)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "7"
+                      uri = "NVIDIA.HW.GPUFreePhysicalFB"
+                      name = "Available Memory MB"
+                      description = "GPU Free Physical Frame Buffer Size (in MB)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "8"
+                      uri = "NVIDIA.HW.GPUPowerConsumption"
+                      name = "Power Consumption mW"
+                      description = "GPU Power Consumption (in mW)"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "-3">
+                    </counter>
+                    <counter id = "9"
+                      uri = "NVIDIA.HW.GPUUsage"
+                      name = "% GPU Usage"
+                      description = "% GPU Utilization"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "10"
+                      uri = "NVIDIA.HW.GPUMemoryUsage"
+                      name = "% GPU Memory Usage"
+                      description = "% GPU Memory Utilization"
+                      type = "perf_counter_rawcount"
+                      callback = "custom"
+                      detailLevel = "standard"
+                      defaultScale = "0">
+                    </counter>
+                    <counter id = "11"
+                        uri = "NVIDIA.HW.GPUFanSpeed"
+                        name = "Fan Speed RPM"
+                        description = "GPU Fan Speed (in RPM)"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "12"
+                        uri = "NVIDIA.HW.BusUsage"
+                        name = "% Bus Usage"
+                        description = "% Bus Utilization"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "13"
+                        uri = "NVIDIA.HW.VideoUsage"
+                        name = "% Video Usage"
+                        description = "% Video Utilization"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "14"
+                        uri = "NVIDIA.HW.FBUsage"
+                        name = "% FB Usage"
+                        description = "% FB Utilization"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "15"
+                        uri = "NVIDIA.HW.PcieDownstreamWidth"
+                        name = "PCI-E downstream width"
+                        description = "Width of PCI-E downstream link (# of lanes)"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "16"
+                        uri = "NVIDIA.HW.PcieCurrentSpeedGpu"
+                        name = "PCI-E current speed to GPU Mbps"
+                        description = "Current speed of the PCI-E link to GPU (Mbps)"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "3">
+                    </counter>
+                    <counter id = "17"
+                        uri = "NVIDIA.HW.PcieCurrentWidthGpu"
+                        name = "PCI-E current width to GPU"
+                        description = "PCI-E current width of link to GPU (# of lanes)"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "18"
+                        uri = "NVIDIA.HW.VideoEncUsage"
+                        name = "% Video Encoder usage"
+                        description = "Video Encoder usage in percents"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "19"
+                        uri = "NVIDIA.HW.VideoDecUsage"
+                        name = "% Video Decoder usage"
+                        description = "Video Decoder usage in percents"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "20"
+                        uri = "NVIDIA.HW.VideoEncSessionsCount"
+                        name = "Video Encoder sessions count"
+                        description = "Video Encoder - number of active sessions"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "21"
+                        uri = "NVIDIA.HW.VideoEncAveFps"
+                        name = "Video Encoder average FPS"
+                        description = "Video Encoder - frames per second encoded, trailing average"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                    <counter id = "22"
+                        uri = "NVIDIA.HW.VideoEncAveLatency"
+                        name = "Video Encoder average latency"
+                        description = "Video Encoder - average latency across all active encoding sessions"
+                        type = "perf_counter_rawcount"
+                        callback = "custom"
+                        detailLevel = "standard"
+                        defaultScale = "0">
+                    </counter>
+                </counterSet>
+              <counterSet guid = "{8D4C906D-431F-4428-AC5E-1BD1B62790AB}"
+                 uri = "NVIDIAENCODERSESSION"
+                 name = "NVIDIA GPU ENCODER SESSIONS"
+                 description = "NVIDIA GPU Encoder Sessions Counters"
+                 instances = "multiple"
+                 symbol = "nvwmiGPUset">
+                <counter id = "1"
+                  uri = "NVIDIAENCODERSESSION.HW.AVERAGEFPS"
+                  name = "Average FPS"
+                  description = "Moving average encode frames per second"
+                  type = "perf_counter_rawcount"
+                  callback = "custom"
+                  detailLevel = "standard"
+                  defaultScale = "0">
+                </counter>
+                <counter id = "2"
+                  uri = "NVIDIAENCODERSESSION.HW.AVERAGELATENCY"
+                  name = "Average Latency"
+                  description = "Moving average encode latency in milliseconds"
+                  type = "perf_counter_rawcount"
+                  callback = "custom"
+                  detailLevel = "standard"
+                  defaultScale = "0">
+                </counter>
+              </counterSet>
+              <counterSet guid = "{610F1361-4822-45D2-8A9F-0FD9F4FEDBA2}"
+                  uri = "NVIDIAPROCUTIL"
+                  name = "NVIDIA GPU Utilization"
+                  description = "NVIDIA GPU Utilization Counters"
+                  instances = "multiple"
+                  symbol = "nvwmiGPUset">
+                  <counter id = "1"
+                    uri = "NVIDIAPROCUTIL.HW.SMUtil"
+                    name = "SM Utilization value"
+                    description = "SM Utilization of the Process"
+                    type = "perf_counter_rawcount"
+                    callback = "custom"
+                    detailLevel = "standard"
+                    defaultScale = "0">
+                  </counter>
+                  <counter id = "2"
+                    uri = "NVIDIAPROCUTIL.HW.MEMUtil"
+                    name = "Mem Utilization value"
+                    description = "Mem Utilization of the Process"
+                    type = "perf_counter_rawcount"
+                    callback = "custom"
+                    detailLevel = "standard"
+                    defaultScale = "0">
+                  </counter>
+                  <counter id = "3"
+                    uri = "NVIDIAPROCUTIL.HW.ENCUtil"
+                    name = "Enc Utilization value"
+                    description = "Enc Utilization of the Process"
+                    type = "perf_counter_rawcount"
+                    callback = "custom"
+                    detailLevel = "standard"
+                    defaultScale = "0">
+                  </counter>
+                  <counter id = "4"
+                    uri = "NVIDIAPROCUTIL.HW.DECUtil"
+                    name = "Dec Utilization value"
+                    description = "Dec Utilization of the Process"
+                    type = "perf_counter_rawcount"
+                    callback = "custom"
+                    detailLevel = "standard"
+                    defaultScale = "0">
+                  </counter>
+                </counterSet>
+            </provider>
+        </counters>
+    </instrumentation>
+</instrumentationManifest>

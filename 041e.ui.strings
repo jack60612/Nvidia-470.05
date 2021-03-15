@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x041e">
+		<string name="VersionText" value="รุ่น ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="รุ่น ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="โปรแกรมติดตั้งของ NVIDIA"/>
+		<string name="UninstallFrameTitle" value="โปรแกรมถอนการติดตั้งของ NVIDIA"/>
+		<string name="ErrorNoPackagesToInstall" value="ไม่มีส่วนประกอบใดๆ ที่จะติดตั้ง"/>
+		<string name="ErrorMissingRequiredPackages" value="ส่วนประกอบที่จำเป็นขาดหายไป"/>
+		<string name="ErrorMissingPackageFiles" value="แฟ้มที่จำเป็นขาดหายไป"/>
+		<string name="ErrorUnsupportedPlatform" value="ระบบปฏิบัติการที่ใช้ไม่ได้รับการสนับสนุนโดยแพ็คเกจนี้ โปรดรับแพคเกจที่ถูกต้องสำหรับระบบของคุณ"/>
+		<string name="ErrorInstallerAlreadyRunning" value="การติดตั้งอื่นๆ กำลังดำเนินการอยู่ ให้การติดตั้งอื่นๆ ดำเนินการเสร็จก่อนแล้วจึงลองอีกครั้ง"/>
+		<string name="ErrorInstallerNeedReboot" value="ต้องเริ่มการทำงานของระบบใหม่อีกครั้ง เริ่มการทำงานของระบบอีกครั้งและลองใหม่อีกครั้ง"/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="หากต้องการดำเนินการต่อ โปรดเพิ่มเนื้อที่ว่างบนดิสก์
+พื้นที่ที่ต้องการ: "/>
+		<string name="RequiredFilesMissing" value="แฟ้มที่จำเป็นอย่างน้อยหนึ่งแฟ้มขาดหายไป"/>
+		<string name="ErrorEULAMissing" value="ไม่สามารถเรียกใช้การติดตั้งของ NVIDIA ได้เนื่องจาก &quot;EULA.txt&quot; ขาดหายไป"/>
+		<string name="ErrorPackageCorrupt" value="แพ็คเกจการติดตั้งเสียหาย"/>
+		<string name="CannotCancelInstallMessage" value="ไม่สามารถหยุดการทำงานของโปรแกรมติดตั้งของ NVIDIA ได้ในขณะนี้"/>
+		<string name="CannotCancelUninstallMessage" value="ไม่สามารถหยุดการทำงานของโปรแกรมถอนการติดตั้งของ NVIDIA ได้ในขณะนี้"/>
+		<string name="ConfirmCancelMessage" value="คุณต้องการยกเลิกจริงหรือไม่"/>
+		<string name="CompList" value="รายการส่วนประกอบ"/>
+		<string name="ResList" value="รายการผลลัพธ์"/>
+		<string name="VersionHeader" value="รุ่น"/>
+		<string name="ComponentHeader" value="ส่วนประกอบ"/>
+		<string name="NewVersionHeader" value="รุ่นใหม่"/>
+		<string name="CurVersionHeader" value="รุ่นปัจจุบัน"/>
+		<string name="StatusHeader" value="สถานะ"/>
+		<string name="ListEntryNotFound" value="ไม่พบ"/>
+		<string name="ListEntryNotSelected" value="ไม่ถูกเลือก"/>
+		<string name="ListEntryInstalled" value="ติดตั้งแล้ว"/>
+		<string name="ListEntryNotInstalled" value="ยังไม่ได้ติดตั้ง"/>
+		<string name="ListEntryNoneInstalled" value="ไม่มี"/>
+		<string name="ListEntryUninstalled" value="ถูกเอาออก"/>
+		<string name="ListEntryNotUninstalled" value="ไม่ถูกเอาออก"/>
+		<string name="ListEntryFailed" value="ล้มเหลว"/>
+		<string name="ListEntrySkipped" value="ไม่ได้ติดตั้ง มีรุ่นใหม่อยู่แล้ว"/>
+		<string name="SystemCheck" value="การตรวจสอบระบบ"/>
+		<string name="LicenseAgreement" value="ข้อตกลงสิทธิ์การใช้งาน"/>
+		<string name="Options" value="ตัวเลือก"/>
+		<string name="Installation" value="ติดตั้ง"/>
+		<string name="Finish" value="เสร็จสิ้น"/>
+		<string name="NextButtonText" value="ถัด&amp;ไป"/>
+		<string name="BackButtonText" value="ย้&amp;อนกลับ"/>
+		<string name="CancelButtonText" value="&amp;ยกเลิก"/>
+		<string name="CloseButtonText" value="&amp;ปิด"/>
+		<string name="RetryButtonText" value="&amp;ลองอีกครั้ง"/>
+		<string name="AgreeButtonText" value="&amp;ตกลงและทำต่อ"/>
+		<string name="RestartNowButtonText" value="เริ่&amp;มการทำงานใหม่เดี๋ยวนี้"/>
+		<string name="RestartLaterButtonText" value="เริ่มการทำงานใหม่ใน&amp;ภายหลัง"/>
+		<string name="UninstallButtonText" value="&amp;ถอนการติดตั้ง"/>
+		<string name="ContinueButtonText" value="ดำเนิ&amp;นการต่อ"/>
+		<string name="LaunchButtonText" value="เปิ&amp;ด"/>
+		<string name="BrowseButtonText" value="เรียกดู..."/>
+		<string name="CheckingSystemCompatibility" value="การตรวจสอบความเข้ากันได้ของระบบ"/>
+		<string name="Warnings" value="คำเตือน"/>
+		<string name="EULAHeadText" value="ข้อตกลงสิทธิ์การใช้งานซอฟต์แวร์ของ NVIDIA"/>
+		<string name="EULAInstructions" value="โปรดอ่านข้อตกลงสิทธิ์การใช้งานซอฟต์แวร์ของ NVIDIA ต่อไปนี้อย่างละเอียด"/>
+		<string name="EULAAcceptInstructions" value="คลิกตกลงและทำต่อถ้าคุณยอมรับเงื่อนไขของข้อตกลง"/>
+		<string name="NoEULAFound" value="ไม่พบ EULA"/>
+		<string name="InstallOptions" value="ตัวเลือกการติดตั้ง"/>
+		<string name="ExpressRecommended" value="&amp;ด่วน (แนะนำให้ใช้)"/>
+		<string name="CustomAdvanced" value="&amp;กำหนดเอง (ขั้นสูง)"/>
+		<string name="ExpressDescription" value="อัพเกรดโปรแกรมควบคุมที่มีอยู่และเก็บการตั้งค่าปัจจุบันของ NVIDIA"/>
+		<string name="CustomDescription" value="ทำให้คุณสามารถเลือกส่วนประกอบต่างๆ ที่คุณต้องการติดตั้งและให้ตัวเลือกสำหรับการติดตั้งใหม่ทั้งหมด"/>
+		<string name="CustomInstallOptions" value="ตัวเลือกการติดตั้งที่กำหนดเอง"/>
+		<string name="CustomInstallInstructions" value="เลือกส่วนประกอบโปรแกรมควบคุม:"/>
+		<string name="CleanInstall" value="&amp;ทำการติดตั้งใหม่ทั้งหมด"/>
+		<string name="CleanInstallDescription" value="การติดตั้งใหม่ทั้งหมดจะคืนค่าการตั้งค่าทั้งหมดของ NVIDIA ให้ไปเป็นค่าเริ่มต้นและเอาส่วนกำหนดค่าใดๆ ที่คุณได้สร้างไว้ออกทั้งหมด"/>
+		<string name="SelectInstallLocation" value="เลือกตำแหน่งการติดตั้ง"/>
+		<string name="InstallPreparing" value="กำลังเตรียมที่จะติดตั้ง"/>
+		<string name="RebootInstallPreparing" value="กำลังเตรียมรีสตาร์ต..."/>
+		<string name="UninstallingPrevious" value="กำลังเอารุ่นก่อนหน้าออก"/>
+		<string name="RemoveStatus" value="กำลังเอา ${!ProgressTitle} ออก..."/>
+		<string name="RestartNotification" value="กำลังเริ่มการทำงานใหม่ภายใน 60 วินาที"/>
+		<string name="AfterRestartInstructions" value="หลังจากเริ่มการทำงานของระบบใหม่โปรแกรมติดตั้งของ NVIDIA จะดำเนินการต่อ"/>
+		<string name="InstallInProgress" value="อยู่ในระหว่างติดตั้ง"/>
+		<string name="InstallStatus" value="กำลังติดตั้ง ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="ติดตั้งเสร็จสมบูรณ์"/>
+		<string name="InstallerFinished" value="โปรแกรมติดตั้งของ NVIDIA ดำเนินการเสร็จแล้ว"/>
+		<string name="InstallerFinishedInstructions" value="ส่วนประกอบต่อไปนี้ได้รับการติดตั้งแล้ว"/>
+		<string name="InstallCannotContinue" value="โปรแกรมติดตั้งของ NVIDIA ไม่สามารถทำต่อได้"/>
+		<string name="FailureReasonHeader" value="เหตุผลที่ล้มเหลว"/>
+		<string name="FailureDisplayError" value="ไม่สามารถแสดงความล้มเหลวได้"/>
+		<string name="InstallFailure" value="โปรแกรมติดตั้งของ NVIDIA ล้มเหลว"/>
+		<string name="InstallWarning" value="คุณต้องการทำต่อหรือไม่"/>
+		<string name="FailureListHeader" value="มีความล้มเหลวต่อไปนี้เกิดขึ้น:"/>
+		<string name="InstallRebootInstructions" value="ในการติดตั้งให้เสร็จสมบูรณ์ ให้เริ่มการทำงานของคอมพิวเตอร์ใหม่"/>
+		<string name="RebootQuestion" value="คุณต้องการเริ่มการทำงานใหม่เดี๋ยวนี้หรือไม่"/>
+		<string name="UninstallPreparing" value="กำลังเตรียมถอนการติดตั้ง"/>
+		<string name="UninstallQuestion" value="คุณต้องการเอาซอฟต์แวร์นี้ออกจริงหรือไม่"/>
+		<string name="UninstallInProgress" value="กำลังดำเนินการเอาออก"/>
+		<string name="UninstallStatus" value="กำลังเอา ${!ProgressTitle} ออก..."/>
+		<string name="UninstallComplete" value="โปรแกรมถอนการติดตั้งของ NVIDIA ดำเนินการเสร็จแล้ว"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} เอาออกเรียบร้อยแล้ว"/>
+		<string name="UninstallCannotContinue" value="โปรแกรมถอนการติดตั้งของ NVIDIA ไม่สามารถทำต่อได้"/>
+		<string name="UninstallFailure" value="โปรแกรมถอนการติดตั้งของ NVIDIA ล้มเหลว"/>
+		<string name="UninstallRebootInstructions" value="ในการเอาออกให้เสร็จสมบูรณ์ ให้เริ่มการทำงานของคอมพิวเตอร์ใหม่"/>
+		<string name="WaitPnpAlreadyRunning" value="ตัวช่วยสร้างฮาร์ดแวร์กำลังทำงานอยู่ การติดตั้งจะทำงานต่อหลังจากตัวช่วยสร้างนี้ทำงานเสร็จ"/>
+		<string name="DisplayFlash" value="หมายเหตุ:  อาจมีการกะพริบในระหว่างติดตั้ง"/>
+		<string name="PreCheckWarning" value="ตรวจพบว่ามีปัญหาอย่างน้อยหนึ่งอย่าง"/>
+		<string name="OldOverNewWarning" value="โปรแกรมควบคุมนี้เก่ากว่ารุ่นที่ใช้อยู่ในปัจจุบัน การติดตั้งจะคืนค่าการตั้งค่าทั้งหมดของ NVIDIA ให้ไปเป็นค่าเริ่มต้นและเอาส่วนกำหนดค่าใดๆ ที่คุณได้สร้างไว้ออกทั้งหมด"/>
+		<string name="IntelDriverNotPresentMessage" value="คุณต้องติดตั้งโปรแกรมควบคุมของ Intel® เป็นอันดับแรก"/>
+		<string name="ReleaseHighlights" value="จุดเด่นของรุ่นนี้"/>
+		<string name="UpdatesReadyToInstall" value="โปรแกรมอัพเดตใหม่พร้อมที่จะติดตั้ง"/>
+		<string name="UpdatesReady" value="โปรแกรมอัพเดตใหม่พร้อมใช้งานแล้ว"/>
+		<string name="UpdatesBeingInstalled" value="กำลังติดตั้งโปรแกรมอัพเดต"/>
+		<string name="UpdateText" value="กำลังอัพเดต"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="กำลังเตรียมการอัพเดท"/>
+		<string name="InstallPaused" value="โปรแกรมติดตั้งของ NVIDIA หยุดชั่วคราว"/>
+		<string name="ClosePrograms" value="ปิดโปรแกรมเหล่านี้เพื่อดำเนินการต่อ:"/>
+		<string name="DownloadInProgress" value="กำลังดำเนินการดาวน์โหลด"/>
+		<string name="DownloadingPackages" value="กำลังดาวน์โหลดแพ็คเกจการติดตั้ง"/>
+		<string name="ProcessingDownloadedPackages" value="กำลังประมวลผลแพ็คเกจที่ดาวน์โหลด"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% เสร็จสมบูรณ์"/>
+		<string name="LearnMore" value="เรียนรู้เพิ่มเติม"/>
+		<string name="NetworkConnectionError" value="ไม่พบการเชื่อมต่อเครือข่าย"/>
+		<string name="DefaultDownloadFailure" value="ดาวน์โหลดไม่เสร็จสมบูรณ์ ลองอีกครั้ง"/>
+		<string name="NetworkFailureNoConnection" value="ไม่สามารถเชื่อมต่อกับ NVIDIA ได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ"/>
+		<string name="NetworkFailureTryAgain" value="ไม่สามารถเชื่อมต่อกับ NVIDIA ได้ ลองอีกครั้งในภายหลัง"/>
+		<string name="SignatureCheckFailure" value="ดาวน์โหลดไม่เสร็จสมบูรณ์ ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="ไม่สามารถดาวน์โหลดไฟล์ที่จำเป็นสำหรับการติดตั้ง ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

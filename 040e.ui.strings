@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x040e">
+		<string name="VersionText" value="Verzió: ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Verzió: ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA telepítő"/>
+		<string name="UninstallFrameTitle" value="NVIDIA eltávolító"/>
+		<string name="ErrorNoPackagesToInstall" value="Nincsenek telepíthető összetevők."/>
+		<string name="ErrorMissingRequiredPackages" value="Szükséges összetevők hiányoznak."/>
+		<string name="ErrorMissingPackageFiles" value="Szükséges fájlok hiányoznak."/>
+		<string name="ErrorUnsupportedPlatform" value="A használt operációs rendszert ez a csomag nem támogatja. Kérjük, szerezze be a rendszernek megfelelő csomagot."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Más telepítések futnak. Fejezze be a többi telepítést, majd próbálja meg újra."/>
+		<string name="ErrorInstallerNeedReboot" value="Rendszer-újraindítás szükséges. Indítsa újra a rendszert, majd próbálja meg újra."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="A folytatáshoz szabadítson fel további lemezterületet.
+Szükséges terület: "/>
+		<string name="RequiredFilesMissing" value="Egy vagy több szükséges fájl hiányzik."/>
+		<string name="ErrorEULAMissing" value="Az NVIDIA telepítés nem futtatható, mert az &quot;EULA.txt&quot; fájl hiányzik."/>
+		<string name="ErrorPackageCorrupt" value="A telepítőcsomag sérült."/>
+		<string name="CannotCancelInstallMessage" value="Az NVIDIA telepítő most nem állítható le."/>
+		<string name="CannotCancelUninstallMessage" value="Az NVIDIA eltávolító most nem állítható le."/>
+		<string name="ConfirmCancelMessage" value="Biztosan megszakítja?"/>
+		<string name="CompList" value="Összetevők listája"/>
+		<string name="ResList" value="Eredmények listája"/>
+		<string name="VersionHeader" value="Verzió"/>
+		<string name="ComponentHeader" value="Összetevő"/>
+		<string name="NewVersionHeader" value="Új verzió"/>
+		<string name="CurVersionHeader" value="Jelenlegi verzió"/>
+		<string name="StatusHeader" value="Állapot"/>
+		<string name="ListEntryNotFound" value="Nem található"/>
+		<string name="ListEntryNotSelected" value="Nincs kiválasztva"/>
+		<string name="ListEntryInstalled" value="Telepítve"/>
+		<string name="ListEntryNotInstalled" value="Nincs telepítve"/>
+		<string name="ListEntryNoneInstalled" value="Nincs"/>
+		<string name="ListEntryUninstalled" value="Eltávolítva"/>
+		<string name="ListEntryNotUninstalled" value="Nincs eltávolítva"/>
+		<string name="ListEntryFailed" value="Sikertelen"/>
+		<string name="ListEntrySkipped" value="Nem telepíthető. Már létezik egy újabb verzió."/>
+		<string name="SystemCheck" value="Rendszerellenőrzés"/>
+		<string name="LicenseAgreement" value="Licencszerződés"/>
+		<string name="Options" value="Beállítások"/>
+		<string name="Installation" value="Telepítés"/>
+		<string name="Finish" value="Befejezés"/>
+		<string name="NextButtonText" value="&amp;TOVÁBB"/>
+		<string name="BackButtonText" value="&amp;VISSZA"/>
+		<string name="CancelButtonText" value="&amp;MÉGSE"/>
+		<string name="CloseButtonText" value="&amp;BEZÁRÁS"/>
+		<string name="RetryButtonText" value="&amp;ÚJRA"/>
+		<string name="AgreeButtonText" value="&amp;ELFOGADÁS ÉS FOLYTATÁS"/>
+		<string name="RestartNowButtonText" value="&amp;ÚJRAINDÍTÁS MOST"/>
+		<string name="RestartLaterButtonText" value="ÚJRAINDÍTÁS &amp;KÉSŐBB"/>
+		<string name="UninstallButtonText" value="&amp;ELTÁVOLÍTÁS"/>
+		<string name="ContinueButtonText" value="F&amp;OLYTATÁS"/>
+		<string name="LaunchButtonText" value="&amp;INDÍTÁS"/>
+		<string name="BrowseButtonText" value="TALLÓZÁS..."/>
+		<string name="CheckingSystemCompatibility" value="Rendszer-kompatibilitás ellenőrzése"/>
+		<string name="Warnings" value="Figyelmeztetés."/>
+		<string name="EULAHeadText" value="NVIDIA szoftverlicenc-szerződés"/>
+		<string name="EULAInstructions" value="Olvassa el figyelmesen a következő NVIDIA szoftver-licencszerződést."/>
+		<string name="EULAAcceptInstructions" value="Kattintson az Elfogadás és folytatás gombra, ha elfogadja a szerződés feltételeit."/>
+		<string name="NoEULAFound" value="Nem található EULA."/>
+		<string name="InstallOptions" value="Telepítési beállítások"/>
+		<string name="ExpressRecommended" value="&amp;Expressz (Ajánlott)"/>
+		<string name="CustomAdvanced" value="&amp;Egyéni (Speciális)"/>
+		<string name="ExpressDescription" value="Frissíti a meglévő illesztőprogramokat, és megőrzi a jelenlegi NVIDIA-beállításokat."/>
+		<string name="CustomDescription" value="Lehetővé teszi a telepítendő összetevők kiválasztását, és lehetőséget ad tiszta telepítésre is."/>
+		<string name="CustomInstallOptions" value="Egyéni telepítési beállítások"/>
+		<string name="CustomInstallInstructions" value="Válassza ki az illesztőprogram összetevőit:"/>
+		<string name="CleanInstall" value="&amp;Tiszta telepítés végrehajtása"/>
+		<string name="CleanInstallDescription" value="A tiszta telepítés az összes NVIDIA beállítást visszaállítja az alapértelmezett értékre, és törli a felhasználó által létrehozott összes profilt."/>
+		<string name="SelectInstallLocation" value="Válassza ki a telepítés helyét"/>
+		<string name="InstallPreparing" value="Felkészülés a telepítésre"/>
+		<string name="RebootInstallPreparing" value="Felkészülés az újraindításra..."/>
+		<string name="UninstallingPrevious" value="Előző verzió eltávolítása"/>
+		<string name="RemoveStatus" value="Eltávolítás: ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Újraindítás 60 másodpercen belül"/>
+		<string name="AfterRestartInstructions" value="Az újraindítás után az NVIDIA telepítés folytatódik."/>
+		<string name="InstallInProgress" value="Telepítés folyamatban"/>
+		<string name="InstallStatus" value="Telepítés: ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="A telepítés kész"/>
+		<string name="InstallerFinished" value="Az NVIDIA telepítő befejeződött"/>
+		<string name="InstallerFinishedInstructions" value="A következő összetevők telepítése zajlik:"/>
+		<string name="InstallCannotContinue" value="Az NVIDIA telepítő nem tudja folytatni"/>
+		<string name="FailureReasonHeader" value="A sikertelenség oka:"/>
+		<string name="FailureDisplayError" value="A hibák nem jeleníthetők meg."/>
+		<string name="InstallFailure" value="Az NVIDIA telepítő sikertelen"/>
+		<string name="InstallWarning" value="Folytatja?"/>
+		<string name="FailureListHeader" value="A következő hibák történtek:"/>
+		<string name="InstallRebootInstructions" value="A telepítés befejezéséhez indítsa újra a számítógépet."/>
+		<string name="RebootQuestion" value="Újraindítja most?"/>
+		<string name="UninstallPreparing" value="Felkészülés az eltávolításra"/>
+		<string name="UninstallQuestion" value="Biztosan eltávolítja ezt a szoftvert?"/>
+		<string name="UninstallInProgress" value="Eltávolítás folyamatban"/>
+		<string name="UninstallStatus" value="Eltávolítás: ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="Az NVIDIA eltávolító befejeződött"/>
+		<string name="UninstallSuccessInfo" value="A(z) ${{GeneralTitleText}} eltávolítása sikeresen megtörtént."/>
+		<string name="UninstallCannotContinue" value="Az NVIDIA eltávolító nem tudja folytatni"/>
+		<string name="UninstallFailure" value="Az NVIDIA eltávolító sikertelen"/>
+		<string name="UninstallRebootInstructions" value="Az eltávolítás befejezéséhez indítsa újra a számítógépet."/>
+		<string name="WaitPnpAlreadyRunning" value="A hardvervarázsló fut. A telepítés a varázsló befejezése után folytatódik."/>
+		<string name="DisplayFlash" value="Megjegyzés: A telepítés során vibrálás léphet fel."/>
+		<string name="PreCheckWarning" value="Egy vagy több probléma lépett fel"/>
+		<string name="OldOverNewWarning" value="Ez az illesztőprogram régebbi a jelenleg használt verziónál. A telepítése az összes NVIDIA beállítást visszaállítja az alapértelmezett értékekre, és törli a felhasználó által létrehozott összes profilt."/>
+		<string name="IntelDriverNotPresentMessage" value="Előbb egy Intel® illesztőprogramot kell telepítenie."/>
+		<string name="ReleaseHighlights" value="Verzióújdonságok"/>
+		<string name="UpdatesReadyToInstall" value="Az új frissítések készen állnak a telepítésre"/>
+		<string name="UpdatesReady" value="Az új frissítések készen állnak"/>
+		<string name="UpdatesBeingInstalled" value="A frissítések telepítése folyamatban van"/>
+		<string name="UpdateText" value="frissítése"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Frissítések előkészítése"/>
+		<string name="InstallPaused" value="Az NVIDIA telepítő működése szünetel"/>
+		<string name="ClosePrograms" value="A folytatáshoz zárja be ezeket a programokat:"/>
+		<string name="DownloadInProgress" value="Letöltés folyamatban"/>
+		<string name="DownloadingPackages" value="Telepítőcsomagok letöltése"/>
+		<string name="ProcessingDownloadedPackages" value="Letöltött csomagok feldolgozása"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% kész"/>
+		<string name="LearnMore" value="TovÃ¡bbi tudnivalÃ³k."/>
+		<string name="NetworkConnectionError" value="Nincs hÃ¡lÃ³zati kapcsolat."/>
+		<string name="DefaultDownloadFailure" value="A letÃ¶ltÃ©s nem sikerÃ¼lt. PrÃ³bÃ¡lja meg Ãºjra."/>
+		<string name="NetworkFailureNoConnection" value="Nem lehet csatlakozni az NVIDIA-hoz. EllenÅ‘rizze az internetkapcsolatot."/>
+		<string name="NetworkFailureTryAgain" value="Nem lehet csatlakozni az NVIDIA-hoz. PrÃ³bÃ¡lja meg kÃ©sÅ‘bb."/>
+		<string name="SignatureCheckFailure" value="A letÃ¶ltÃ©s nem sikerÃ¼lt. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Nem lehet letÃ¶lteni a telepÃ­tÃ©shez szÃ¼ksÃ©ges fÃ¡jlokat. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

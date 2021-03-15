@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0804">
+		<string name="VersionText" value="版本 ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="版本 ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA 安装程序"/>
+		<string name="UninstallFrameTitle" value="NVIDIA 卸载程序"/>
+		<string name="ErrorNoPackagesToInstall" value="没有可安装的组件。"/>
+		<string name="ErrorMissingRequiredPackages" value="所需组件丢失"/>
+		<string name="ErrorMissingPackageFiles" value="所需文件丢失"/>
+		<string name="ErrorUnsupportedPlatform" value="此软件包不支持所使用的操作系统。请获取适合您系统的正确软件包。"/>
+		<string name="ErrorInstallerAlreadyRunning" value="其他安装程序正在运行。请完成其他安装后重试。"/>
+		<string name="ErrorInstallerNeedReboot" value="需要重新启动系统。重新启动系统并重试。"/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="要继续，请释放更多磁盘空间。
+所需空间: "/>
+		<string name="RequiredFilesMissing" value="一个或更多所需文件丢失。"/>
+		<string name="ErrorEULAMissing" value="无法运行 NVIDIA 安装程序，因为 &quot;EULA.txt&quot; 丢失。"/>
+		<string name="ErrorPackageCorrupt" value="安装组件损坏。"/>
+		<string name="CannotCancelInstallMessage" value="现在无法停止 NVIDIA 安装程序。"/>
+		<string name="CannotCancelUninstallMessage" value="现在无法停止 NVIDIA 卸载程序。"/>
+		<string name="ConfirmCancelMessage" value="您是否确定要取消？"/>
+		<string name="CompList" value="组件列表"/>
+		<string name="ResList" value="结果列表"/>
+		<string name="VersionHeader" value="版本"/>
+		<string name="ComponentHeader" value="组件"/>
+		<string name="NewVersionHeader" value="新版本"/>
+		<string name="CurVersionHeader" value="当前版本"/>
+		<string name="StatusHeader" value="状态"/>
+		<string name="ListEntryNotFound" value="未找到"/>
+		<string name="ListEntryNotSelected" value="未选择"/>
+		<string name="ListEntryInstalled" value="已安装"/>
+		<string name="ListEntryNotInstalled" value="未安装"/>
+		<string name="ListEntryNoneInstalled" value="无"/>
+		<string name="ListEntryUninstalled" value="已删除"/>
+		<string name="ListEntryNotUninstalled" value="未删除"/>
+		<string name="ListEntryFailed" value="失败"/>
+		<string name="ListEntrySkipped" value="未安装。已存在更新的版本。"/>
+		<string name="SystemCheck" value="系统检查"/>
+		<string name="LicenseAgreement" value="许可协议"/>
+		<string name="Options" value="选项"/>
+		<string name="Installation" value="安装"/>
+		<string name="Finish" value="结束"/>
+		<string name="NextButtonText" value="下一步(&amp;N)"/>
+		<string name="BackButtonText" value="后退(&amp;B)"/>
+		<string name="CancelButtonText" value="取消(&amp;C)"/>
+		<string name="CloseButtonText" value="关闭(&amp;C)"/>
+		<string name="RetryButtonText" value="重试(&amp;R)"/>
+		<string name="AgreeButtonText" value="同意并继续(&amp;A)"/>
+		<string name="RestartNowButtonText" value="马上重新启动(&amp;R)"/>
+		<string name="RestartLaterButtonText" value="稍后重启(&amp;L)"/>
+		<string name="UninstallButtonText" value="卸载(&amp;U)"/>
+		<string name="ContinueButtonText" value="继续(&amp;O)"/>
+		<string name="LaunchButtonText" value="启动(&amp;L)"/>
+		<string name="BrowseButtonText" value="浏览..."/>
+		<string name="CheckingSystemCompatibility" value="检查系统兼容性"/>
+		<string name="Warnings" value="警告"/>
+		<string name="EULAHeadText" value="NVIDIA 软件许可协议"/>
+		<string name="EULAInstructions" value="请仔细阅读以下 NVIDIA 软件许可协议。"/>
+		<string name="EULAAcceptInstructions" value="如果您接受此协议条款，请单击同意并继续。"/>
+		<string name="NoEULAFound" value="无法找到 EULA。"/>
+		<string name="InstallOptions" value="安装选项"/>
+		<string name="ExpressRecommended" value="精简(&amp;E)（推荐）"/>
+		<string name="CustomAdvanced" value="自定义(&amp;C)（高级）"/>
+		<string name="ExpressDescription" value="更新现有驱动程序并保留当前 NVIDIA 设置。"/>
+		<string name="CustomDescription" value="可让您选择想要安装的组件并提供清洁安装选项。"/>
+		<string name="CustomInstallOptions" value="自定义安装选项"/>
+		<string name="CustomInstallInstructions" value="选择驱动程序组件"/>
+		<string name="CleanInstall" value="执行清洁安装(&amp;P)"/>
+		<string name="CleanInstallDescription" value="清洁安装会将所有 NVIDIA 设置恢复为默认值并删除您已创建的所有配置文件。"/>
+		<string name="SelectInstallLocation" value="选择安装位置"/>
+		<string name="InstallPreparing" value="准备安装"/>
+		<string name="RebootInstallPreparing" value="正在准备重启..."/>
+		<string name="UninstallingPrevious" value="删除上一版本"/>
+		<string name="RemoveStatus" value="正在删除 ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="在 60 秒内重新启动"/>
+		<string name="AfterRestartInstructions" value="重新启动后，NVIDIA 安装将继续进行。"/>
+		<string name="InstallInProgress" value="安装进行中"/>
+		<string name="InstallStatus" value="正在安装 ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="安装完成"/>
+		<string name="InstallerFinished" value="NVIDIA 安装程序已完成"/>
+		<string name="InstallerFinishedInstructions" value="现在已安装以下组件："/>
+		<string name="InstallCannotContinue" value="NVIDIA 安装程序无法继续"/>
+		<string name="FailureReasonHeader" value="失败原因："/>
+		<string name="FailureDisplayError" value="无法显示失败"/>
+		<string name="InstallFailure" value="NVIDIA 安装程序失败"/>
+		<string name="InstallWarning" value="是否要继续？"/>
+		<string name="FailureListHeader" value="出现以下错误："/>
+		<string name="InstallRebootInstructions" value="要完成安装，请重新启动计算机。"/>
+		<string name="RebootQuestion" value="是否马上重新启动？"/>
+		<string name="UninstallPreparing" value="准备卸载"/>
+		<string name="UninstallQuestion" value="您是否确定要删除此软件？"/>
+		<string name="UninstallInProgress" value="删除进行中"/>
+		<string name="UninstallStatus" value="正在删除 ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="NVIDIA 卸载程序已完成"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}}已成功卸载。"/>
+		<string name="UninstallCannotContinue" value="NVIDIA 卸载程序无法继续"/>
+		<string name="UninstallFailure" value="NVIDIA 卸载程序失败"/>
+		<string name="UninstallRebootInstructions" value="要完成删除，请重新启动计算机。"/>
+		<string name="WaitPnpAlreadyRunning" value="硬件向导正在运行。该向导完成后将继续安装。"/>
+		<string name="DisplayFlash" value="备注：在安装过程中可能会出现闪烁。"/>
+		<string name="PreCheckWarning" value="检测到一个或更多问题"/>
+		<string name="OldOverNewWarning" value="此驱动程序比当前使用的版本更旧。安装它会将所有 NVIDIA 设置恢复为默认值并删除您已创建的所有配置文件。"/>
+		<string name="IntelDriverNotPresentMessage" value="你必须先安装 Intel® 驱动程序。"/>
+		<string name="ReleaseHighlights" value="版本精髓"/>
+		<string name="UpdatesReadyToInstall" value="准备安装最近更新"/>
+		<string name="UpdatesReady" value="最近更新已推出"/>
+		<string name="UpdatesBeingInstalled" value="正在安装更新"/>
+		<string name="UpdateText" value="更新"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="正在准备更新"/>
+		<string name="InstallPaused" value="NVIDIA 安装程序已暂停"/>
+		<string name="ClosePrograms" value="关闭这些程序以继续："/>
+		<string name="DownloadInProgress" value="下载正在进行中"/>
+		<string name="DownloadingPackages" value="正在下载安装包"/>
+		<string name="ProcessingDownloadedPackages" value="正在处理下载的安装包"/>
+		<string name="DownloadProgressInfo" value="完成 ${!DownloadProgressInfo}%"/>
+		<string name="LearnMore" value="了解更多。"/>
+		<string name="NetworkConnectionError" value="未发现网络连接。"/>
+		<string name="DefaultDownloadFailure" value="未成功完成下载。重试。"/>
+		<string name="NetworkFailureNoConnection" value="无法连接 NVIDIA。检查您的互联网连接。"/>
+		<string name="NetworkFailureTryAgain" value="无法连接 NVIDIA。请稍后再试。"/>
+		<string name="SignatureCheckFailure" value="未成功完成下载。${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="无法下载安装所需要的文件。${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>

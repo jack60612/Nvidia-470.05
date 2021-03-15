@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<localized locale="0x0809">
+		<string name="VersionText" value="Version ${!ProductVersion}"/>
+		<string name="GeneralTitleText" value="${!GeneralTitle}"/>
+		<string name="GeneralVersionText" value="Version ${!GeneralVersion}"/>
+		<string name="InstallFrameTitle" value="NVIDIA Installer"/>
+		<string name="UninstallFrameTitle" value="NVIDIA Uninstaller"/>
+		<string name="ErrorNoPackagesToInstall" value="There are no components to install."/>
+		<string name="ErrorMissingRequiredPackages" value="Required components are missing."/>
+		<string name="ErrorMissingPackageFiles" value="Required files are missing."/>
+		<string name="ErrorUnsupportedPlatform" value="The operating system in use is not supported by this package. Please obtain the correct package for your system."/>
+		<string name="ErrorInstallerAlreadyRunning" value="Other installations are running. Finish the other installations then try again."/>
+		<string name="ErrorInstallerNeedReboot" value="A system restart is required. Restart the system and try again."/>
+		<string name="ErrorInstallerNeedsDiskSpace" value="To continue, free up additional disk space.
+Required space: "/>
+		<string name="RequiredFilesMissing" value="One or more required files are missing."/>
+		<string name="ErrorEULAMissing" value="Unable to run NVIDIA Install because the &quot;EULA.txt&quot; is missing."/>
+		<string name="ErrorPackageCorrupt" value="Installation package is corrupt."/>
+		<string name="CannotCancelInstallMessage" value="NVIDIA Installer cannot be stopped at this point."/>
+		<string name="CannotCancelUninstallMessage" value="NVIDIA Uninstaller cannot be stopped at this point."/>
+		<string name="ConfirmCancelMessage" value="Do you really want to cancel?"/>
+		<string name="CompList" value="Component List"/>
+		<string name="ResList" value="Results List"/>
+		<string name="VersionHeader" value="Version"/>
+		<string name="ComponentHeader" value="Component"/>
+		<string name="NewVersionHeader" value="New Version"/>
+		<string name="CurVersionHeader" value="Current Version"/>
+		<string name="StatusHeader" value="Status"/>
+		<string name="ListEntryNotFound" value="Not Found"/>
+		<string name="ListEntryNotSelected" value="Not Selected"/>
+		<string name="ListEntryInstalled" value="Installed"/>
+		<string name="ListEntryNotInstalled" value="Not Installed"/>
+		<string name="ListEntryNoneInstalled" value="None"/>
+		<string name="ListEntryUninstalled" value="Removed"/>
+		<string name="ListEntryNotUninstalled" value="Not Removed"/>
+		<string name="ListEntryFailed" value="Failed"/>
+		<string name="ListEntrySkipped" value="Did not install. A newer version already exists."/>
+		<string name="SystemCheck" value="System Check"/>
+		<string name="LicenseAgreement" value="Licence Agreement"/>
+		<string name="Options" value="Options"/>
+		<string name="Installation" value="Install"/>
+		<string name="Finish" value="Finish"/>
+		<string name="NextButtonText" value="&amp;NEXT"/>
+		<string name="BackButtonText" value="&amp;BACK"/>
+		<string name="CancelButtonText" value="&amp;CANCEL"/>
+		<string name="CloseButtonText" value="&amp;CLOSE"/>
+		<string name="RetryButtonText" value="&amp;RETRY"/>
+		<string name="AgreeButtonText" value="&amp;AGREE AND CONTINUE"/>
+		<string name="RestartNowButtonText" value="&amp;RESTART NOW"/>
+		<string name="RestartLaterButtonText" value="RESTART &amp;LATER"/>
+		<string name="UninstallButtonText" value="&amp;UNINSTALL"/>
+		<string name="ContinueButtonText" value="C&amp;ONTINUE"/>
+		<string name="LaunchButtonText" value="&amp;LAUNCH"/>
+		<string name="BrowseButtonText" value="BROWSE..."/>
+		<string name="CheckingSystemCompatibility" value="Checking system compatibility"/>
+		<string name="Warnings" value="Warnings."/>
+		<string name="EULAHeadText" value="NVIDIA software licence agreement"/>
+		<string name="EULAInstructions" value="Please read the following NVIDIA software licence agreement carefully."/>
+		<string name="EULAAcceptInstructions" value="Click Agree and Continue if you accept the terms of the agreement."/>
+		<string name="NoEULAFound" value="No EULA can be found."/>
+		<string name="InstallOptions" value="Installation options"/>
+		<string name="ExpressRecommended" value="&amp;Express (Recommended)"/>
+		<string name="CustomAdvanced" value="C&amp;ustom (Advanced)"/>
+		<string name="ExpressDescription" value="Upgrades existing drivers and retains current NVIDIA settings."/>
+		<string name="CustomDescription" value="Allows you to select the components you want to install and provides the option for a clean installation."/>
+		<string name="CustomInstallOptions" value="Custom installation options"/>
+		<string name="CustomInstallInstructions" value="Select driver components:"/>
+		<string name="CleanInstall" value="&amp;Perform a clean installation"/>
+		<string name="CleanInstallDescription" value="A clean installation restores all NVIDIA settings to the default value and removes any profiles you have created."/>
+		<string name="SelectInstallLocation" value="Select installation location"/>
+		<string name="InstallPreparing" value="Preparing to install"/>
+		<string name="RebootInstallPreparing" value="Preparing for restart..."/>
+		<string name="UninstallingPrevious" value="Removing previous version"/>
+		<string name="RemoveStatus" value="Removing ${!ProgressTitle}..."/>
+		<string name="RestartNotification" value="Restarting in less than 60 seconds"/>
+		<string name="AfterRestartInstructions" value="After restarting, NVIDIA Install will continue."/>
+		<string name="InstallInProgress" value="Installation in progress"/>
+		<string name="InstallStatus" value="Installing ${!ProgressTitle}..."/>
+		<string name="InstallComplete" value="Install Complete"/>
+		<string name="InstallerFinished" value="NVIDIA Installer has finished"/>
+		<string name="InstallerFinishedInstructions" value="The following components are now installed:"/>
+		<string name="InstallCannotContinue" value="NVIDIA Installer cannot continue"/>
+		<string name="FailureReasonHeader" value="Reason for failure:"/>
+		<string name="FailureDisplayError" value="Unable to display failures."/>
+		<string name="InstallFailure" value="NVIDIA Installer failed"/>
+		<string name="InstallWarning" value="Do you want to continue?"/>
+		<string name="FailureListHeader" value="The following failures occurred:"/>
+		<string name="InstallRebootInstructions" value="To complete the installation, restart the computer."/>
+		<string name="RebootQuestion" value="Do you want to restart now?"/>
+		<string name="UninstallPreparing" value="Preparing to uninstall"/>
+		<string name="UninstallQuestion" value="Do you really want to remove this software?"/>
+		<string name="UninstallInProgress" value="Removal in progress"/>
+		<string name="UninstallStatus" value="Removing ${!ProgressTitle}..."/>
+		<string name="UninstallComplete" value="NVIDIA Uninstaller has finished"/>
+		<string name="UninstallSuccessInfo" value="${{GeneralTitleText}} has been successfully removed."/>
+		<string name="UninstallCannotContinue" value="NVIDIA Uninstaller cannot continue"/>
+		<string name="UninstallFailure" value="NVIDIA Uninstaller failed"/>
+		<string name="UninstallRebootInstructions" value="To complete the removal, restart the computer."/>
+		<string name="WaitPnpAlreadyRunning" value="The hardware wizard is running. Install will resume when it has finished."/>
+		<string name="DisplayFlash" value="Note: Some flashing might occur during the installation."/>
+		<string name="PreCheckWarning" value="One or more issues were detected"/>
+		<string name="OldOverNewWarning" value="This driver is older than the version currently in use. Installing it will restore all NVIDIA settings to the default value and remove any profiles you have created."/>
+		<string name="IntelDriverNotPresentMessage" value="You must install an Intel® driver first."/>
+		<string name="ReleaseHighlights" value="Release highlights"/>
+		<string name="UpdatesReadyToInstall" value="New updates are ready to be installed"/>
+		<string name="UpdatesReady" value="New updates are ready"/>
+		<string name="UpdatesBeingInstalled" value="Updates are being installed"/>
+		<string name="UpdateText" value="Updating"/>
+		<string name="UpdateStatus" value="${{UpdateText}} ${!ProgressTitle}"/>
+		<string name="PreparingUpdates" value="Preparing updates"/>
+		<string name="InstallPaused" value="NVIDIA Installer has paused"/>
+		<string name="ClosePrograms" value="Close these programs to continue:"/>
+		<string name="DownloadInProgress" value="Download in progress"/>
+		<string name="DownloadingPackages" value="Downloading installation packages"/>
+		<string name="ProcessingDownloadedPackages" value="Processing downloaded packages"/>
+		<string name="DownloadProgressInfo" value="${!DownloadProgressInfo}% complete"/>
+		<string name="LearnMore" value="Learn more."/>
+		<string name="NetworkConnectionError" value="Network connection not found."/>
+		<string name="DefaultDownloadFailure" value="Download did not complete successfully. Try again."/>
+		<string name="NetworkFailureNoConnection" value="Unable to connect to NVIDIA. Check your internet connection."/>
+		<string name="NetworkFailureTryAgain" value="Unable to connect to NVIDIA. Try again later."/>
+		<string name="SignatureCheckFailure" value="Download did not complete successfully. ${{SignatureErrorLearnMoreLink}}"/>
+		<string name="DataWriteFailure" value="Unable to download required files for installation. ${{DataWriteErrorLearnMoreLink}}"/>
+	</localized>
+</strings>
